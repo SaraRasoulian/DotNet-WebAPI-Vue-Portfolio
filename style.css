@@ -10,22 +10,24 @@
   --background-color: #F6F1EB;
   --border-color: #A29078;
   --text-color: #503115;
-  --Introduction-text-color: #014F57;
+  --titr-color: #014F57;
 }
 
 /******************** Base styles ********************/
 html {
-  font-size: 16px;
-  line-height: 1.5;
-  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: var(--secondary-color);
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: Arial, 'Source Sans Pro', sans-serif;
 }
 
 span,
@@ -38,6 +40,63 @@ h5,
 h6 {
   color: var(--text-color);
 }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+ html {
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 59%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 65%;
+  }
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+input:focus,
+button:focus,
+a:focus,
+textarea:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
 
 /******************** Header ********************/
 .greeting {
@@ -65,7 +124,7 @@ header .greeting-text-2 {
 
 /******************** Introduction ********************/
 .intro-titr {
-  color: var(--Introduction-text-color);
+  color: var(--titr-color);
   text-align: left;
   font-size: 36px;
   font-weight: 700;
