@@ -1,155 +1,167 @@
 /******************** Colors ********************/
 :root {
-    --primary-color: #007bff; /* blue */
-    --secondary-color: #6c757d; /* gray */
-    --error-color: #dc3545; /* red */
+  --primary-color: #007bff;
+  /* blue */
+  --secondary-color: #6c757d;
+  /* gray */
+  --error-color: #dc3545;
+  /* red */
 
-    --background-color:#F6F1EB;
-    --border-color:#A29078;
-    --text-color:#503115;
-    --Introduction-text-color:#014F57;
-  }
-  
-  /******************** Base styles ********************/
-  html {
-    font-size: 16px;
-    line-height: 1.5;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    color: var(--secondary-color);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-  }
-  
-  span, p,h1,h2,h3,h4,h5,h6{
-    color: var(--text-color);
-  }
-  /******************** Header ********************/
-  .greeting {
-    border: 1px solid var(--border-color);
-    margin: 5vw auto;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12vw 0;
-  }
-  .greeting .text{
-    margin:1rem;
-    display: grid;
-  }
-  h1 {
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-  }
-  header .greeting-text-1{
-    font-size: 1rem;
-  }
-  header .greeting-text-2{
-    font-size: 2rem;
-  }
+  --background-color: #F6F1EB;
+  --border-color: #A29078;
+  --text-color: #503115;
+  --Introduction-text-color: #014F57;
+}
+
+/******************** Base styles ********************/
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--secondary-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+}
+
+/******************** Header ********************/
+.greeting {
+  border: 1px solid var(--border-color);
+  margin: 5vw auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12vw 0;
+}
+
+.greeting .text {
+  margin: 1rem;
+  display: grid;
+}
+
+header .greeting-text-1 {
+  font-size: 1rem;
+}
+
+header .greeting-text-2 {
+  font-size: 2rem;
+}
+
 /******************** Introduction ********************/
-.intro-titr{
+.intro-titr {
   color: var(--Introduction-text-color);
   text-align: left;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
 }
-  /******************** Navigation ********************/
-  nav {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    max-width: 800px;
-    width: 100%;
-  }
-  
-  nav li {
-    margin: 0 10px;
-  }
-  
-  nav a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-  }
-  
-  nav a:hover {
-    color: var(--primary-color);
-  }
-  
-  /******************** Buttons ********************/
-  button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0069d9;
-  }
-  
-  /******************** Form ********************/
-  form {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  form h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0 0 20px 0;
-  }
-  
-  form input[type="text"],
-  form input[type="email"],
-  form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  form input[type="submit"] {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  form input[type="submit"]:hover {
-    background-color: #0069d9;
-  }
-  
-  form label {
-    font-weight: 600;
-  }
-  
+
+/******************** Navigation ********************/
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 100%;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/******************** Buttons ********************/
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0069d9;
+}
+
+/******************** Form ********************/
+form {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="submit"] {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+form label {
+  font-weight: 600;
+}
