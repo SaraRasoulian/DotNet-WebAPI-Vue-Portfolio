@@ -14,6 +14,15 @@
 }
 
 /******************** Base styles ********************/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -41,44 +50,9 @@ h6 {
   color: var(--text-color);
 }
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  font-family: inherit;
-}
-
- html {
-  font-size: 62.5%;
-  scroll-behavior: smooth; }
-@media only screen and (max-width: 75em) {
-  html {
-    font-size: 59%;
-  }
-}
-
-@media only screen and (max-width: 56.25em) {
-  html {
-    font-size: 56%;
-  }
-}
-
-@media only screen and (min-width: 112.5em) {
-  html {
-    font-size: 65%;
-  }
-}
-
-
 a {
   text-decoration: none;
   color: inherit;
-}
-
-li {
-  list-style: none;
 }
 
 input:focus,
@@ -96,7 +70,6 @@ button {
 textarea {
   resize: none;
 }
-
 
 /******************** Header ********************/
 .greeting {
