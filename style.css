@@ -1,17 +1,18 @@
-/******************** Colors ********************/
 :root {
-  --primary-color: #007bff;
-  /* blue */
-  --secondary-color: #6c757d;
-  /* gray */
-  --error-color: #dc3545;
-  /* red */
-
+  /******************** Colors ********************/
   --background-color: #F6F1EB;
   --border-color: #A29078;
   --text-color: #503115;
   --titr-color: #014F57;
+
+  /******************** Font Sizes ********************/
+  --greeting-sm-size:1rem;
+  --greeting-lg-size:2rem;
+  --titr-size:36px;
+  --header-title-size:24px;
+  --text-size:20px;
 }
+
 
 /******************** Base styles ********************/
 *,
@@ -36,7 +37,7 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   overflow-y: scroll;
-  font-family: Arial, 'Source Sans Pro', sans-serif;
+  font-family: Arial ,sans-serif,'Source Sans Pro';
 }
 
 span,
@@ -71,7 +72,14 @@ textarea {
   resize: none;
 }
 
-/******************** Header ********************/
+
+/*maybe change the location  Desktop Only*/
+.container-hero{
+  margin: auto 10rem;
+}
+
+
+/******************** Header (Greeting) ********************/
 .greeting {
   border: 1px solid var(--border-color);
   margin: 5vw auto;
@@ -87,22 +95,84 @@ textarea {
   display: grid;
 }
 
-header .greeting-text-1 {
-  font-size: 1rem;
+header .greeting-text-sm {
+  font-size: var(--greeting-sm-size);
 }
 
-header .greeting-text-2 {
-  font-size: 2rem;
+header .greeting-text-lg {
+  font-size: var(--greeting-lg-size);
 }
 
 /******************** Introduction ********************/
-.intro-titr {
+.introduction-titr {
   color: var(--titr-color);
   text-align: left;
-  font-size: 36px;
+  font-size: var(--titr-size);
   font-weight: 700;
   margin: 0;
 }
+.introduction-text{
+  font-size: var(--text-size);
+}
+
+
+/******************** Sections ********************/
+.section {
+  width: 100%;
+  margin-top: 2rem;
+  -webkit-transition: -webkit-transform 200ms ease-out;
+  transition: -webkit-transform 200ms ease-out;
+  transition: transform 200ms ease-out;
+  transition: transform 200ms ease-out, -webkit-transform 200ms ease-out;
+}
+
+.section-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header-title {
+  padding: 10px 20px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  font-size: var(--header-title-size);
+}
+.section-content{
+  font-size: var(--text-size);  
+}
+
+/******************** Experiences ********************/
+
+/******************** Education ********************/
+
+/******************** Contact ********************/
+
+/******************** Say Hi (Form) ********************/
+
+/******************** Footer ********************/
+
+
+
+
+
+
+
 
 /******************** Navigation ********************/
 nav {
@@ -129,7 +199,7 @@ nav a {
   color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--text-size);
 }
 
 nav a:hover {
@@ -163,7 +233,6 @@ form {
 }
 
 form h2 {
-  font-size: 24px;
   font-weight: 600;
   margin: 0 0 20px 0;
 }
