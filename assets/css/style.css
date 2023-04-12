@@ -1,17 +1,17 @@
 :root {
   /******************** Colors ********************/
-  --background-color: #F6F1EB;
-  --border-color: #A29078;
+  --bg-color: #F6F1EB;
+  --border-color: #d3c3b0;
   --text-color: #503115;
   --titr-color: #014F57;
 
   /******************** Font Sizes ********************/
-  --greeting-sm-size: 2vw;
-  --greeting-lg-size: 9vw;
+  /* --greeting-sm-size: 2vw;
+  --greeting-lg-size: 9vw; 
   --titr-size: 36px;
   --header-title-size: 24px;
   --text-md-size: 20px;
-  --text-sm-size: 13px;
+  --text-sm-size: 13px;*/
 }
 
 
@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -38,7 +38,7 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   overflow-y: scroll;
-  font-family: Arial, sans-serif, 'Source Sans Pro';
+  /* font-family: Arial, sans-serif, 'Source Sans Pro'; */
 }
 
 span,
@@ -98,33 +98,33 @@ textarea {
   display: grid;
 }
 
-header .greeting-text-sm {
+/* header .greeting-text-sm {
   font-size: var(--greeting-sm-size);
-}
+} */
 
 header .greeting-text-lg {
-  font-size: var(--greeting-lg-size);
-  font-family: 'Sienthas', 'Mastrih', 'sans-serif';
+  /* font-size: var(--greeting-lg-size); */
+  font-family: 'Mastrih', 'Sienthas', 'sans-serif';
 }
 
 /******************** Introduction ********************/
 .introduction-titr {
   color: var(--titr-color);
   text-align: left;
-  font-size: var(--titr-size);
+  /* font-size: var(--titr-size); */
   font-weight: 700;
   margin-bottom: 2vw;
 }
 
-.introduction-text {
+/* .introduction-text {
   font-size: var(--text-md-size);
-}
+} */
 
 
 /******************** Sections ********************/
 .section {
   width: 100%;
-  margin-bottom: 5vw;
+  margin-bottom: calc(4rem + 3vw);
 }
 
 .section-header {
@@ -155,9 +155,9 @@ header .greeting-text-lg {
   /* font-size: var(--header-title-size); */
 }
 
-.section-content {
+/* .section-content {
   font-size: var(--text-md-size);
-}
+} */
 
 .center-content {
   text-align: center;
@@ -196,7 +196,7 @@ header .greeting-text-lg {
 .contact .contact-item .contact-title {
   margin-top: 5px;
   font-weight: 600;
-  font-size: var(--text-md-size);
+  /* font-size: var(--text-md-size); */
 }
 
 
@@ -211,7 +211,7 @@ header .greeting-text-lg {
 }
 
 .footer .footer-text {
-  font-size: var(--text-sm-size);
+  /* font-size: var(--text-sm-size); */
   color: var(--border-color);
 }
 
@@ -242,7 +242,7 @@ nav a {
   color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: var(--text-md-size);
+  /* font-size: var(--text-md-size); */
 }
 
 nav a:hover {
