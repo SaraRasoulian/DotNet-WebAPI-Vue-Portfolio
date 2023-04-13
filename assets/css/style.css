@@ -4,6 +4,7 @@
   --border-color: #d3c3b0;
   --text-color: #503115;
   --titr-color: #014F57;
+  --input-bg-color :#F9F6F1;
 
   /******************** Font Sizes ********************/
   /* --greeting-sm-size: 2vw;
@@ -38,11 +39,12 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   overflow-y: scroll;
-  /* font-family: Arial, sans-serif, 'Source Sans Pro'; */
+  /* font-family: Arial, sans-serif, 'Source Sans Pro';  */
 }
 
 span,
 p,
+label,
 h1,
 h2,
 h3,
@@ -202,7 +204,9 @@ header .greeting-text-lg {
 
 
 /******************** Say Hi (Form) ********************/
-
+input, textarea{
+background-color: var(--input-bg-color);
+}
 /******************** Footer ********************/
 .footer {
   border-top: 1px solid var(--border-color);
@@ -218,94 +222,3 @@ header .greeting-text-lg {
 
 
 /******************** Navigation ********************/
-nav {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  max-width: 800px;
-  width: 100%;
-}
-
-nav li {
-  margin: 0 10px;
-}
-
-nav a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-weight: 600;
-  /* font-size: var(--text-md-size); */
-}
-
-nav a:hover {
-  color: var(--primary-color);
-}
-
-/******************** Buttons ********************/
-button {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0069d9;
-}
-
-/******************** Form ********************/
-form {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-form h2 {
-  font-weight: 600;
-  margin: 0 0 20px 0;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-form input[type="submit"] {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-form input[type="submit"]:hover {
-  background-color: #0069d9;
-}
-
-form label {
-  font-weight: 600;
-}
