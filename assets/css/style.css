@@ -3,8 +3,13 @@
   --bg-color: #F6F1EB;
   --border-color: #d3c3b0;
   --text-color: #503115;
+
+  /* Footer text, input placeholder, button bg, input border focus */
+  --secondary-text-color: #9c8570;
+
   --titr-color: #014F57;
-  --input-bg-color :#F9F6F1;
+  --input-bg-color: #f9f6f1;
+  --input-border-color: #dfd5c5;
 
   /******************** Font Sizes ********************/
   /* --greeting-sm-size: 2vw;
@@ -36,9 +41,11 @@ body {
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  line-height: 1.5;
   overflow-x: hidden;
   overflow-y: scroll;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* font-family: Arial, sans-serif, 'Source Sans Pro';  */
 }
 
@@ -77,13 +84,6 @@ textarea {
   resize: none;
 }
 
-
-/*maybe change the location  Desktop Only*/
-/* .container-hero{
-  margin: auto 10rem;
-} */
-
-
 /******************** Header (Greeting) ********************/
 .greeting {
   border: 1px solid var(--border-color);
@@ -100,9 +100,10 @@ textarea {
   display: grid;
 }
 
-/* header .greeting-text-sm {
-  font-size: var(--greeting-sm-size);
-} */
+header .greeting-text-sm {
+  /* font-size: var(--greeting-sm-size); */
+  text-transform: uppercase;
+}
 
 header .greeting-text-lg {
   /* font-size: var(--greeting-lg-size); */
@@ -213,17 +214,19 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
+  width: 100%;
   height: 38px;
-  padding: 6px 10px; 
+  padding: 6px 10px;
   background-color: var(--input-bg-color);
   border: 1px solid var(--border-color);
+  color: var(--text-color);
   border-radius: 0;
   box-shadow: none;
   box-sizing: border-box;
   resize: none;
-} 
+}
 
-  input[type="email"],
+input[type="email"],
 input[type="number"],
 input[type="search"],
 input[type="text"],
@@ -232,12 +235,17 @@ input[type="url"],
 input[type="password"],
 textarea {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none; }
+  -moz-appearance: none;
+  appearance: none;
+}
+
 textarea {
-  min-height: 65px;
+  /* min-height: 65px; */
+  min-height: 86px;
   padding-top: 6px;
-  padding-bottom: 6px; }
+  padding-bottom: 6px;
+}
+
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -247,46 +255,74 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid var(--text-color);
-  outline: 0; }
+  border: 1px solid var(--secondary-text-color);
+  outline: 0;
+}
+
 label,
 legend {
   display: block;
   margin-bottom: .5rem;
-  font-weight: 600; }
+  font-weight: 600;
+}
+
 fieldset {
   padding: 0;
-  border-width: 0; }
+  border-width: 0;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline; }
-label > .label-body {
+  display: inline;
+}
+
+label>.label-body {
   display: inline-block;
   margin-left: .5rem;
-  font-weight: normal; }
-  /******************** buttons ********************/
-  .button,
+  font-weight: normal;
+}
+
+
+::placeholder {
+  color: var(--secondary-text-color);
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--secondary-text-color);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--secondary-text-color);
+}
+
+/******************** buttons ********************/
+.button,
 button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
+  width: 100%;
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: var(--border-color);
+  color: var(--text-color);
+  background-color: var(--secondary-text-color);
   text-align: center;
-  font-size: 11px;
   font-weight: 600;
   line-height: 38px;
   letter-spacing: .1rem;
-  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
   border-radius: 0;
   border: none;
   cursor: pointer;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
+
 .button:hover,
 button:hover,
 input[type="submit"]:hover,
@@ -297,31 +333,11 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: #333;
-  border: none;
-  outline: 0; }
-.button.button-primary,
-button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
-  color: #FFF;
-  background-color: var(--border-color);;
-  border: none; }
-.button.button-primary:hover,
-button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
-.button.button-primary:focus,
-button.button-primary:focus,
-input[type="submit"].button-primary:focus,
-input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus {
-  color: #FFF;
+  color: var(--bg-color);
   background-color: var(--text-color);
-  border: none; }
-
+  border: none;
+  outline: 0;
+}
 
 /******************** Footer ********************/
 .footer {
@@ -331,10 +347,19 @@ input[type="button"].button-primary:focus {
 }
 
 .footer .footer-text {
-  /* font-size: var(--text-sm-size); */
-  color: var(--border-color);
+  color: var(--secondary-text-color);
 }
 
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--text-color);
+  font-weight: 600;
+}
 
 
 /******************** Navigation ********************/

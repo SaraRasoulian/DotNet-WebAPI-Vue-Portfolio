@@ -50,10 +50,10 @@
 }
 
 /* For devices larger than 550px */
-@media (min-width: 550px) {
+  /* For devices larger than 769px */
+@media (min-width: 769px) {
   .container {
-    /* width: 80%;  */
-    width: 70%; 
+   width: 80%;  
   }
   .column,
   .columns {
@@ -123,12 +123,6 @@ html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%; }
-body {
-  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
 
 
 /* Typography
@@ -143,11 +137,22 @@ h3 { font-size: 2.6rem; line-height: 1.3;  letter-spacing: -.1rem; }
 h4 { font-size: 2.2rem; line-height: 1.35; letter-spacing: -.08rem; }
 h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
 h6 { font-size: 1.4rem; line-height: 1.6;  letter-spacing: 0; }
-p {font-size: 18px; line-height: 1.7;  letter-spacing: 0;}
+
+p{font-size: 18px; line-height: 1.7;  letter-spacing: 0;}
+
+span,
+input,
+textarea,
+select,
+label,
+legend,
+.button,
+button {font-size: 14px;}
+
 .massive { 
   font-size: 4rem;
 }
-/* Larger than tablet */
+/* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
   h1 { 
     font-size: 4.7rem;
@@ -158,7 +163,18 @@ p {font-size: 18px; line-height: 1.7;  letter-spacing: 0;}
   h4 { font-size: 3.0rem; }
   h5 { font-size: 2.4rem; }
   h6 { font-size: 1.5rem; }
+
   p {font-size: 20px;}
+
+  span,
+  input,
+  textarea,
+  select,
+  label,
+  legend,
+  .button,
+  button
+   {font-size: 16px;}
 
   .massive { 
     font-size: calc(5rem + 2vw);
@@ -167,15 +183,6 @@ p {font-size: 18px; line-height: 1.7;  letter-spacing: 0;}
 
 /* p {
   margin-top: 0; } */
-
-
-/* Links
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-a {
-  color: #1EAEDB; }
-a:hover {
-  color: #0FA0CE; }
-
 
 
 /* Lists
@@ -197,80 +204,15 @@ li {
   margin-bottom: 1rem; }
 
 
-/* Code
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-code {
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
-  font-size: 90%;
-  white-space: nowrap;
-  background: #F1F1F1;
-  border: 1px solid #E1E1E1;
-  border-radius: 4px; }
-pre > code {
-  display: block;
-  padding: 1rem 1.5rem;
-  white-space: pre; }
-
-
-/* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-th,
-td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
-th:first-child,
-td:first-child {
-  padding-left: 0; }
-th:last-child,
-td:last-child {
-  padding-right: 0; }
-
-
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
-.button {
-  margin-bottom: 1rem; }
+.button,
 input,
 textarea,
 select,
 fieldset {
-  margin-bottom: 1.5rem; }
-pre,
-blockquote,
-dl,
-figure,
-table,
-p,
-ul,
-ol,
-form {
-  margin-bottom: 2.5rem; }
-
-
-/* Utilities
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.u-full-width {
-  width: 100%;
-  box-sizing: border-box; }
-.u-max-full-width {
-  max-width: 100%;
-  box-sizing: border-box; }
-.u-pull-right {
-  float: right; }
-.u-pull-left {
-  float: left; }
-
-
-/* Misc
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid #E1E1E1; }
+  margin-bottom: 1rem; }
 
 
 /* Clearing
@@ -302,7 +244,8 @@ there.
 @media (min-width: 550px) {}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (min-width: 750px) {
+}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {}
