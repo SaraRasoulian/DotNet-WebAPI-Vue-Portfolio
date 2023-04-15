@@ -11,6 +11,8 @@
   --input-bg-color: #f9f6f1;
   --input-border-color: #dfd5c5;
 
+  --button-bg-color:#d1c3b6;
+
   /******************** Font Sizes ********************/
   /* --greeting-sm-size: 2vw;
   --greeting-lg-size: 9vw; 
@@ -310,7 +312,7 @@ input[type="button"] {
   height: 38px;
   padding: 0 30px;
   color: var(--text-color);
-  background-color: var(--secondary-text-color);
+  background-color: var(--button-bg-color);
   text-align: center;
   font-weight: 600;
   line-height: 38px;
