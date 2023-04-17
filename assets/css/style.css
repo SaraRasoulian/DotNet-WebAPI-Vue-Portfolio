@@ -11,7 +11,7 @@
   --input-bg-color: #f9f6f1;
   --input-border-color: #dfd5c5;
 
-  --button-bg-color:#d1c3b6;
+  --button-bg-color: #d1c3b6;
 
   /******************** Font Sizes ********************/
   /* --greeting-sm-size: 2vw;
@@ -172,6 +172,15 @@ header .greeting-text-lg {
 }
 
 /******************** Experiences ********************/
+.experience-item {
+  margin-bottom: calc(3rem + 1vw);
+  padding: 0;
+}
+
+.experience-item .experience-item-header {
+  display: grid;
+  font-weight: 600;
+}
 
 /******************** Education ********************/
 
@@ -260,6 +269,8 @@ select:focus {
   border: 1px solid var(--secondary-text-color);
   outline: 0;
 }
+
+
 
 label,
 legend {
