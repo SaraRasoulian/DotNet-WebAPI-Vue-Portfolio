@@ -172,17 +172,21 @@ header .greeting-text-lg {
 }
 
 /******************** Experiences ********************/
-.experience-item {
+
+/******************** Education ********************/
+
+
+
+/******************** Time Line (Experiences, Education) ********************/
+.timeline-item {
   margin-bottom: calc(3rem + 1vw);
   padding: 0;
 }
 
-.experience-item .experience-item-header {
+.timeline-item .timeline-item-header {
   display: grid;
   font-weight: 600;
 }
-
-/******************** Education ********************/
 
 /******************** Contact ********************/
 .contact {
@@ -322,8 +326,8 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: var(--text-color);
-  background-color: var(--button-bg-color);
+  color: var(--bg-color);
+  background-color: var(--text-color);
   text-align: center;
   font-weight: 600;
   line-height: 38px;
@@ -347,7 +351,7 @@ input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
   color: var(--bg-color);
-  background-color: var(--text-color);
+  background-color: var(--titr-color);
   border: none;
   outline: 0;
 }
