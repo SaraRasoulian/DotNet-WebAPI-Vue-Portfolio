@@ -48,7 +48,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* font-family: Arial, sans-serif, 'Source Sans Pro';  */
+  /* font-family: 'Open Sans', sans-serif; */
 }
 
 span,
@@ -107,9 +107,15 @@ header .greeting-text-sm {
   text-transform: uppercase;
 }
 
+@font-face {
+  font-family: 'Mastrih';
+  src: url('assets/fonts/Mastrih.ttf') format('truetype'),
+       url('assets/fonts/Mastrih.otf') format('opentype');
+}
+
 header .greeting-text-lg {
   /* font-size: var(--greeting-lg-size); */
-  font-family: 'Mastrih', 'Sienthas', 'sans-serif';
+  font-family: 'Mastrih', 'sans-serif';
 }
 
 /******************** Introduction ********************/
@@ -120,6 +126,36 @@ header .greeting-text-lg {
   font-weight: 700;
   margin-bottom: 2vw;
 }
+
+.profile-img{
+  width: -webkit-fill-available;
+  max-width: fit-content;
+
+  /*for FireFox*/
+  width: -moz-available;
+  max-width: -moz-fit-content;
+}
+
+
+.img-wrapper{
+  text-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Larger than tablet (tablet:768px) */
+@media (min-width: 769px) {
+  .img-wrapper{
+    text-align: end;
+    -webkit-box-align: end;
+    align-items: end;
+    justify-content: end;
+  }
+}
+
+
+
 
 /* .introduction-text {
   font-size: var(--text-md-size);
