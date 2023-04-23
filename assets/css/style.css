@@ -39,6 +39,8 @@ html {
 
 body {
   background-color: var(--bg-color);
+
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -84,6 +86,11 @@ button {
 textarea {
   resize: none;
 }
+/******************** Grainy Texture ********************/
+.texture {
+  padding-top: 1px;
+  background-image: url(/assets/img/noise.png);
+}
 
 /******************** Header (Greeting) ********************/
 .greeting {
@@ -107,7 +114,7 @@ textarea {
 @font-face {
   font-family: 'Mastrih';
   src: url('/assets/fonts/Mastrih.ttf') format('truetype'),
-       url('/assets/fonts/Mastrih.otf') format('opentype');
+    url('/assets/fonts/Mastrih.otf') format('opentype');
 }
 
 .greeting-text-lg {
@@ -122,7 +129,7 @@ textarea {
   margin-bottom: 2vw;
 }
 
-.profile-img{
+.profile-img {
   width: -webkit-fill-available;
   max-width: fit-content;
 
@@ -132,7 +139,7 @@ textarea {
 }
 
 
-.img-wrapper{
+.img-wrapper {
   text-align: center;
   -webkit-box-align: center;
   align-items: center;
@@ -141,7 +148,7 @@ textarea {
 
 /* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
-  .img-wrapper{
+  .img-wrapper {
     text-align: end;
     -webkit-box-align: end;
     align-items: end;
@@ -157,9 +164,9 @@ textarea {
   margin-bottom: calc(4rem + 3vw);
 }
 
-.section-header {  
+.section-header {
   margin-bottom: calc(1rem + 1vw);
-  width: 100%;  
+  width: 100%;
 }
 
 .section-line {
@@ -233,7 +240,7 @@ textarea {
   margin-bottom: calc(1rem + 1vw);
 }
 
-.form-header{
+.form-header {
   font-family: 'Mastrih', 'sans-serif';
   margin-bottom: 2rem;
 }
@@ -342,7 +349,7 @@ input[type="button"] {
   height: 38px;
   padding: 0 30px;
   color: var(--secondary-text-color);
-  background-color:transparent;
+  background-color: transparent;
   border: 1px solid var(--secondary-text-color);
   text-align: center;
   font-weight: 600;
