@@ -48,7 +48,6 @@ body {
   line-height: 1.5;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* font-family: 'Open Sans', sans-serif; */
 }
 
 span,
@@ -88,8 +87,7 @@ textarea {
 
 /******************** Header (Greeting) ********************/
 .greeting {
-  border: 1px solid var(--border-color);
-  margin: 5vw auto;
+  margin: 3vw auto;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -102,8 +100,7 @@ textarea {
   display: grid;
 }
 
-header .greeting-text-sm {
-  /* font-size: var(--greeting-sm-size); */
+.greeting-text-sm {
   text-transform: uppercase;
 }
 
@@ -113,8 +110,7 @@ header .greeting-text-sm {
        url('/assets/fonts/Mastrih.otf') format('opentype');
 }
 
-header .greeting-text-lg {
-  /* font-size: var(--greeting-lg-size); */
+.greeting-text-lg {
   font-family: 'Mastrih', 'sans-serif';
 }
 
@@ -122,7 +118,6 @@ header .greeting-text-lg {
 .introduction-titr {
   color: var(--titr-color);
   text-align: left;
-  /* font-size: var(--titr-size); */
   font-weight: 700;
   margin-bottom: 2vw;
 }
@@ -156,49 +151,21 @@ header .greeting-text-lg {
 
 
 
-
-/* .introduction-text {
-  font-size: var(--text-md-size);
-} */
-
-
 /******************** Sections ********************/
 .section {
   width: 100%;
   margin-bottom: calc(4rem + 3vw);
 }
 
-.section-header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 2vw;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+.section-header {  
+  margin-bottom: calc(1rem + 1vw);
+  width: 100%;  
+}
+
+.section-line {
   border-bottom: 1px solid var(--border-color);
 }
 
-.section-header-title {
-  padding: 10px 20px;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  border-top: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  /* font-size: var(--header-title-size); */
-}
-
-/* .section-content {
-  font-size: var(--text-md-size);
-} */
 
 .center-content {
   text-align: center;
@@ -235,7 +202,14 @@ header .greeting-text-lg {
 }
 
 .contact .contact-item {
-  margin: auto 4vw;
+  margin: auto;
+}
+
+/* Larger than tablet (tablet:768px) */
+@media (min-width: 769px) {
+  .contact .contact-item {
+    margin: auto 5vw;
+  }
 }
 
 .contact .contact-item .contact-item-inner {
@@ -250,12 +224,20 @@ header .greeting-text-lg {
 .contact .contact-item .contact-title {
   margin-top: 5px;
   font-weight: 600;
-  /* font-size: var(--text-md-size); */
 }
 
 
-
 /******************** Say Hi (Form) ********************/
+
+.form {
+  margin-bottom: calc(1rem + 1vw);
+}
+
+.form-header{
+  font-family: 'Mastrih', 'sans-serif';
+  margin-bottom: 2rem;
+}
+
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -291,10 +273,7 @@ textarea {
 }
 
 textarea {
-  /* min-height: 65px; */
   min-height: 86px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 input[type="email"]:focus,
@@ -396,7 +375,7 @@ input[type="button"]:focus {
 .footer {
   border-top: 1px solid var(--border-color);
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .footer .footer-text {

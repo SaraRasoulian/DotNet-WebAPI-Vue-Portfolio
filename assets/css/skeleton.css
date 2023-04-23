@@ -162,11 +162,8 @@ button {font-size: 14px;}
 }
 /* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
-  h1 { 
-    font-size: 4.5rem;
-    /* font-size: 5.0rem; */
-   }
-  h2 { font-size: 4.2rem; }
+  h1 { font-size: 4.5rem; }
+  h2 { font-size: 4.0rem; }
   h3 { font-size: 3.6rem; }
   h4 { font-size: 3.0rem; }
   h5 { font-size: 2.4rem; }
