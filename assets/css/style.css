@@ -3,14 +3,10 @@
   --bg-color: #F6F1EB;
   --border-color: #d3c3b0;
   --text-color: #503115;
-
-  /* Footer text, input placeholder, button bg, input border focus */
   --secondary-text-color: #9c8570;
-
   --titr-color: #014F57;
   --input-bg-color: #f9f6f1;
   --input-border-color: #dfd5c5;
-
   --button-bg-color: #d1c3b6;
 
   /******************** Font Sizes ********************/
@@ -23,24 +19,13 @@
 }
 
 
-/******************** Base styles (ToDo: remove reset codes) ********************/
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  font-family: inherit;
-}
-
+/******************** Base styles ********************/
 html {
   scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg-color);
-
-
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -65,28 +50,6 @@ h6 {
   padding: 0;
   margin: 0;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-input:focus,
-button:focus,
-a:focus,
-textarea:focus {
-  outline: none;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-}
-
-textarea {
-  resize: none;
-}
-
 /******************** Grainy Texture ********************/
 .texture {
   padding-top: 1px;
@@ -174,7 +137,7 @@ textarea {
   }
 }
 
-/******************** Header (Greeting) ********************/
+/******************** Header (Greetings) ********************/
 .greeting {
   margin: 3vw auto;
   text-align: center;
@@ -375,7 +338,7 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border: 1px solid var(--secondary-text-color);
-  outline: 0;
+  outline: none;
 }
 
 
@@ -457,7 +420,7 @@ input[type="button"]:focus {
   color: var(--bg-color);
   background-color: var(--titr-color);
   border: none;
-  outline: 0;
+  outline: none;
 }
 
 /******************** Footer ********************/
@@ -475,6 +438,7 @@ input[type="button"]:focus {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 a:hover {
