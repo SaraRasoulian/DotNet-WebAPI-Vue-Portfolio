@@ -86,6 +86,7 @@ button {
 textarea {
   resize: none;
 }
+
 /******************** Grainy Texture ********************/
 .texture {
   padding-top: 1px;
@@ -95,34 +96,82 @@ textarea {
 /******************** Animated Gradient ********************/
 
 .animated-gradient {
-  background: linear-gradient(240deg,#B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD,#F8B2B0);
-  background-size: 800% 800%;
+  background: linear-gradient(260deg, #B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD, #F8B2B0);
+  background-size: 300% 300%;
 
-  -webkit-animation: AnimationName 20s ease infinite;
-  -moz-animation: AnimationName 20s ease infinite;
-  -o-animation: AnimationName 20s ease infinite;
-  animation: AnimationName 20s ease infinite;
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  -o-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
+}
+
+/* Larger than tablet (tablet:768px) */
+@media (min-width: 769px) {
+  .animated-gradient {
+    background: linear-gradient(240deg, #B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD, #F8B2B0);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 20s ease infinite;
+    -moz-animation: AnimationName 20s ease infinite;
+    -o-animation: AnimationName 20s ease infinite;
+    animation: AnimationName 20s ease infinite;
+  }
 }
 
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
+
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
+
 @-o-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
+
 @keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
 
 /******************** Header (Greeting) ********************/
