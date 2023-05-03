@@ -53,7 +53,7 @@ h6 {
 /******************** Grainy Texture ********************/
 .texture {
   padding-top: 1px;
-  background-image: url(/website/assets/img/noise.png);
+  background-image: url(/assets/img/noise.png);
 }
 
 /******************** Animated Gradient ********************/
@@ -158,8 +158,8 @@ h6 {
 
 @font-face {
   font-family: 'Mastrih';
-  src: url('/website/assets/fonts/Mastrih.ttf') format('truetype'),
-    url('/website/assets/fonts/Mastrih.otf') format('opentype');
+  src: url('/assets/fonts/Mastrih.ttf') format('truetype'),
+    url('/assets/fonts/Mastrih.otf') format('opentype');
 }
 
 .greeting-text-lg {
