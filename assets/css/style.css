@@ -89,7 +89,40 @@ textarea {
 /******************** Grainy Texture ********************/
 .texture {
   padding-top: 1px;
-  background-image: url(/assets/img/noise.png);
+  background-image: url(/website/assets/img/noise.png);
+}
+
+/******************** Animated Gradient ********************/
+
+.animated-gradient {
+  background: linear-gradient(240deg,#B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD,#F8B2B0);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 20s ease infinite;
+  -moz-animation: AnimationName 20s ease infinite;
+  -o-animation: AnimationName 20s ease infinite;
+  animation: AnimationName 20s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 /******************** Header (Greeting) ********************/
@@ -257,7 +290,7 @@ select {
   width: 100%;
   height: 38px;
   padding: 6px 10px;
-  background-color: var(--input-bg-color);
+  background-color: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-color);
   border-radius: 0;
@@ -348,9 +381,9 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: var(--secondary-text-color);
-  background-color: transparent;
-  border: 1px solid var(--secondary-text-color);
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  border: none;
   text-align: center;
   font-weight: 600;
   line-height: 38px;
@@ -373,7 +406,7 @@ input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
   color: var(--bg-color);
-  background-color: var(--text-color);
+  background-color: var(--titr-color);
   border: none;
   outline: 0;
 }
