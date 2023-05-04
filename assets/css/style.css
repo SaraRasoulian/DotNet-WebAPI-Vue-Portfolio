@@ -62,10 +62,10 @@ h6 {
   background: linear-gradient(260deg, #B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD, #F8B2B0);
   background-size: 300% 300%;
 
-  -webkit-animation: AnimationName 15s ease infinite;
-  -moz-animation: AnimationName 15s ease infinite;
-  -o-animation: AnimationName 15s ease infinite;
-  animation: AnimationName 15s ease infinite;
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  -o-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
 }
 
 /* Larger than tablet (tablet:768px) */
@@ -158,8 +158,7 @@ h6 {
 
 @font-face {
   font-family: 'Mastrih';
-  src: url('/assets/fonts/Mastrih.ttf') format('truetype'),
-    url('/assets/fonts/Mastrih.otf') format('opentype');
+  src: url('/assets/fonts/Mastrih.ttf') format('truetype');
 }
 
 .greeting-text-lg {
@@ -279,8 +278,7 @@ h6 {
 }
 
 
-/******************** Say Hi (Form) ********************/
-
+/******************** Form (Say Hi) ********************/
 .form {
   margin-bottom: calc(1rem + 1vw);
 }
