@@ -211,12 +211,22 @@ h6 {
 .section-header {
   margin-bottom: calc(1rem + 1vw);
   width: 100%;
+  display: inline-flex;
 }
 
 .section-line {
   border-bottom: 1px solid var(--border-color);
+  margin: auto;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
+.section-titr{
+  width: fit-content;
+  min-width: fit-content;
+  color: var(--border-color);
+  margin-right: 1rem;
+}
 
 .center-content {
   text-align: center;
