@@ -4,7 +4,6 @@
 * www.getskeleton.com
 * Free to use under the MIT license.
 * http://www.opensource.org/licenses/mit-license.php
-* 12/29/2014
 */
 
 
@@ -12,17 +11,9 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 - Grid
 - Base Styles
-- Typography
-- Links
-- Buttons
-- Forms
-- Lists
-- Code
-- Tables
+- Typography 
 - Spacing
-- Utilities
 - Clearing
-- Media Queries
 */
 
 
@@ -31,7 +22,6 @@
 .container {
   position: relative;
   width: 100%;
-  /* max-width: 960px; */
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 25px;
@@ -49,16 +39,11 @@
     padding: 0; }
 }
 
-/* For devices larger than 550px */
   /* For devices larger than 769px */
 @media (min-width: 769px) {
   .container {
    width: 80%;  
   }
-  /* .column,
-  .columns {
-    margin-left: 4%; } */
-
     .column,
     .columns {
       margin-left: 2%; }
@@ -67,14 +52,12 @@
   .columns:first-child {
     margin-left: 0; }
 
-    /*all columns increased 1%*/
   .one.column,
   .one.columns                    { width: 5.66666666667%; }
   .two.columns                    { width: 14.3333333333%; }
   .three.columns                  { width: 23%;            }
   .four.columns                   { width: 31.6666666667%; }
   .five.columns                   { width: 40.3333333333%; }
-  /* .six.columns                    { width: 48%;            } */
   .six.columns                    { width: 49%;            }
   .seven.columns                  { width: 57.6666666667%; }
   .eight.columns                  { width: 66.3333333333%; }
@@ -86,7 +69,6 @@
   .one-third.column               { width: 31.6666666667%; }
   .two-thirds.column              { width: 66.3333333333%; }
 
-  /* .one-half.column                { width: 48%; } */
   .one-half.column                { width: 49%; }
 
   /* Offsets */
@@ -145,9 +127,7 @@ h3 { font-size: 2.6rem; line-height: 1.3;  letter-spacing: -.1rem; }
 h4 { font-size: 2.2rem; line-height: 1.35; letter-spacing: -.08rem; }
 h5 { font-size: 1.9rem; line-height: 1.5;  letter-spacing: -.05rem; }
 h6 { font-size: 1.4rem; line-height: 1.6;  letter-spacing: 0; }
-
 p{font-size: 18px; line-height: 1.7;  letter-spacing: 0;}
-
 span,
 input,
 textarea,
@@ -156,10 +136,8 @@ label,
 legend,
 .button,
 button {font-size: 14px;}
+.massive { font-size: 4.5rem; }
 
-.massive { 
-  font-size: 4.5rem;
-}
 /* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
   h1 { font-size: 4.5rem; }
@@ -168,9 +146,7 @@ button {font-size: 14px;}
   h4 { font-size: 3.0rem; }
   h5 { font-size: 2.4rem; }
   h6 { font-size: 1.5rem; }
-
   p {font-size: 20px;}
-
   span,
   input,
   textarea,
@@ -178,36 +154,9 @@ button {font-size: 14px;}
   label,
   legend,
   .button,
-  button
-   {font-size: 16px;}
-
-  .massive { 
-    font-size: calc(5rem + 2vw);
-  }
+  button {font-size: 16px;}
+  .massive { font-size: calc(5rem + 2vw); }
 }
-
-/* p {
-  margin-top: 0; } */
-
-
-/* Lists
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-ul {
-  list-style: circle inside; }
-ol {
-  list-style: decimal inside; }
-ol, ul {
-  padding-left: 0;
-  margin-top: 0; }
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  margin: 1.5rem 0 1.5rem 3rem;
-  font-size: 90%; }
-li {
-  margin-bottom: 1rem; }
-
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -219,41 +168,11 @@ select,
 fieldset {
   margin-bottom: 1rem; }
 
-
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/* Self Clearing Goodness */
 .container:after,
 .row:after,
 .u-cf {
   content: "";
   display: table;
   clear: both; }
-
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
