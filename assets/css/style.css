@@ -110,7 +110,7 @@ h6 {
 /******************** Sections ********************/
 .section {
   width: 100%;
-  margin-bottom: calc(4rem + 3vw);
+  margin-bottom: calc(7rem + 1vw);
 }
 
 .section-header {
@@ -360,10 +360,10 @@ a:hover {
   background: linear-gradient(260deg, #B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD, #F8B2B0);
   background-size: 300% 300%;
 
-  -webkit-animation: AnimationName 7s ease infinite;
-  -moz-animation: AnimationName 7s ease infinite;
-  -o-animation: AnimationName 7s ease infinite;
-  animation: AnimationName 7s ease infinite;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  -o-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
 }
 
 /* Larger than tablet (tablet:768px) */
