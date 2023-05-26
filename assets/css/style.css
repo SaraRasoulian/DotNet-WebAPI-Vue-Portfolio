@@ -55,7 +55,7 @@ h6 {
   display: grid;
 }
 
-.header-text-sm {
+.text-sm {
   text-transform: uppercase;
 }
 
@@ -64,7 +64,7 @@ h6 {
   src: url('/assets/fonts/Mastrih.ttf') format('truetype');
 }
 
-.header-text-lg {
+.text-lg {
   font-family: 'Mastrih', 'sans-serif';
 }
 
