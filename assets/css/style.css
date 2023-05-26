@@ -5,9 +5,7 @@
   --text-color: #503115;
   --secondary-text-color: #9c8570;
   --titr-color: #014F57;
-  --input-bg-color: #f9f6f1;
-  --input-border-color: #dfd5c5;
-  --button-bg-color: #d1c3b6;
+  --input-border-color: #cfbda0;
 }
 
 /******************** Base styles ********************/
@@ -44,7 +42,7 @@ h6 {
 
 /******************** Header ********************/
 .header {
-  margin: 3vw auto;
+  margin: calc(2rem + 4vw) auto;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -79,6 +77,7 @@ h6 {
 }
 
 .profile-img {
+  margin-top: 2rem;
   width: -webkit-fill-available;
   max-width: fit-content;
 
@@ -102,6 +101,9 @@ h6 {
     -webkit-box-align: end;
     align-items: end;
     justify-content: end;
+  }
+  .profile-img {
+    margin-top: 0;
   }
 }
 
@@ -127,7 +129,7 @@ h6 {
 .section-titr{
   width: fit-content;
   min-width: fit-content;
-  color: var(--border-color);
+  color: var(--secondary-text-color);
   margin-right: 1rem;
 }
 
@@ -139,7 +141,7 @@ h6 {
 }
 
 .timeline-item {
-  margin-bottom: calc(3rem + 1vw);
+  margin-bottom: calc(2rem + 1vw);
   padding: 0;
 }
 
@@ -191,7 +193,7 @@ h6 {
 
 .form-header {
   font-family: 'Mastrih', 'sans-serif';
-  margin-bottom: 2rem;
+  margin-bottom: 1.8vw;
 }
 
 input[type="email"],
@@ -207,7 +209,7 @@ select {
   height: 38px;
   padding: 6px 10px;
   background-color: transparent;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--input-border-color);
   color: var(--text-color);
   border-radius: 0;
   box-shadow: none;
@@ -358,10 +360,10 @@ a:hover {
   background: linear-gradient(260deg, #B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD, #F8B2B0);
   background-size: 300% 300%;
 
-  -webkit-animation: AnimationName 12s ease infinite;
-  -moz-animation: AnimationName 12s ease infinite;
-  -o-animation: AnimationName 12s ease infinite;
-  animation: AnimationName 12s ease infinite;
+  -webkit-animation: AnimationName 7s ease infinite;
+  -moz-animation: AnimationName 7s ease infinite;
+  -o-animation: AnimationName 7s ease infinite;
+  animation: AnimationName 7s ease infinite;
 }
 
 /* Larger than tablet (tablet:768px) */
