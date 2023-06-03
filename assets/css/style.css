@@ -164,6 +164,10 @@ h6 {
   margin: auto;
 }
 
+.social-item-img{
+  margin: auto;
+}
+
 /* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
   .social .social-item {
