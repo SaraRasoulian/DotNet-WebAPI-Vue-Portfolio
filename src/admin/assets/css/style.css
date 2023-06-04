@@ -1,28 +1,12 @@
 :root {
   /******************** Colors ********************/
-  --bg-color: #F6F1EB;
-  --border-color: #d3c3b0;
-  --text-color: #503115;
-  --secondary-text-color: #9c8570;
-  --titr-color: #014F57;
-  --input-border-color: #cfbda0;
+  --bg-color: #F2F3F8;
+  --text-color: #2D2D2D;
 }
 
 /******************** Base styles ********************/
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  line-height: 1.5;
-  font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 span,
@@ -40,3 +24,65 @@ h6 {
 }
 
 /******************** Header ********************/
+
+body {
+  padding-top: 56px;
+  background-color: var(--bg-color);
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: 20px;
+  z-index: 1030;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.content {
+  background-color: white;
+  padding: 30px;
+  margin: 25px 25px 0 275px;
+  height: 89.5vh;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.header {
+  padding-right: 25px;
+  background-color: white;
+  box-shadow: 0 0px 5px #DBDBDB;
+}
+
+.navbar-title {
+  margin-bottom: 37px !important;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      display: none;
+  }
+
+  .content {
+      margin-left: 0;
+      background-color: white;
+      padding: 20px;
+      margin: 20px 20px 0 20px;
+  }
+
+  .navbar-toggler {
+      display: block;
+  }
+}
