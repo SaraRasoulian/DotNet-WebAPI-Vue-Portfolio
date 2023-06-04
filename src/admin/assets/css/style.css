@@ -1,0 +1,42 @@
+:root {
+  /******************** Colors ********************/
+  --bg-color: #F6F1EB;
+  --border-color: #d3c3b0;
+  --text-color: #503115;
+  --secondary-text-color: #9c8570;
+  --titr-color: #014F57;
+  --input-border-color: #cfbda0;
+}
+
+/******************** Base styles ********************/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+span,
+p,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+}
+
+/******************** Header ********************/
