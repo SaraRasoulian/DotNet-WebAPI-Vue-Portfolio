@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +17,14 @@
     <!-- Header -->
     <div class="fixed-top header">
         <div class="text-white py-3 text-end">
-          <span>Sign out</button>
+            <span>Sign out</button>
         </div>
     </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
-
         <ul class="nav flex-column">
-            <li class="nav-item navbar-title">
+            <li class="nav-item sidebar-title">
                 <div>Admin Panel</div>
             </li>
             <li class="nav-item">
@@ -45,12 +45,77 @@
         </ul>
     </div>
 
-    <!-- Content -->
+    <!-- Content Start -->
     <div class="content">
         <h2>Edit Education</h2>
         <hr />
-        <p>This is the main content area of the admin panel.</p>
+
+        <form class="needs-validation" novalidate="">
+            <div class="row g-3">
+
+
+                <div class="col-12">
+                    <label for="username" class="form-label">Degree</label>
+                    <div class="input-group has-validation">
+                        <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                        <div class="invalid-feedback">
+                            Your username is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="email" class="form-label">Field of study</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="address" class="form-label">School</label>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                    <div class="invalid-feedback">
+                        Please enter your shipping address.
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Start Year</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="lastName" class="form-label">End Year</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                    <div class="invalid-feedback">
+                        Valid last name is required.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="address2" class="form-label">Discription <span
+                            class="text-body-secondary">(Optional)</span></label>
+                    <textarea type="text" class="form-control" id="address2"
+                        placeholder="Apartment or suite"></textarea>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-xs-6">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-xs-6">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Cancle</button>
+                </div>
+        </form>
+
     </div>
+    <!-- Content End -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

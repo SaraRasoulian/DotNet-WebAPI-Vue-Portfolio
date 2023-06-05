@@ -23,13 +23,18 @@ h6 {
   margin: 0;
 }
 
-/******************** Header ********************/
-
 body {
   padding-top: 56px;
   background-color: var(--bg-color);
 }
+/******************** Header ********************/
+.header {
+  padding-right: 25px;
+  background-color: white;
+  box-shadow: 0 0px 5px #DBDBDB;
+}
 
+/******************** Sidebar ********************/
 .sidebar {
   height: 100%;
   width: 250px;
@@ -50,6 +55,22 @@ body {
   margin-bottom: 10px;
 }
 
+.sidebar-title {
+  margin-bottom: 37px !important;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      display: none;
+  }
+  .sidebar-toggler {
+      display: block;
+      color: red;
+  }
+}
+
+/******************** Content ********************/
 .content {
   background-color: white;
   padding: 30px;
@@ -59,30 +80,11 @@ body {
   border-top-left-radius: 12px;
 }
 
-.header {
-  padding-right: 25px;
-  background-color: white;
-  box-shadow: 0 0px 5px #DBDBDB;
-}
-
-.navbar-title {
-  margin-bottom: 37px !important;
-  padding: 0 1rem;
-}
-
 @media (max-width: 768px) {
-  .sidebar {
-      display: none;
-  }
-
   .content {
-      margin-left: 0;
-      background-color: white;
-      padding: 20px;
-      margin: 20px 20px 0 20px;
-  }
-
-  .navbar-toggler {
-      display: block;
-  }
+    margin-left: 0;
+    background-color: white;
+    padding: 20px;
+    margin: 20px 20px 0 20px;
+}
 }
