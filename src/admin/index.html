@@ -47,14 +47,12 @@
 
     <!-- Content Start -->
     <div class="content">
-        <h2>Edit Education</h2>
+        <h3>Edit Education</h3>
         <hr />
 
         <form class="needs-validation" novalidate="">
             <div class="row g-3">
-
-
-                <div class="col-12">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                     <label for="degree" class="form-label">Degree</label>
                     <div class="input-group has-validation">
                         <input type="text" class="form-control" id="degree" placeholder="Degree" required="">
@@ -63,25 +61,30 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12">
+            <div class="row g-3">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                     <label for="field" class="form-label">Field of study</label>
                     <input type="text" class="form-control" id="field" placeholder="Field of study">
                     <div class="invalid-feedback">
                         Please enter a valid email address for shipping updates.
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12">
+            <div class="row g-3">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                     <label for="school" class="form-label">School</label>
                     <input type="text" class="form-control" id="school" placeholder="School" required="">
                     <div class="invalid-feedback">
                         Please enter your shipping address.
                     </div>
                 </div>
+            </div>
 
-
-                <div class="col-sm-6">
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <label for="startYear" class="form-label">Start Year</label>
                     <input type="text" class="form-control" id="startYear" placeholder="Start Year" value=""
                         required="">
@@ -89,30 +92,32 @@
                         Valid first name is required.
                     </div>
                 </div>
-
-                <div class="col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <label for="endYear" class="form-label">End Year</label>
                     <input type="text" class="form-control" id="endYear" placeholder="End Year" value="" required="">
                     <div class="invalid-feedback">
                         Valid last name is required.
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12">
+            <div class="row g-3">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                     <label for="discription" class="form-label">Discription<span
                             class="text-body-secondary">(Optional)</span></label>
-                    <textarea type="text" class="form-control" id="discription"
-                        placeholder="Discription"></textarea>
+                    <textarea type="text" class="form-control" id="discription" placeholder="Discription"></textarea>
                 </div>
+            </div>
 
-
-                <div class="col-lg-3 col-md-3 col-xs-6">
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-xs-6">
+                    <button class="btn btn-save" type="submit">Save</button>
                 </div>
-
-                <div class="col-lg-3 col-md-3 col-xs-6">
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Cancle</button>
+                <div class="col-lg-2 col-md-3 col-xs-6">
+                    <button class="btn btn-cancel" type="submit">Cancle</button>
                 </div>
+            </div>
+
         </form>
 
     </div>
