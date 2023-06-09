@@ -1,15 +1,15 @@
 :root {
   /******************** Colors ********************/
   --bg-color: #F2F3F8;
-  --text-color: rgb(60,64,67);  
-  --green: #29BC9C; 
-  --dark-green:#26A88C;
+  --text-color: rgb(60, 64, 67);
+  --green: #29BC9C;
+  --dark-green: #26A88C;
 
-  --gray:#EFEFEF;
-  --dark-gray:#DEDCDC;
+  --gray: #EFEFEF;
+  --dark-gray: #DEDCDC;
 
-  --red:#DB575A;
-  --dark-red:#CB5153;
+  --red: #DB575A;
+  --dark-red: #CB5153;
 }
 
 /******************** Base styles ********************/
@@ -35,6 +35,7 @@ body {
   padding-top: 56px;
   background-color: var(--bg-color);
 }
+
 /******************** Header ********************/
 .header {
   padding-right: 25px;
@@ -50,7 +51,7 @@ body {
   top: 0;
   left: 0;
   background-color: white;
-  padding: 20px;
+  padding: 20px 30px;
   z-index: 1030;
 }
 
@@ -60,21 +61,63 @@ body {
 }
 
 .sidebar li {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .sidebar-title {
   margin-bottom: 37px !important;
+}
+
+.sidebar-title span {
+  padding: .5rem 1rem;
+}
+
+.sidebar-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: auto 0;
+}
+
+.nav-item-inner {
+  display: inline-flex;
   padding: 0 1rem;
+}
+
+/*active-item start*/
+.active {
+  background-color: #D3E3FD;
+  border-radius: 50px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+.active .nav-link {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/*active-item end*/
+
+.nav-link {
+  color: var(--text-color);
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-link:focus {
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {
   .sidebar {
-      display: none;
+    display: none;
   }
+
   .sidebar-toggler {
-      display: block;
-      color: red;
+    display: block;
+    color: red;
   }
 }
 
@@ -94,15 +137,15 @@ body {
     background-color: white;
     padding: 20px;
     margin: 20px 20px 0 20px;
-}
+  }
 }
 
-.row{
+.row {
   margin-bottom: 1rem;
 }
 
 /*Buttons*/
-.btn{
+.btn {
   border-radius: 40px;
   border: none;
   font-weight: 600;
@@ -112,21 +155,25 @@ body {
   min-width: 7rem;
 }
 
-.btn-save{
+.btn-save {
   background-color: var(--green);
   color: white;
 }
-.btn-save:hover, .btn-save:focus{
+
+.btn-save:hover,
+.btn-save:focus {
   background-color: var(--dark-green);
   color: white;
 }
 
 
-.btn-cancel{
+.btn-cancel {
   background-color: var(--gray);
   color: var(--text-color);
 }
-.btn-cancel:hover, .btn-cancel:focus{
+
+.btn-cancel:hover,
+.btn-cancel:focus {
   background-color: var(--dark-gray);
   color: var(--text-color);
 }
