@@ -42,6 +42,10 @@ body {
   background-color: white;
   box-shadow: 0 0px 5px #DBDBDB;
 }
+.top-navbar{
+  float: right;
+}
+
 
 /******************** Sidebar ********************/
 .sidebar {
