@@ -5,7 +5,7 @@
   --green: #29BC9C;
   --dark-green: #26A88C;
 
-  --gray: #EFEFEF;
+  --gray: #EAEBEF;
   --dark-gray: #DEDCDC;
 
   --red: #DB575A;
@@ -87,15 +87,22 @@ body {
   padding: 0 1rem;
 }
 
+.sidebar .nav-item:hover {
+  background-color: var(--gray);
+  border-radius: 50px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
 /*active-item start*/
-.active {
+.sidebar .active, .sidebar .active:hover {
   background-color: #D3E3FD;
   border-radius: 50px;
   width: -webkit-fill-available;
   width: -moz-available;
 }
 
-.active .nav-link {
+.sidebar .active .nav-link {
   font-weight: 600;
   color: var(--text-color);
 }
