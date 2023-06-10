@@ -73,6 +73,7 @@ body {
 .header .dropdown-menu {
   left: auto;
   right: 0;
+  position: absolute;
 }
 
 /******************** Sidebar ********************/
@@ -156,14 +157,24 @@ body {
   color: var(--text-color);
 }
 
+
+/*Desktop and mobile*/
+.desktop-navbar {
+  display: block; 
+}
+
+.mobile-navbar {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .sidebar {
-    display: none;
+  
+  .desktop-navbar {
+    display: none; 
   }
 
-  .sidebar-toggler {
+  .mobile-navbar {
     display: block;
-    color: red;
   }
 }
 
