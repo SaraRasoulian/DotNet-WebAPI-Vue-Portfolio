@@ -41,11 +41,39 @@ body {
   padding-right: 25px;
   background-color: white;
   box-shadow: 0 0px 5px #DBDBDB;
+  height: 60px;
 }
-.top-navbar{
+
+.header .nav-item {
+  height: fit-content;
+}
+
+.top-navbar {
   float: right;
 }
 
+.profile-photo {
+  width: 2rem;
+  border-radius: 50px;
+  padding-right: 5px;
+}
+
+.wraper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 60px;
+}
+
+.wraper-div {
+  text-align: center;
+  /* Optional: center the content horizontally */
+}
+
+.header .dropdown-menu {
+  left: auto;
+  right: 0;
+}
 
 /******************** Sidebar ********************/
 .sidebar {
@@ -55,8 +83,9 @@ body {
   top: 0;
   left: 0;
   background-color: white;
-  padding: 20px 30px;
+  padding: 20px 20px;
   z-index: 1030;
+  box-shadow: 0 0px 5px #DBDBDB;
 }
 
 .sidebar ul {
@@ -65,7 +94,7 @@ body {
 }
 
 .sidebar li {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .sidebar-title {
@@ -77,13 +106,17 @@ body {
 }
 
 .sidebar-icon {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
   margin: auto 0;
 }
 
 .nav-item-inner {
   display: inline-flex;
+  padding: .5rem 1rem;
+}
+
+.nav-item-inner span {
   padding: 0 1rem;
 }
 
@@ -95,7 +128,8 @@ body {
 }
 
 /*active-item start*/
-.sidebar .active, .sidebar .active:hover {
+.sidebar .active,
+.sidebar .active:hover {
   background-color: #D3E3FD;
   border-radius: 50px;
   width: -webkit-fill-available;
@@ -111,6 +145,7 @@ body {
 
 .nav-link {
   color: var(--text-color);
+  padding: 0;
 }
 
 .nav-link:hover {
