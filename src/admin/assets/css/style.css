@@ -189,8 +189,63 @@ body {
     align-items: center;
   }
 
-  .mobile-navbar .navbar-icon{
+  .mobile-navbar .navbar-icon {
     margin: auto 20px;
+    cursor: pointer;
+  }
+
+  .mobile-navbar .navbar-content {
+    height: 100vh;
+    width: 70vw;
+    position: absolute;
+    z-index: 9;
+    display: none;
+    background-color: white;
+    box-shadow: 0 0px 5px #DBDBDB;
+    padding: 2rem;
+    animation-duration: 0.2s; 
+    animation-timing-function: ease-in-out; 
+    animation-fill-mode: forwards; 
+  }
+
+  .mobile-navbar .back {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    background-color: black;
+    opacity: .2;
+  }
+
+  .mobile-navbar .navbar-content.show{
+    display: block;
+    animation-name: slideIn;
+  }
+
+  .mobile-navbar .navbar-content.hide {
+    animation-name: slideOut;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);     }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0); 
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+  }
+
+  .mobile-navbar .back.show {
+    display: block;
   }
 
 }
