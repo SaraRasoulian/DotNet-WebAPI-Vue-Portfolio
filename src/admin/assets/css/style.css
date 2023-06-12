@@ -32,7 +32,6 @@ h6 {
 }
 
 body {
-  padding-top: 56px;
   background-color: var(--bg-color);
 }
 
@@ -84,9 +83,8 @@ body {
   top: 0;
   left: 0;
   background-color: white;
-  padding: 20px 20px;
+  padding: 16px 20px;
   z-index: 1030;
-  box-shadow: 0 0px 5px #DBDBDB;
 }
 
 .sidebar ul {
@@ -99,11 +97,16 @@ body {
 }
 
 .sidebar-title {
-  margin-bottom: 37px !important;
+  margin-bottom: 38px !important;
+}
+
+.title-inner {
+  display: inline-flex;
+  padding: 0 1rem;
 }
 
 .sidebar-title span {
-  padding: .5rem 1rem;
+  padding: 0 1rem;
 }
 
 .sidebar-icon {
@@ -160,7 +163,7 @@ body {
 
 /*Desktop and mobile*/
 .desktop-navbar {
-  display: block; 
+  display: block;
 }
 
 .mobile-navbar {
@@ -168,21 +171,35 @@ body {
 }
 
 @media (max-width: 768px) {
-  
   .desktop-navbar {
-    display: none; 
+    display: none;
   }
 
   .mobile-navbar {
     display: block;
   }
+
+  /*mobile style code goes here*/
+
+  .mobile-navbar .navbar-top {
+    background-color: white;
+    box-shadow: 0 0px 5px #DBDBDB;
+    height: 55px;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-navbar .navbar-icon{
+    margin: auto 20px;
+  }
+
 }
 
 /******************** Content ********************/
 .content {
   background-color: white;
   padding: 30px;
-  margin: 25px 25px 0 275px;
+  margin: 81px 25px 0 275px;
   height: 89.5vh;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
