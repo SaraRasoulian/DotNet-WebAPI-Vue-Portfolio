@@ -1,7 +1,7 @@
 :root {
   /******************** Colors ********************/
   --bg-color: #F2F3F8;
-  --text-color: rgb(60, 64, 67);
+  --text-color:#3C4043;
   --green: #29BC9C;
   --dark-green: #26A88C;
 
@@ -192,6 +192,7 @@ body {
   .mobile-navbar .navbar-icon {
     margin: auto 20px;
     cursor: pointer;
+    width: 1.5rem;
   }
 
   .mobile-navbar .navbar-content {
@@ -263,6 +264,31 @@ body {
     padding: 20px;
     margin: 20px 20px 0 20px;
   }
+
+  .back{
+    margin: 0 5px !important;
+  }
+
+  .back-icon{
+    width: 1.1rem !important;
+    height: 1.1rem !important;
+  }
+}
+
+.title-container{
+  display: flex;
+  align-items: center;
+}
+
+.back{
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.back-icon{
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: auto 0;
 }
 
 .row {
