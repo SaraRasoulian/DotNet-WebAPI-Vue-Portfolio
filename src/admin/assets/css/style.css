@@ -202,20 +202,20 @@ body {
     display: none;
     background-color: white;
     box-shadow: 0 0px 5px #DBDBDB;
-    padding: 2rem;
+    padding: 3rem 2rem;
     animation-duration: 0.2s; 
     animation-timing-function: ease-in-out; 
     animation-fill-mode: forwards; 
   }
 
-  .mobile-navbar .back {
+  .mobile-navbar .navbar-back {
     height: 100vh;
     width: 100vw;
     position: absolute;
     display: none;
     z-index: 1;
-    background-color: black;
-    opacity: .2;
+    opacity: 0.45;
+    background-color: #444;
   }
 
   .mobile-navbar .navbar-content.show{
@@ -223,29 +223,25 @@ body {
     animation-name: slideIn;
   }
 
-  .mobile-navbar .navbar-content.hide {
-    animation-name: slideOut;
-  }
-
   @keyframes slideIn {
     0% {
-      transform: translateX(-100%);     }
+      transform: translateX(-100%);     
+    }
     100% {
       transform: translateX(0);
     }
   }
 
-  @keyframes slideOut {
-    0% {
-      transform: translateX(0); 
-    }
-    100% {
-      transform: translateX(-100%); 
-    }
+  .mobile-navbar .navbar-back.show {
+    display: block;
   }
 
-  .mobile-navbar .back.show {
-    display: block;
+  .mobile-navbar .nav-item{
+    margin-bottom: 1rem;
+  }
+
+  .mobile-navbar .nav-item hr{
+    margin: 1rem 0 0 0;
   }
 
 }

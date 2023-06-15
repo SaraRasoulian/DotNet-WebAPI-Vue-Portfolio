@@ -98,9 +98,82 @@
     </div>
     <div class="mobile-navbar">
         <div class="navbar-content" id="navbarContent">
-          <h4>Mobile</h4>
+            <ul class="nav flex-column">
+                <li class="">
+                    <div class="title-inner">
+                        <img src="assets/images/profile-photo.png" class="profile-photo" alt="" />
+                        <span>Sara Rasoulian</span>
+                    </div>
+                    <hr/>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/user.png" class="sidebar-icon" alt="" />
+                            <span>Profile</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/career.png" class="sidebar-icon" alt="" />
+                            <span>Experiences</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/mortarboard (1).png" class="sidebar-icon" alt="" />
+                            <span>Educations</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/link.png" class="sidebar-icon" alt="" />
+                            <span>Social Links</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/email.png" class="sidebar-icon" alt="" />
+                            <span>Messages</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/settings.png" class="sidebar-icon" alt="" />
+                            <span>SEO</span>
+                        </div>
+                    </a>
+                    <hr/>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/email.png" class="sidebar-icon" alt="" />
+                            <span>Password</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/email.png" class="sidebar-icon" alt="" />
+                            <span>Log Out</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="back" id="back" onclick="toggleNavbarContent()"></div>
+        <div class="navbar-back" id="navbar-back" onclick="toggleNavbarContent()"></div>
         <div class="navbar-top">
           <div onclick="toggleNavbarContent()">
             <img src="assets/images/menu.svg" class="navbar-icon" alt="" />
@@ -190,7 +263,7 @@
           var navbarContent = document.getElementById("navbarContent");
           navbarContent.classList.toggle("show");
       
-          var back = document.getElementById("back");
+          var back = document.getElementById("navbar-back");
           back.classList.toggle("show");
         }
       </script>
