@@ -1,7 +1,7 @@
 :root {
   /******************** Colors ********************/
   --bg-color: #F2F3F8;
-  --text-color:#3C4043;
+  --text-color: #3C4043;
   --green: #29BC9C;
   --dark-green: #26A88C;
 
@@ -73,6 +73,14 @@ body {
   left: auto;
   right: 0;
   position: absolute;
+}
+
+.dropdown-menu li{
+  padding: 3px 0;
+}
+
+.header .dropdown-menu .dropdown-icon {
+  margin-right: 10px;
 }
 
 /******************** Sidebar ********************/
@@ -202,11 +210,11 @@ body {
     z-index: 9;
     display: none;
     background-color: white;
-    box-shadow: 0 0px 5px #DBDBDB;
+    box-shadow: 0 0px 5px #999;
     padding: 3rem 2rem;
-    animation-duration: 0.2s; 
-    animation-timing-function: ease-in-out; 
-    animation-fill-mode: forwards; 
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
   }
 
   .mobile-navbar .navbar-back {
@@ -219,15 +227,16 @@ body {
     background-color: #444;
   }
 
-  .mobile-navbar .navbar-content.show{
+  .mobile-navbar .navbar-content.show {
     display: block;
     animation-name: slideIn;
   }
 
   @keyframes slideIn {
     0% {
-      transform: translateX(-100%);     
+      transform: translateX(-100%);
     }
+
     100% {
       transform: translateX(0);
     }
@@ -237,11 +246,11 @@ body {
     display: block;
   }
 
-  .mobile-navbar .nav-item{
+  .mobile-navbar .nav-item {
     margin-bottom: 1rem;
   }
 
-  .mobile-navbar .nav-item hr{
+  .mobile-navbar .nav-item hr {
     margin: 1rem 0 0 0;
   }
 
@@ -265,27 +274,27 @@ body {
     margin: 20px 20px 0 20px;
   }
 
-  .back{
+  .back {
     margin: 0 5px !important;
   }
 
-  .back-icon{
+  .back-icon {
     width: 1.1rem !important;
     height: 1.1rem !important;
   }
 }
 
-.title-container{
+.title-container {
   display: flex;
   align-items: center;
 }
 
-.back{
+.back {
   cursor: pointer;
   margin: 0 10px;
 }
 
-.back-icon{
+.back-icon {
   width: 1.3rem;
   height: 1.3rem;
   margin: auto 0;
