@@ -304,7 +304,12 @@ body {
   margin-bottom: 1rem;
 }
 
-/*Buttons*/
+/********** Buttons **********/
+
+.button-container{
+  display: flex;
+}
+
 .btn {
   border-radius: 40px;
   border: none;
@@ -330,6 +335,7 @@ body {
 .btn-cancel {
   background-color: var(--gray);
   color: var(--text-color);
+  margin-left: 5px;
 }
 
 .btn-cancel:hover,
