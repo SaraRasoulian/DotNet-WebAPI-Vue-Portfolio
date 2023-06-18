@@ -219,6 +219,7 @@ body {
 
   .mobile-navbar {
     display: block;
+    padding-bottom: 65px;
   }
 
   .mobile-navbar .navbar-top {
@@ -227,19 +228,24 @@ body {
     height: 55px;
     display: flex;
     align-items: center;
+    width: 100%;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    z-index: 9;
   }
 
   .mobile-navbar .navbar-icon {
     margin: auto 20px;
     cursor: pointer;
-    width: 1.5rem;
+    width: 1.3rem;
   }
 
   .mobile-navbar .navbar-content {
     height: 100vh;
     width: 70vw;
-    position: absolute;
-    z-index: 9;
+    position: fixed;
+    z-index: 999;
     display: none;
     background-color: white;
     box-shadow: 0 0px 5px #999;
@@ -247,14 +253,15 @@ body {
     animation-duration: 0.2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    overflow-y: scroll;
   }
 
   .mobile-navbar .navbar-back {
     height: 100vh;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     display: none;
-    z-index: 1;
+    z-index: 99;
     opacity: 0.45;
     background-color: #444;
   }
@@ -279,12 +286,12 @@ body {
   }
 
   .mobile-navbar .nav-item {
-    margin-bottom: 1rem;
+    margin-bottom: 8px;
     border: 1px solid white;
   }
 
   .mobile-navbar .line {
-    margin: 0 0 1rem 0;
+    margin: 0 0 8px 0;
   }
 
   .mobile-navbar .profile-container {
@@ -303,17 +310,16 @@ body {
   background-color: white;
   padding: 30px;
   margin: 81px 25px 0 275px;
-  height: 89.5vh;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
+  min-height: 89.5vh;
+  height: fit-content;
+  border-radius: 12px;
 }
 
 @media (max-width: 768px) {
   .content {
-    margin-left: 0;
     background-color: white;
     padding: 20px;
-    margin: 20px 20px 0 20px;
+    margin: 0 10px;
   }
 
   .back {
@@ -344,6 +350,10 @@ body {
 
 .row {
   margin-bottom: 1rem;
+}
+
+.optional{
+  color: darkgray;
 }
 
 /********** Buttons **********/
