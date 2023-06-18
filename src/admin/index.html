@@ -190,7 +190,7 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar-back" id="navbar-back" onclick="toggleNavbarContent()"></div>
+        <div class="navbar-background" id="navbar-background" onclick="toggleNavbarContent()"></div>
         <div class="navbar-top">
             <div onclick="toggleNavbarContent()">
                 <img src="assets/images/menu.svg" class="navbar-icon" alt="" />
@@ -203,9 +203,11 @@
             <div class="back">
                 <img src="assets/images/back.svg" class="back-icon" alt="" />
             </div>
-            <h4>Edit Education</h4>
+            <div>
+                <h4>Edit Education</h4>
+            </div>
         </div>
-        <hr />
+        <hr class="line" />
 
         <form class="needs-validation" novalidate="">
             <div class="row g-3">
@@ -284,7 +286,7 @@
             var navbarContent = document.getElementById("navbarContent");
             navbarContent.classList.toggle("show");
 
-            var back = document.getElementById("navbar-back");
+            var back = document.getElementById("navbar-background");
             back.classList.toggle("show");
         }
     </script>

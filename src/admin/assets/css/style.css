@@ -236,7 +236,7 @@ body {
   }
 
   .mobile-navbar .navbar-icon {
-    margin: auto 20px;
+    margin: auto 29px;
     cursor: pointer;
     width: 1.3rem;
   }
@@ -249,14 +249,14 @@ body {
     display: none;
     background-color: white;
     box-shadow: 0 0px 5px #999;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.8rem;
     animation-duration: 0.2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     overflow-y: scroll;
   }
 
-  .mobile-navbar .navbar-back {
+  .mobile-navbar .navbar-background {
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -281,12 +281,12 @@ body {
     }
   }
 
-  .mobile-navbar .navbar-back.show {
+  .mobile-navbar .navbar-background.show {
     display: block;
   }
 
   .mobile-navbar .nav-item {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     border: 1px solid white;
   }
 
@@ -295,12 +295,12 @@ body {
   }
 
   .mobile-navbar .profile-container {
-    display: inline-flex;
+    display: block;
     padding: 0 1rem;
   }
 
   .mobile-navbar .profile-container span {
-    padding: 3px;
+    padding: 5px;
   }
 
 }
@@ -321,11 +321,7 @@ body {
     padding: 20px;
     margin: 0 10px;
   }
-
-  .back {
-    margin: 0 5px !important;
-  }
-
+ 
   .back-icon {
     width: 1.1rem !important;
     height: 1.1rem !important;
@@ -338,8 +334,23 @@ body {
 }
 
 .back {
+  text-align: center;
   cursor: pointer;
-  margin: 0 10px;
+  padding: 10px;
+  margin: 5px;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  display: grid;
+}
+
+.back:hover {
+  background-color: var(--gray);
+}
+
+.back:active {
+  border: 1px solid #DBDBDB;
 }
 
 .back-icon {
@@ -354,6 +365,10 @@ body {
 
 .optional{
   color: darkgray;
+}
+
+.line {
+  margin: 0 0 8px 0;
 }
 
 /********** Buttons **********/
