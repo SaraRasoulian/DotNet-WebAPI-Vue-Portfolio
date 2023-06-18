@@ -2,6 +2,8 @@
   /******************** Colors ********************/
   --bg-color: #F2F3F8;
   --text-color: #3C4043;
+  --active-color: #D3E3FD;
+
   --green: #29BC9C;
   --dark-green: #26A88C;
 
@@ -10,6 +12,8 @@
 
   --red: #DB575A;
   --dark-red: #CB5153;
+
+
 }
 
 /******************** Base styles ********************/
@@ -54,7 +58,7 @@ body {
 .profile-photo {
   width: 2rem;
   border-radius: 50px;
-  padding-right: 5px;
+  margin-right: 5px;
 }
 
 .wraper {
@@ -83,6 +87,11 @@ body {
   margin-right: 10px;
 }
 
+.header .dropdown-item:active {
+  background-color: var(--active-color);
+  color: var(--text-color);
+}
+
 /******************** Sidebar ********************/
 .sidebar {
   height: 100%;
@@ -102,6 +111,7 @@ body {
 
 .sidebar li {
   margin-bottom: .5rem;
+  border: 1px solid white;
 }
 
 .sidebar-title {
@@ -132,7 +142,21 @@ body {
   padding: 0 1rem;
 }
 
-.sidebar .nav-item:hover {
+.sidebar .nav-item:hover,
+.mobile-navbar .nav-item:hover {
+  background-color: var(--gray);
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  margin-left: -2rem;
+  padding-left: 2rem;
+}
+
+
+.sidebar .nav-item:active,
+.mobile-navbar .nav-item:active {
+  border: 1px solid #DBDBDB;
   background-color: var(--gray);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -145,8 +169,9 @@ body {
 /*active-item start*/
 .sidebar .active,
 .sidebar .active:hover,
-.mobile-navbar .active {
-  background-color: #D3E3FD;
+.mobile-navbar .nav-item.active {
+
+  background-color: var(--active-color);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   width: -webkit-fill-available;
@@ -255,10 +280,20 @@ body {
 
   .mobile-navbar .nav-item {
     margin-bottom: 1rem;
+    border: 1px solid white;
   }
 
-  .mobile-navbar .nav-item hr {
-    margin: 1rem 0 0 0;
+  .mobile-navbar .line {
+    margin: 0 0 1rem 0;
+  }
+
+  .mobile-navbar .profile-container {
+    display: inline-flex;
+    padding: 0 1rem;
+  }
+
+  .mobile-navbar .profile-container span {
+    padding: 3px;
   }
 
 }
