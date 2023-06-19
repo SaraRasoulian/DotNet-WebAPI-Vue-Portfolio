@@ -353,6 +353,10 @@ body {
   border: 1px solid #DBDBDB;
 }
 
+.back a{
+  display: contents;
+}
+
 .back-icon {
   width: 1.3rem;
   height: 1.3rem;
