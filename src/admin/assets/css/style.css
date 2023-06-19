@@ -135,7 +135,7 @@ body {
 
 .nav-item-inner {
   display: inline-flex;
-  padding: .5rem 1rem;
+  padding: .4rem 1rem;
 }
 
 .nav-item-inner span {
@@ -410,3 +410,10 @@ body {
   background-color: var(--dark-gray);
   color: var(--text-color);
 }
+
+.btn-add{
+  height: 2rem;
+  max-width: 4rem;
+}
+
+/********** list **********/

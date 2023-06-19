@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+    <title>Admin panel</title>
+    <link rel="icon" type="image/png" href="assets/img/300x300.png" />
+</head>
+
+<body>
+    <div class="desktop-navbar">
+        <!-- Header -->
+        <div class="fixed-top header wraper">
+            <nav class="top-navbar navbar navbar-expand-lg">
+                <div class="container">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle wraper-div" href="#" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="assets/images/profile-photo.png" class="profile-photo" alt="" />
+                                <span>Sara</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">
+                                        <img src="assets/images/user-outline.png" class="sidebar-icon dropdown-icon"
+                                            alt="" />
+                                        Edit profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <img src="assets/images/padlock-outline.png" class="sidebar-icon dropdown-icon"
+                                            alt="" />
+                                        Password
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <img src="assets/images/logout-outline.png" class="sidebar-icon dropdown-icon"
+                                            alt="" />
+                                        Log out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul class="nav flex-column">
+                <li class="sidebar-title">
+                    <div class="title-inner">
+                        <img src="assets/images/menu.svg" class="sidebar-icon" alt="" />
+                        <span>Admin Panel</span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/user-outline.png" class="sidebar-icon" alt="" />
+                            <span>Profile</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/career-outline.png" class="sidebar-icon" alt="" />
+                            <span>Experiences</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/mortarboard-outline.png" class="sidebar-icon" alt="" />
+                            <span>Educations</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/link-outline.png" class="sidebar-icon" alt="" />
+                            <span>Social Links</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/email-outline.png" class="sidebar-icon" alt="" />
+                            <span>Messages</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/settings-outline.png" class="sidebar-icon" alt="" />
+                            <span>SEO</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-navbar">
+        <div class="navbar-content" id="navbarContent">
+            <ul class="nav flex-column">
+                <li class="">
+                    <div class="profile-container">
+                        <img src="assets/images/profile-photo.png" class="profile-photo" alt="" />
+                        <span>Sara Rasoulian</span>
+                    </div>
+                    <hr />
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/user-outline.png" class="sidebar-icon" alt="" />
+                            <span>Profile</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/career-outline.png" class="sidebar-icon" alt="" />
+                            <span>Experiences</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/mortarboard-outline.png" class="sidebar-icon" alt="" />
+                            <span>Educations</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/link-outline.png" class="sidebar-icon" alt="" />
+                            <span>Social Links</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/email-outline.png" class="sidebar-icon" alt="" />
+                            <span>Messages</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/settings-outline.png" class="sidebar-icon" alt="" />
+                            <span>SEO</span>
+                        </div>
+                    </a>
+                </li>
+                <hr class="line" />
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/padlock-outline.png" class="sidebar-icon" alt="" />
+                            <span>Password</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="nav-item-inner">
+                            <img src="assets/images/logout-outline.png" class="sidebar-icon" alt="" />
+                            <span>Log Out</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-background" id="navbar-background" onclick="toggleNavbarContent()"></div>
+        <div class="navbar-top">
+            <div onclick="toggleNavbarContent()">
+                <img src="assets/images/menu.svg" class="navbar-icon" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- Content Start -->
+    <div class="content">
+        <div class="title-container">
+            <div>
+                <h4>Educations</h4>
+                <span>2</span>
+                <span>total</span>
+            </div>
+            <div>
+                <button class="btn btn-save btn-add" type="submit">Add</button>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="list-header">
+            <div class="row">
+                <div class="col-3"><span>Degree</span></div>
+                <div class="col-3"><span>Field of study</span></div>
+                <div class="col-3"><span>School</span></div>
+                <div class="col-3"><span>Controls</span></div>
+            </div>
+        </div>
+
+        <!--list items-->
+        <div class="list-content">
+            <div class="row">
+                <div class="col-3"><span>Master's degree</span></div>
+                <div class="col-3"><span>Artificial Intelligence</span></div>
+                <div class="col-3"><span>In publishing and graphic design</span></div>
+                <div class="col-3">
+                    <div class="list-controls">
+                        <a href="#" class="">View</a>
+                        <a href="#" class="">Edit</a>
+                        <a href="#" class="">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Content End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleNavbarContent() {
+            var navbarContent = document.getElementById("navbarContent");
+            navbarContent.classList.toggle("show");
+
+            var back = document.getElementById("navbar-background");
+            back.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>
