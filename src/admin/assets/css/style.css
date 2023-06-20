@@ -133,12 +133,12 @@ body {
   margin: auto 0;
 }
 
-.nav-item-inner {
+.nav-link-inner {
   display: inline-flex;
   padding: .4rem 1rem;
 }
 
-.nav-item-inner span {
+.nav-link-inner span {
   padding: 0 1rem;
 }
 
@@ -308,7 +308,6 @@ body {
   background-color: white;
   padding: 30px;
   margin: 81px 25px 0 275px;
-  min-height: 89.5vh;
   height: fit-content;
   border-radius: 12px;
 }
