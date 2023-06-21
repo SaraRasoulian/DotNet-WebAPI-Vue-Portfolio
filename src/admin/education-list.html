@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <title>Admin panel</title>
+    <title>Educations</title>
     <link rel="icon" type="image/png" href="assets/img/300x300.png" />
 </head>
 
@@ -197,38 +197,44 @@
         </div>
     </div>
     <!-- Content Start -->
-    <div class="content">
-        <div class="title-container">
-            <div>
+    <div class="content-container">
+        <div class="title-wrapper list-title-wrapper">
+            <div class="list-title">
                 <h4>Educations</h4>
-                <span>2</span>
-                <span>total</span>
+                <div class="list-total">
+                    <span>2</span>
+                    <span>total</span>
+                </div>
             </div>
-            <div>
+            <div class="list-button">
                 <button class="btn btn-save btn-add" type="submit">Add</button>
             </div>
         </div>
-        <hr class="line" />
-        <div class="list-header">
-            <div class="row">
-                <div class="col-3"><span>Degree</span></div>
-                <div class="col-3"><span>Field of study</span></div>
-                <div class="col-3"><span>School</span></div>
-                <div class="col-3"><span>Controls</span></div>
-            </div>
-        </div>
 
-        <!--list items-->
-        <div class="list-content">
-            <div class="row">
-                <div class="col-3"><span>Master's degree</span></div>
-                <div class="col-3"><span>Artificial Intelligence</span></div>
-                <div class="col-3"><span>In publishing and graphic design</span></div>
-                <div class="col-3">
-                    <div class="list-controls">
-                        <a href="#" class="">View</a>
-                        <a href="education-edit.html" class="">Edit</a>
-                        <a href="#" class="">Delete</a>
+        <hr class="line" />
+
+        <div class="content"> 
+            <div class="list-header">
+                <div class="row">
+                    <div class="col-3"><span>Degree</span></div>
+                    <div class="col-3"><span>Field of study</span></div>
+                    <div class="col-3"><span>School</span></div>
+                    <div class="col-3"><span>Controls</span></div>
+                </div>
+            </div>
+
+            <!--list items-->
+            <div class="list-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12"><span>Master's degree</span></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12"><span>Artificial Intelligence</span></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12"><span>In publishing and graphic design</span></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="list-controls">
+                            <a href="#" class="">View</a>
+                            <a href="education-edit.html" class="">Edit</a>
+                            <a href="#" class="">Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>

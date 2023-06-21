@@ -304,7 +304,7 @@ body {
 }
 
 /******************** Content ********************/
-.content {
+.content-container {
   background-color: white;
   padding: 30px;
   margin: 81px 25px 0 275px;
@@ -313,7 +313,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .content {
+  .content-container {
     background-color: white;
     padding: 20px;
     margin: 0 10px;
@@ -323,9 +323,17 @@ body {
     width: 1.1rem !important;
     height: 1.1rem !important;
   }
+
+  .list-header {
+    display: none;
+  }
 }
 
-.title-container {
+.content {
+  margin: 20px;
+}
+
+.title-wrapper {
   display: flex;
   align-items: center;
 }
@@ -368,7 +376,9 @@ body {
 }
 
 .line {
-  margin: 0 0 8px 0;
+  margin: 0;
+  padding: 0;
+  color: darkgray;
 }
 
 /********** Buttons **********/
@@ -385,6 +395,11 @@ body {
   height: 2.4rem;
   max-width: 15rem;
   min-width: 7rem;
+
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-save {
@@ -417,3 +432,26 @@ body {
 }
 
 /********** list **********/
+.list-header span {
+  color: darkgray;
+}
+
+.list-title {
+  display: flex;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.list-button {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.list-title-wrapper {
+  margin: 20px 20px 9px 20px;
+}
+
+.list-total {
+  margin-left: 5px;
+}
