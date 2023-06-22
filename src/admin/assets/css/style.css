@@ -8,7 +8,7 @@
 }
 
 .content {
-  margin: 9px 20px 20px 20px;
+  margin: 15px 0 20px 0;
 }
 
 @media (max-width: 768px) {
@@ -19,11 +19,9 @@
   }
 
   .content {
-    margin: 4px 10px 10px 10px;
+    margin: 0;
   }
 }
-
-
 
 .title-wrapper {
   display: flex;
@@ -70,7 +68,7 @@
 .line {
   margin: 0;
   padding: 0;
-  color: darkgray;
+  color: #c1c2c5;
 }
 
 /********** Buttons **********/
@@ -123,6 +121,10 @@
 }
 
 /********** list **********/
+.list-header {
+  padding: 0 15px;
+}
+
 .list-header span {
   color: darkgray;
 }
@@ -134,13 +136,13 @@
   justify-content: end;
 }
 
-.list-button {
+.list-add-button {
   margin-left: auto;
   margin-right: 0;
 }
 
 .list-title-wrapper {
-  margin: 20px 20px 9px 20px;
+  margin: 20px 20px 10px 15px;
 }
 
 .list-total {
@@ -159,11 +161,13 @@
   color: white;
 }
 
-.list-item{
-  padding: 25px 0;
+.list-item {
+  padding: 25px 15px;
 }
-.list-item .row{
+
+.list-item .row {
   margin-bottom: 0;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -172,11 +176,15 @@
     height: 1.1rem !important;
   }
 
+  .form-container {
+    padding-top: 10px !important;
+  }
+
   .list-header {
     display: none;
   }
 
-  .list-button .add-text {
+  .list-add-button .add-text {
     display: none;
   }
 
@@ -192,4 +200,61 @@
     margin: 10px 10px 4px 10px;
   }
 
+  .list-item {
+    padding: 15px 10px;
+  }
+
+  .list-item .col-sm-12 {
+    margin: 3px 0;
+  }
+
+  .list-button-wrapper {
+    padding: 10px 0 0 0;
+    display: block !important;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .list-button {
+    margin: 0 20px !important;
+  }
+
+}
+
+.list-item:hover {
+  box-shadow: 0 0px 5px #DBDBDB;
+  cursor: pointer;
+}
+
+.list-item:active {
+  background-color: var(--bg-color);
+}
+
+.form-container {
+  padding: 0 15px;
+}
+
+/****** list button *****/
+.list-button-wrapper {
+  display: inline;
+}
+
+.list-button {
+  padding: 9px;
+  border-radius: 50px;
+  background-color: white;
+  box-shadow: 0 0 4px #DBDBDB;
+  text-decoration: none;
+  text-align: center;
+  display: inline-flex;
+  margin-right: 15px;
+}
+
+.list-button:hover {
+  background-color: var(--gray);
+}
+
+.list-button-icon {
+  width: 1rem;
+  height: 1rem;
 }
