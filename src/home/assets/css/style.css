@@ -102,6 +102,7 @@ h6 {
     align-items: end;
     justify-content: end;
   }
+
   .profile-img {
     margin-top: 0;
   }
@@ -126,7 +127,7 @@ h6 {
   width: -moz-available;
 }
 
-.section-titr{
+.section-titr {
   width: fit-content;
   min-width: fit-content;
   color: var(--secondary-text-color);
@@ -164,7 +165,7 @@ h6 {
   margin: auto;
 }
 
-.social-item-img{
+.social-item-img {
   margin: auto;
 }
 
@@ -304,7 +305,6 @@ input[type="button"] {
   background-color: var(--text-color);
   border: none;
   text-align: center;
-  font-weight: 600;
   line-height: 38px;
   letter-spacing: .1rem;
   text-decoration: none;
@@ -329,6 +329,23 @@ input[type="button"]:focus {
   border: none;
   outline: none;
 }
+
+.send-button {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+}
+
+.send-button img {
+  width: 17px;
+  height: 17px;
+}
+
+.send-button span {
+  color: var(--bg-color) !important;
+  padding-right: 5px;
+}
+
 
 /******************** Footer ********************/
 .footer {
