@@ -61,7 +61,7 @@ h6 {
 
 @font-face {
   font-family: 'Mastrih';
-  src: url('/assets/fonts/Mastrih.ttf') format('truetype');
+  src: url('/src/home/assets/fonts/Mastrih.ttf') format('truetype');
 }
 
 .text-lg {
