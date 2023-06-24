@@ -265,7 +265,7 @@ body {
     background-color: #444;
   }
 
-  .mobile-navbar .navbar-content.show {
+  .mobile-navbar .navbar-content.display {
     display: block;
     animation-name: slideIn;
   }
@@ -280,7 +280,7 @@ body {
     }
   }
 
-  .mobile-navbar .navbar-background.show {
+  .mobile-navbar .navbar-background.display {
     display: block;
   }
 
