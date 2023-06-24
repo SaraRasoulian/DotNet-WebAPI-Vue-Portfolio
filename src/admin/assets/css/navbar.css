@@ -1,6 +1,6 @@
 :root {
   /******************** Colors ********************/
-  --bg-color: #F7FAFF;
+  --bg-color: #f2f5fc;
   --text-color: #3C4043;
   --active-color: #D3E3FD;
 
@@ -119,8 +119,8 @@ body {
 }
 
 .title-inner {
-  display: inline-flex;
-  padding: 0 1rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .sidebar-title span {
@@ -261,7 +261,7 @@ body {
     position: fixed;
     display: none;
     z-index: 99;
-    opacity: 0.45;
+    opacity: 0.2;
     background-color: #444;
   }
 
