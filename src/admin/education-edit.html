@@ -59,8 +59,10 @@
             <div class="sidebar">
                 <ul class="nav flex-column">
                     <li class="sidebar-title">
-                        <div class="title-inner">
-                            <img src="assets/images/menu.svg" class="sidebar-icon" alt="" />
+                        <div class="toggle-sidebar-wrapper">
+                            <div class="toggle-sidebar" v-on:click="toggleSidebar">
+                                <img src="assets/images/menu.svg" class="sidebar-icon" alt="" />
+                            </div>
                             <span>Admin Panel</span>
                         </div>
                     </li>
