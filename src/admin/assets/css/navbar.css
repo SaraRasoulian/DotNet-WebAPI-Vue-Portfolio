@@ -112,6 +112,10 @@ body {
 
 .sidebar li {
   margin-bottom: .5rem;
+
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 /*** toggle-sidebar ***/
@@ -145,8 +149,6 @@ body {
   margin-bottom: 38px !important;
 }
 
-
-
 .sidebar-title span {
   margin: 0 5px;
 }
@@ -160,7 +162,7 @@ body {
 
 .nav-link-inner {
   display: inline-flex;
-  padding: .4rem 1rem;
+  padding: 8px;
 }
 
 .nav-link-inner span {
@@ -328,6 +330,23 @@ body {
 
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
 /******************** min-sidebar ********************/
 .min-sidebar .content-container {
   margin: 81px 25px 0 95px;
@@ -344,19 +363,21 @@ body {
   display: none;
 }
 
-
-.min-sidebar .nav-link-inner {
-  
+.min-sidebar .sidebar li {
+  justify-content: center;
+  width: 40px;
 }
 
-.min-sidebar .sidebar .nav-item:hover{
-    border-radius: 50%;
+.min-sidebar .nav-link-inner {}
+
+.min-sidebar .sidebar .nav-item:hover {
+  border-radius: 50%;
   margin-left: 0;
   padding-left: 0;
 }
 
 
-.min-sidebar .sidebar .nav-item:active{  
+.min-sidebar .sidebar .nav-item:active {
   border-radius: 50%;
   margin-left: 0;
   padding-left: 0;
@@ -364,7 +385,7 @@ body {
 
 /*active-item start*/
 .min-sidebar .sidebar .active,
-.min-sidebar .sidebar .active:hover{
+.min-sidebar .sidebar .active:hover {
   border-radius: 50%;
   margin-left: 0;
   padding-left: 0;
