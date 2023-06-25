@@ -29,18 +29,17 @@
 }
 
 .back-to-list-wrapper {
-  border-radius: 50px;
   margin: 5px;
 }
 
 .back-to-list {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  padding: 10px;
-  min-height: 40px;
-  min-width: 40px;
-  border-radius: 50px;
-  display: grid;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
 
 .back-to-list:hover {
@@ -142,7 +141,7 @@
 }
 
 .list-title-wrapper {
-  margin: 20px 20px 10px 15px;
+  margin: 10px 20px 10px 15px;
 }
 
 .list-total {
@@ -241,7 +240,7 @@
 
 .list-button {
   padding: 9px;
-  border-radius: 50px;
+  border-radius: 50%;
   background-color: white;
   box-shadow: 0 0 4px #DBDBDB;
   text-decoration: none;

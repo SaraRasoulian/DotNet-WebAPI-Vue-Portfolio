@@ -12,294 +12,312 @@
 
     <title>Edit Education</title>
     <link rel="icon" type="image/png" href="assets/img/300x300.png" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-    <div class="desktop-navbar">
-        <!-- Header -->
-        <div class="fixed-top header wraper">
-            <nav class="top-navbar navbar navbar-expand-lg">
-                <div class="container">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle wraper-div" href="#" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <img src="assets/images/profile-photo.png" class="profile-photo" alt="" />
-                                <span>Sara</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">
-                                        <img src="assets/images/profile.png" class="sidebar-icon dropdown-icon"
-                                            alt="" />
-                                        Edit profile
+    <div id="app">
+        <div :class="{ 'min-sidebar': isSidebarMinimized}">
+            <div class="desktop-navbar noselect">
+                <!-- Header -->
+                <div class="fixed-top header wraper">
+                    <nav class="top-navbar navbar navbar-expand-lg">
+                        <div class="container">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle wraper-div" href="#" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img src="assets/images/profile-photo.png" class="profile-photo" alt="" />
+                                        <span>Sara</span>
                                     </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="assets/images/password.png" class="sidebar-icon dropdown-icon"
-                                            alt="" />
-                                        Password
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="assets/images/logout.png" class="sidebar-icon dropdown-icon" alt="" />
-                                        Log out
-                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">
+                                                <img src="assets/images/profile.png" class="sidebar-icon dropdown-icon"
+                                                    alt="" />
+                                                Edit profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <img src="assets/images/password.png" class="sidebar-icon dropdown-icon"
+                                                    alt="" />
+                                                Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <img src="assets/images/logout.png" class="sidebar-icon dropdown-icon"
+                                                    alt="" />
+                                                Log out
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
+                        </div>
+                    </nav>
+                </div>
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <ul class="nav flex-column">
+
+                        <li class="sidebar-title">
+                            <div class="toggle-sidebar-wrapper">
+                                <div class="toggle-sidebar" v-on:click="toggleSidebar">
+                                    <img src="assets/images/menu.svg" class="sidebar-icon" alt="" />
+                                </div>
+                                <span>Admin Panel</span>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-inner">
+                                    <img src="assets/images/profile.png" class="sidebar-icon" alt="" />
+                                    <span>Profile</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-inner">
+                                    <img src="assets/images/experiences.png" class="sidebar-icon" alt="" />
+                                    <span>Experiences</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-inner">
+                                    <img src="assets/images/educations.png" class="sidebar-icon" alt="" />
+                                    <span>Educations</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-inner">
+                                    <img src="assets/images/social-links.png" class="sidebar-icon" alt="" />
+                                    <span>Social Links</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-inner">
+                                    <img src="assets/images/messages.png" class="sidebar-icon" alt="" />
+                                    <span>Messages</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="nav-link-inner">
+                                    <img src="assets/images/seo.png" class="sidebar-icon" alt="" />
+                                    <span>SEO</span>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </div>
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <ul class="nav flex-column">
-                <li class="sidebar-title">
-                    <div class="title-inner">
-                        <span>Admin Panel</span>
+            </div>
+            <div class="mobile-navbar noselect">
+                <div>
+                    <div class="navbar-content" id="navbarContent" :class="{ 'display': isMobileNavbarVisible }">
+                        <ul class="nav flex-column">
+                            <li class="">
+                                <div class="profile-container">
+                                    <img src="assets/images/profile-photo.png" class="profile-photo" alt="" />
+                                    <span>Sara Rasoulian</span>
+                                </div>
+                                <hr />
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/profile.png" class="sidebar-icon" alt="" />
+                                        <span>Profile</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/experiences.png" class="sidebar-icon" alt="" />
+                                        <span>Experiences</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/educations.png" class="sidebar-icon" alt="" />
+                                        <span>Educations</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/social-links.png" class="sidebar-icon" alt="" />
+                                        <span>Social Links</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/messages.png" class="sidebar-icon" alt="" />
+                                        <span>Messages</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/seo.png" class="sidebar-icon" alt="" />
+                                        <span>SEO</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <hr class="line" />
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/password.png" class="sidebar-icon" alt="" />
+                                        <span>Password</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav-link-inner">
+                                        <img src="assets/images/logout.png" class="sidebar-icon" alt="" />
+                                        <span>Log Out</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="nav-link-inner">
-                            <img src="assets/images/profile.png" class="sidebar-icon" alt="" />
-                            <span>Profile</span>
+                    <div class="navbar-background" :class="{ 'display': isMobileNavbarVisible }"
+                        v-on:click="toggleMobileNavbar"></div>
+                    <div class="navbar-top">
+                        <div v-on:click="toggleMobileNavbar">
+                            <img src="assets/images/menu.svg" class="navbar-icon" alt="" />
                         </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="nav-link-inner">
-                            <img src="assets/images/experiences.png" class="sidebar-icon" alt="" />
-                            <span>Experiences</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        <div class="nav-link-inner">
-                            <img src="assets/images/educations.png" class="sidebar-icon" alt="" />
-                            <span>Educations</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="nav-link-inner">
-                            <img src="assets/images/social-links.png" class="sidebar-icon" alt="" />
-                            <span>Social Links</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="nav-link-inner">
-                            <img src="assets/images/messages.png" class="sidebar-icon" alt="" />
-                            <span>Messages</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="nav-link-inner">
-                            <img src="assets/images/seo.png" class="sidebar-icon" alt="" />
-                            <span>SEO</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="mobile-navbar">
-        <div id="app">
-            <div class="navbar-content" id="navbarContent" :class="{ display: isNavbarVisible }">
-                <ul class="nav flex-column">
-                    <li class="">
-                        <div class="profile-container">
-                            <img src="assets/images/profile-photo.png" class="profile-photo" alt="" />
-                            <span>Sara Rasoulian</span>
-                        </div>
-                        <hr />
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/profile.png" class="sidebar-icon" alt="" />
-                                <span>Profile</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/experiences.png" class="sidebar-icon" alt="" />
-                                <span>Experiences</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/educations.png" class="sidebar-icon" alt="" />
-                                <span>Educations</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/social-links.png" class="sidebar-icon" alt="" />
-                                <span>Social Links</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/messages.png" class="sidebar-icon" alt="" />
-                                <span>Messages</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/seo.png" class="sidebar-icon" alt="" />
-                                <span>SEO</span>
-                            </div>
-                        </a>
-                    </li>
-                    <hr class="line" />
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/password.png" class="sidebar-icon" alt="" />
-                                <span>Password</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <div class="nav-link-inner">
-                                <img src="assets/images/logout.png" class="sidebar-icon" alt="" />
-                                <span>Log Out</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-background" :class="{ display: isNavbarVisible }" @click="toggleNavbar"></div>
-            <div class="navbar-top">
-                <div @click="toggleNavbar">
-                    <img src="assets/images/menu.svg" class="navbar-icon" alt="" />
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Content Start -->
-    <div class="content-container">
-        <div class="title-wrapper">
-            <a href="education-list.html" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
-                title="Back">
-                <div class="back-to-list">
-                    <img src="assets/images/back.png" class="back-icon" alt="" />
+            <!-- Content Start -->
+            <div class="content-container">
+                <div class="title-wrapper">
+                    <a href="education-list.html" class="back-to-list-wrapper" data-toggle="tooltip"
+                        data-placement="top" title="Back">
+                        <div class="back-to-list">
+                            <img src="assets/images/back.png" class="back-icon" alt="" />
+                        </div>
+                    </a>
+                    <h4>Edit Education</h4>
                 </div>
-            </a>
-            <h4>Edit Education</h4>
-        </div>
-        <hr class="line" />
+                <hr class="line" />
 
-        <div class="content">
-            <div class="form-container">
-                <form class="needs-validation" novalidate="">
-                    <div class="row g-3">
-                        <div class="col-lg-8 col-md-12 col-sm-12">
-                            <label for="degree" class="form-label">Degree</label>
-                            <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="degree" placeholder="Degree" required="">
-                                <div class="invalid-feedback">
-                                    Your username is required.
+                <div class="content">
+                    <div class="form-container">
+                        <form class="needs-validation" novalidate="">
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="degree" class="form-label">Degree</label>
+                                    <div class="input-group has-validation">
+                                        <input type="text" class="form-control" id="degree" placeholder="Degree"
+                                            required="">
+                                        <div class="invalid-feedback">
+                                            Your username is required.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row g-3">
-                        <div class="col-lg-8 col-md-12 col-sm-12">
-                            <label for="field" class="form-label">Field of study</label>
-                            <input type="text" class="form-control" id="field" placeholder="Field of study">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="field" class="form-label">Field of study</label>
+                                    <input type="text" class="form-control" id="field" placeholder="Field of study">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row g-3">
-                        <div class="col-lg-8 col-md-12 col-sm-12">
-                            <label for="school" class="form-label">School</label>
-                            <input type="text" class="form-control" id="school" placeholder="School" required="">
-                            <div class="invalid-feedback">
-                                Please enter your shipping address.
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="school" class="form-label">School</label>
+                                    <input type="text" class="form-control" id="school" placeholder="School"
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping address.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row g-3">
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <label for="startYear" class="form-label">Start Year</label>
-                            <input type="text" class="form-control" id="startYear" placeholder="Start Year" value=""
-                                required="">
-                            <div class="invalid-feedback">
-                                Valid first name is required.
+                            <div class="row g-3">
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <label for="startYear" class="form-label">Start Year</label>
+                                    <input type="text" class="form-control" id="startYear" placeholder="Start Year"
+                                        value="" required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <label for="endYear" class="form-label">End Year</label>
+                                    <input type="text" class="form-control" id="endYear" placeholder="End Year" value=""
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <label for="endYear" class="form-label">End Year</label>
-                            <input type="text" class="form-control" id="endYear" placeholder="End Year" value=""
-                                required="">
-                            <div class="invalid-feedback">
-                                Valid last name is required.
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="discription" class="form-label">Discription
+                                        <span class="optional">(Optional)</span>
+                                    </label>
+                                    <textarea type="text" class="form-control" id="discription"
+                                        placeholder="Discription"></textarea>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row g-3">
-                        <div class="col-lg-8 col-md-12 col-sm-12">
-                            <label for="discription" class="form-label">Discription
-                                <span class="optional">(Optional)</span>
-                            </label>
-                            <textarea type="text" class="form-control" id="discription"
-                                placeholder="Discription"></textarea>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
-                            <div class="button-container">
-                                <button class="btn btn-save" type="submit">Save</button>
-                                <button class="btn btn-cancel" type="submit">Cancel</button>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                    <div class="button-container">
+                                        <button class="btn btn-save" type="submit">Save</button>
+                                        <button class="btn btn-cancel" type="submit">Cancel</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
-
     </div>
     <!-- Content End -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <script>
         const app = Vue.createApp({
             data() {
                 return {
-                    isNavbarVisible: false
+                    isMobileNavbarVisible: false,
+                    isSidebarMinimized: false
                 }
             },
             methods: {
-                toggleNavbar() {
-                    this.isNavbarVisible = !this.isNavbarVisible
+                toggleMobileNavbar() {
+                    this.isMobileNavbarVisible = !this.isMobileNavbarVisible
+                },
+                toggleSidebar() {
+                    this.isSidebarMinimized = !this.isSidebarMinimized
                 }
             }
         })

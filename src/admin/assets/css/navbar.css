@@ -58,7 +58,7 @@ body {
 
 .profile-photo {
   width: 2rem;
-  border-radius: 50px;
+  border-radius: 50%;
   margin-right: 5px;
 }
 
@@ -101,7 +101,7 @@ body {
   top: 0;
   left: 0;
   background-color: white;
-  padding: 16px 20px;
+  padding: 10px 15px;
   z-index: 1030;
 }
 
@@ -114,28 +114,50 @@ body {
   margin-bottom: .5rem;
 }
 
+/*** toggle-sidebar ***/
+.toggle-sidebar-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-sidebar {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+}
+
+.toggle-sidebar:hover {
+  background-color: var(--gray);
+}
+
+.toggle-sidebar:active {
+  background-color: var(--active-gray);
+}
+
 .sidebar-title {
   margin-bottom: 38px !important;
 }
 
-.title-inner {
-  font-weight: 600;
-  text-align: center;
-}
-
 .sidebar-title span {
-  padding: 0 1rem;
+  margin: 0 5px;
 }
 
+/**/
 .sidebar-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1rem;
+  height: 1rem;
   margin: auto 0;
 }
 
 .nav-link-inner {
   display: inline-flex;
-  padding: .4rem 1rem;
+  padding: 8px 12px;
 }
 
 .nav-link-inner span {
@@ -191,6 +213,9 @@ body {
 .nav-link {
   color: var(--text-color);
   padding: 0;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 .nav-link:hover {
@@ -261,7 +286,7 @@ body {
     position: fixed;
     display: none;
     z-index: 99;
-    opacity: 0.2;
+    opacity: 0.25;
     background-color: #444;
   }
 
@@ -301,4 +326,65 @@ body {
     padding: 5px;
   }
 
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+/******************** min-sidebar ********************/
+.min-sidebar .content-container {
+  margin: 81px 25px 0 95px;
+}
+
+.min-sidebar .sidebar {
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.min-sidebar .sidebar span {
+  display: none;
+}
+
+.min-sidebar .sidebar li {
+  justify-content: center;
+  width: 40px;
+}
+
+.min-sidebar .nav-link-inner {}
+
+.min-sidebar .sidebar .nav-item:hover {
+  border-radius: 50%;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
+.min-sidebar .sidebar .nav-item:active {
+  border-radius: 50%;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/*active-item start*/
+.min-sidebar .sidebar .active,
+.min-sidebar .sidebar .active:hover {
+  border-radius: 50%;
+  margin-left: 0;
+  padding-left: 0;
 }
