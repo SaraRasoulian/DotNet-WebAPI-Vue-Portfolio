@@ -101,7 +101,7 @@ body {
   top: 0;
   left: 0;
   background-color: white;
-  padding: 7px 15px;
+  padding: 10px 15px;
   z-index: 1030;
 }
 
@@ -112,17 +112,12 @@ body {
 
 .sidebar li {
   margin-bottom: .5rem;
-
-  display: flex;
-  align-items: center;
-  height: 40px;
 }
 
 /*** toggle-sidebar ***/
 .toggle-sidebar-wrapper {
   display: flex;
   align-items: center;
-  margin: 0 4px;
 }
 
 .toggle-sidebar {
@@ -162,7 +157,7 @@ body {
 
 .nav-link-inner {
   display: inline-flex;
-  padding: 8px;
+  padding: 8px 12px;
 }
 
 .nav-link-inner span {
@@ -218,6 +213,9 @@ body {
 .nav-link {
   color: var(--text-color);
   padding: 0;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 .nav-link:hover {
@@ -288,7 +286,7 @@ body {
     position: fixed;
     display: none;
     z-index: 99;
-    opacity: 0.2;
+    opacity: 0.25;
     background-color: #444;
   }
 

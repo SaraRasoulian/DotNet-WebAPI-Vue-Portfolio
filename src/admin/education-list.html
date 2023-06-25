@@ -60,6 +60,7 @@
                 <!-- Sidebar -->
                 <div class="sidebar">
                     <ul class="nav flex-column">
+
                         <li class="sidebar-title">
                             <div class="toggle-sidebar-wrapper">
                                 <div class="toggle-sidebar" v-on:click="toggleSidebar">
@@ -68,6 +69,7 @@
                                 <span>Admin Panel</span>
                             </div>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <div class="nav-link-inner">
@@ -119,7 +121,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="mobile-navbar">
+            <div class="mobile-navbar noselect">
                 <div>
                     <div class="navbar-content" id="navbarContent" :class="{ 'display': isMobileNavbarVisible }">
                         <ul class="nav flex-column">
