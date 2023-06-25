@@ -141,7 +141,7 @@ body {
 }
 
 .sidebar-title {
-  margin-bottom: 38px !important;
+  margin-bottom: 26px !important;
 }
 
 .sidebar-title span {
@@ -347,7 +347,7 @@ body {
 
 /******************** min-sidebar ********************/
 .min-sidebar .content-container {
-  margin: 81px 25px 0 95px;
+  margin-left: 90px;
 }
 
 .min-sidebar .sidebar {
@@ -365,8 +365,6 @@ body {
   justify-content: center;
   width: 40px;
 }
-
-.min-sidebar .nav-link-inner {}
 
 .min-sidebar .sidebar .nav-item:hover {
   border-radius: 50%;
