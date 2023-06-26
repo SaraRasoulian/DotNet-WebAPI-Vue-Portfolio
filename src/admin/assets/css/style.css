@@ -70,6 +70,14 @@
   color: #c1c2c5;
 }
 
+textarea {
+  min-height: 86px !important;
+}
+
+textarea, input{
+  color: var(--text-color);
+}
+
 /********** Buttons **********/
 
 .button-container {
