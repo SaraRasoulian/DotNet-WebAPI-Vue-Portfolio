@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/navbar.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <title>Educations</title>
+    <title>Add Education</title>
     <link rel="icon" type="image/png" href="assets/img/300x300.png" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -210,111 +210,92 @@
             </div>
             <!-- Content Start -->
             <div class="content-container">
-                <div class="title-wrapper list-title-wrapper">
-                    <div class="list-title">
-                        <h4>Educations</h4>
-                        <div class="list-total">
-                            <span>3</span>
-                            <span>total</span>
+                <div class="title-wrapper">
+                    <a href="education-list.html" class="back-to-list-wrapper" data-toggle="tooltip"
+                        data-placement="top" title="Back">
+                        <div class="back-to-list">
+                            <img src="assets/images/back.png" class="back-icon" alt="" />
                         </div>
-                    </div>
-                    <div class="list-add-button">
-                        <a class="btn btn-save btn-add" href="education-add.html">
-                            <img src="assets/images/add.svg" class="add-icon" alt="" />
-                            <span class="add-text">Add</span>
-                        </a>
-                    </div>
+                    </a>
+                    <h4>Add Education</h4>
                 </div>
-
                 <hr class="line" />
 
                 <div class="content">
-
-                    <div class="list-header">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Field of study</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>School</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Controls</span></div>
-                        </div>
-                    </div>
-
-                    <!--list items-->
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Master's degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Artificial Intelligence</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>In publishing and graphic</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                <div class="list-button-wrapper">
-                                    <a href="#" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="View">
-                                        <img src="assets/images/view.png" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-edit.html" class="list-button" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <img src="assets/images/edit.svg" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="#" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="Delete">
-                                        <img src="assets/images/delete.svg" class="list-button-icon" alt="" />
-                                    </a>
+                    <div class="form-container">
+                        <form class="needs-validation" novalidate="">
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="degree" class="form-label">Degree</label>
+                                    <div class="input-group has-validation">
+                                        <input type="text" class="form-control" id="degree" placeholder="Degree"
+                                            required="">
+                                        <div class="invalid-feedback">
+                                            Your username is required.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <hr class="line" />
 
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Master's degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Artificial Intelligence</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>In and graphic design</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                <div class="list-button-wrapper">
-                                    <a href="#" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="View">
-                                        <img src="assets/images/view.png" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-edit.html" class="list-button" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <img src="assets/images/edit.svg" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="#" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="Delete">
-                                        <img src="assets/images/delete.svg" class="list-button-icon" alt="" />
-                                    </a>
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="field" class="form-label">Field of study</label>
+                                    <input type="text" class="form-control" id="field" placeholder="Field of study">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <hr class="line" />
 
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Master's degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Artificial Intelligence</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>In publis graphic design</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                <div class="list-button-wrapper">
-                                    <a href="#" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="View">
-                                        <img src="assets/images/view.png" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-edit.html" class="list-button" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <img src="assets/images/edit.svg" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="#" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="Delete">
-                                        <img src="assets/images/delete.svg" class="list-button-icon" alt="" />
-                                    </a>
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="school" class="form-label">School</label>
+                                    <input type="text" class="form-control" id="school" placeholder="School"
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping address.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <hr class="line" />
 
+                            <div class="row g-3">
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <label for="startYear" class="form-label">Start Year</label>
+                                    <input type="text" class="form-control" id="startYear" placeholder="Start Year"
+                                        value="" required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <label for="endYear" class="form-label">End Year</label>
+                                    <input type="text" class="form-control" id="endYear" placeholder="End Year" value=""
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <label for="discription" class="form-label">Discription
+                                        <span class="optional">(Optional)</span>
+                                    </label>
+                                    <textarea type="text" class="form-control" id="discription"
+                                        placeholder="Discription"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                    <div class="button-container">
+                                        <button class="btn btn-save" type="submit">Add</button>
+                                        <button class="btn btn-cancel" type="submit">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
             </div>
@@ -322,7 +303,7 @@
     </div>
     <!-- Content End -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         const app = Vue.createApp({
             data() {
