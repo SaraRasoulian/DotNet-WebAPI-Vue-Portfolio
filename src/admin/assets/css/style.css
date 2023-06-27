@@ -14,7 +14,7 @@
 @media (max-width: 768px) {
   .content-container {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     margin: 0 10px;
   }
 
@@ -74,7 +74,8 @@ textarea {
   min-height: 86px !important;
 }
 
-textarea, input{
+textarea,
+input {
   color: var(--text-color);
 }
 
@@ -143,7 +144,8 @@ textarea, input{
   justify-content: end;
 }
 
-.list-add-button {
+.left-button-wrapper,
+.view-wrapper .buttons-wrapper {
   margin-left: auto;
   margin-right: 0;
 }
@@ -184,14 +186,14 @@ textarea, input{
   }
 
   .form-container {
-    padding-top: 10px !important;
+    padding: 10px !important;
   }
 
   .list-header {
     display: none;
   }
 
-  .list-add-button .add-text {
+  .left-button-wrapper .add-text {
     display: none;
   }
 
@@ -215,7 +217,7 @@ textarea, input{
     margin: 3px 0;
   }
 
-  .list-button-wrapper {
+  .buttons-wrapper {
     padding: 10px 0 0 0;
     display: block !important;
     width: fit-content;
@@ -224,6 +226,18 @@ textarea, input{
 
   .list-button {
     margin: 0 20px !important;
+  }
+
+  .back-to-list-wrapper {
+    margin-left: 0px !important;
+  }
+
+  .view-wrapper .list-button {
+    margin: 0 5px !important;
+  }
+
+  .view-wrapper .buttons-wrapper{
+    padding: 0;
   }
 
 }
@@ -238,14 +252,12 @@ textarea, input{
 }
 
 .form-container {
-  padding: 0 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+
 }
 
 /****** list button *****/
-.list-button-wrapper {
-  display: inline;
-}
-
 .list-button {
   padding: 9px;
   border-radius: 50%;
@@ -264,4 +276,14 @@ textarea, input{
 .list-button-icon {
   width: 12px;
   height: 12px;
+}
+
+.view-item-wrapper {
+  display: grid;
+  margin-bottom: 1rem;
+}
+
+.view-item-wrapper span {
+  font-weight: 600;
+  margin-bottom: 5px;
 }
