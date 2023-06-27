@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/navbar.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <title>Educations</title>
+    <title>Delete Education</title>
     <link rel="icon" type="image/png" href="assets/img/300x300.png" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -210,119 +210,92 @@
             </div>
             <!-- Content Start -->
             <div class="content-container">
-                <div class="title-wrapper list-title-wrapper">
-                    <div class="list-title">
-                        <h4>Educations</h4>
-                        <div class="list-total">
-                            <span>3</span>
-                            <span>total</span>
-                        </div>
-                    </div>
-                    <div class="left-button-wrapper">
-                        <a class="btn btn-save btn-add" href="education-add.html">
-                            <img src="assets/images/add.svg" class="add-icon" alt="" />
-                            <span class="add-text">Add</span>
+                <div class="view-wrapper">
+                    <div class="title-wrapper">
+                        <a href="education-list.html" class="back-to-list-wrapper" data-toggle="tooltip"
+                            data-placement="top" title="Back">
+                            <div class="back-to-list">
+                                <img src="assets/images/back.png" class="back-icon" alt="" />
+                            </div>
                         </a>
-                    </div>
-                </div>
-
-                <hr class="line" />
-
-                <div class="content">
-
-                    <div class="list-header">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Field of study</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>School</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Controls</span></div>
-                        </div>
-                    </div>
-
-                    <!--list items-->
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Master's degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Artificial Intelligence</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>In publishing and graphic</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                <div class="buttons-wrapper">
-                                    <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="View">
-                                        <img src="assets/images/view.png" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-edit.html" class="list-button" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <img src="assets/images/edit.svg" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-delete.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="Delete">
-                                        <img src="assets/images/delete.svg" class="list-button-icon" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <h4>Delete Education</h4>                        
                     </div>
                     <hr class="line" />
 
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Master's degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Artificial Intelligence</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>In and graphic design</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                <div class="buttons-wrapper">
-                                    <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="View">
-                                        <img src="assets/images/view.png" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-edit.html" class="list-button" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <img src="assets/images/edit.svg" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-delete.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="Delete">
-                                        <img src="assets/images/delete.svg" class="list-button-icon" alt="" />
-                                    </a>
+                    <div class="content">
+                        <div class="form-container">
+                            <div>
+                                <div class="row g-3">
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        <div class="view-item-wrapper">
+                                            <span>Degree</span>
+                                            <p>Master's degree</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="line" />
 
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Master's degree</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>Artificial Intelligence</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12"><span>In publis graphic design</span></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                <div class="buttons-wrapper">
-                                    <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="View">
-                                        <img src="assets/images/view.png" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-edit.html" class="list-button" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <img src="assets/images/edit.svg" class="list-button-icon" alt="" />
-                                    </a>
-                                    <a href="education-delete.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                        title="Delete">
-                                        <img src="assets/images/delete.svg" class="list-button-icon" alt="" />
-                                    </a>
+                                <div class="row g-3">
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        <div class="view-item-wrapper">
+                                            <span>Field of study</span>
+                                            <p>Artificial Intelligence</p>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <div class="row g-3">
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        <div class="view-item-wrapper">
+                                            <span>School</span>
+                                            <p>White Mountain College</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="view-item-wrapper">
+                                            <span>Start Year</span>
+                                            <p>2020</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="view-item-wrapper">
+                                            <span>End Year</span>
+                                            <p>Present</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        <div class="view-item-wrapper">
+                                            <span>Discription</span>
+                                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text
+                                                commonly used to demonstrate the visual form of a document or a typeface
+                                                without relying on meaningful content</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                        <div class="button-container">
+                                            <button class="btn btn-delete" type="submit">Delete</button>
+                                            <button class="btn btn-cancel" type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <hr class="line" />
 
                 </div>
-
             </div>
         </div>
     </div>
     <!-- Content End -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         const app = Vue.createApp({
             data() {

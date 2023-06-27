@@ -110,6 +110,17 @@ input {
   color: white;
 }
 
+.btn-delete {
+  background-color: var(--red);
+  color: white;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+  background-color: var(--dark-red);
+  color: white;
+}
+
 
 .btn-cancel {
   background-color: var(--gray);
