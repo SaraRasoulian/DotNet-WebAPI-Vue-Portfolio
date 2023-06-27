@@ -102,6 +102,7 @@ body {
   left: 0;
   background-color: white;
   padding: 10px 15px;
+  margin: 0;
   z-index: 1030;
 }
 
