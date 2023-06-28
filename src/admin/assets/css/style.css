@@ -26,6 +26,7 @@
 .title-wrapper {
   display: flex;
   align-items: center;
+  margin-right: 20px;
 }
 
 .back-to-list-wrapper {
@@ -161,7 +162,7 @@ input {
   margin-right: 0;
 }
 
-.list-title-wrapper {
+.parent-page-title {
   margin: 10px 20px 10px 15px;
 }
 
@@ -216,7 +217,7 @@ input {
     margin: 0 !important;
   }
 
-  .list-title-wrapper {
+  .parent-page-title {
     margin: 10px 10px 4px 10px;
   }
 
@@ -277,7 +278,7 @@ input {
   text-decoration: none;
   text-align: center;
   display: inline-flex;
-  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .list-button:hover {
@@ -297,4 +298,8 @@ input {
 .view-item-wrapper span {
   font-weight: 600;
   margin-bottom: 5px;
+}
+
+.view-profile-photo{
+  width: 12rem;
 }
