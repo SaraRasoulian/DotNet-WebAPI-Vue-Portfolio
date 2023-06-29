@@ -47,7 +47,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12vw 0;
+  padding: 11vw 0;
 }
 
 .header .text {
@@ -454,4 +454,47 @@ a:hover {
   100% {
     background-position: 0% 50%
   }
+}
+
+/******************** Fade in effect ********************/
+.fade-in-text {
+  animation: fadeInText 2s;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-on-load {
+  animation: fadeInOnLoad 1s;
+}
+
+@keyframes fadeInOnLoad {
+  0% {
+    opacity: 0;
+    transform: translate(0, 3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translate(0, 3rem);
+  transition: all 1s;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: 1s;
 }
