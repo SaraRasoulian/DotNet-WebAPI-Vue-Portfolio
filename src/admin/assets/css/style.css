@@ -221,6 +221,10 @@ input {
     margin: 10px 10px 4px 10px;
   }
 
+  .title-wrapper {
+    margin-right: 10px;
+  }
+
   .list-item {
     padding: 15px 10px;
   }
@@ -248,7 +252,7 @@ input {
     margin: 0 5px !important;
   }
 
-  .view-wrapper .buttons-wrapper{
+  .view-wrapper .buttons-wrapper {
     padding: 0;
   }
 
@@ -300,6 +304,54 @@ input {
   margin-bottom: 5px;
 }
 
-.view-profile-photo{
-  width: 12rem;
+.view-profile-photo {
+  width: 10rem;
+}
+
+.edit-photo-wrapper {
+  display: flex;
+}
+
+.photo-buttons-wrapper {
+  margin: 0 0 0 1rem;
+}
+
+.photo-buttons-wrapper .photo-btn {
+  border: none;
+  background-color: white;
+  font-weight: 600;
+  padding: 0;
+}
+
+.photo-buttons-wrapper .photo-btn.update-btn {
+  color: var(--green);
+  margin-right: 20px;
+}
+
+.photo-buttons-wrapper .photo-btn.update-btn:hover {
+  color: var(--dark-green);
+}
+
+.photo-buttons-wrapper .photo-btn.remove-btn {
+  color: var(--red);
+}
+
+.photo-buttons-wrapper .photo-btn.remove-btn:hover {
+  color: var(--dark-red);
+}
+
+
+@media (max-width: 426px) {
+  .edit-photo-wrapper {
+    display: block;
+  }
+
+  .view-profile-photo {
+    width: 100%;
+  }
+
+  .photo-buttons-wrapper {
+    margin: 1rem 0 0 0;
+  }
+
 }
