@@ -1,3 +1,43 @@
+:root {
+  /******************** Colors ********************/
+  --bg-color: #f2f5fc;
+  --text-color: #3C4043;
+  --active-color: #D3E3FD;
+
+  --green: #29BC9C;
+  --dark-green: #26A88C;
+
+  --gray: #EAEBEF;
+  --active-gray: #e2e2e6;
+  --dark-gray: #DEDCDC;
+
+  --red: #DB575A;
+  --dark-red: #CB5153;
+}
+
+/******************** Base styles ********************/
+html {
+  scroll-behavior: smooth;
+}
+
+span,
+p,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
 /******************** Content ********************/
 .content-container {
   background-color: white;

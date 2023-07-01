@@ -1,0 +1,14 @@
+.login-container{
+  margin: 80px auto;
+  width: 32rem;
+}
+
+@media (max-width: 426px) {
+  .login-container{
+    margin: 10px;
+    width: auto;
+  }
+  .btn{
+    width: 100%;
+  }
+}
