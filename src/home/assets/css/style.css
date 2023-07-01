@@ -472,7 +472,7 @@ a:hover {
 }
 
 .fade-in-on-load {
-  animation: fadeInOnLoad 1s;
+  animation: fadeInOnLoad 1.5s;
 }
 
 @keyframes fadeInOnLoad {

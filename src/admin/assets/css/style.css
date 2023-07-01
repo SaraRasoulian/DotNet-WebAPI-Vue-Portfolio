@@ -263,10 +263,6 @@ input {
   cursor: pointer;
 }
 
-.list-item:active {
-  background-color: var(--bg-color);
-}
-
 .form-container {
   padding-right: 15px;
   padding-left: 15px;
