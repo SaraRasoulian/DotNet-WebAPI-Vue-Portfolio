@@ -321,6 +321,10 @@ input {
   margin-left: 15px;
 }
 
+.buttons-wrapper .list-button:first-child {
+  margin-left: 0px;
+}
+
 .list-button:hover {
   background-color: var(--gray);
 }
@@ -389,5 +393,20 @@ input {
   .photo-buttons-wrapper {
     margin: 1rem 0 0 0;
   }
+}
 
+/*messages*/
+.truncated{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 50ch;
+}
+
+.truncated-email {
+  max-width: 30ch;
+}
+
+.list-item.un-read{
+  background-color: var(--bg-color);
 }
