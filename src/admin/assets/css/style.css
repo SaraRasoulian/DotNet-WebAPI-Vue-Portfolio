@@ -38,6 +38,14 @@ body {
   background-color: var(--bg-color);
 }
 
+.bold {
+  font-weight: 600;
+}
+
+.secondary-text {
+  color: #88898d;
+  font-size: 15px;
+}
 /******************** Content ********************/
 .content-container {
   background-color: white;
@@ -99,10 +107,6 @@ body {
 
 .row {
   margin-bottom: 1rem;
-}
-
-.secondary-text {
-  color: #88898d;
 }
 
 .line {
@@ -212,6 +216,10 @@ input {
 
 .list-total span {
   color: darkgray;
+}
+
+.list-total span:first-child {
+  margin-right: 5px;
 }
 
 .add-icon {
@@ -412,14 +420,8 @@ input {
 }
 
 .message-head {
-  margin-bottom: 1rem;
   display: flex;
   align-items: center;
-}
-
-.message-sender {
-  font-weight: 600;
-  font-size: large;
 }
 
 @media (max-width: 768px) {
