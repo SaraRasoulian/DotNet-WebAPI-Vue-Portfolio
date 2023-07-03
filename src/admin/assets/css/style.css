@@ -101,8 +101,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.optional {
-  color: darkgray;
+.secondary-text {
+  color: #88898d;
 }
 
 .line {
@@ -396,7 +396,7 @@ input {
 }
 
 /*messages*/
-.truncated{
+.truncated {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -407,6 +407,27 @@ input {
   max-width: 30ch;
 }
 
-.list-item.un-read{
+.list-item.un-read {
   background-color: var(--bg-color);
+}
+
+.message-head {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.message-sender {
+  font-weight: 600;
+  font-size: large;
+}
+
+@media (max-width: 768px) {
+  .message-head {
+    display: block;
+  }
+
+  .message-head .buttons-wrapper {
+    margin: 0;
+  }
 }
