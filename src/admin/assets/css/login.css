@@ -21,16 +21,16 @@
   color: var(--text-color);
 }
 
-.back-home{
+.back-home {
   text-decoration: none;
   color: var(--text-color);
 }
 
-.back-home:hover{
+.back-home:hover {
   color: #000
 }
 
-.login-title{
+.login-title {
   margin: 0 auto;
 }
 
@@ -38,5 +38,6 @@
   .login-container {
     margin: 10px;
     width: auto;
+    padding-top: 30px;
   }
 }
