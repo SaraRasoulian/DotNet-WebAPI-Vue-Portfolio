@@ -207,6 +207,9 @@ input {
 .list-header .control-header{
   min-width: 120px;
 }
+.list-header .message-control-header{
+  min-width: 75px;
+}
 
 .list-title {
   display: flex;
@@ -437,7 +440,7 @@ input {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 50ch;
+  max-width: 60ch;
 }
 
 .truncated-email {
