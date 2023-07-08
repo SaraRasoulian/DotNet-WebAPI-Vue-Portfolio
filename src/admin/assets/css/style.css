@@ -43,7 +43,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   line-height: 1.5;
-  font-weight: 400;  
+  font-weight: 400;
 }
 
 .bold {
@@ -54,6 +54,7 @@ body {
   color: #88898d;
   font-size: 15px;
 }
+
 /******************** Content ********************/
 .content-container {
   background-color: white;
@@ -82,7 +83,8 @@ body {
 .title-wrapper {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  margin-right: 15px;
 }
 
 .back-to-list-wrapper {
@@ -194,11 +196,16 @@ input {
 
 /********** list **********/
 .list-header {
-  padding: 0 15px;
+  padding: 0 15px 16px 15px;
+  display: flex;
 }
 
 .list-header span {
   color: darkgray;
+}
+
+.list-header .control-header{
+  min-width: 120px;
 }
 
 .list-title {
@@ -208,14 +215,15 @@ input {
   justify-content: end;
 }
 
-.left-button-wrapper,
+.right-button-wrapper,
 .view-wrapper .buttons-wrapper {
   margin-left: auto;
   margin-right: 0;
 }
 
 .parent-page-title {
-  margin: 10px 20px 10px 15px;
+  /* margin: 10px 20px 10px 15px; */
+  margin: 10px 15px;
 }
 
 .list-total {
@@ -240,11 +248,23 @@ input {
 
 .list-item {
   padding: 25px 15px;
+  /* padding: 25px 20px 25px 15px; */
+
+  display: flex;
+  align-items: center;
 }
 
-.list-item .row {
+.list-item .row,
+.list-header .row {
+  width: 100%;
+  display: flex;
   margin-bottom: 0;
+  margin-right: 0;
   align-items: center;
+}
+
+.list-item .buttons-wrapper {
+  display: flex;
 }
 
 @media (max-width: 768px) {
@@ -261,7 +281,7 @@ input {
     display: none;
   }
 
-  .left-button-wrapper .add-text {
+  .right-button-wrapper .add-text {
     display: none;
   }
 
@@ -283,6 +303,7 @@ input {
 
   .list-item {
     padding: 15px 10px;
+    display: block;
   }
 
   .list-item .col-sm-12 {
