@@ -475,6 +475,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
 /Portfolio/.vs/Portfolio/DesignTimeBuild/.dtbcache.v2
 /Portfolio/.vs/Portfolio/v17/.suo
 /Portfolio/Portfolio/bin/Debug/net7.0/Portfolio.dll
