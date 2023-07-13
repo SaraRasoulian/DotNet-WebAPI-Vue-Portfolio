@@ -378,7 +378,6 @@ input[type="button"]:focus {
 
 /* Icon Rotate */
 .icon-rotate {
-  display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -386,7 +385,7 @@ input[type="button"]:focus {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.icon-rotate img {
+.icon-rotate .icon {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-transition-duration: 0.3s;
@@ -396,7 +395,7 @@ input[type="button"]:focus {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.icon-rotate:hover img, .icon-rotate:focus img, .icon-rotate:active img {
+.icon-rotate:hover .icon, .icon-rotate:focus .icon, .icon-rotate:active .icon {
   -webkit-transform: rotate(20deg);
   transform: rotate(20deg);
 }
