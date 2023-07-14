@@ -215,7 +215,10 @@ h6 {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.social .social-item:hover:before, .social .social-item:focus:before, .social .social-item:active:before {
+
+.social .social-item:hover:before,
+.social .social-item:focus:before,
+.social .social-item:active:before {
   right: 0;
 }
 
@@ -385,6 +388,7 @@ input[type="button"]:focus {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
+
 .icon-rotate .icon {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -395,10 +399,14 @@ input[type="button"]:focus {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.icon-rotate:hover .icon, .icon-rotate:focus .icon, .icon-rotate:active .icon {
+
+.icon-rotate:hover .icon,
+.icon-rotate:focus .icon,
+.icon-rotate:active .icon {
   -webkit-transform: rotate(20deg);
   transform: rotate(20deg);
 }
+
 /******************** Footer ********************/
 .footer {
   border-top: 1px solid var(--border-color);
@@ -549,4 +557,23 @@ a:hover {
   opacity: 1;
   transform: translate(0, 0);
   transition: 1s;
+}
+
+/******************** Scrollbar ********************/
+@media (min-width: 769px) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+  }
 }
