@@ -7,7 +7,7 @@ namespace Portfolio.Data.Entity
         public Guid Id { get; set; }
 
         [MaxLength(50)]
-        public required string FisrtName { get; set; }
+        public required string FirstName { get; set; }
 
         [MaxLength(50)]
         public required string LastName { get; set; }
@@ -17,10 +17,10 @@ namespace Portfolio.Data.Entity
         public required string Email { get; set; }
 
         [MaxLength(100)]
-        public required string Title { get; set; }
+        public required string Headline { get; set; }
 
         [MaxLength(1000)]
-        public required string Summary { get; set; }
+        public required string About { get; set; }
 
         public byte[]? Photo { get; set; }
     }
