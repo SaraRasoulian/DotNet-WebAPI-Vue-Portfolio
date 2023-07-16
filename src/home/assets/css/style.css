@@ -375,7 +375,7 @@ input[type="button"]:focus {
 }
 
 .send-button span {
-  color: var(--bg-color) !important;
+  color: var(--bg-color);
   padding-right: 5px;
 }
 
