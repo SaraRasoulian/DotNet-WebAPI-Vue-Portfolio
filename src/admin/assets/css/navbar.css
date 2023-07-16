@@ -99,8 +99,8 @@
   background-color: var(--active-gray);
 }
 
-.sidebar-title {
-  margin-bottom: 30px !important;
+.sidebar li.sidebar-title {
+  margin-bottom: 30px;
 }
 
 .sidebar-title span {

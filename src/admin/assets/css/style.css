@@ -126,7 +126,7 @@ body {
 }
 
 textarea {
-  min-height: 86px !important;
+  height: 86px;
 }
 
 textarea,
@@ -204,10 +204,11 @@ input {
   color: darkgray;
 }
 
-.list-header .control-header{
+.list-header .control-header {
   min-width: 120px;
 }
-.list-header .message-control-header{
+
+.list-header .message-control-header {
   min-width: 75px;
 }
 
@@ -270,14 +271,13 @@ input {
   display: flex;
 }
 
-@media (max-width: 768px) {
-  .back-icon {
-    width: 1.1rem !important;
-    height: 1.1rem !important;
-  }
+.form-container {
+  padding: 0 15px;
+}
 
+@media (max-width: 768px) {
   .form-container {
-    padding: 10px !important;
+    padding: 10px;
   }
 
   .list-header {
@@ -289,11 +289,11 @@ input {
   }
 
   .btn-add {
-    width: 2rem !important;
+    width: 2rem;
   }
 
   .add-icon {
-    margin: 0 !important;
+    margin: 0;
   }
 
   .parent-page-title {
@@ -315,21 +315,12 @@ input {
 
   .buttons-wrapper {
     padding: 10px 0 0 0;
-    display: block !important;
     width: fit-content;
     margin: 0 auto;
   }
 
-  .list-button {
-    margin: 0 20px !important;
-  }
-
   .back-to-list-wrapper {
-    margin-left: 0px !important;
-  }
-
-  .view-wrapper .list-button {
-    margin: 0 5px !important;
+    margin-left: 0px;
   }
 
   .view-wrapper .buttons-wrapper {
@@ -341,12 +332,6 @@ input {
 .list-item:hover {
   box-shadow: 0 0px 5px #DBDBDB;
   cursor: pointer;
-}
-
-.form-container {
-  padding-right: 15px;
-  padding-left: 15px;
-
 }
 
 /****** list button *****/
@@ -420,8 +405,17 @@ input {
   color: var(--dark-red);
 }
 
-
 @media (max-width: 426px) {
+
+  .list-button,
+  .buttons-wrapper .list-button:first-child {
+    margin: 0 20px;
+  }
+
+  .view-wrapper .buttons-wrapper .list-button {
+    margin: 0 5px;
+  }
+
   .edit-photo-wrapper {
     display: block;
   }
