@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/login.css" type="text/css" />
 
-    <title>Log In</title>    
+    <title>Log In</title>
     <!-- Emoji as Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
 </head>
 
 <body>
@@ -31,13 +32,11 @@
         <div class="content">
             <div class="form-container">
                 <form class="needs-validation" novalidate="">
-
-                    
                     <div class="row g-3">
                         <div class="col-lg-21 col-md-12 col-sm-12">
-                            <label for="degree" class="form-label">User Name</label>
+                            <label for="user-name" class="form-label">User Name</label>
                             <div class="input-group has-validation">
-                                <input type="text" class="form-control" placeholder="User Name" required="" value="">
+                                <input type="text" id="user-name" class="form-control" placeholder="User Name" required="" value="">
                                 <div class="invalid-feedback">
                                     Your username is required.
                                 </div>
@@ -47,8 +46,8 @@
 
                     <div class="row g-3">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <label for="field" class="form-label">Password</label>
-                            <input type="text" class="form-control" placeholder="Password" value="">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" id="password" class="form-control" placeholder="Password" value="">
                             <div class="invalid-feedback">
                                 Your username is required.
                             </div>
