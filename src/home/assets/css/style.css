@@ -561,11 +561,12 @@ a:hover {
 
 /******************** Scrollbar ********************/
 @media (min-width: 769px) {
+
   /* width */
   ::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: var(--border-color);
