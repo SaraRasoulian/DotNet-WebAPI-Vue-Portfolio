@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Portfolio.Data.Entity
+namespace Domain
 {
     public class Education : ObjectModel
     {

@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Data.Entity
+﻿namespace Domain
 {
     public class ObjectModel
     {

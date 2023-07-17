@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Portfolio.Data.Entity;
 
-namespace Portfolio.Data
+namespace Domain.DbContexts
 {
     public class PortfolioDbContext : DbContext
     {
