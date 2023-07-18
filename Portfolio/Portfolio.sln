@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio", "Portfolio\Portfolio.csproj", "{E3C78E91-C4E5-42D8-94AC-36B56583BD7C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{199D48C4-D6C9-40D4-B5D7-8F3A7618D620}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{462E29BB-BE0F-4B2A-ABA6-CF7A3E757590}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{9CBDB0FE-2CEC-44B0-9D18-D2ECC21490DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{0AEAE58A-F063-49F1-8B93-883620296AE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{0AEAE58A-F063-49F1-8B93-883620296AE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{1BA6D3A8-A349-407C-A7F5-BA24176C0639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{1BA6D3A8-A349-407C-A7F5-BA24176C0639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3C78E91-C4E5-42D8-94AC-36B56583BD7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3C78E91-C4E5-42D8-94AC-36B56583BD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3C78E91-C4E5-42D8-94AC-36B56583BD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3C78E91-C4E5-42D8-94AC-36B56583BD7C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9CBDB0FE-2CEC-44B0-9D18-D2ECC21490DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9CBDB0FE-2CEC-44B0-9D18-D2ECC21490DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CBDB0FE-2CEC-44B0-9D18-D2ECC21490DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,7 +36,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E3C78E91-C4E5-42D8-94AC-36B56583BD7C} = {199D48C4-D6C9-40D4-B5D7-8F3A7618D620}
 		{9CBDB0FE-2CEC-44B0-9D18-D2ECC21490DC} = {462E29BB-BE0F-4B2A-ABA6-CF7A3E757590}
 		{0AEAE58A-F063-49F1-8B93-883620296AE0} = {199D48C4-D6C9-40D4-B5D7-8F3A7618D620}
 		{1BA6D3A8-A349-407C-A7F5-BA24176C0639} = {199D48C4-D6C9-40D4-B5D7-8F3A7618D620}
