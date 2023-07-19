@@ -1,43 +1,135 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using Domain.DbContexts;
+using Domain.Entities;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/educations")]
     [ApiController]
+    [Route("api/[controller]")]
     public class EducationsController : ControllerBase
     {
-        // GET: api/educations
+        private readonly PortfolioDbContext _dbContext;
+        public EducationsController(PortfolioDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                var result = await _dbContext.Educations.OrderByDescending(c => c.StartYear).ThenByDescending(c => c.EndYear).ToListAsync();
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                // To Do: log the exceptions
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
-        // GET api/educations/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> Get([FromRoute] Guid id)
         {
-            return "value";
+            try
+            {
+                var result = await _dbContext.Educations.FindAsync(id);
+                if (result is null)
+                {
+                    return NotFound();
+                }
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
-        // POST api/educations
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post([FromBody] Education value)
         {
+            try
+            {
+                if (value is null || !ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                value.Id = Guid.NewGuid();
+                value.CreatedAt = DateTime.UtcNow;
+                value.LastUpdatedAt = DateTime.UtcNow;
+
+                var result = await _dbContext.Educations.AddAsync(value);
+                await _dbContext.SaveChangesAsync();
+                return Ok(result.Entity);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
         }
 
-        // PUT api/educations/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] Education value)
         {
+            try
+            {
+                if (value is null || !ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                if (id != value.Id)
+                {
+                    return BadRequest(value);
+                }
+
+                var toUpdate = await _dbContext.Educations.FindAsync(id);
+                if (toUpdate is null)
+                {
+                    return BadRequest(toUpdate);
+                }
+
+                toUpdate.Degree = value.Degree;
+                toUpdate.FieldOfStudy = value.FieldOfStudy;
+                toUpdate.School = value.School;
+                toUpdate.StartYear = value.StartYear;
+                toUpdate.EndYear = value.EndYear;
+                toUpdate.Description = value.Description;
+                toUpdate.LastUpdatedAt = DateTime.UtcNow;
+
+                await _dbContext.SaveChangesAsync();
+
+                return Ok(toUpdate);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
-        // DELETE api/educations/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
+            try
+            {
+                var toDelete = await _dbContext.Educations.FindAsync(id);
+                if (toDelete is null)
+                {
+                    return BadRequest(toDelete);
+                }
+                _dbContext.Educations.Remove(toDelete);
+                await _dbContext.SaveChangesAsync();
+                return Ok(toDelete);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }
