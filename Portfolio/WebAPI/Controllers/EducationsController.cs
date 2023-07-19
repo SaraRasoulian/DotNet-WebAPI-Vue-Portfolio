@@ -122,6 +122,7 @@ namespace WebAPI.Controllers
                 {
                     return BadRequest(toDelete);
                 }
+
                 _dbContext.Educations.Remove(toDelete);
                 await _dbContext.SaveChangesAsync();
                 return Ok(toDelete);
