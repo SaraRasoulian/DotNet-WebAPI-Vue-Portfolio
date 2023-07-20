@@ -198,7 +198,7 @@ h6 {
   font-weight: 600;
 }
 
-/* Underline Hover effect */
+/* Hover effect */
 .social .social-item:before {
   content: "";
   position: absolute;
@@ -306,19 +306,19 @@ label>.label-body {
   font-weight: normal;
 }
 
+/* Firefox */
 ::placeholder {
   color: var(--secondary-text-color);
   opacity: 1;
-  /* Firefox */
 }
 
+/* Internet Explorer 10-11 */
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: var(--secondary-text-color);
 }
 
+/* Microsoft Edge */
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
   color: var(--secondary-text-color);
 }
 
@@ -427,8 +427,6 @@ a:hover {
   color: var(--text-color);
   font-weight: 600;
 }
-
-
 
 /******************** Grainy Texture ********************/
 .texture {

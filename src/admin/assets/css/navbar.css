@@ -29,7 +29,6 @@
 
 .wraper-div {
   text-align: center;
-  /* Optional: center the content horizontally */
 }
 
 .header .dropdown-menu {
@@ -73,7 +72,7 @@
   margin-bottom: .5rem;
 }
 
-/*** toggle-sidebar ***/
+/* toggle-sidebar */
 .toggle-sidebar-wrapper {
   display: flex;
   align-items: center;
@@ -107,7 +106,6 @@
   margin: 0 5px;
 }
 
-/**/
 .sidebar-icon {
   width: 1rem;
   height: 1rem;
@@ -146,7 +144,7 @@
   padding-left: 2rem;
 }
 
-/*active-item start*/
+/* active-item */
 .sidebar .active,
 .sidebar .active:hover,
 .mobile-navbar .nav-item.active {
@@ -167,8 +165,6 @@
   color: var(--text-color);
 }
 
-/*active-item end*/
-
 .nav-link {
   color: var(--text-color);
   padding: 0;
@@ -185,8 +181,6 @@
   color: var(--text-color);
 }
 
-
-/*Desktop and mobile*/
 .desktop-navbar {
   display: block;
 }
@@ -338,7 +332,7 @@
   padding-left: 0;
 }
 
-/*active-item start*/
+/* active-item */
 .min-sidebar .sidebar .active,
 .min-sidebar .sidebar .active:hover {
   border-radius: 50%;

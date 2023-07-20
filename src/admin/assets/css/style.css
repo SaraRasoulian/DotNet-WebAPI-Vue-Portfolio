@@ -5,14 +5,14 @@
   --active-color: #D3E3FD;
   --shadow-color: #DBDBDB;
   --line-color: #c1c2c5;
-    
+
   --gray: #EAEBEF;
   --dark-gray: #DEDCDC;
   --darker-gray: #88898d;
   --active-gray: #e2e2e6;
 
   --green: #29BC9C;
-  --dark-green: #26A88C;  
+  --dark-green: #26A88C;
 
   --red: #DB575A;
   --dark-red: #CB5153;
@@ -86,7 +86,6 @@ body {
 .title-wrapper {
   display: flex;
   align-items: center;
-  /* margin-right: 20px; */
   margin-right: 15px;
 }
 
@@ -137,8 +136,7 @@ input {
   color: var(--text-color);
 }
 
-/********** Buttons **********/
-
+/*********** Buttons ***********/
 .button-container {
   display: flex;
 }
@@ -197,7 +195,7 @@ input {
   width: 7rem;
 }
 
-/********** list **********/
+/*********** list ***********/
 .list-header {
   padding: 0 15px 16px 15px;
   display: flex;
@@ -229,7 +227,6 @@ input {
 }
 
 .parent-page-title {
-  /* margin: 10px 20px 10px 15px; */
   margin: 10px 15px;
 }
 
@@ -255,8 +252,6 @@ input {
 
 .list-item {
   padding: 25px 15px;
-  /* padding: 25px 20px 25px 15px; */
-
   display: flex;
   align-items: center;
 }
@@ -337,7 +332,7 @@ input {
   cursor: pointer;
 }
 
-/****** list button *****/
+/*********** list button ***********/
 .list-button {
   padding: 9px;
   border-radius: 50%;
@@ -432,7 +427,7 @@ input {
   }
 }
 
-/*messages*/
+/*********** messages ***********/
 .truncated {
   overflow: hidden;
   white-space: nowrap;
