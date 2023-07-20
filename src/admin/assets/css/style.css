@@ -3,13 +3,16 @@
   --bg-color: #f2f5fc;
   --text-color: #3C4043;
   --active-color: #D3E3FD;
+  --shadow-color: #DBDBDB;
+  --line-color: #c1c2c5;
+    
+  --gray: #EAEBEF;
+  --dark-gray: #DEDCDC;
+  --darker-gray: #88898d;
+  --active-gray: #e2e2e6;
 
   --green: #29BC9C;
-  --dark-green: #26A88C;
-
-  --gray: #EAEBEF;
-  --active-gray: #e2e2e6;
-  --dark-gray: #DEDCDC;
+  --dark-green: #26A88C;  
 
   --red: #DB575A;
   --dark-red: #CB5153;
@@ -51,7 +54,7 @@ body {
 }
 
 .secondary-text {
-  color: #88898d;
+  color: var(--darker-gray);
   font-size: 15px;
 }
 
@@ -122,7 +125,7 @@ body {
 .line {
   margin: 0;
   padding: 0;
-  color: #c1c2c5;
+  color: var(--line-color);
 }
 
 textarea {
@@ -330,7 +333,7 @@ input {
 }
 
 .list-item:hover {
-  box-shadow: 0 0px 5px #DBDBDB;
+  box-shadow: 0 0px 5px var(--shadow-color);
   cursor: pointer;
 }
 
@@ -339,7 +342,7 @@ input {
   padding: 9px;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 0 0 4px #DBDBDB;
+  box-shadow: 0 0 4px var(--shadow-color);
   text-decoration: none;
   text-align: center;
   display: inline-flex;

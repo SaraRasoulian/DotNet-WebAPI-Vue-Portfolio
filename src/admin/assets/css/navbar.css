@@ -2,7 +2,7 @@
 .header {
   padding-right: 25px;
   background-color: white;
-  box-shadow: 0 0px 5px #DBDBDB;
+  box-shadow: 0 0px 5px var(--shadow-color);
   height: 60px;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .nav-link:hover {
-  color: #000;
+  color: black;
 }
 
 .nav-link:focus {
@@ -207,7 +207,7 @@
 
   .mobile-navbar .navbar-top {
     background-color: white;
-    box-shadow: 0 0px 5px #DBDBDB;
+    box-shadow: 0 0px 5px var(--shadow-color);
     height: 55px;
     display: flex;
     align-items: center;
@@ -231,7 +231,7 @@
     z-index: 999;
     display: none;
     background-color: white;
-    box-shadow: 0 0px 5px #999;
+    box-shadow: 0 0px 5px var(--darker-gray);
     padding: 2.5rem 1.8rem;
     animation-duration: 0.2s;
     animation-timing-function: ease-in-out;
@@ -245,8 +245,8 @@
     position: fixed;
     display: none;
     z-index: 99;
-    opacity: 0.25;
-    background-color: #444;
+    opacity: 0.4;
+    background-color: var(--darker-gray);
   }
 
   .mobile-navbar .navbar-content.display {
