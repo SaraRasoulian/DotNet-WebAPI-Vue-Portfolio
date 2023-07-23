@@ -1,8 +1,6 @@
 ﻿using Domain.DbContexts;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace WebAPI.Repositories
 {
