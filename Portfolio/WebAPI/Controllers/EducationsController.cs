@@ -21,7 +21,7 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var result = await _educationsRepository.Get();
+                var result = await _educationsRepository.GetAll();
                 return Ok(result);
             }
             catch (Exception)
@@ -83,9 +83,11 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var result = await _educationsRepository.Delete(id);
-                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
-                return Ok(result);
+                var toDelete = await _educationsRepository.GetById(id);
+                if (toDelete is null) return StatusCode(StatusCodes.Status204NoContent);
+
+                await _educationsRepository.Delete(toDelete);
+                return Ok();
             }
             catch (Exception)
             {

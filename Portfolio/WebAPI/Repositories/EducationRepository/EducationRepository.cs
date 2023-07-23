@@ -12,7 +12,7 @@ namespace WebAPI.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Education>> Get()
+        public async Task<IEnumerable<Education>> GetAll()
         {
             return await _dbContext.Educations.OrderByDescending(c => c.StartYear).ThenByDescending(c => c.EndYear).ToListAsync();
         }
@@ -52,15 +52,10 @@ namespace WebAPI.Repositories
             return toUpdate;
         }
 
-        public async Task<Education?> Delete(Guid id)
+        public async Task Delete(Education model)
         {
-            var toDelete = await GetById(id);
-            if (toDelete is null) return null;
-
-            _dbContext.Educations.Remove(toDelete);
+            _dbContext.Educations.Remove(model);
             await _dbContext.SaveChangesAsync();
-            return toDelete;
         }
-
     }
 }
