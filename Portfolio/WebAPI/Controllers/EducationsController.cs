@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Domain.DbContexts;
 using Domain.Entities;
+using WebAPI.Repositories;
 
 namespace WebAPI.Controllers
 {
@@ -9,10 +10,10 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class EducationsController : ControllerBase
     {
-        private readonly PortfolioDbContext _dbContext;
-        public EducationsController(PortfolioDbContext dbContext)
+        private readonly IEducationsRepository _educationsRepository;
+        public EducationsController(IEducationsRepository educationsRepository)
         {
-            _dbContext = dbContext;
+            _educationsRepository = educationsRepository;
         }
 
         [HttpGet]
@@ -20,7 +21,7 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var result = await _dbContext.Educations.OrderByDescending(c => c.StartYear).ThenByDescending(c => c.EndYear).ToListAsync();
+                var result = await _educationsRepository.Get();
                 return Ok(result);
             }
             catch (Exception)
@@ -35,11 +36,8 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var result = await _dbContext.Educations.FindAsync(id);
-                if (result is null)
-                {
-                    return NotFound();
-                }
+                var result = await _educationsRepository.GetById(id);
+                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
                 return Ok(result);
             }
             catch (Exception)
@@ -49,62 +47,30 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Education value)
+        public async Task<IActionResult> Post([FromBody] Education model)
         {
             try
             {
-                if (value is null || !ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
-                value.Id = Guid.NewGuid();
-                value.CreatedAt = DateTime.UtcNow;
-                value.LastUpdatedAt = DateTime.UtcNow;
-
-                var result = await _dbContext.Educations.AddAsync(value);
-                await _dbContext.SaveChangesAsync();
-                return Ok(result.Entity);
+                if (model is null || !ModelState.IsValid) return BadRequest(ModelState);
+                var result = await _educationsRepository.Add(model);
+                if (result is null) return StatusCode(StatusCodes.Status204NoContent, result);
+                return Ok(result);
             }
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
-
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] Education value)
+        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] Education model)
         {
             try
             {
-                if (value is null || !ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
-                if (id != value.Id)
-                {
-                    return BadRequest(value);
-                }
-
-                var toUpdate = await _dbContext.Educations.FindAsync(id);
-                if (toUpdate is null)
-                {
-                    return BadRequest(toUpdate);
-                }
-
-                toUpdate.Degree = value.Degree;
-                toUpdate.FieldOfStudy = value.FieldOfStudy;
-                toUpdate.School = value.School;
-                toUpdate.StartYear = value.StartYear;
-                toUpdate.EndYear = value.EndYear;
-                toUpdate.Description = value.Description;
-                toUpdate.LastUpdatedAt = DateTime.UtcNow;
-
-                await _dbContext.SaveChangesAsync();
-
-                return Ok(toUpdate);
+                if (model is null || model.Id != id || !ModelState.IsValid) return BadRequest(ModelState);
+                var result = await _educationsRepository.UpdateById(id, model);
+                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
+                return Ok(result);
             }
             catch (Exception)
             {
@@ -117,15 +83,9 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var toDelete = await _dbContext.Educations.FindAsync(id);
-                if (toDelete is null)
-                {
-                    return BadRequest(toDelete);
-                }
-
-                _dbContext.Educations.Remove(toDelete);
-                await _dbContext.SaveChangesAsync();
-                return Ok(toDelete);
+                var result = await _educationsRepository.DeleteById(id);
+                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
+                return Ok(result);
             }
             catch (Exception)
             {
