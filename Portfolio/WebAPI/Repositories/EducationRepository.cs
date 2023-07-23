@@ -6,10 +6,10 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace WebAPI.Repositories
 {
-    public class EducationsRepository : IEducationsRepository
+    public class EducationRepository : IEducationRepository
     {
         private readonly PortfolioDbContext _dbContext;
-        public EducationsRepository(PortfolioDbContext dbContext)
+        public EducationRepository(PortfolioDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -36,7 +36,7 @@ namespace WebAPI.Repositories
             return result.Entity;
         }
 
-        public async Task<Education?> UpdateById(Guid id, Education model)
+        public async Task<Education?> Update(Guid id, Education model)
         {
             var toUpdate = await GetById(id);
             if (toUpdate is null) return null;
@@ -54,7 +54,7 @@ namespace WebAPI.Repositories
             return toUpdate;
         }
 
-        public async Task<Education?> DeleteById(Guid id)
+        public async Task<Education?> Delete(Guid id)
         {
             var toDelete = await GetById(id);
             if (toDelete is null) return null;
