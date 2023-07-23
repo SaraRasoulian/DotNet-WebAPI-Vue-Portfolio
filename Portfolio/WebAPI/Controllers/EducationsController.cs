@@ -10,8 +10,8 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class EducationsController : ControllerBase
     {
-        private readonly IEducationsRepository _educationsRepository;
-        public EducationsController(IEducationsRepository educationsRepository)
+        private readonly IEducationRepository _educationsRepository;
+        public EducationsController(IEducationRepository educationsRepository)
         {
             _educationsRepository = educationsRepository;
         }
@@ -68,7 +68,7 @@ namespace WebAPI.Controllers
             try
             {
                 if (model is null || model.Id != id || !ModelState.IsValid) return BadRequest(ModelState);
-                var result = await _educationsRepository.UpdateById(id, model);
+                var result = await _educationsRepository.Update(id, model);
                 if (result is null) return StatusCode(StatusCodes.Status204NoContent);
                 return Ok(result);
             }
@@ -83,7 +83,7 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var result = await _educationsRepository.DeleteById(id);
+                var result = await _educationsRepository.Delete(id);
                 if (result is null) return StatusCode(StatusCodes.Status204NoContent);
                 return Ok(result);
             }

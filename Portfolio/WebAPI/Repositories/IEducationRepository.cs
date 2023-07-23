@@ -2,12 +2,12 @@
 
 namespace WebAPI.Repositories
 {
-    public interface IEducationsRepository
+    public interface IEducationRepository
     {
         Task<IEnumerable<Education>> Get();
         Task<Education?> GetById(Guid id);
         Task<Education?> Add(Education model);
-        Task<Education?> UpdateById(Guid id ,Education model);
-        Task<Education?> DeleteById(Guid id);
+        Task<Education?> Update(Guid id ,Education model);
+        Task<Education?> Delete(Guid id);
     }
 }

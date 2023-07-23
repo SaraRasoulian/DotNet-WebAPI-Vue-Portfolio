@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), o => o.UseNodaTime()));
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "PortfolioDB");
 
-builder.Services.AddScoped<IEducationsRepository,EducationsRepository>();
+builder.Services.AddScoped<IEducationRepository,EducationRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
