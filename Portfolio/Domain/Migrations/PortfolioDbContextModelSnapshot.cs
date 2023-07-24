@@ -22,7 +22,7 @@ namespace Domain.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Education", b =>
+            modelBuilder.Entity("Domain.Entities.Education", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -69,7 +69,7 @@ namespace Domain.Migrations
                     b.ToTable("Educations");
                 });
 
-            modelBuilder.Entity("Domain.Experience", b =>
+            modelBuilder.Entity("Domain.Entities.Experience", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,6 +102,7 @@ namespace Domain.Migrations
                         .HasColumnType("character varying(25)");
 
                     b.Property<string>("Website")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
@@ -110,7 +111,7 @@ namespace Domain.Migrations
                     b.ToTable("Experiences");
                 });
 
-            modelBuilder.Entity("Domain.Message", b =>
+            modelBuilder.Entity("Domain.Entities.Message", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -145,7 +146,7 @@ namespace Domain.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("Domain.Profile", b =>
+            modelBuilder.Entity("Domain.Entities.Profile", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -188,9 +189,22 @@ namespace Domain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Profiles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f03339d5-23a3-4893-a860-c1ac834a4d2d"),
+                            About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
+                            CreatedAt = new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1029),
+                            Email = "Example@gmail.com",
+                            FirstName = "Sara",
+                            Headline = "My name is Sara",
+                            LastName = "Rasoulian",
+                            LastUpdatedAt = new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1030)
+                        });
                 });
 
-            modelBuilder.Entity("Domain.SEOSettings", b =>
+            modelBuilder.Entity("Domain.Entities.SEOSettings", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -206,14 +220,17 @@ namespace Domain.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("MetaAuthor")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("character varying(250)");
 
                     b.Property<string>("MetaDescription")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("character varying(250)");
 
                     b.Property<string>("MetaKeywords")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("character varying(250)");
 
@@ -225,9 +242,21 @@ namespace Domain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SEOSettings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("6cbb3fb8-60d1-4ea5-a974-2184d0213e6f"),
+                            CreatedAt = new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1157),
+                            LastUpdatedAt = new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1157),
+                            MetaAuthor = "",
+                            MetaDescription = "",
+                            MetaKeywords = "",
+                            WebSiteTitle = "Sara Rasoulian | Portfolio"
+                        });
                 });
 
-            modelBuilder.Entity("Domain.SocialLink", b =>
+            modelBuilder.Entity("Domain.Entities.SocialLink", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
