@@ -6,7 +6,6 @@ namespace Domain.Entities
     public class Education : BaseEntity
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [MaxLength(50)]
