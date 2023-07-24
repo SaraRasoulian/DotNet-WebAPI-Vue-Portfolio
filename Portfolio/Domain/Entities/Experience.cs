@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class Experience : ObjectModel
+    public class Experience : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,6 +22,6 @@ namespace Domain.Entities
         public required string Description { get; set; }
 
         [MaxLength(255)]
-        public string? Website { get; set; }
+        public string Website { get; set; } = string.Empty;
     }
 }
