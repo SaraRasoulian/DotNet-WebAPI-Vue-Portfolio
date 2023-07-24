@@ -25,9 +25,6 @@ namespace WebAPI.Repositories
         public async Task<Education?> Add(Education model)
         {
             model.Id = Guid.NewGuid();
-            model.CreatedAt = DateTime.UtcNow;
-            model.LastUpdatedAt = DateTime.UtcNow;
-
             var result = await _dbContext.Educations.AddAsync(model);
             await _dbContext.SaveChangesAsync();
 

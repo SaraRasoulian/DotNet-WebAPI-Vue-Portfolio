@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class SEOSettings : ObjectModel
+    public class SEOSettings : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -13,13 +13,13 @@ namespace Domain.Entities
         public required string WebSiteTitle { get; set; }
 
         [MaxLength(250)]
-        public string? MetaAuthor { get; set; }
+        public string MetaAuthor { get; set; } = string.Empty;
 
         [MaxLength(250)]
-        public string? MetaDescription { get; set; }
+        public string MetaDescription { get; set; } = string.Empty;
 
         [MaxLength(250)]
-        public string? MetaKeywords { get; set; }
+        public string MetaKeywords { get; set; } = string.Empty;
 
         public byte[]? Favicon { get; set; }
     }

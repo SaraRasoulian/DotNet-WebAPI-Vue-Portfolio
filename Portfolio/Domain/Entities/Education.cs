@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class Education : ObjectModel
+    public class Education : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -25,6 +25,6 @@ namespace Domain.Entities
         public required string EndYear { get; set; }
 
         [MaxLength(500)]
-        public required string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
     }
 }
