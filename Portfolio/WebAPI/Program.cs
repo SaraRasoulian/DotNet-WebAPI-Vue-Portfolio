@@ -1,5 +1,6 @@
 using Domain.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using WebAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,10 @@ builder.Services.AddControllers();
 // Database
 builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), o => o.UseNodaTime()));
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "PortfolioDB");
+
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+//maybe?
+builder.Services.AddMvc().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddScoped<IEducationRepository,EducationRepository>();
 
