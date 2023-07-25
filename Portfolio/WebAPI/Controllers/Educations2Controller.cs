@@ -17,11 +17,11 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             try
             {
-                var result = _unitOfWork.Education2.GetAll();
+                var result = await _unitOfWork.Education2.GetAll();
                 return Ok(result);
             }
             catch (Exception)

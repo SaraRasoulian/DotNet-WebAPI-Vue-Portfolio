@@ -3,27 +3,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebAPI.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly PortfolioDbContext _context;
         private readonly DbSet<T> table;
-        public GenericRepository(PortfolioDbContext _context)
+        protected GenericRepository(PortfolioDbContext _context)
         {
             this._context = _context;
             table = _context.Set<T>();
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return table.ToList();
+            return await table.ToListAsync();
         }
-        public T GetById(object id)
+        public async Task<T> GetById(object id)
         {
-            return table.Find(id);
+            return await table.FindAsync(id);
         }
-        public T Add(T obj)
+        public async Task<T> Add(T obj)
         {
-            var result = table.Add(obj);
+            var result = await table.AddAsync(obj);
             return result.Entity;
         }
         public T Update(T obj)
@@ -38,7 +38,7 @@ namespace WebAPI.Repositories
         }
         public void Save()
         {
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
         }
     }
 }

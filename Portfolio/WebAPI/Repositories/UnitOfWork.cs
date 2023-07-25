@@ -15,14 +15,14 @@ namespace WebAPI.Repositories
             Profile = new ProfileRepository(_contect);
         }
 
-        public int Save()
+        public async Task<int> Save()
         {
-            return _contect.SaveChanges();
+            return await _contect.SaveChangesAsync();
         }
 
         public void Dispose()
         {
-            _contect.Dispose();
+            _contect.DisposeAsync();
         }
     }
 }

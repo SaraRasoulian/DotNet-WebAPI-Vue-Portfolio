@@ -4,6 +4,6 @@
     {
         IEducation2Repository Education2 { get; }
         IProfileRepository Profile { get; }
-        int Save();
+        Task<int> Save();
     }
 }
