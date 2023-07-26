@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Domain.DbContexts;
-using Domain.Entities;
 using WebAPI.Repositories;
 
 namespace WebAPI.Controllers
@@ -46,8 +44,10 @@ namespace WebAPI.Controllers
             }
         }
 
+
+        // Here Use ViewModel instead of DomainModel
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Education model)
+        public async Task<IActionResult> Post([FromBody] EducationRequest model)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] Education model)
+        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationRequest model)
         {
             try
             {

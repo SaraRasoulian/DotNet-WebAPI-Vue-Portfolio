@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Domain.DbContexts;
 using Domain.Entities;
 using WebAPI.Repositories;
 

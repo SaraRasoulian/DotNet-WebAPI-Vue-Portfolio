@@ -1,13 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Common;
 
 namespace Domain.Entities
 {
-    public class Education : BaseEntity
+    public class Education : EntityBase
     {
-        [Key]
-        public Guid Id { get; set; }
-
         [MaxLength(50)]
         public required string Degree { get; set; }
 
