@@ -1,13 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Common;
 
 namespace Domain.Entities
 {
-    public class Message : BaseEntity
+    public class Message : EntityBase
     {
-        [Key]
-        public Guid Id { get; set; }
-
         [MaxLength(100)]
         public required string Name { get; set; }
 

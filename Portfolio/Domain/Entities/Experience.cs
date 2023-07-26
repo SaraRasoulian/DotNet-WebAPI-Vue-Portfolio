@@ -1,13 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Common;
 
 namespace Domain.Entities
 {
-    public class Experience : BaseEntity
-    {
-        [Key]
-        public Guid Id { get; set; }
-
+    public class Experience : EntityBase
+    {       
         [MaxLength(50)]
         public required string CompanyName { get; set; }        
 

@@ -1,13 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Common;
 
 namespace Domain.Entities
 {
-    public class SEOSettings : BaseEntity
+    public class SEOSettings : EntityBase
     {
-        [Key]
-        public Guid Id { get; set; }
-
         [MaxLength(100)]
         public required string WebSiteTitle { get; set; }
 
