@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Domain.Entities;
-using WebAPI.Repositories;
+using Application.Interfaces;
+using Application.DTOs;
 
 namespace WebAPI.Controllers
 {
@@ -46,14 +46,18 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Education model)
+        public async Task<IActionResult> Post([FromBody] EducationDTO model)
         {
             try
             {
                 if (model is null || !ModelState.IsValid) return BadRequest(ModelState);
-                var result = await _educationsRepository.Add(model);
-                if (result is null) return StatusCode(StatusCodes.Status204NoContent, result);
-                return Ok(result);
+
+
+                //var result = await _educationsRepository.Add(model);
+                //if (result is null) return StatusCode(StatusCodes.Status204NoContent, result);
+                //return Ok(result);
+
+                return Ok();
             }
             catch (Exception)
             {
@@ -62,14 +66,16 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] Education model)
+        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDTO model)
         {
             try
             {
                 if (model is null || model.Id != id || !ModelState.IsValid) return BadRequest(ModelState);
-                var result = await _educationsRepository.Update(id, model);
-                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
-                return Ok(result);
+                //var result = await _educationsRepository.Update(id, model);
+                //if (result is null) return StatusCode(StatusCodes.Status204NoContent);
+                //return Ok(result);
+
+                return Ok();
             }
             catch (Exception)
             {

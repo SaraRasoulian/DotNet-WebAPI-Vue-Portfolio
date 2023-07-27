@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace WebAPI.Repositories
+namespace Application.Interfaces
 {
     public interface IProfileRepository : IGenericRepository<Profile>
     {

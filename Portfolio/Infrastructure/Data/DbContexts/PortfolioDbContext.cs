@@ -1,18 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using Application.Interfaces;
 
-namespace Domain.DbContexts
+namespace Infrastructure.Data.DbContexts
 {
-    public class PortfolioDbContext : DbContext
+    public class PortfolioDbContext : DbContext, IPortfolioDbContext
     {
         public PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : base(options) { }
-        public DbSet<Profile> Profiles { get; set; }
-        public DbSet<Experience> Experiences { get; set; }
-        public DbSet<Education> Educations { get; set; }
-        public DbSet<SocialLink> SocialLinks { get; set; }
-        public DbSet<Message> Messages { get; set; }
-        public DbSet<SEOSettings> SEOSettings { get; set; }
 
+        public DbSet<Profile> Profiles => Set<Profile>();
+        public DbSet<Experience> Experiences => Set<Experience>()
+            ;
+        public DbSet<Education> Educations => Set<Education>();
+        public DbSet<SocialLink> SocialLinks => Set<SocialLink>();
+        public DbSet<Message> Messages => Set<Message>();
+        public DbSet<SEOSettings> SEOSettings => Set<SEOSettings>();
+                
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Profile>().HasData(
@@ -34,6 +37,16 @@ namespace Domain.DbContexts
                     WebSiteTitle = "Sara Rasoulian | Portfolio",             
                 }
                 );
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            return await base.SaveChangesAsync(cancellationToken);
         }
     }
 }

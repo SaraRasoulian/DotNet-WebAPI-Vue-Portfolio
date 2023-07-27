@@ -1,7 +1,7 @@
-﻿using Domain.DbContexts;
+﻿using Application.Interfaces;
 using Domain.Entities;
-
-namespace WebAPI.Repositories
+using Infrastructure.Data.DbContexts;
+namespace Infrastructure.Repositories
 {
     public class Education2Repository : GenericRepository<Education>, IEducation2Repository
     {
