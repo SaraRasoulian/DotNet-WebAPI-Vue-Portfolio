@@ -1,7 +1,8 @@
-﻿using Domain.DbContexts;
+﻿using Application.Interfaces;
+using Infrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebAPI.Repositories
+namespace Infrastructure.Repositories
 {
     public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
     {

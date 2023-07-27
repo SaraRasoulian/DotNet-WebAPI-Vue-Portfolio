@@ -1,9 +1,10 @@
-﻿using Domain.DbContexts;
+﻿using Application.Interfaces;
 using Domain.Entities;
+using Infrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebAPI.Repositories
-{
+namespace Infrastructure.Repositories
+{ 
     public class EducationRepository : IEducationRepository
     {
         private readonly PortfolioDbContext _dbContext;

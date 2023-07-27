@@ -1,6 +1,6 @@
-﻿using Domain.DbContexts;
-
-namespace WebAPI.Repositories
+﻿using Application.Interfaces;
+using Infrastructure.Data.DbContexts;
+namespace Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

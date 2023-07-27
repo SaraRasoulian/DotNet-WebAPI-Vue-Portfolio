@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Domain.Migrations
+namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialize : Migration
+    public partial class v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,7 +23,9 @@ namespace Domain.Migrations
                     EndYear = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
                     Description = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastUpdatedBy = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,7 +43,9 @@ namespace Domain.Migrations
                     Description = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
                     Website = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastUpdatedBy = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,7 +62,9 @@ namespace Domain.Migrations
                     Content = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
                     IsRead = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastUpdatedBy = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -77,7 +83,9 @@ namespace Domain.Migrations
                     About = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
                     Photo = table.Column<byte[]>(type: "bytea", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastUpdatedBy = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,7 +103,9 @@ namespace Domain.Migrations
                     MetaKeywords = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
                     Favicon = table.Column<byte[]>(type: "bytea", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastUpdatedBy = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -111,7 +121,9 @@ namespace Domain.Migrations
                     URL = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
                     Icon = table.Column<byte[]>(type: "bytea", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastUpdatedBy = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -120,13 +132,13 @@ namespace Domain.Migrations
 
             migrationBuilder.InsertData(
                 table: "Profiles",
-                columns: new[] { "Id", "About", "CreatedAt", "Email", "FirstName", "Headline", "LastName", "LastUpdatedAt", "Photo" },
-                values: new object[] { new Guid("f03339d5-23a3-4893-a860-c1ac834a4d2d"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1029), "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1030), null });
+                columns: new[] { "Id", "About", "CreatedAt", "CreatedBy", "Email", "FirstName", "Headline", "LastName", "LastUpdatedAt", "LastUpdatedBy", "Photo" },
+                values: new object[] { new Guid("5b541c1f-85db-40d2-ab7e-4be9aff17c68"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", new DateTime(2023, 7, 27, 12, 28, 57, 960, DateTimeKind.Utc).AddTicks(4117), new Guid("48bb4dbf-142b-4e6d-8891-44f1b057789e"), "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", new DateTime(2023, 7, 27, 12, 28, 57, 960, DateTimeKind.Utc).AddTicks(4138), new Guid("00000000-0000-0000-0000-000000000000"), null });
 
             migrationBuilder.InsertData(
                 table: "SEOSettings",
-                columns: new[] { "Id", "CreatedAt", "Favicon", "LastUpdatedAt", "MetaAuthor", "MetaDescription", "MetaKeywords", "WebSiteTitle" },
-                values: new object[] { new Guid("6cbb3fb8-60d1-4ea5-a974-2184d0213e6f"), new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1157), null, new DateTime(2023, 7, 24, 15, 8, 4, 836, DateTimeKind.Utc).AddTicks(1157), "", "", "", "Sara Rasoulian | Portfolio" });
+                columns: new[] { "Id", "CreatedAt", "CreatedBy", "Favicon", "LastUpdatedAt", "LastUpdatedBy", "MetaAuthor", "MetaDescription", "MetaKeywords", "WebSiteTitle" },
+                values: new object[] { new Guid("654f025d-6e81-4e2a-ae19-d0fc16cb6e8b"), new DateTime(2023, 7, 27, 12, 28, 57, 960, DateTimeKind.Utc).AddTicks(4259), new Guid("898126ce-b606-4c37-9e9d-582a3d9d6238"), null, new DateTime(2023, 7, 27, 12, 28, 57, 960, DateTimeKind.Utc).AddTicks(4268), new Guid("00000000-0000-0000-0000-000000000000"), "", "", "", "Sara Rasoulian | Portfolio" });
         }
 
         /// <inheritdoc />

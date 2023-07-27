@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace WebAPI.Repositories
+﻿namespace Application.Interfaces
 {
     public interface IGenericRepository<T> where T : class
     {

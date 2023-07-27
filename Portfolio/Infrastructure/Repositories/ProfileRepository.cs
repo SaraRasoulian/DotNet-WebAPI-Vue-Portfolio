@@ -1,7 +1,8 @@
-﻿using Domain.DbContexts;
+﻿using Application.Interfaces;
+using Infrastructure.Data.DbContexts;
 using Domain.Entities;
 
-namespace WebAPI.Repositories
+namespace Infrastructure.Repositories
 {
     public class ProfileRepository : GenericRepository<Profile>, IProfileRepository
     {

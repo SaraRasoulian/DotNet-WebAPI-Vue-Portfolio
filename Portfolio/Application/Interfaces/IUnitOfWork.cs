@@ -1,4 +1,4 @@
-﻿namespace WebAPI.Repositories
+﻿namespace Application.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
