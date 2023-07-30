@@ -27,19 +27,18 @@ namespace Infrastructure.Repositories
             var result = await table.AddAsync(obj);
             return result.Entity;
         }
-        public T Update(T obj)
+        public void Update(T obj)
         {
-            var result = table.Attach(obj);
+            table.Update(obj);
             _context.Entry(obj).State = EntityState.Modified;
-            return result.Entity;
         }
         public void Delete(T obj)
         {
             table.Remove(obj);
         }
-        public void Save()
-        {
-            _context.SaveChangesAsync();
-        }
+        //public async void Save()
+        //{
+        //   await _context.SaveChangesAsync();
+        //}
     }
 }

@@ -14,13 +14,13 @@ namespace WebAPI.Controllers
             _educationService = educationService;
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
                 var result = await _educationService.GetAll();
+                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
                 return Ok(result);
             }
             catch (Exception)
@@ -54,7 +54,6 @@ namespace WebAPI.Controllers
                 if (model is null || !ModelState.IsValid) return BadRequest(ModelState);
 
                 var result = await _educationService.Add(model);
-                
                 if (result is null) return StatusCode(StatusCodes.Status204NoContent, result);
                 return Ok(result);
             }
@@ -71,10 +70,9 @@ namespace WebAPI.Controllers
             {
                 if (model is null || model.Id != id || !ModelState.IsValid) return BadRequest(ModelState);
 
-                var result = _educationService.Update(id,model);
-                
-                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
-                return Ok(result);
+                bool isOk = await _educationService.Update(id, model);
+                if (!isOk) return StatusCode(StatusCodes.Status400BadRequest);
+                return Ok();
             }
             catch (Exception)
             {
@@ -87,9 +85,9 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var toDelete = await _educationService.Delete(id);
-                if (toDelete is null) return StatusCode(StatusCodes.Status204NoContent);                
-                return Ok(toDelete);
+                var isOk = await _educationService.Delete(id);
+                if (!isOk) return StatusCode(StatusCodes.Status400BadRequest);
+                return Ok();
             }
             catch (Exception)
             {
