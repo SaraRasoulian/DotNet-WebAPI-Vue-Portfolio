@@ -17,9 +17,6 @@ builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(b
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "PortfolioDB");
 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-//maybe?
-builder.Services.AddMvc().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
-
 builder.Services.AddScoped<IEducationRepository,EducationRepository>();
 builder.Services.AddScoped<IEducationService,EducationService>();
 

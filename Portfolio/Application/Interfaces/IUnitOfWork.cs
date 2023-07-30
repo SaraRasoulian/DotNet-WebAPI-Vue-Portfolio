@@ -4,6 +4,6 @@
     {
         IEducation2Repository Education2 { get; }
         IProfileRepository Profile { get; }
-        Task<int> Save();
+        Task<int> CommitAsync();
     }
 }

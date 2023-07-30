@@ -10,8 +10,8 @@ namespace Application.Services
 
         Task<EducationDTO> Add(EducationDTO model);
 
-        Task<EducationDTO> Update(Guid id, EducationDTO model);
+        Task<bool> Update(Guid id, EducationDTO model);
 
-        Task<EducationDTO> Delete(Guid id);
+        Task<bool> Delete(Guid id);
     }
 }

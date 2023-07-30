@@ -15,9 +15,9 @@ namespace Infrastructure.Repositories
             Profile = new ProfileRepository(_contect);
         }
 
-        public async Task<int> Save()
+        public Task<int> CommitAsync()
         {
-            return await _contect.SaveChangesAsync();
+            return _contect.SaveChangesAsync();
         }
 
         public void Dispose()
