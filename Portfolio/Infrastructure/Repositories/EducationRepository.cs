@@ -31,8 +31,6 @@ namespace Infrastructure.Repositories
             Education toAdd = model.Adapt<Education>();
 
             toAdd.Id = Guid.NewGuid();
-            toAdd.CreatedAt = DateTime.UtcNow;
-            toAdd.LastUpdatedAt = DateTime.UtcNow;
 
             var result = await _dbContext.Educations.AddAsync(toAdd);
             await _dbContext.SaveChangesAsync();
@@ -51,7 +49,6 @@ namespace Infrastructure.Repositories
             toUpdate.StartYear = model.StartYear;
             toUpdate.EndYear = model.EndYear;
             toUpdate.Description = model.Description;
-            toUpdate.LastUpdatedAt = DateTime.UtcNow;
 
             var result = _dbContext.Educations.Update(toUpdate);
             await _dbContext.SaveChangesAsync();

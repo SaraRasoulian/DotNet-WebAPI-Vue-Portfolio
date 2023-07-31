@@ -30,8 +30,6 @@ namespace Infrastructure.Services
         {
             var EducationEntity = model.Adapt<Education>();
             EducationEntity.Id = Guid.NewGuid();
-            EducationEntity.CreatedAt = DateTime.UtcNow;
-            EducationEntity.LastUpdatedAt = DateTime.UtcNow;
 
             var result = await _unitOfWork.Education2.Add(EducationEntity);
             await _unitOfWork.CommitAsync();
@@ -52,7 +50,6 @@ namespace Infrastructure.Services
                 toUpdate.StartYear = model.StartYear;
                 toUpdate.EndYear = model.EndYear;
                 toUpdate.Description = model.Description;
-                toUpdate.LastUpdatedAt = DateTime.UtcNow;
 
                 _unitOfWork.Education2.Update(toUpdate);
                 await _unitOfWork.CommitAsync();
