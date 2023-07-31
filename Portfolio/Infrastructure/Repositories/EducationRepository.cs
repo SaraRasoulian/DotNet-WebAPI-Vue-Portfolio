@@ -1,12 +1,12 @@
-﻿using Domain.Entities;
+﻿using Application.DTOs;
 using Application.Interfaces;
-using Application.DTOs;
-using Microsoft.EntityFrameworkCore;
+using Domain.Entities;
 using Mapster;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
-{ 
-    public class EducationRepository : IEducationRepository
+{
+    public sealed class EducationRepository : IEducationRepository
     {
         private readonly IPortfolioDbContext _dbContext;
         public EducationRepository(IPortfolioDbContext dbContext)

@@ -1,10 +1,9 @@
-using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
 using Application.Interfaces;
-using Infrastructure.Repositories;
 using Application.Services;
-using Infrastructure.Services;
 using Infrastructure.DbContexts;
+using Infrastructure.Repositories;
+using Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,10 +17,10 @@ builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnection
 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IPortfolioDbContext,PortfolioDbContext>();
+builder.Services.AddScoped<IPortfolioDbContext, PortfolioDbContext>();
 
-builder.Services.AddScoped<IEducationRepository,EducationRepository>();
-builder.Services.AddScoped<IEducationService,EducationService>();
+builder.Services.AddScoped<IEducationRepository, EducationRepository>();
+builder.Services.AddScoped<IEducationService, EducationService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
