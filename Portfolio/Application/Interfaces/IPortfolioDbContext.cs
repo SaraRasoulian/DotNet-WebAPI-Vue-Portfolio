@@ -11,6 +11,6 @@ namespace Application.Interfaces
         DbSet<SocialLink> SocialLinks { get; }
         DbSet<Message> Messages { get; }
         DbSet<SEOSettings> SEOSettings { get; }
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
