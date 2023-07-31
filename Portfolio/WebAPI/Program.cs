@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using Application.Interfaces;
 using Infrastructure.Repositories;
-using Infrastructure.Data.DbContexts;
 using Application.Services;
 using Infrastructure.Services;
+using Infrastructure.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
-using Infrastructure.Data.DbContexts;
+using Infrastructure.DbContexts;
+
 namespace Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork

@@ -1,23 +1,26 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Application.Interfaces;
 using Domain.Entities;
-using Application.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
-namespace Infrastructure.Data.DbContexts
+namespace Infrastructure.DbContexts
 {
     public class PortfolioDbContext : DbContext, IPortfolioDbContext
     {
         public PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : base(options) { }
 
         public DbSet<Profile> Profiles => Set<Profile>();
-        public DbSet<Experience> Experiences => Set<Experience>()
-            ;
+        public DbSet<Experience> Experiences => Set<Experience>();
         public DbSet<Education> Educations => Set<Education>();
         public DbSet<SocialLink> SocialLinks => Set<SocialLink>();
         public DbSet<Message> Messages => Set<Message>();
         public DbSet<SEOSettings> SEOSettings => Set<SEOSettings>();
-                
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            //Seed
             modelBuilder.Entity<Profile>().HasData(
                 new Profile
                 {
@@ -34,14 +37,9 @@ namespace Infrastructure.Data.DbContexts
                 new SEOSettings
                 {
                     Id = Guid.NewGuid(),
-                    WebSiteTitle = "Sara Rasoulian | Portfolio",             
+                    WebSiteTitle = "Sara Rasoulian | Portfolio",
                 }
                 );
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
