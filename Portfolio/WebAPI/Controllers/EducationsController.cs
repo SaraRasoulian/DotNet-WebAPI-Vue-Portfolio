@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Application.Interfaces;
 using Application.DTOs;
 
@@ -52,12 +51,9 @@ namespace WebAPI.Controllers
             {
                 if (model is null || !ModelState.IsValid) return BadRequest(ModelState);
 
-
-                //var result = await _educationsRepository.Add(model);
-                //if (result is null) return StatusCode(StatusCodes.Status204NoContent, result);
-                //return Ok(result);
-
-                return Ok();
+                var result = await _educationsRepository.Add(model);
+                if (result is null) return StatusCode(StatusCodes.Status204NoContent, result);
+                return Ok(result);
             }
             catch (Exception)
             {
@@ -71,11 +67,9 @@ namespace WebAPI.Controllers
             try
             {
                 if (model is null || model.Id != id || !ModelState.IsValid) return BadRequest(ModelState);
-                //var result = await _educationsRepository.Update(id, model);
-                //if (result is null) return StatusCode(StatusCodes.Status204NoContent);
-                //return Ok(result);
-
-                return Ok();
+                var result = await _educationsRepository.Update(id, model);
+                if (result is null) return StatusCode(StatusCodes.Status400BadRequest);
+                return Ok(result);
             }
             catch (Exception)
             {
@@ -87,12 +81,10 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             try
-            {
-                var toDelete = await _educationsRepository.GetById(id);
-                if (toDelete is null) return StatusCode(StatusCodes.Status204NoContent);
-
-                await _educationsRepository.Delete(toDelete);
-                return Ok();
+            {             
+                var result = await _educationsRepository.Delete(id);
+                if(result is null) return BadRequest(ModelState);
+                return Ok(result);
             }
             catch (Exception)
             {

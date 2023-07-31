@@ -1,7 +1,9 @@
-﻿using Application.Interfaces;
-using Domain.Entities;
+﻿using Domain.Entities;
+using Application.Interfaces;
+using Application.DTOs;
 using Infrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using Mapster;
 
 namespace Infrastructure.Repositories
 { 
@@ -13,28 +15,36 @@ namespace Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Education>> GetAll()
+        public async Task<IEnumerable<EducationDTO>> GetAll()
         {
-            return await _dbContext.Educations.OrderByDescending(c => c.StartYear).ThenByDescending(c => c.EndYear).ToListAsync();
+            var list = await _dbContext.Educations.OrderByDescending(c => c.StartYear).ThenByDescending(c => c.EndYear).ToListAsync();
+            return list.Adapt<List<EducationDTO>>();
         }
 
-        public async Task<Education?> GetById(Guid id)
+        public async Task<EducationDTO?> GetById(Guid id)
         {
-            return await _dbContext.Educations.FindAsync(id);
+            var item = await _dbContext.Educations.FindAsync(id);
+            return item.Adapt<EducationDTO>();
         }
 
-        public async Task<Education?> Add(Education model)
+        public async Task<EducationDTO?> Add(EducationDTO model)
         {
-            model.Id = Guid.NewGuid();
-            var result = await _dbContext.Educations.AddAsync(model);
+
+            Education toAdd = model.Adapt<Education>();
+
+            toAdd.Id = Guid.NewGuid();
+            toAdd.CreatedAt = DateTime.UtcNow;
+            toAdd.LastUpdatedAt = DateTime.UtcNow;
+
+            var result = await _dbContext.Educations.AddAsync(toAdd);
             await _dbContext.SaveChangesAsync();
 
-            return result.Entity;
+            return result.Entity.Adapt<EducationDTO>();
         }
 
-        public async Task<Education?> Update(Guid id, Education model)
+        public async Task<EducationDTO?> Update(Guid id, EducationDTO model)
         {
-            var toUpdate = await GetById(id);
+            var toUpdate = await _dbContext.Educations.FindAsync(id);
             if (toUpdate is null) return null;
 
             toUpdate.Degree = model.Degree;
@@ -45,15 +55,21 @@ namespace Infrastructure.Repositories
             toUpdate.Description = model.Description;
             toUpdate.LastUpdatedAt = DateTime.UtcNow;
 
+            var result = _dbContext.Educations.Update(toUpdate);
             await _dbContext.SaveChangesAsync();
 
-            return toUpdate;
+            return result.Entity.Adapt<EducationDTO>();
         }
 
-        public async Task Delete(Education model)
+        public async Task<EducationDTO?> Delete(Guid id)
         {
-            _dbContext.Educations.Remove(model);
+            var toDelete = await _dbContext.Educations.FindAsync(id);
+            if (toDelete is null) return null;
+
+            var result = _dbContext.Educations.Remove(toDelete);
             await _dbContext.SaveChangesAsync();
+
+            return result.Entity.Adapt<EducationDTO>();
         }
     }
 }
