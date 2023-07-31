@@ -1,7 +1,6 @@
 ﻿using Domain.Entities;
 using Application.Interfaces;
 using Application.DTOs;
-using Infrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Mapster;
 
@@ -9,8 +8,8 @@ namespace Infrastructure.Repositories
 { 
     public class EducationRepository : IEducationRepository
     {
-        private readonly PortfolioDbContext _dbContext;
-        public EducationRepository(PortfolioDbContext dbContext)
+        private readonly IPortfolioDbContext _dbContext;
+        public EducationRepository(IPortfolioDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -29,7 +28,6 @@ namespace Infrastructure.Repositories
 
         public async Task<EducationDTO?> Add(EducationDTO model)
         {
-
             Education toAdd = model.Adapt<Education>();
 
             toAdd.Id = Guid.NewGuid();

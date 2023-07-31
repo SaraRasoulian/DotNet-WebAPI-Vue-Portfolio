@@ -17,6 +17,9 @@ builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(b
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "PortfolioDB");
 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IPortfolioDbContext,PortfolioDbContext>();
+
 builder.Services.AddScoped<IEducationRepository,EducationRepository>();
 builder.Services.AddScoped<IEducationService,EducationService>();
 
