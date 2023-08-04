@@ -21,11 +21,11 @@ public class EducationConfiguration : IEntityTypeConfiguration<Education>
             .IsRequired();
 
         builder.Property(t => t.StartYear)
-            .HasMaxLength(25)
+            .HasMaxLength(4)
             .IsRequired();
 
         builder.Property(t => t.EndYear)
-            .HasMaxLength(25)
+            .HasMaxLength(4)
             .IsRequired();
 
         builder.Property(t => t.Description)
