@@ -1,7 +1,9 @@
-﻿using Application.Interfaces;
+﻿using Application.DTOs;
+using Application.Interfaces;
 using Domain.Entities;
 using Infrastructure.Repositories;
 using Moq;
+using Newtonsoft.Json.Linq;
 
 namespace Application.Tests.Unit
 {
@@ -34,6 +36,7 @@ namespace Application.Tests.Unit
             // Assert
             Assert.NotNull(result);
             Assert.Equal(expectedId, result.Id);
+            Assert.IsType<EducationDTO>(result);
         }
 
         [Fact]
