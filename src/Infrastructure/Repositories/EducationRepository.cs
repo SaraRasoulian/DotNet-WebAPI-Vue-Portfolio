@@ -23,6 +23,7 @@ namespace Infrastructure.Repositories
         public async Task<EducationDTO?> GetById(Guid id)
         {
             var item = await _dbContext.Educations.FindAsync(id);
+            if (item == null) return null;
             return item.Adapt<EducationDTO>();
         }
 
