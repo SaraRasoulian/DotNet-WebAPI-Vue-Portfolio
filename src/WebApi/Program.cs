@@ -1,8 +1,6 @@
 using Application.Interfaces;
-using Application.Services;
 using Infrastructure.DbContexts;
 using Infrastructure.Repositories;
-using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,10 +14,8 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), o => o.UseNodaTime()));
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "PortfolioDB");
 
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IPortfolioDbContext, PortfolioDbContext>();
 builder.Services.AddScoped<IEducationRepository, EducationRepository>();
-builder.Services.AddScoped<IEducationService, EducationService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

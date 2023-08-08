@@ -300,7 +300,7 @@ namespace WebApi.Tests.Unit
             var result = await educationController.Delete(nonExistingId);
 
             // Assert
-            Assert.IsType<BadRequestResult>(result);
+            Assert.IsType<BadRequestObjectResult>(result);
         }
 
         [Fact]
