@@ -2,7 +2,7 @@
 
 namespace Application.Interfaces
 {
-    public interface IEducationRepository
+    public interface IEducationRepository_temp
     {
         Task<IEnumerable<EducationDTO>> GetAll();
         Task<EducationDTO?> GetById(Guid id);
