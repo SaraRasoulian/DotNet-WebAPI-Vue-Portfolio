@@ -1,6 +1,6 @@
 ﻿namespace Application.Tests
 {
-    internal class EducationServiceTests
+    public class EducationServiceTests
     {
     }
 }
