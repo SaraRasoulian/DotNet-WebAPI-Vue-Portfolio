@@ -12,5 +12,6 @@ namespace Application.Interfaces
         DbSet<Message> Messages { get; }
         DbSet<SEOSettings> SEOSettings { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+        void Dispose();
     }
 }
