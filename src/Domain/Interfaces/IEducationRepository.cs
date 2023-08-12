@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
 namespace Domain.Interfaces
 {
-    public interface IEducationRepository
+    public interface IEducationRepository : IDisposable
     {
         Task<IEnumerable<Education>> GetAll();
         Task<Education?> GetById(Guid id);

@@ -1,23 +1,20 @@
 ﻿using Application.Interfaces;
 
-namespace Infrastructure
+namespace Infrastructure.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
         private bool _disposed = false;
         private readonly IPortfolioDbContext _dbContext;
-        public UnitOfWork(IPortfolioDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        public UnitOfWork(IPortfolioDbContext dbContext) => _dbContext = dbContext;
 
-        public Task<int> CommitAsync()
+        public async Task<int> CommitAsync()
         {
             if (_disposed)
             {
-                throw new ObjectDisposedException(this.GetType().FullName);
+                throw new ObjectDisposedException(GetType().FullName);
             }
-            return _dbContext.SaveChangesAsync();
+            return await _dbContext.SaveChangesAsync();
         }
 
         public void Dispose()
