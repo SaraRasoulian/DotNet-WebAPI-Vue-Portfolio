@@ -1,7 +1,10 @@
-﻿namespace Application.Interfaces
+﻿using Domain.Interfaces;
+
+namespace Application.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
+        IEducationRepository Education { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

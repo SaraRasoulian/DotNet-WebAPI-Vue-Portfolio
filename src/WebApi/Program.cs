@@ -1,6 +1,8 @@
 using Application.Interfaces;
+using Application.Service;
 using Infrastructure.DbContexts;
 using Infrastructure.Repositories;
+using Infrastructure.UoW;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +18,8 @@ builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnection
 
 
 builder.Services.AddScoped<IEducationRepository_temp, EducationRepository_temp>();
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEducationService, EducationService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
