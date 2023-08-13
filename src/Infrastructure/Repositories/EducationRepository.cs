@@ -1,14 +1,14 @@
-﻿using Application.Interfaces;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Domain.Interfaces;
+using Infrastructure.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
     public class EducationRepository : IEducationRepository
     {
-        private readonly IPortfolioDbContext _dbContext;
-        public EducationRepository(IPortfolioDbContext dbContext)
+        private readonly PortfolioDbContext _dbContext;
+        public EducationRepository(PortfolioDbContext dbContext)
         {
             _dbContext = dbContext;
         }

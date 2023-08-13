@@ -39,8 +39,8 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("EndYear")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
 
                     b.Property<string>("FieldOfStudy")
                         .IsRequired()
@@ -54,8 +54,8 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("StartYear")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
 
                     b.HasKey("Id");
 
@@ -80,13 +80,13 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("EndYear")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
 
                     b.Property<string>("StartYear")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
 
                     b.Property<string>("Website")
                         .HasMaxLength(255)
@@ -120,6 +120,9 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("SentAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -167,7 +170,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("39028107-7203-45fa-8234-c2ca117e97aa"),
+                            Id = new Guid("c1e9b646-34de-4e46-b6b1-4efb2f320578"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",
@@ -209,7 +212,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f93b9138-5258-4f1a-a5d9-33d6faac9e0b"),
+                            Id = new Guid("a10d6fdd-2744-4c5a-b47f-43e087811880"),
                             WebSiteTitle = "Sara Rasoulian | Portfolio"
                         });
                 });

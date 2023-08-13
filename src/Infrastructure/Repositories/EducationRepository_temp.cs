@@ -1,6 +1,7 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
 using Domain.Entities;
+using Infrastructure.DbContexts;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,8 +9,8 @@ namespace Infrastructure.Repositories
 {
     public sealed class EducationRepository_temp : IEducationRepository_temp
     {
-        private readonly IPortfolioDbContext _dbContext;
-        public EducationRepository_temp(IPortfolioDbContext dbContext)
+        private readonly PortfolioDbContext _dbContext;
+        public EducationRepository_temp(PortfolioDbContext dbContext)
         {
             _dbContext = dbContext;
         }

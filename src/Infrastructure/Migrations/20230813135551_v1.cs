@@ -19,8 +19,8 @@ namespace Infrastructure.Migrations
                     Degree = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     FieldOfStudy = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
                     School = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
-                    StartYear = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
-                    EndYear = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
+                    StartYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    EndYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     Description = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: true)
                 },
                 constraints: table =>
@@ -34,8 +34,8 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CompanyName = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    StartYear = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
-                    EndYear = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
+                    StartYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    EndYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     Description = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
                     Website = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: true)
                 },
@@ -52,6 +52,7 @@ namespace Infrastructure.Migrations
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "character varying(320)", maxLength: 320, nullable: false),
                     Content = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
+                    SentAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     IsRead = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
@@ -109,12 +110,12 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("39028107-7203-45fa-8234-c2ca117e97aa"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+                values: new object[] { new Guid("c1e9b646-34de-4e46-b6b1-4efb2f320578"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
 
             migrationBuilder.InsertData(
                 table: "SEOSettings",
                 columns: new[] { "Id", "Favicon", "MetaAuthor", "MetaDescription", "MetaKeywords", "WebSiteTitle" },
-                values: new object[] { new Guid("f93b9138-5258-4f1a-a5d9-33d6faac9e0b"), null, null, null, null, "Sara Rasoulian | Portfolio" });
+                values: new object[] { new Guid("a10d6fdd-2744-4c5a-b47f-43e087811880"), null, null, null, null, "Sara Rasoulian | Portfolio" });
         }
 
         /// <inheritdoc />

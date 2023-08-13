@@ -1,12 +1,13 @@
-﻿using Application.Interfaces;
+﻿using Infrastructure.DbContexts;
+using Application.Interfaces;
 
 namespace Infrastructure.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
         private bool _disposed = false;
-        private readonly IPortfolioDbContext _dbContext;
-        public UnitOfWork(IPortfolioDbContext dbContext) => _dbContext = dbContext;
+        private readonly PortfolioDbContext _dbContext;
+        public UnitOfWork(PortfolioDbContext dbContext) => _dbContext = dbContext;
 
         public async Task<int> CommitAsync()
         {

@@ -13,11 +13,11 @@ public class ExperienceConfiguration : IEntityTypeConfiguration<Experience>
             .IsRequired();
 
         builder.Property(t => t.StartYear)
-            .HasMaxLength(4)
+            .HasMaxLength(10)
             .IsRequired();
 
         builder.Property(t => t.EndYear)
-            .HasMaxLength(4)
+            .HasMaxLength(10)
             .IsRequired();
 
         builder.Property(t => t.Description)

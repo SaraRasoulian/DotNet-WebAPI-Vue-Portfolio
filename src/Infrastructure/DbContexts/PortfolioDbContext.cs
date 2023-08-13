@@ -1,20 +1,19 @@
-﻿using Application.Interfaces;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace Infrastructure.DbContexts
 {
-    public class PortfolioDbContext : DbContext, IPortfolioDbContext
+    public class PortfolioDbContext : DbContext
     {
         public PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : base(options) { }
 
-        public DbSet<Profile> Profiles => Set<Profile>();
-        public DbSet<Experience> Experiences => Set<Experience>();
-        public DbSet<Education> Educations => Set<Education>();
-        public DbSet<SocialLink> SocialLinks => Set<SocialLink>();
-        public DbSet<Message> Messages => Set<Message>();
-        public DbSet<SEOSettings> SEOSettings => Set<SEOSettings>();
+        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<Education> Educations { get; set; }
+        public DbSet<SocialLink> SocialLinks { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<SEOSettings> SEOSettings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
