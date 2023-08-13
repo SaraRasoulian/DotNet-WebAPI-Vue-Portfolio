@@ -1,7 +1,7 @@
 ﻿namespace Application.Interfaces
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
-        Task<int> CommitAsync();
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

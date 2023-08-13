@@ -3,35 +3,17 @@ using Application.Interfaces;
 
 namespace Infrastructure.UoW
 {
-    public class UnitOfWork : IUnitOfWork
+    public sealed class UnitOfWork : IUnitOfWork
     {
-        private bool _disposed = false;
         private readonly PortfolioDbContext _dbContext;
-        public UnitOfWork(PortfolioDbContext dbContext) => _dbContext = dbContext;
-
-        public async Task<int> CommitAsync()
+        public UnitOfWork(PortfolioDbContext dbContext)
         {
-            if (_disposed)
-            {
-                throw new ObjectDisposedException(GetType().FullName);
-            }
-            return await _dbContext.SaveChangesAsync();
+            _dbContext = dbContext;
         }
 
-        public void Dispose()
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (_disposed) return;
-            if (disposing && _dbContext != null)
-            {
-                _dbContext.Dispose();
-            }
-            _disposed = true;
+            return await _dbContext.SaveChangesAsync(cancellationToken);
         }
     }
 }
