@@ -1,7 +1,6 @@
 using Application.Interfaces;
 using Application.Service;
 using Infrastructure.DbContexts;
-using Infrastructure.Repositories;
 using Infrastructure.UoW;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,13 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-
 // Database
 builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), o => o.UseNodaTime()));
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "PortfolioDB");
 
-
-builder.Services.AddScoped<IEducationRepository_temp, EducationRepository_temp>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEducationService, EducationService>();
 
