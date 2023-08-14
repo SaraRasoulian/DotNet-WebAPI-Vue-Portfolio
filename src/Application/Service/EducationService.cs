@@ -25,23 +25,44 @@ namespace Application.Service
             return result?.Adapt<EducationDTO>();
         }
 
-        public async Task Add(EducationDTO model)
+        public async Task<bool> Add(EducationDTO model)
         {
+            if (model is null) return false;
             Education toAdd = model.Adapt<Education>();
 
             toAdd.Id = Guid.NewGuid();
 
             await _unitOfWork.Education.Add(toAdd);
             await _unitOfWork.SaveChangesAsync();
+            return true;
         }
-        public Task<bool> Update(Guid id, EducationDTO model)
+        public async Task<bool> Update(Guid id, EducationDTO model)
         {
-            throw new NotImplementedException();
+            if (model is null || model.Id != id) return false;
+
+            var toUpdate = await _unitOfWork.Education.GetById(id);
+            if (toUpdate is null) return false;
+
+            toUpdate.Degree = model.Degree;
+            toUpdate.FieldOfStudy = model.FieldOfStudy;
+            toUpdate.School = model.School;
+            toUpdate.StartYear = model.StartYear;
+            toUpdate.EndYear = model.EndYear;
+            toUpdate.Description = model.Description;
+
+            _unitOfWork.Education.Update(toUpdate);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
         }
 
-        public Task<bool> Delete(Guid id)
+        public async Task<bool> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var toDelete = await _unitOfWork.Education.GetById(id);
+            if (toDelete is null) return false;
+
+            _unitOfWork.Education.Delete(toDelete);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
         }
     }
 }

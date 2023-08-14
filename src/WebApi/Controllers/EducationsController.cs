@@ -35,7 +35,7 @@ namespace WebApi.Controllers
             try
             {
                 var result = await _educationService.GetById(id);
-                if (result is null) return StatusCode(StatusCodes.Status204NoContent);
+                if (result is null) return NoContent();
                 return Ok(result);
             }
             catch (Exception)
@@ -49,9 +49,9 @@ namespace WebApi.Controllers
         {
             try
             {
-                if (model is null || !ModelState.IsValid) return BadRequest(ModelState);
-
-                await _educationService.Add(model);
+                if (!ModelState.IsValid) return BadRequest(ModelState);
+                var result = await _educationService.Add(model);
+                if (!result) return BadRequest();
                 return Ok();
             }
             catch (Exception)
@@ -63,13 +63,32 @@ namespace WebApi.Controllers
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDTO model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (!ModelState.IsValid) return BadRequest(ModelState);
+                var result = await _educationService.Update(id, model);
+                if (!result) return BadRequest();
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _educationService.Delete(id);
+                if (!result) return BadRequest();
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }

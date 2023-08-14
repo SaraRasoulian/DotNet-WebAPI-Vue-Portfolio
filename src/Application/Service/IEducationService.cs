@@ -6,7 +6,7 @@ namespace Application.Service
     {
         Task<IEnumerable<EducationDTO>> GetAll();
         Task<EducationDTO?> GetById(Guid id);
-        Task Add(EducationDTO model);
+        Task<bool> Add(EducationDTO model);
         Task<bool> Update(Guid id ,EducationDTO model);
         Task<bool> Delete(Guid id);
     }
