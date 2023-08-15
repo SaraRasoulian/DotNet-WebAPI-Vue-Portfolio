@@ -214,7 +214,7 @@
                     <div class="list-title">
                         <h4>Educations</h4>
                         <div class="list-total">
-                            <span>3</span>
+                            <span>{{ listTotal }}</span>
                             <span>total</span>
                         </div>
                     </div>
@@ -242,75 +242,30 @@
                     </div>
 
                     <!--list items-->
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Master's degree</span></div>
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Artificial Intelligence</span></div>
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Solstice College</span></div>
+                    <div v-for="item in list">
+                        <div class="list-item">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.degree }}</span></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.fieldOfStudy }}</span></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.school }}</span></div>
+                            </div>
+                            <div class="buttons-wrapper">
+                                <a href="education-view.html" class="list-button" data-toggle="tooltip"
+                                    data-placement="top" title="View">
+                                    <img src="assets/images/view.png" class="list-button-icon" alt="">
+                                </a>
+                                <a href="education-edit.html" class="list-button" data-toggle="tooltip"
+                                    data-placement="top" title="Edit">
+                                    <img src="assets/images/edit.svg" class="list-button-icon" alt="">
+                                </a>
+                                <a href="education-delete.html" class="list-button" data-toggle="tooltip"
+                                    data-placement="top" title="Delete">
+                                    <img src="assets/images/delete.svg" class="list-button-icon" alt="">
+                                </a>
+                            </div>
                         </div>
-                        <div class="buttons-wrapper">
-                            <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                title="View">
-                                <img src="assets/images/view.png" class="list-button-icon" alt="">
-                            </a>
-                            <a href="education-edit.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                title="Edit">
-                                <img src="assets/images/edit.svg" class="list-button-icon" alt="">
-                            </a>
-                            <a href="education-delete.html" class="list-button" data-toggle="tooltip"
-                                data-placement="top" title="Delete">
-                                <img src="assets/images/delete.svg" class="list-button-icon" alt="">
-                            </a>
-                        </div>
+                        <hr class="line" />
                     </div>
-                    <hr class="line" />
-
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Bachelor's degree</span></div>
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Computer Science</span></div>
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Stellar Institute</span></div>
-                        </div>
-                        <div class="buttons-wrapper">
-                            <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                title="View">
-                                <img src="assets/images/view.png" class="list-button-icon" alt="">
-                            </a>
-                            <a href="education-edit.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                title="Edit">
-                                <img src="assets/images/edit.svg" class="list-button-icon" alt="">
-                            </a>
-                            <a href="education-delete.html" class="list-button" data-toggle="tooltip"
-                                data-placement="top" title="Delete">
-                                <img src="assets/images/delete.svg" class="list-button-icon" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <hr class="line" />
-
-                    <div class="list-item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Bachelor's degree</span></div>
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Environmental Science</span></div>
-                            <div class="col-lg-4 col-md-4 col-sm-12"><span>Avalon University</span></div>
-                        </div>
-                        <div class="buttons-wrapper">
-                            <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                title="View">
-                                <img src="assets/images/view.png" class="list-button-icon" alt="">
-                            </a>
-                            <a href="education-edit.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                                title="Edit">
-                                <img src="assets/images/edit.svg" class="list-button-icon" alt="">
-                            </a>
-                            <a href="education-delete.html" class="list-button" data-toggle="tooltip"
-                                data-placement="top" title="Delete">
-                                <img src="assets/images/delete.svg" class="list-button-icon" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <hr class="line" />
-
                 </div>
 
             </div>
@@ -318,14 +273,21 @@
     </div>
     <!-- Content End -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const app = Vue.createApp({
             data() {
                 return {
                     isMobileNavbarVisible: false,
-                    isSidebarMinimized: false
+                    isSidebarMinimized: false,
+                    list: [],
+                    listTotal:0,
                 }
+            },
+            mounted() {
+                this.getAll();
             },
             methods: {
                 toggleMobileNavbar() {
@@ -333,8 +295,16 @@
                 },
                 toggleSidebar() {
                     this.isSidebarMinimized = !this.isSidebarMinimized
-                }
-            }
+                },
+
+                getAll() {
+                    axios.get('http://localhost:5135/api/educations').then(response => {
+                        console.log(response)
+                        this.list = response.data
+                        this.listTotal = this.list.length
+                    })
+                },
+            },
         })
         app.mount('#app');
     </script>
