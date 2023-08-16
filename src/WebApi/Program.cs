@@ -2,9 +2,15 @@ using Application.Interfaces;
 using Application.Service;
 using Infrastructure.DbContexts;
 using Infrastructure.UoW;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//temp
+builder.Services.AddCors(); 
+builder.Services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
 
 // Add services to the container.
 
@@ -22,6 +28,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//temp
+app.UseCors(options => options.WithOrigins("http://127.0.0.1:5500").AllowAnyMethod());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
