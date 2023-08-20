@@ -9,7 +9,7 @@ namespace Application.Tests
     public class EducationServiceTests
     {
         [Fact]
-        public async Task GetAll_With_Data_Should_Return_List_Of_EducationDTO()
+        public async Task GetAll_With_Data_Returns_List_Of_EducationDTO()
         {
             // Arrange
             var unitOfWork = A.Fake<IUnitOfWork>();
