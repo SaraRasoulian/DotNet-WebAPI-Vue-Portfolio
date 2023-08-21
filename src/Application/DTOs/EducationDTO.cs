@@ -1,6 +1,6 @@
 ﻿namespace Application.DTOs
 {
-    public class EducationDTO
+    public class EducationDto
     {
         public Guid Id { get; set; }
         public required string Degree { get; set; }

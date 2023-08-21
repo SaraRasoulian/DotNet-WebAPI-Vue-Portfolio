@@ -45,7 +45,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] EducationDTO model)
+        public async Task<IActionResult> Post([FromBody] EducationDto model)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDTO model)
+        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDto model)
         {
             try
             {

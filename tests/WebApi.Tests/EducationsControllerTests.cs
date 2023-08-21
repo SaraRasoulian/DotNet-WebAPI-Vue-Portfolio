@@ -15,7 +15,7 @@ namespace WebApi.Tests
         {
             // Arrange
             var educationService = A.Fake<IEducationService>();
-            var dummyEducationData = A.CollectionOfDummy<EducationDTO>(3);
+            var dummyEducationData = A.CollectionOfDummy<EducationDto>(3);
             A.CallTo(() => educationService.GetAll()).Returns(dummyEducationData);
             var controller = new EducationsController(educationService);
 
@@ -24,7 +24,7 @@ namespace WebApi.Tests
 
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result);
-            var data = Assert.IsType<List<EducationDTO>>(okResult.Value);
+            var data = Assert.IsType<List<EducationDto>>(okResult.Value);
             Assert.Equal(3, data.Count);
         }
 
@@ -49,7 +49,7 @@ namespace WebApi.Tests
         {
             // Arrange
             var educationService = A.Fake<IEducationService>();
-            var expectedDto = A.Dummy<EducationDTO>();
+            var expectedDto = A.Dummy<EducationDto>();
             var validId = expectedDto.Id;
             A.CallTo(() => educationService.GetById(validId)).Returns(expectedDto);
             var controller = new EducationsController(educationService);

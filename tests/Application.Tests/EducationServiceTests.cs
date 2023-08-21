@@ -24,7 +24,7 @@ namespace Application.Tests
 
             // Assert
             Assert.NotNull(result);
-            Assert.IsAssignableFrom<IEnumerable<EducationDTO>>(result);
+            Assert.IsAssignableFrom<IEnumerable<EducationDto>>(result);
             Assert.Equal(educationData.Count, result.Count());
         }
     }

@@ -4,10 +4,10 @@ namespace Application.Service
 {
     public interface IEducationService
     {
-        Task<IEnumerable<EducationDTO>> GetAll();
-        Task<EducationDTO?> GetById(Guid id);
-        Task<bool> Add(EducationDTO model);
-        Task<bool> Update(Guid id ,EducationDTO model);
+        Task<IEnumerable<EducationDto>> GetAll();
+        Task<EducationDto?> GetById(Guid id);
+        Task<bool> Add(EducationDto model);
+        Task<bool> Update(Guid id ,EducationDto model);
         Task<bool> Delete(Guid id);
     }
 }

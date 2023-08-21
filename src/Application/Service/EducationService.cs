@@ -13,19 +13,19 @@ namespace Application.Service
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IEnumerable<EducationDTO>> GetAll()
+        public async Task<IEnumerable<EducationDto>> GetAll()
         {
             var result = await _unitOfWork.Education.GetAll();
-            return result.Adapt<List<EducationDTO>>();
+            return result.Adapt<List<EducationDto>>();
         }
 
-        public async Task<EducationDTO?> GetById(Guid id)
+        public async Task<EducationDto?> GetById(Guid id)
         {
             var result = await _unitOfWork.Education.GetById(id);
-            return result?.Adapt<EducationDTO>();
+            return result?.Adapt<EducationDto>();
         }
 
-        public async Task<bool> Add(EducationDTO model)
+        public async Task<bool> Add(EducationDto model)
         {
             if (model is null) return false;
             Education toAdd = model.Adapt<Education>();
@@ -36,7 +36,7 @@ namespace Application.Service
             await _unitOfWork.SaveChangesAsync();
             return true;
         }
-        public async Task<bool> Update(Guid id, EducationDTO model)
+        public async Task<bool> Update(Guid id, EducationDto model)
         {
             if (model is null || model.Id != id) return false;
 
