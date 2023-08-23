@@ -78,5 +78,56 @@ namespace WebApi.Tests
             Assert.Equal(StatusCodes.Status500InternalServerError, statusCodeResult.StatusCode);
         }
         #endregion
+
+        #region Delete
+        [Fact]
+        public async Task Delete_For_Successful_Deletion_Returns_OkResult()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            A.CallTo(() => educationService.Delete(A<Guid>._)).Returns(true);
+
+            var controller = new EducationsController(educationService);
+
+            // Act
+            var result = await controller.Delete(Guid.NewGuid());
+
+            // Assert
+            Assert.IsType<OkResult>(result);
+        }
+
+        [Fact]
+        public async Task Delete_For_Failed_Deletion_Returns_BadRequest()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            A.CallTo(() => educationService.Delete(A<Guid>._)).Returns(false);
+
+            var controller = new EducationsController(educationService);
+
+            // Act
+            var result = await controller.Delete(Guid.NewGuid());
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
+        }
+
+        [Fact]
+        public async Task Delete_On_Exception_Returns_InternalServerError()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            A.CallTo(() => educationService.Delete(A<Guid>._)).Throws(new Exception());
+
+            var controller = new EducationsController(educationService);
+
+            // Act
+            var result = await controller.Delete(Guid.NewGuid());
+
+            // Assert
+            var statusCodeResult = Assert.IsType<StatusCodeResult>(result);
+            Assert.Equal(StatusCodes.Status500InternalServerError, statusCodeResult.StatusCode);
+        }
+        #endregion
     }
 }
