@@ -46,6 +46,29 @@ namespace Application.Tests
             // Assert
             Assert.NotNull(result);
             Assert.IsType<EducationDto>(result);
-        }        
+        }
+
+        [Fact]
+        public async Task Delete_With_Existing_Id_Returns_True()
+        {
+            // Arrange
+            var unitOfWork = A.Fake<IUnitOfWork>();
+            var educationRepository = A.Fake<IEducationRepository>();
+            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
+
+            var existingId = Guid.NewGuid();
+            var existingEducation = A.Dummy<Education>();
+            A.CallTo(() => educationRepository.GetById(existingId)).Returns(existingEducation);
+
+            var educationService = new EducationService(unitOfWork);
+
+            // Act
+            var result = await educationService.Delete(existingId);
+
+            // Assert
+            Assert.True(result);
+            A.CallTo(() => unitOfWork.Education.Delete(existingEducation)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => unitOfWork.SaveChangesAsync(default)).MustHaveHappenedOnceExactly();
+        }
     }
 }
