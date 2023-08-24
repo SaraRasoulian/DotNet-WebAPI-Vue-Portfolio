@@ -51,8 +51,7 @@ namespace WebApi.Controllers
             {
                 if (!ModelState.IsValid) return BadRequest(ModelState);
                 var result = await _educationService.Add(model);
-                if (!result) return BadRequest();
-                return Ok();
+                return Ok(result);
             }
             catch (Exception)
             {

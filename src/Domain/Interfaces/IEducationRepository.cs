@@ -5,7 +5,7 @@ namespace Domain.Interfaces
     {
         Task<IEnumerable<Education>> GetAll();
         Task<Education?> GetById(Guid id);
-        Task Add(Education model);
+        Task<Education> Add(Education model);
         void Update(Education model);
         void Delete(Education model);
     }

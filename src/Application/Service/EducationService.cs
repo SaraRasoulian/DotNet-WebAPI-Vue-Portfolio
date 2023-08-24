@@ -25,16 +25,13 @@ namespace Application.Service
             return result?.Adapt<EducationDto>();
         }
 
-        public async Task<bool> Add(EducationDto model)
+        public async Task<EducationDto> Add(EducationDto model)
         {
-            if (model is null) return false;
             Education toAdd = model.Adapt<Education>();
-
             toAdd.Id = Guid.NewGuid();
-
-            await _unitOfWork.Education.Add(toAdd);
+            var result = await _unitOfWork.Education.Add(toAdd);
             await _unitOfWork.SaveChangesAsync();
-            return true;
+            return result.Adapt<EducationDto>();
         }
         public async Task<bool> Update(Guid id, EducationDto model)
         {

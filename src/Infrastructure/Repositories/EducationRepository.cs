@@ -23,9 +23,10 @@ namespace Infrastructure.Repositories
             return await _dbContext.Educations.FindAsync(id);
         }
 
-        public async Task Add(Education model)
+        public async Task<Education> Add(Education model)
         {
-            await _dbContext.Educations.AddAsync(model);
+            var result = await _dbContext.Educations.AddAsync(model);
+            return result.Entity;
         }
 
         public void Update(Education model)
