@@ -11,7 +11,7 @@ namespace WebApi.Tests
     {
         #region Get
         [Fact]
-        public async Task Get_With_Data_Returns_OkResult()
+        public async Task Get_With_Data_Returns_Ok()
         {
             // Arrange
             var educationService = A.Fake<IEducationService>();
@@ -45,7 +45,7 @@ namespace WebApi.Tests
         }
 
         [Fact]
-        public async Task GetById_With_Valid_Id_Returns_OkResult()
+        public async Task GetById_With_Valid_Id_Returns_Ok()
         {
             // Arrange
             var educationService = A.Fake<IEducationService>();
@@ -79,9 +79,59 @@ namespace WebApi.Tests
         }
         #endregion
 
+        #region Post
+        [Fact]
+        public async Task Post_With_Valid_Model_Returns_Ok()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            var validEducationDto = A.Dummy<EducationDto>();
+            A.CallTo(() => educationService.Add(validEducationDto)).Returns(validEducationDto);
+            var controller = new EducationsController(educationService);
+
+            // Act
+            var result = await controller.Post(validEducationDto);
+
+            // Assert
+            Assert.IsType<OkObjectResult>(result);
+        }
+
+        [Fact]
+        public async Task Post_With_Null_Model_Returns_BadRequest()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            var controller = new EducationsController(educationService);
+
+            // Act
+            var result = await controller.Post(null);
+
+            // Assert
+            Assert.IsType<BadRequestObjectResult>(result);
+        }
+
+        [Fact]
+        public async Task Post_On_Exception_Returns_InternalServerError()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            A.CallTo(() => educationService.Add(A<EducationDto>._)).Throws(new Exception());
+
+            var controller = new EducationsController(educationService);
+            var validEducationDto = A.Dummy<EducationDto>();
+
+            // Act
+            var result = await controller.Post(validEducationDto);
+
+            // Assert
+            var statusCodeResult = Assert.IsType<StatusCodeResult>(result);
+            Assert.Equal(StatusCodes.Status500InternalServerError, statusCodeResult.StatusCode);
+        }
+        #endregion
+
         #region Delete
         [Fact]
-        public async Task Delete_For_Successful_Deletion_Returns_OkResult()
+        public async Task Delete_For_Successful_Deletion_Returns_Ok()
         {
             // Arrange
             var educationService = A.Fake<IEducationService>();

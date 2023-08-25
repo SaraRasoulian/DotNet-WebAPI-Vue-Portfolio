@@ -33,6 +33,7 @@ namespace Application.Service
             await _unitOfWork.SaveChangesAsync();
             return result.Adapt<EducationDto>();
         }
+
         public async Task<bool> Update(Guid id, EducationDto model)
         {
             if (model is null || model.Id != id) return false;

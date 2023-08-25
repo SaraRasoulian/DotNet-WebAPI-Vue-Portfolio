@@ -4,6 +4,8 @@ using Application.Service;
 using Domain.Entities;
 using Domain.Interfaces;
 using FakeItEasy;
+using Mapster;
+
 namespace Application.Tests
 {
     public class EducationServiceTests
@@ -46,6 +48,30 @@ namespace Application.Tests
             // Assert
             Assert.NotNull(result);
             Assert.IsType<EducationDto>(result);
+        }
+
+        [Fact]
+        public async Task Add_Returns_Added_EducationDto()
+        {
+            // Arrange
+            var unitOfWork = A.Fake<IUnitOfWork>();
+            var educationRepository = A.Fake<IEducationRepository>();
+            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
+
+            var educationDto = A.Dummy<EducationDto>();
+            var addedEducation = educationDto.Adapt<Education>();
+            addedEducation.Id = Guid.NewGuid();
+            A.CallTo(() => educationRepository.Add(A<Education>._)).Returns(addedEducation);
+
+            var educationService = new EducationService(unitOfWork);
+
+            // Act
+            var result = await educationService.Add(educationDto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.IsType<EducationDto>(result);
+            Assert.Equal(addedEducation.Id, result.Id);
         }
 
         [Fact]

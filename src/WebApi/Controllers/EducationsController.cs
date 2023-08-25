@@ -49,7 +49,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                if (!ModelState.IsValid) return BadRequest(ModelState);
+                if (!ModelState.IsValid || model is null) return BadRequest(ModelState);
                 var result = await _educationService.Add(model);
                 return Ok(result);
             }
