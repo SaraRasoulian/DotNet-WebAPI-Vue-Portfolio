@@ -9,12 +9,17 @@ namespace WebApi.Tests
 {
     public class EducationsControllerTests
     {
+        IEducationService educationService;
+        public EducationsControllerTests()
+        {
+            educationService = A.Fake<IEducationService>();
+        }
+
         #region Get
         [Fact]
         public async Task Get_With_Data_Returns_Ok()
         {
-            // Arrange
-            var educationService = A.Fake<IEducationService>();
+            // Arrange            
             var dummyEducationData = A.CollectionOfDummy<EducationDto>(3);
             A.CallTo(() => educationService.GetAll()).Returns(dummyEducationData);
             var controller = new EducationsController(educationService);
@@ -32,7 +37,6 @@ namespace WebApi.Tests
         public async Task Get_On_Exception_Returns_InternalServerError()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.GetAll()).Throws(new Exception());
             var controller = new EducationsController(educationService);
 
@@ -48,7 +52,6 @@ namespace WebApi.Tests
         public async Task GetById_With_Valid_Id_Returns_Ok()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             var expectedDto = A.Dummy<EducationDto>();
             var validId = expectedDto.Id;
             A.CallTo(() => educationService.GetById(validId)).Returns(expectedDto);
@@ -65,7 +68,6 @@ namespace WebApi.Tests
         public async Task GetById_On_Exception_Returns_InternalServerError()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             var id = Guid.NewGuid();
             A.CallTo(() => educationService.GetById(id)).Throws(new Exception());
             var controller = new EducationsController(educationService);
@@ -84,7 +86,6 @@ namespace WebApi.Tests
         public async Task Post_With_Valid_Model_Returns_Ok()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             var validEducationDto = A.Dummy<EducationDto>();
             A.CallTo(() => educationService.Add(validEducationDto)).Returns(validEducationDto);
             var controller = new EducationsController(educationService);
@@ -100,7 +101,6 @@ namespace WebApi.Tests
         public async Task Post_With_Null_Input_Returns_BadRequest()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             var controller = new EducationsController(educationService);
 
             // Act
@@ -114,9 +114,7 @@ namespace WebApi.Tests
         public async Task Post_On_Exception_Returns_InternalServerError()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.Add(A<EducationDto>._)).Throws(new Exception());
-
             var controller = new EducationsController(educationService);
             var validEducationDto = A.Dummy<EducationDto>();
 
@@ -134,7 +132,6 @@ namespace WebApi.Tests
         public async Task Put_For_Successful_Update_Returns_Ok()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.Update(A<Guid>._, A<EducationDto>._)).Returns(true);
             var controller = new EducationsController(educationService);
             var existingId = Guid.NewGuid();
@@ -151,7 +148,6 @@ namespace WebApi.Tests
         public async Task Put_For_Failed_Update_Returns_BadRequest()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.Update(A<Guid>._, A<EducationDto>._)).Returns(false);
             var controller = new EducationsController(educationService);
             var existingId = Guid.NewGuid();
@@ -167,10 +163,9 @@ namespace WebApi.Tests
         [Fact]
         public async Task Put_With_Null_Input_Returns_BadRequest()
         {
-            // Arrange
-            var educationService = A.Fake<IEducationService>();
-
+            // Arrange          
             var controller = new EducationsController(educationService);
+
             // Act
             var result = await controller.Put(Guid.NewGuid(), null);
 
@@ -182,7 +177,6 @@ namespace WebApi.Tests
         public async Task Put_On_Exception_Returns_InternalServerError()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.Update(A<Guid>._, A<EducationDto>._)).Throws(new Exception());
             var controller = new EducationsController(educationService);
 
@@ -200,9 +194,7 @@ namespace WebApi.Tests
         public async Task Delete_For_Successful_Deletion_Returns_Ok()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.Delete(A<Guid>._)).Returns(true);
-
             var controller = new EducationsController(educationService);
 
             // Act
@@ -216,9 +208,7 @@ namespace WebApi.Tests
         public async Task Delete_For_Failed_Deletion_Returns_BadRequest()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.Delete(A<Guid>._)).Returns(false);
-
             var controller = new EducationsController(educationService);
 
             // Act
@@ -232,9 +222,7 @@ namespace WebApi.Tests
         public async Task Delete_On_Exception_Returns_InternalServerError()
         {
             // Arrange
-            var educationService = A.Fake<IEducationService>();
             A.CallTo(() => educationService.Delete(A<Guid>._)).Throws(new Exception());
-
             var controller = new EducationsController(educationService);
 
             // Act
