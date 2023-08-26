@@ -75,6 +75,54 @@ namespace Application.Tests
         }
 
         [Fact]
+        public async Task Update_For_Successful_Update_Returns_True()
+        {
+            // Arrange
+            var unitOfWork = A.Fake<IUnitOfWork>();
+            var educationRepository = A.Fake<IEducationRepository>();
+            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
+
+            var existingId = Guid.NewGuid();
+            var existingEducation = A.Dummy<Education>();
+            existingEducation.Id = existingId;
+            A.CallTo(() => educationRepository.GetById(existingId)).Returns(existingEducation);
+
+            var updatedEducationDto = A.Dummy<EducationDto>();
+            updatedEducationDto.Id = existingId;
+            var educationService = new EducationService(unitOfWork);
+
+            // Act
+            var result = await educationService.Update(existingId, updatedEducationDto);
+
+            // Assert
+            Assert.True(result);
+            A.CallTo(() => unitOfWork.Education.Update(A<Education>.That.Matches(e => e.Id == existingId))).MustHaveHappenedOnceExactly();
+            A.CallTo(() => unitOfWork.SaveChangesAsync(default)).MustHaveHappenedOnceExactly();
+        }
+
+        [Fact]
+        public async Task Update_For_Id_Mismatch_Returns_False()
+        {
+            // Arrange
+            var unitOfWork = A.Fake<IUnitOfWork>();
+            var educationRepository = A.Fake<IEducationRepository>();
+            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
+
+            var educationService = new EducationService(unitOfWork);
+            var invalidEducationDto = A.Dummy<EducationDto>();
+            var existingId = Guid.NewGuid();
+
+            // Act
+            var result = await educationService.Update(existingId, invalidEducationDto);
+
+            // Assert
+            Assert.False(result);
+            A.CallTo(() => unitOfWork.Education.GetById(A<Guid>._)).MustNotHaveHappened();
+            A.CallTo(() => unitOfWork.Education.Update(A<Education>._)).MustNotHaveHappened();
+            A.CallTo(() => unitOfWork.SaveChangesAsync(default)).MustNotHaveHappened();
+        }
+          
+        [Fact]
         public async Task Delete_With_Existing_Id_Returns_True()
         {
             // Arrange
