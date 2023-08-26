@@ -97,7 +97,7 @@ namespace WebApi.Tests
         }
 
         [Fact]
-        public async Task Post_With_Null_Model_Returns_BadRequest()
+        public async Task Post_With_Null_Input_Returns_BadRequest()
         {
             // Arrange
             var educationService = A.Fake<IEducationService>();
@@ -122,6 +122,72 @@ namespace WebApi.Tests
 
             // Act
             var result = await controller.Post(validEducationDto);
+
+            // Assert
+            var statusCodeResult = Assert.IsType<StatusCodeResult>(result);
+            Assert.Equal(StatusCodes.Status500InternalServerError, statusCodeResult.StatusCode);
+        }
+        #endregion
+
+        #region Put
+        [Fact]
+        public async Task Put_For_Successful_Update_Returns_Ok()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            A.CallTo(() => educationService.Update(A<Guid>._, A<EducationDto>._)).Returns(true);
+            var controller = new EducationsController(educationService);
+            var existingId = Guid.NewGuid();
+            var educationDto = A.Dummy<EducationDto>();
+
+            // Act
+            var result = await controller.Put(existingId, educationDto);
+
+            // Assert
+            Assert.IsType<OkResult>(result);
+        }
+
+        [Fact]
+        public async Task Put_For_Failed_Update_Returns_BadRequest()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            A.CallTo(() => educationService.Update(A<Guid>._, A<EducationDto>._)).Returns(false);
+            var controller = new EducationsController(educationService);
+            var existingId = Guid.NewGuid();
+            var educationDto = A.Dummy<EducationDto>();
+
+            // Act
+            var result = await controller.Put(existingId, educationDto);
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
+        }
+
+        [Fact]
+        public async Task Put_With_Null_Input_Returns_BadRequest()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+
+            var controller = new EducationsController(educationService);
+            // Act
+            var result = await controller.Put(Guid.NewGuid(), null);
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
+        }
+
+        [Fact]
+        public async Task Put_On_Exception_Returns_InternalServerError()
+        {
+            // Arrange
+            var educationService = A.Fake<IEducationService>();
+            A.CallTo(() => educationService.Update(A<Guid>._, A<EducationDto>._)).Throws(new Exception());
+            var controller = new EducationsController(educationService);
+
+            // Act
+            var result = await controller.Put(Guid.NewGuid(), A.Dummy<EducationDto>());
 
             // Assert
             var statusCodeResult = Assert.IsType<StatusCodeResult>(result);
