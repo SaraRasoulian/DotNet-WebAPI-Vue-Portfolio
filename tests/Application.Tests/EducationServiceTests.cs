@@ -10,13 +10,20 @@ namespace Application.Tests
 {
     public class EducationServiceTests
     {
+        IUnitOfWork unitOfWork;
+        IEducationRepository educationRepository;
+
+        public EducationServiceTests()
+        {
+            unitOfWork = A.Fake<IUnitOfWork>();
+            educationRepository = A.Fake<IEducationRepository>();
+            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
+        }
+
         [Fact]
         public async Task GetAll_With_Data_Returns_List_Of_EducationDto()
         {
             // Arrange
-            var unitOfWork = A.Fake<IUnitOfWork>();
-            var educationRepository = A.Fake<IEducationRepository>();
-            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
             var educationData = new List<Education>();
             A.CallTo(() => educationRepository.GetAll()).Returns(educationData);
             var educationService = new EducationService(unitOfWork);
@@ -34,9 +41,6 @@ namespace Application.Tests
         public async Task GetById_With_Data_Returns_EducationDto()
         {
             // Arrange
-            var unitOfWork = A.Fake<IUnitOfWork>();
-            var educationRepository = A.Fake<IEducationRepository>();
-            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
             var educationId = Guid.NewGuid();
             var educationData = A.Dummy<Education>();
             A.CallTo(() => educationRepository.GetById(educationId)).Returns(educationData);
@@ -54,10 +58,6 @@ namespace Application.Tests
         public async Task Add_Returns_Added_EducationDto()
         {
             // Arrange
-            var unitOfWork = A.Fake<IUnitOfWork>();
-            var educationRepository = A.Fake<IEducationRepository>();
-            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
-
             var educationDto = A.Dummy<EducationDto>();
             var addedEducation = educationDto.Adapt<Education>();
             addedEducation.Id = Guid.NewGuid();
@@ -78,10 +78,6 @@ namespace Application.Tests
         public async Task Update_For_Successful_Update_Returns_True()
         {
             // Arrange
-            var unitOfWork = A.Fake<IUnitOfWork>();
-            var educationRepository = A.Fake<IEducationRepository>();
-            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
-
             var existingId = Guid.NewGuid();
             var existingEducation = A.Dummy<Education>();
             existingEducation.Id = existingId;
@@ -104,10 +100,6 @@ namespace Application.Tests
         public async Task Update_For_Id_Mismatch_Returns_False()
         {
             // Arrange
-            var unitOfWork = A.Fake<IUnitOfWork>();
-            var educationRepository = A.Fake<IEducationRepository>();
-            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
-
             var educationService = new EducationService(unitOfWork);
             var invalidEducationDto = A.Dummy<EducationDto>();
             var existingId = Guid.NewGuid();
@@ -121,15 +113,11 @@ namespace Application.Tests
             A.CallTo(() => unitOfWork.Education.Update(A<Education>._)).MustNotHaveHappened();
             A.CallTo(() => unitOfWork.SaveChangesAsync(default)).MustNotHaveHappened();
         }
-          
+
         [Fact]
         public async Task Delete_With_Existing_Id_Returns_True()
         {
             // Arrange
-            var unitOfWork = A.Fake<IUnitOfWork>();
-            var educationRepository = A.Fake<IEducationRepository>();
-            A.CallTo(() => unitOfWork.Education).Returns(educationRepository);
-
             var existingId = Guid.NewGuid();
             var existingEducation = A.Dummy<Education>();
             A.CallTo(() => educationRepository.GetById(existingId)).Returns(existingEducation);
