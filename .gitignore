@@ -476,25 +476,18 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-/Portfolio/.vs/Portfolio/DesignTimeBuild/.dtbcache.v2
-/Portfolio/.vs/Portfolio/v17/.suo
-/Portfolio/Portfolio/bin/Debug/net7.0/Portfolio.dll
-/Portfolio/Portfolio/bin/Debug/net7.0/Portfolio.pdb
-/Portfolio/Portfolio/bin/Debug/net7.0/Portfolio.staticwebassets.runtime.json
-/Portfolio/Portfolio/obj/Debug/net7.0/Portfolio.assets.cache
-/Portfolio/Portfolio/obj/Debug/net7.0/Portfolio.csproj.FileListAbsolute.txt
-/Portfolio/Portfolio/obj/Debug/net7.0/Portfolio.dll
-/Portfolio/Portfolio/obj/Debug/net7.0/Portfolio.GeneratedMSBuildEditorConfig.editorconfig
-/Portfolio/Portfolio/obj/Debug/net7.0/Portfolio.genruntimeconfig.cache
-/Portfolio/Portfolio/obj/Debug/net7.0/Portfolio.pdb
-/Portfolio/Portfolio/obj/Debug/net7.0/staticwebassets.build.json
-/Portfolio/Portfolio/obj/Debug/net7.0/staticwebassets.development.json
-/Portfolio/Portfolio/obj/Debug/net7.0/staticwebassets.pack.json
-/Portfolio/Portfolio/obj/Portfolio.csproj.nuget.dgspec.json
-/Portfolio/Portfolio/obj/project.assets.json
-/Portfolio/Portfolio/obj/project.nuget.cache
-/Portfolio/Tests/obj/Debug/net7.0/Tests.assets.cache
-/Portfolio/Tests/obj/Debug/net7.0/Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Portfolio/Tests/obj/project.assets.json
-/Portfolio/Tests/obj/project.nuget.cache
-/Portfolio/Tests/obj/Tests.csproj.nuget.dgspec.json
+
+######################
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
