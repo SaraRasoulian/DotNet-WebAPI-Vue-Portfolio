@@ -1,5 +1,5 @@
 ﻿using Application.DTOs;
-using Application.Service;
+using Application.Service.Interfaces;
 using FakeItEasy;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
