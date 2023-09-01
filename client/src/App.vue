@@ -1,25 +1,204 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div :class="{ 'min-sidebar': isSidebarMinimized }">
+    <div class="desktop-navbar noselect">
+      <!-- Header -->
+      <div class="fixed-top header wraper">
+        <nav class="top-navbar navbar navbar-expand-lg">
+          <div class="container">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle wraper-div" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="@/assets/images/profile-photo.png" class="profile-photo" alt="">
+                  <span>Sara</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <RouterLink to="/profile/edit" class="dropdown-item">
+                      <img src="@/assets/images/profile.png" class="sidebar-icon dropdown-icon" alt="">
+                      Edit profile
+                    </RouterLink>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <img src="@/assets/images/password.png" class="sidebar-icon dropdown-icon" alt="">
+                      Password
+                    </a>
+                  </li>
+                  <li>
+                    <RouterLink to="/" class="dropdown-item">
+                      <img src="@/assets/images/logout.png" class="sidebar-icon dropdown-icon" alt="">
+                      Log out
+                    </RouterLink>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <ul class="nav flex-column">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+          <li class="sidebar-title">
+            <div class="toggle-sidebar-wrapper">
+              <div class="toggle-sidebar" v-on:click="toggleSidebar">
+                <img src="@/assets/images/menu.svg" class="sidebar-icon" alt="">
+              </div>
+              <span>Admin Panel</span>
+            </div>
+          </li>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/educations">educations list</RouterLink>
-      </nav>
+          <li class="nav-item">
+            <RouterLink to="/profile" class="nav-link">
+              <div class="nav-link-inner">
+                <img src="@/assets/images/profile.png" class="sidebar-icon" alt="">
+                <span>Profile</span>
+              </div>
+            </RouterLink>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <div class="nav-link-inner">
+                <img src="@/assets/images/experiences.png" class="sidebar-icon" alt="">
+                <span>Experiences</span>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/educations" class="nav-link">
+              <div class="nav-link-inner">
+                <img src="@/assets/images/educations.png" class="sidebar-icon" alt="">
+                <span>Educations</span>
+              </div>
+            </RouterLink>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <div class="nav-link-inner">
+                <img src="@/assets/images/social-links.png" class="sidebar-icon" alt="">
+                <span>Social Links</span>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="message-list.html">
+              <div class="nav-link-inner">
+                <img src="@/assets/images/messages.png" class="sidebar-icon" alt="">
+                <span>Messages</span>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="seo-view.html">
+              <div class="nav-link-inner">
+                <img src="@/assets/images/seo.png" class="sidebar-icon" alt="">
+                <span>SEO</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </header>
-
-  <RouterView />
+    <div class="mobile-navbar noselect">
+      <div>
+        <div class="navbar-content" id="navbarContent" :class="{ 'display': isMobileNavbarVisible }">
+          <ul class="nav flex-column">
+            <li class="">
+              <div class="profile-container">
+                <img src="@/assets/images/profile-photo.png" class="profile-photo" alt="">
+                <span>Sara Rasoulian</span>
+              </div>
+              <hr />
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/profile" class="nav-link">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/profile.png" class="sidebar-icon" alt="">
+                  <span>Profile</span>
+                </div>
+              </RouterLink>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/experiences.png" class="sidebar-icon" alt="">
+                  <span>Experiences</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/educations" class="nav-link">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/educations.png" class="sidebar-icon" alt="">
+                  <span>Educations</span>
+                </div>
+              </RouterLink>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/social-links.png" class="sidebar-icon" alt="">
+                  <span>Social Links</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="message-list.html">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/messages.png" class="sidebar-icon" alt="">
+                  <span>Messages</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="seo-view.html">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/seo.png" class="sidebar-icon" alt="">
+                  <span>SEO</span>
+                </div>
+              </a>
+            </li>
+            <hr class="line" />
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/password.png" class="sidebar-icon" alt="">
+                  <span>Password</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">
+                <div class="nav-link-inner">
+                  <img src="@/assets/images/logout.png" class="sidebar-icon" alt="">
+                  <span>Log Out</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-background" :class="{ 'display': isMobileNavbarVisible }" v-on:click="toggleMobileNavbar">
+        </div>
+        <div class="navbar-top">
+          <div v-on:click="toggleMobileNavbar">
+            <img src="@/assets/images/menu.svg" class="navbar-icon" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <RouterView />
+  </div>
 </template>
+
+<style>
+@import '@/assets/css/navbar.css';
+@import '@/assets/css/style.css';
+</style>
+
 <script>
 
 import 'bootstrap'
@@ -28,77 +207,24 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   name: 'App',
   data() {
+    return {
+      isMobileNavbarVisible: false,
+      isSidebarMinimized: false
+    }
+  },
+  methods: {
+    toggleMobileNavbar() {
+      this.isMobileNavbarVisible = !this.isMobileNavbarVisible
+    },
+    toggleSidebar() {
+      this.isSidebarMinimized = !this.isSidebarMinimized
+    }
   },
   mounted() {
     console.log("I am in mounted!!!")
   },
-  setup () {
+  setup() {
     console.log("I am in setup!!!")
   }
 }
 </script>
-
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
