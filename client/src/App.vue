@@ -20,6 +20,24 @@ import HelloWorld from './components/HelloWorld.vue'
 
   <RouterView />
 </template>
+<script>
+
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+export default {
+  name: 'App',
+  data() {
+  },
+  mounted() {
+    console.log("I am in mounted!!!")
+  },
+  setup () {
+    console.log("I am in setup!!!")
+  }
+}
+</script>
+
 
 <style scoped>
 header {
