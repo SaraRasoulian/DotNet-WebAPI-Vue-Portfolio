@@ -1,5 +1,6 @@
 using Application.Interfaces;
 using Application.Service;
+using Application.Service.Interfaces;
 using Infrastructure.DbContexts;
 using Infrastructure.UoW;
 using Microsoft.AspNetCore.Mvc;
