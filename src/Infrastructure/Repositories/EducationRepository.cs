@@ -20,7 +20,7 @@ namespace Infrastructure.Repositories
 
         public async Task<Education?> GetById(Guid id)
         {
-            return await _dbContext.Educations.FindAsync(id);
+            return await _dbContext.Educations.AsNoTracking().FirstOrDefaultAsync(c=>c.Id == id);
         }
 
         public async Task<Education> Add(Education model)
