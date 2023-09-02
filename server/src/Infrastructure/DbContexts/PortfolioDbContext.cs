@@ -13,7 +13,6 @@ namespace Infrastructure.DbContexts
         public DbSet<Education> Educations { get; set; }
         public DbSet<SocialLink> SocialLinks { get; set; }
         public DbSet<Message> Messages { get; set; }
-        public DbSet<SEOSettings> SEOSettings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,14 +28,6 @@ namespace Infrastructure.DbContexts
                     Email = "Example@gmail.com",
                     Headline = "My name is Sara",
                     About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
-                }
-                );
-
-            modelBuilder.Entity<SEOSettings>().HasData(
-                new SEOSettings
-                {
-                    Id = Guid.NewGuid(),
-                    WebSiteTitle = "Sara Rasoulian | Portfolio",
                 }
                 );
         }
