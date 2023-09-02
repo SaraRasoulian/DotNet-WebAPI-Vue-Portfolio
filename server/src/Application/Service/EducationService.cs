@@ -42,12 +42,7 @@ namespace Application.Service
             var toUpdate = await _unitOfWork.Education.GetById(id);
             if (toUpdate is null) return false;
 
-            toUpdate.Degree = model.Degree;
-            toUpdate.FieldOfStudy = model.FieldOfStudy;
-            toUpdate.School = model.School;
-            toUpdate.StartYear = model.StartYear;
-            toUpdate.EndYear = model.EndYear;
-            toUpdate.Description = model.Description;
+            toUpdate = model.Adapt<Education>();
 
             _unitOfWork.Education.Update(toUpdate);
             await _unitOfWork.SaveChangesAsync();
