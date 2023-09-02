@@ -1,6 +1,9 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div class="content-container login-container">
-
     <div class="title-wrapper parent-page-title">
       <div class="login-title">
         <h4>Welcome back</h4>
@@ -9,12 +12,12 @@
     <hr class="line" />
     <div class="content">
       <div class="form-container">
-        <form class="needs-validation" novalidate="">
+        <form class="needs-validation">
           <div class="row g-3">
             <div class="col-lg-21 col-md-12 col-sm-12">
               <label for="user-name" class="form-label">User Name</label>
               <div class="input-group has-validation">
-                <input type="text" id="user-name" class="form-control" placeholder="User Name" required="" value="">
+                <input type="text" id="user-name" class="form-control" placeholder="User Name">
                 <div class="invalid-feedback">
                   Username is required.
                 </div>
@@ -25,7 +28,7 @@
           <div class="row g-3">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <label for="password" class="form-label">Password</label>
-              <input type="text" id="password" class="form-control" placeholder="Password" value="">
+              <input type="text" id="password" class="form-control" placeholder="Password">
               <div class="invalid-feedback">
                 Password is required.
               </div>
@@ -47,6 +50,12 @@
   </div>
 </template>
 
-<style scoped>
+<style>
+@import '@/assets/css/style.css';
 @import '@/assets/css/login.css';
 </style>
+
+<script>
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+</script>
