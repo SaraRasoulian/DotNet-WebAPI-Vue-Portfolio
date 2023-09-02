@@ -92,14 +92,6 @@ import { RouterLink, RouterView } from 'vue-router'
               </div>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="seo-view.html">
-              <div class="nav-link-inner">
-                <img src="@/assets/images/seo.png" class="sidebar-icon" alt="">
-                <span>SEO</span>
-              </div>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -151,14 +143,6 @@ import { RouterLink, RouterView } from 'vue-router'
                 <div class="nav-link-inner">
                   <img src="@/assets/images/messages.png" class="sidebar-icon" alt="">
                   <span>Messages</span>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="seo-view.html">
-                <div class="nav-link-inner">
-                  <img src="@/assets/images/seo.png" class="sidebar-icon" alt="">
-                  <span>SEO</span>
                 </div>
               </a>
             </li>
