@@ -5,7 +5,7 @@
         <RouterLink to="/educations" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
           title="Return to list">
           <div class="back-to-list">
-            <img src="@/assets/images/back.png" class="back-icon" alt="" />
+            <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
           </div>
         </RouterLink>
         <h4>Add Education</h4>

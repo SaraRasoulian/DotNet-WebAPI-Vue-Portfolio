@@ -39,7 +39,9 @@ import { RouterLink } from 'vue-router'
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="login-buttons">
                 <RouterLink class="btn btn-login" to="/profile">Log In</RouterLink>
-                <a class="back-home" href="/src/home/index.html">Back to home page</a>
+                <RouterLink to="/" class="back-home">
+                  Back to home page
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -51,8 +53,8 @@ import { RouterLink } from 'vue-router'
 </template>
 
 <style>
-@import '@/assets/css/style.css';
-@import '@/assets/css/login.css';
+@import '@/assets/admin/css/style.css';
+@import '@/assets/admin/css/login.css';
 </style>
 
 <script>

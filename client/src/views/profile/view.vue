@@ -10,7 +10,7 @@
                     <div class="buttons-wrapper">
                         <RouterLink to="/profile/edit" class="list-button" data-toggle="tooltip" data-placement="top"
                             title="Edit">
-                            <img src="@/assets/images/edit.svg" class="list-button-icon" alt="">
+                            <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="">
                         </RouterLink>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                 <div class="col-lg-8 col-md-12 col-sm-12">
                                     <div class="view-item-wrapper">
                                         <span>Photo</span>
-                                        <img src="assets/images/profile-photo.png" class="view-profile-photo" alt="">
+                                        <img src="assets/admin/images/profile-photo.png" class="view-profile-photo" alt="">
                                     </div>
                                 </div>
                             </div>

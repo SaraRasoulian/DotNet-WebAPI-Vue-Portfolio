@@ -5,7 +5,7 @@
                 <RouterLink to="/profile" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
                     title="Return to view">
                     <div class="back-to-list">
-                        <img src="@/assets/images/back.png" class="back-icon" alt="" />
+                        <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
                     </div>
                 </RouterLink>
                 <h4>Edit Profile</h4>
@@ -68,7 +68,7 @@
                                     <span class="secondary-text">(Optional)</span>
                                 </label>
                                 <div class="edit-photo-wrapper">
-                                    <img src="assets/images/profile-photo.png" class="view-profile-photo" alt="" />
+                                    <img src="assets/admin/images/profile-photo.png" class="view-profile-photo" alt="" />
                                     <div class="photo-buttons-wrapper">
                                         <div>
                                             <button class="photo-btn update-btn" type="button">Update</button>

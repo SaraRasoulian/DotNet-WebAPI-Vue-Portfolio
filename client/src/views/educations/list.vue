@@ -11,7 +11,7 @@
         </div>
         <div class="right-button-wrapper">
           <RouterLink to="/educations/add" class="btn btn-save btn-add">
-            <img src="@/assets/images/add.svg" class="add-icon" alt="">
+            <img src="@/assets/admin/images/add.svg" class="add-icon" alt="">
             <span class="add-text">Add</span>
           </RouterLink>
         </div>
@@ -41,14 +41,14 @@
             </div>
             <div class="buttons-wrapper">
               <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top" title="View">
-                <img src="@/assets/images/view.png" class="list-button-icon" alt="">
+                <img src="@/assets/admin/images/view.png" class="list-button-icon" alt="">
               </a>
               <a href="education-edit.html" class="list-button" data-toggle="tooltip" data-placement="top" title="Edit">
-                <img src="@/assets/images/edit.svg" class="list-button-icon" alt="">
+                <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="">
               </a>
               <a href="education-delete.html" class="list-button" data-toggle="tooltip" data-placement="top"
                 title="Delete">
-                <img src="@/assets/images/delete.svg" class="list-button-icon" alt="">
+                <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="">
               </a>
             </div>
           </div>
