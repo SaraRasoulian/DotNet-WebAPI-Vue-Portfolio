@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20230813135551_v1")]
-    partial class v1
+    [Migration("20230905114121_Initialize")]
+    partial class Initialize
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,50 +173,12 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c1e9b646-34de-4e46-b6b1-4efb2f320578"),
+                            Id = new Guid("9fbf9255-da73-4c5b-bd1b-498726e5eeff"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",
                             Headline = "My name is Sara",
                             LastName = "Rasoulian"
-                        });
-                });
-
-            modelBuilder.Entity("Domain.Entities.SEOSettings", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<byte[]>("Favicon")
-                        .HasColumnType("bytea");
-
-                    b.Property<string>("MetaAuthor")
-                        .HasMaxLength(250)
-                        .HasColumnType("character varying(250)");
-
-                    b.Property<string>("MetaDescription")
-                        .HasMaxLength(250)
-                        .HasColumnType("character varying(250)");
-
-                    b.Property<string>("MetaKeywords")
-                        .HasMaxLength(250)
-                        .HasColumnType("character varying(250)");
-
-                    b.Property<string>("WebSiteTitle")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SEOSettings");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("a10d6fdd-2744-4c5a-b47f-43e087811880"),
-                            WebSiteTitle = "Sara Rasoulian | Portfolio"
                         });
                 });
 
