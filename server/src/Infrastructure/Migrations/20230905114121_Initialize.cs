@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class v1 : Migration
+    public partial class Initialize : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -78,22 +78,6 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SEOSettings",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    WebSiteTitle = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    MetaAuthor = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
-                    MetaKeywords = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
-                    MetaDescription = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
-                    Favicon = table.Column<byte[]>(type: "bytea", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SEOSettings", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "SocialLinks",
                 columns: table => new
                 {
@@ -110,12 +94,7 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("c1e9b646-34de-4e46-b6b1-4efb2f320578"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
-
-            migrationBuilder.InsertData(
-                table: "SEOSettings",
-                columns: new[] { "Id", "Favicon", "MetaAuthor", "MetaDescription", "MetaKeywords", "WebSiteTitle" },
-                values: new object[] { new Guid("a10d6fdd-2744-4c5a-b47f-43e087811880"), null, null, null, null, "Sara Rasoulian | Portfolio" });
+                values: new object[] { new Guid("9fbf9255-da73-4c5b-bd1b-498726e5eeff"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
         }
 
         /// <inheritdoc />
@@ -132,9 +111,6 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Profiles");
-
-            migrationBuilder.DropTable(
-                name: "SEOSettings");
 
             migrationBuilder.DropTable(
                 name: "SocialLinks");
