@@ -6,32 +6,32 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/home.vue')
+      component: () => import('../views/home/landing.vue')
     },
     {
-      path: '/login',
+      path: '/admin/login',
       name: 'login',
-      component: () => import('../views/login.vue')
+      component: () => import('../views/admin/login.vue')
     },
     {
-      path: '/profile',
+      path: '/admin/profile',
       name: 'profile-view',
-      component: () => import('../views/profile/view.vue')
+      component: () => import('../views/admin/profile/view.vue')
     },
     {
-      path: '/profile/edit',
+      path: '/admin/profile/edit',
       name: 'profile-edit',
-      component: () => import('../views/profile/edit.vue')
+      component: () => import('../views/admin/profile/edit.vue')
     },
     {
-      path: '/educations',
+      path: '/admin/educations',
       name: 'list',
-      component: () => import('../views/educations/list.vue')
+      component: () => import('../views/admin/educations/list.vue')
     },
     {
-      path: '/educations/add',
+      path: '/admin/educations/add',
       name: 'add',
-      component: () => import('../views/educations/add.vue')
+      component: () => import('../views/admin/educations/add.vue')
     },
   ]
 })

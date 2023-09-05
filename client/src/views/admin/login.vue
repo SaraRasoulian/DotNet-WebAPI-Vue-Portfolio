@@ -38,7 +38,7 @@ import { RouterLink } from 'vue-router'
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="login-buttons">
-                <RouterLink class="btn btn-login" to="/profile">Log In</RouterLink>
+                <RouterLink class="btn btn-login" to="/admin/profile">Log In</RouterLink>
                 <RouterLink to="/" class="back-home">
                   Back to home page
                 </RouterLink>

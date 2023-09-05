@@ -2,7 +2,7 @@
   <AdminLayout>
     <div class="content-container">
       <div class="title-wrapper">
-        <RouterLink to="/educations" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
+        <RouterLink to="/admin/educations" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
           title="Return to list">
           <div class="back-to-list">
             <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import AdminLayout from '@/layouts/AdminLayout.vue'
+import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
 
 export default {

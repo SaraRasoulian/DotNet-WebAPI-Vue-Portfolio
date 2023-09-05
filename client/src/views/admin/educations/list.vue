@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="right-button-wrapper">
-          <RouterLink to="/educations/add" class="btn btn-save btn-add">
+          <RouterLink to="/admin/educations/add" class="btn btn-save btn-add">
             <img src="@/assets/admin/images/add.svg" class="add-icon" alt="">
             <span class="add-text">Add</span>
           </RouterLink>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import AdminLayout from '@/layouts/AdminLayout.vue'
+import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
 
 export default {
