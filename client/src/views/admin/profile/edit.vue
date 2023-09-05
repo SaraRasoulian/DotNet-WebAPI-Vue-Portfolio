@@ -2,7 +2,7 @@
     <AdminLayout>
         <div class="content-container">
             <div class="title-wrapper">
-                <RouterLink to="/profile" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
+                <RouterLink to="/admin/profile" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
                     title="Return to view">
                     <div class="back-to-list">
                         <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
@@ -86,7 +86,7 @@
                             <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                                 <div class="button-container">
                                     <button class="btn btn-save" type="submit">Save</button>
-                                    <RouterLink to="/profile" class="btn btn-cancel">Cancel</RouterLink>
+                                    <RouterLink to="/admin/profile" class="btn btn-cancel">Cancel</RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
 </template>
 
 <script>
-import AdminLayout from '@/layouts/AdminLayout.vue'
+import AdminLayout from '@/layouts/admin/Layout.vue'
 
 export default {
     components: {

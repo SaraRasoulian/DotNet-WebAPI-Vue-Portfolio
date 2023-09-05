@@ -8,7 +8,7 @@
                         <h4>View Profile</h4>
                     </div>
                     <div class="buttons-wrapper">
-                        <RouterLink to="/profile/edit" class="list-button" data-toggle="tooltip" data-placement="top"
+                        <RouterLink to="/admin/profile/edit" class="list-button" data-toggle="tooltip" data-placement="top"
                             title="Edit">
                             <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="">
                         </RouterLink>
@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import AdminLayout from '@/layouts/AdminLayout.vue'
+import AdminLayout from '@/layouts/admin/Layout.vue'
 
 export default {
     components: {
