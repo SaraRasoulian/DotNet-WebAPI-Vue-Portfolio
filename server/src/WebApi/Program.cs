@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 //temp
-builder.Services.AddCors(); 
+builder.Services.AddCors();
 builder.Services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
 
@@ -31,7 +31,8 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 //temp
-app.UseCors(options => options.WithOrigins("*").AllowAnyMethod());
+app.UseCors(options => options.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod());
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

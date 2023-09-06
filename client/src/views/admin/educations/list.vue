@@ -63,6 +63,7 @@
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
+import api from 'api'
 
 export default {
   components: {
@@ -76,7 +77,7 @@ export default {
   },
   methods: {
     getList() {
-      axios.get('https://localhost:7026/api/educations').then(response => {
+      axios.get(api.url + '/api/educations').then(response => {
         console.log(response);
         console.log('data: ', response.data);
         this.list = response.data;

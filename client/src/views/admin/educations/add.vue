@@ -94,6 +94,7 @@
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
+import api from 'api'
 
 export default {
   components: {
@@ -122,15 +123,16 @@ export default {
       console.log('dd ', model);
       alert('test');
 
-      axios.post('https://localhost:7026/api/educations', model, {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json;charset=utf-8'
-        }
-      })
+      axios.post(api.url + '/api/educations', model)
         .then(response => {
-          console.log(response);
-          alert('S');
+          console.log('Response: ', response);
+
+          //back to list page
+          this.$router.push("/admin/educations");
+
+          //show a success notification if status code is 200
+
+
         })
         .catch(error => {
           this.errorMessage = error.message;
