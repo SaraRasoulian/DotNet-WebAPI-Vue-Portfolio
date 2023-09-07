@@ -94,7 +94,7 @@
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
-import api from 'api'
+import api from '@/api.js'
 
 export default {
   components: {
@@ -120,8 +120,7 @@ export default {
         EndYear: this.endYear,
         Description: this.description,
       };
-      console.log('dd ', model);
-      alert('test');
+      console.log('model: ', model);
 
       axios.post(api.url + '/api/educations', model)
         .then(response => {
