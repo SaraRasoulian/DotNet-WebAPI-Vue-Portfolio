@@ -2,12 +2,12 @@
   <AdminLayout>
     <div class="content-container">
       <div class="title-wrapper">
-        <RouterLink to="/admin/educations" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
+        <router-link :to="{ name: 'education-list' }" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
           title="Return to list">
           <div class="back-to-list">
             <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
           </div>
-        </RouterLink>
+        </router-link>
         <h4>Add Education</h4>
       </div>
       <hr class="line" />
@@ -120,11 +120,9 @@ export default {
         EndYear: this.endYear,
         Description: this.description,
       };
-      console.log('model: ', model);
-
       axios.post(api.url + '/api/educations', model)
         .then(response => {
-          console.log('Response: ', response);
+          console.log('Response: ', response.status);
 
           //back to list page
           this.$router.push("/admin/educations");

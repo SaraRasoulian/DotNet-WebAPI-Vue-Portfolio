@@ -10,10 +10,10 @@
           </div>
         </div>
         <div class="right-button-wrapper">
-          <RouterLink to="/admin/educations/add" class="btn btn-save btn-add">
+          <router-link :to="{name: 'education-add' }" class="btn btn-save btn-add">
             <img src="@/assets/admin/images/add.svg" class="add-icon" alt="">
             <span class="add-text">Add</span>
-          </RouterLink>
+          </router-link>
         </div>
       </div>
 
@@ -40,9 +40,11 @@
               <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.school }}</span></div>
             </div>
             <div class="buttons-wrapper">
-              <a href="education-view.html" class="list-button" data-toggle="tooltip" data-placement="top" title="View">
+              <router-link :to="{ name: 'education-view', params: { id: item.id} }" class="list-button" data-toggle="tooltip" data-placement="top"
+                title="Details">
                 <img src="@/assets/admin/images/view.png" class="list-button-icon" alt="">
-              </a>
+              </router-link>
+
               <a href="education-edit.html" class="list-button" data-toggle="tooltip" data-placement="top" title="Edit">
                 <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="">
               </a>
@@ -77,9 +79,7 @@ export default {
   },
   methods: {
     getList() {
-      axios.get(api.url + '/api/educations').then(response => {
-        console.log(response);
-        console.log('data: ', response.data);
+      axios.get(api.url + '/api/educations').then(response => {        
         this.list = response.data;
         this.listTotal = this.list.length;
       });

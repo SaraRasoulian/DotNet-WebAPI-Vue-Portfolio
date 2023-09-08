@@ -25,13 +25,18 @@ const router = createRouter({
     },
     {
       path: '/admin/educations',
-      name: 'list',
+      name: 'education-list',
       component: () => import('../views/admin/educations/list.vue')
     },
     {
       path: '/admin/educations/add',
-      name: 'add',
+      name: 'education-add',
       component: () => import('../views/admin/educations/add.vue')
+    },
+    {
+      path: '/admin/educations/:id',
+      name: 'education-view',
+      component: () => import('../views/admin/educations/view.vue')
     },
   ]
 })
