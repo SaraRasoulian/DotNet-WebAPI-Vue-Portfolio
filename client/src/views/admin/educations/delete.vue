@@ -69,7 +69,8 @@
                                 <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                                     <div class="button-container">
                                         <button class="btn btn-delete" v-on:click.prevent="remove()">Delete</button>
-                                        <router-link :to="{ name: 'education-list' }" class="btn btn-cancel">Cancel</router-link>
+                                        <router-link :to="{ name: 'education-list' }"
+                                            class="btn btn-cancel">Cancel</router-link>
                                     </div>
                                 </div>
                             </div>
@@ -86,6 +87,7 @@
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
 import api from '@/common/api.js'
+import { useToast } from "vue-toastification"
 
 export default {
     components: {
@@ -103,16 +105,26 @@ export default {
                 this.model = response.data
             });
         },
-        remove()
-        {
+        remove() {
+            const toast = useToast();
             axios.delete(api.url + '/api/educations/' + this.id).then(response => {
-                console.log('response: ', response)
+                console.log('response status: ', response.status)
+
                 this.$router.push("/admin/educations")
-            });
+
+                if (response.status == 200) {
+                    toast.success("Education deleted successfully")
+                }
+            })
+                .catch(error => {
+                    console.log(error)
+                    toast.error("Something went wrong")
+                })
         }
     },
     mounted() {
         this.loadData()
+
     }
 }
 </script>

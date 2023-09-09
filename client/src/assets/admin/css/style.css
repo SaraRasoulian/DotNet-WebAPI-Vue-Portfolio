@@ -454,3 +454,8 @@ input {
     margin: 0;
   }
 }
+
+/* toastnotification */
+.Vue-Toastification__toast--success {
+  background-color: var(--green);
+}

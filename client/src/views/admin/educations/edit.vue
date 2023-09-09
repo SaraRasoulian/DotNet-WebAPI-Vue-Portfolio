@@ -101,6 +101,7 @@
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
 import api from '@/common/api.js'
+import { useToast } from "vue-toastification"
 
 export default {
     components: {
@@ -119,19 +120,22 @@ export default {
             });
         },
         update() {
+            const toast = useToast();
             axios.put(api.url + '/api/educations/' + this.id, this.model)
                 .then(response => {
                     console.log('Response: ', response.status)
 
-                    //back to list page
                     this.$router.push("/admin/educations")
 
-                    //show a success notification if status code is 200
+                    if (response.status == 200) {
+                        toast.success("Education edited successfully")
+                    }
+
                 })
                 .catch(error => {
                     this.errorMessage = error.message;
                     console.error("There was an error!", error)
-                    alert('Error')
+                    toast.error("Something went wrong")
                 })
         }
     },
