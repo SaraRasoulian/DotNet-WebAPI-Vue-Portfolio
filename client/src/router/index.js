@@ -37,7 +37,19 @@ const router = createRouter({
       path: '/admin/educations/:id',
       name: 'education-view',
       component: () => import('../views/admin/educations/view.vue')
+    },    
+    {
+      path: '/admin/educations/edit/:id',
+      name: 'education-edit',
+      component: () => import('../views/admin/educations/edit.vue')
     },
+    {
+      path: '/admin/educations/delete/:id',
+      name: 'education-delete',
+      component: () => import('../views/admin/educations/delete.vue')
+    },
+
+    
   ]
 })
 

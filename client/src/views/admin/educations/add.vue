@@ -41,7 +41,7 @@
             <div class="row g-3">
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="school" class="form-label">School</label>
-                <input type="text" v-model="school" class="form-control" id="school" placeholder="School" required="">
+                <input type="text" v-model="school" class="form-control" id="school" placeholder="School">
                 <div class="invalid-feedback">
                   School is required.
                 </div>
@@ -108,7 +108,7 @@ export default {
       startYear: '',
       endYear: '',
       description: '',
-    };
+    }
   },
   methods: {
     create() {
@@ -119,7 +119,7 @@ export default {
         StartYear: this.startYear,
         EndYear: this.endYear,
         Description: this.description,
-      };
+      }
       axios.post(api.url + '/api/educations', model)
         .then(response => {
           console.log('Response: ', response.status);
@@ -128,8 +128,6 @@ export default {
           this.$router.push("/admin/educations");
 
           //show a success notification if status code is 200
-
-
         })
         .catch(error => {
           this.errorMessage = error.message;

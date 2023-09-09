@@ -6,21 +6,10 @@
                     <router-link :to="{ name: 'education-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
                         data-placement="top" title="Return to list">
                         <div class="back-to-list">
-                            <img src="@/assets/admin/images/back.png" class="back-icon" alt="Return to list" />
+                            <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
                         </div>
                     </router-link>
-                    <h4>View Education</h4>
-                    <div class="buttons-wrapper">
-                        <router-link :to="{ name: 'education-edit', params: { id: id } }" class="list-button"
-                            data-toggle="tooltip" data-placement="top" title="Edit">
-                            <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit" />
-                        </router-link>
-
-                        <router-link :to="{ name: 'education-delete', params: { id: id } }" class="list-button"
-                            data-toggle="tooltip" data-placement="top" title="Delete">
-                            <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="Delete" />
-                        </router-link>
-                    </div>
+                    <h4>Edit Education</h4>
                 </div>
                 <hr class="line" />
 
@@ -76,7 +65,14 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="row">
+                                <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                    <div class="button-container">
+                                        <button class="btn btn-delete" v-on:click.prevent="remove()">Delete</button>
+                                        <router-link :to="{ name: 'education-list' }" class="btn btn-cancel">Cancel</router-link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,6 +103,12 @@ export default {
                 this.model = response.data;
             });
         },
+        remove()
+        {
+            axios.delete(api.url + '/api/educations/' + this.id).then(response => {
+                console.log('response: ', response);
+            });
+        }
     },
     mounted() {
         this.loadData()

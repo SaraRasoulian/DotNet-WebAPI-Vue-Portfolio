@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="right-button-wrapper">
-          <router-link :to="{name: 'education-add' }" class="btn btn-save btn-add">
+          <router-link :to="{ name: 'education-add' }" class="btn btn-save btn-add">
             <img src="@/assets/admin/images/add.svg" class="add-icon" alt="">
             <span class="add-text">Add</span>
           </router-link>
@@ -40,18 +40,20 @@
               <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.school }}</span></div>
             </div>
             <div class="buttons-wrapper">
-              <router-link :to="{ name: 'education-view', params: { id: item.id} }" class="list-button" data-toggle="tooltip" data-placement="top"
-                title="Details">
-                <img src="@/assets/admin/images/view.png" class="list-button-icon" alt="">
+              <router-link :to="{ name: 'education-view', params: { id: item.id } }" class="list-button"
+                data-toggle="tooltip" data-placement="top" title="View">
+                <img src="@/assets/admin/images/view.png" class="list-button-icon" alt="View">
               </router-link>
 
-              <a href="education-edit.html" class="list-button" data-toggle="tooltip" data-placement="top" title="Edit">
-                <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="">
-              </a>
-              <a href="education-delete.html" class="list-button" data-toggle="tooltip" data-placement="top"
-                title="Delete">
-                <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="">
-              </a>
+              <router-link :to="{ name: 'education-edit', params: { id: item.id } }" class="list-button"
+                data-toggle="tooltip" data-placement="top" title="Edit">
+                <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit">
+              </router-link>
+
+              <router-link :to="{ name: 'education-delete', params: { id: item.id } }" class="list-button"
+                data-toggle="tooltip" data-placement="top" title="Delete">
+                <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="Delete">
+              </router-link>
             </div>
           </div>
           <hr class="line" />
@@ -79,7 +81,7 @@ export default {
   },
   methods: {
     getList() {
-      axios.get(api.url + '/api/educations').then(response => {        
+      axios.get(api.url + '/api/educations').then(response => {
         this.list = response.data;
         this.listTotal = this.list.length;
       });
