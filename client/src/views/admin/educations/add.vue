@@ -94,7 +94,7 @@
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import axios from "axios"
-import api from '@/api.js'
+import api from '@/common/api.js'
 
 export default {
   components: {
