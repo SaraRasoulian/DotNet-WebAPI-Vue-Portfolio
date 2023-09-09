@@ -13,8 +13,7 @@
       <hr class="line" />
 
       <div class="content">
-        <div class="form-container">
-          <form class="needs-validation" novalidate="">
+        <div class="form-container">          
             <div class="row g-3">
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="degree" class="form-label">Degree</label>
@@ -83,7 +82,6 @@
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
@@ -122,10 +120,10 @@ export default {
       }
       axios.post(api.url + '/api/educations', model)
         .then(response => {
-          console.log('Response: ', response.status);
+          console.log('Response: ', response.status)
 
           //back to list page
-          this.$router.push("/admin/educations");
+          this.$router.push("/admin/educations")
 
           //show a success notification if status code is 200
         })
@@ -134,17 +132,7 @@ export default {
           console.error("There was an error!", error);
           alert('Error');
 
-        });
-
-      this.clearForm();
-    },
-    clearForm() {
-      this.degree = "";
-      this.fieldOfStudy = "";
-      this.school = "";
-      this.startYear = "";
-      this.endYear = "";
-      this.description = "";
+        })
     },
   }
 }

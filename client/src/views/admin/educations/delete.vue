@@ -100,13 +100,14 @@ export default {
     methods: {
         loadData() {
             axios.get(api.url + '/api/educations/' + this.id).then(response => {
-                this.model = response.data;
+                this.model = response.data
             });
         },
         remove()
         {
             axios.delete(api.url + '/api/educations/' + this.id).then(response => {
-                console.log('response: ', response);
+                console.log('response: ', response)
+                this.$router.push("/admin/educations")
             });
         }
     },
