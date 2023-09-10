@@ -3,6 +3,7 @@
     public class EducationDto
     {
         public Guid Id { get; set; }
+
         public required string Degree { get; set; }
 
         public required string FieldOfStudy { get; set; }

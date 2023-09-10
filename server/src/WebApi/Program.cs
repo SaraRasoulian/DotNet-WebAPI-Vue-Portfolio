@@ -23,6 +23,7 @@ builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnection
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEducationService, EducationService>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
