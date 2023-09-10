@@ -8,10 +8,10 @@
                         <h4>View Profile</h4>
                     </div>
                     <div class="buttons-wrapper">
-                        <RouterLink to="/admin/profile/edit" class="list-button" data-toggle="tooltip" data-placement="top"
-                            title="Edit">
-                            <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="">
-                        </RouterLink>
+                        <router-link :to="{ name: 'profile-edit' }" class="list-button" data-toggle="tooltip"
+                            data-placement="top" title="Edit">
+                            <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit">
+                        </router-link>
                     </div>
                 </div>
 
@@ -25,13 +25,13 @@
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <div class="view-item-wrapper">
                                         <span>First Name</span>
-                                        <p>Sara</p>
+                                        <p>{{ model.firstName }}</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <div class="view-item-wrapper">
                                         <span>Last Name</span>
-                                        <p>Rasoulian</p>
+                                        <p>{{ model.lastName }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                                 <div class="col-lg-8 col-md-12 col-sm-12">
                                     <div class="view-item-wrapper">
                                         <span>Email</span>
-                                        <p>Example@gmail.com</p>
+                                        <p>{{ model.email }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                 <div class="col-lg-8 col-md-12 col-sm-12">
                                     <div class="view-item-wrapper">
                                         <span>Headline</span>
-                                        <p>My name is Sara</p>
+                                        <p>{{ model.headline }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -58,12 +58,7 @@
                                 <div class="col-lg-8 col-md-12 col-sm-12">
                                     <div class="view-item-wrapper">
                                         <span>About</span>
-                                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
-                                            to
-                                            demonstrate the visual form of a document or a typeface without relying on
-                                            meaningful content. Lorem ipsum may be used as a placeholder before final copy
-                                            is
-                                            available.</p>
+                                        <p>{{ model.about }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -88,10 +83,27 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
+import axios from "axios"
+import api from '@/common/api.js'
 
 export default {
     components: {
         AdminLayout,
+    },
+    data() {
+        return {
+            model: [],
+        };
+    },
+    methods: {
+        loadData() {
+            axios.get(api.url + '/api/profiles').then(response => {
+                this.model = response.data;
+            });
+        },
+    },
+    mounted() {
+        this.loadData()
     }
 }
 </script>

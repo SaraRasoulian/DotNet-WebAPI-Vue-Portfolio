@@ -78,7 +78,7 @@
             <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
               <div class="button-container">
                 <button class="btn btn-save" v-on:click.prevent="create()">Add</button>
-                <button class="btn btn-cancel" type="submit">Cancel</button>
+                <router-link :to="{ name: 'education-list' }" class="btn btn-cancel">Cancel</router-link>
               </div>
             </div>
           </div>

@@ -2,12 +2,12 @@
     <AdminLayout>
         <div class="content-container">
             <div class="title-wrapper">
-                <RouterLink to="/admin/profile" class="back-to-list-wrapper" data-toggle="tooltip" data-placement="top"
-                    title="Return to view">
+                <router-link :to="{ name: 'profile-view' }" class="back-to-list-wrapper" data-toggle="tooltip"
+                    data-placement="top" title="Return to view">
                     <div class="back-to-list">
-                        <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
+                        <img src="@/assets/admin/images/back.png" class="back-icon" alt="Return to view" />
                     </div>
-                </RouterLink>
+                </router-link>
                 <h4>Edit Profile</h4>
             </div>
             <hr class="line" />
@@ -18,47 +18,40 @@
 
                         <div class="row g-3">
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                                <label for="startYear" class="form-label">First Name</label>
-                                <input type="text" class="form-control" placeholder="First Name">
-                                <div class="invalid-feedback">
-                                    Valid first name is required.
-                                </div>
+                                <label class="form-label">First Name</label>
+                                <input v-model="model.firstName" type="text" class="form-control" placeholder="First Name">
+
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                                <label for="endYear" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last Name">
-                                <div class="invalid-feedback">
-                                    Valid last name is required.
-                                </div>
+                                <label class="form-label">Last Name</label>
+                                <input v-model="model.lastName" type="text" class="form-control" placeholder="Last Name">
+
                             </div>
                         </div>
 
                         <div class="row g-3">
                             <div class="col-lg-8 col-md-12 col-sm-12">
-                                <label for="degree" class="form-label">Email</label>
+                                <label class="form-label">Email</label>
                                 <div class="input-group has-validation">
-                                    <input type="text" class="form-control" placeholder="Email">
-                                    <div class="invalid-feedback">
-                                        Your username is required.
-                                    </div>
+                                    <input v-model="model.email" type="email" class="form-control" placeholder="Email">
+
                                 </div>
                             </div>
                         </div>
 
                         <div class="row g-3">
                             <div class="col-lg-8 col-md-12 col-sm-12">
-                                <label for="field" class="form-label">Headline</label>
-                                <input type="text" class="form-control" placeholder="Headline">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
+                                <label class="form-label">Headline</label>
+                                <input v-model="model.headline" type="text" class="form-control" placeholder="Headline">
+
                             </div>
                         </div>
 
                         <div class="row g-3">
                             <div class="col-lg-8 col-md-12 col-sm-12">
-                                <label for="discription" class="form-label">About</label>
-                                <textarea type="text" class="form-control" placeholder="About"></textarea>
+                                <label class="form-label">About</label>
+                                <textarea v-model="model.about" type="text" class="form-control"
+                                    placeholder="About"></textarea>
                             </div>
                         </div>
 
@@ -85,8 +78,8 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                                 <div class="button-container">
-                                    <button class="btn btn-save" type="submit">Save</button>
-                                    <RouterLink to="/admin/profile" class="btn btn-cancel">Cancel</RouterLink>
+                                    <button class="btn btn-save" v-on:click.prevent="update()">Save</button>
+                                    <router-link :to="{ name: 'profile-view' }" class="btn btn-cancel">Cancel</router-link>
                                 </div>
                             </div>
                         </div>
@@ -99,10 +92,47 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
+import axios from "axios"
+import api from '@/common/api.js'
+import { useToast } from "vue-toastification"
 
 export default {
     components: {
         AdminLayout,
+    },
+    data() {
+        return {
+            model: [],
+        };
+    },
+    methods: {
+        loadData() {
+            axios.get(api.url + '/api/profiles').then(response => {
+                this.model = response.data;
+            });
+        },
+        update() {
+            const toast = useToast();
+            axios.put(api.url + '/api/profiles', this.model)
+                .then(response => {
+                    console.log('Response: ', response.status)
+
+                    this.$router.push("/admin/profile")
+
+                    if (response.status == 200) {
+                        toast.success("Profile edited successfully")
+                    }
+
+                })
+                .catch(error => {
+                    this.errorMessage = error.message;
+                    console.error("There was an error!", error)
+                    toast.error("Something went wrong")
+                })
+        }
+    },
+    mounted() {
+        this.loadData()
     }
 }
 </script>
