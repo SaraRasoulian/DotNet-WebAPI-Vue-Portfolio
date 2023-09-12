@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router'
 </script>
 <template>
-    <div :class="{ 'min-sidebar': isSidebarMinimized }">
+    <div class="" :class="{ 'min-sidebar': isSidebarMinimized }">
         <div class="desktop-navbar noselect">
             <!-- Header -->
             <div class="fixed-top header wraper">
@@ -17,11 +17,11 @@ import { RouterLink } from 'vue-router'
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <RouterLink to="/admin/profile/edit" class="dropdown-item">
+                                        <router-link :to="{ name: 'profile-edit' }" class="dropdown-item">
                                             <img src="@/assets/admin/images/profile.png" class="sidebar-icon dropdown-icon"
-                                                alt="">
+                                                alt="Edit profile">
                                             Edit profile
-                                        </RouterLink>
+                                        </router-link>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">
@@ -31,11 +31,11 @@ import { RouterLink } from 'vue-router'
                                         </a>
                                     </li>
                                     <li>
-                                        <RouterLink to="/admin/login" class="dropdown-item">
+                                        <router-link :to="{ name: 'login' }" class="dropdown-item">
                                             <img src="@/assets/admin/images/logout.png" class="sidebar-icon dropdown-icon"
-                                                alt="">
+                                                alt="Log out">
                                             Log out
-                                        </RouterLink>
+                                        </router-link>
                                     </li>
                                 </ul>
                             </li>
@@ -56,13 +56,13 @@ import { RouterLink } from 'vue-router'
                         </div>
                     </li>
 
-                    <li class="nav-item">
-                        <RouterLink to="/admin/profile" class="nav-link">
+                    <li class="nav-item nav-profile">
+                        <router-link :to="{ name: 'profile-view' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="">
                                 <span>Profile</span>
                             </div>
-                        </RouterLink>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
@@ -72,13 +72,13 @@ import { RouterLink } from 'vue-router'
                             </div>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <RouterLink to="/admin/educations" class="nav-link">
+                    <li class="nav-item nav-education">
+                        <router-link :to="{ name: 'education-list' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
                                 <span>Educations</span>
                             </div>
-                        </RouterLink>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
@@ -110,13 +110,13 @@ import { RouterLink } from 'vue-router'
                             </div>
                             <hr />
                         </li>
-                        <li class="nav-item">
-                            <RouterLink to="/admin/profile" class="nav-link">
+                        <li class="nav-item nav-profile">
+                            <router-link :to="{ name: 'profile-view' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="">
                                     <span>Profile</span>
                                 </div>
-                            </RouterLink>
+                            </router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
@@ -126,13 +126,13 @@ import { RouterLink } from 'vue-router'
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <RouterLink to="/admin/educations" class="nav-link">
+                        <li class="nav-item nav-education">
+                            <router-link :to="{ name: 'education-list' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
                                     <span>Educations</span>
                                 </div>
-                            </RouterLink>
+                            </router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
@@ -160,12 +160,12 @@ import { RouterLink } from 'vue-router'
                             </a>
                         </li>
                         <li class="nav-item">
-                            <RouterLink to="/admin/login" class="nav-link">
+                            <router-link :to="{ name: 'login' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/logout.png" class="sidebar-icon" alt="">
                                     <span>Log Out</span>
                                 </div>
-                            </RouterLink>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -207,12 +207,6 @@ export default {
         toggleSidebar() {
             this.isSidebarMinimized = !this.isSidebarMinimized
         }
-    },
-    mounted() {
-        console.log("I am in mounted!!!")
-    },
-    setup() {
-        console.log("I am in setup!!!")
     }
 }
 </script>

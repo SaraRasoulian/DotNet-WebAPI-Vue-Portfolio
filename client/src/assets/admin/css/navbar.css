@@ -69,7 +69,7 @@
 }
 
 .sidebar li {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* toggle-sidebar */
@@ -132,7 +132,6 @@
   padding-left: 2rem;
 }
 
-
 .sidebar .nav-item:active,
 .mobile-navbar .nav-item:active {
   background-color: var(--active-gray);
@@ -144,15 +143,14 @@
   padding-left: 2rem;
 }
 
-/* active-item */
-.sidebar .router-link-active,
-.sidebar .router-link-active:hover,
-.mobile-navbar .nav-item.router-link-active,
+/* active-item start */
+.profile .sidebar .nav-profile,
+.profile .sidebar .nav-profile:hover,
+.profile .mobile-navbar .nav-item.nav-profile,
 
-.sidebar .router-link-exact-active,
-.sidebar .router-link-exact-active:hover,
-.mobile-navbar .nav-item.router-link-exact-active{
-
+.education .sidebar .nav-education,
+.education .sidebar .nav-education:hover,
+.education .mobile-navbar .nav-item.nav-education {
   background-color: var(--active-color);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -164,12 +162,23 @@
   padding-left: 2rem;
 }
 
-.sidebar .router-link-active .nav-link,
-.sidebar .router-link-exact-active .nav-link
- {
+.profile .min-sidebar .sidebar .nav-profile,
+.profile .min-sidebar .sidebar .nav-profile:hover,
+
+.education .min-sidebar .sidebar .nav-education,
+.education .min-sidebar .sidebar .nav-education:hover {
+  border-radius: 50%;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.profile .sidebar .nav-profile .nav-link,
+
+.education .sidebar .nav-education .nav-link {
   font-weight: 600;
   color: var(--text-color);
 }
+/* active-item end */
 
 .nav-link {
   color: var(--text-color);
@@ -284,7 +293,6 @@
   .mobile-navbar .profile-container span {
     padding: 5px;
   }
-
 }
 
 .noselect {
@@ -302,7 +310,6 @@
   /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-
 
 /******************** min-sidebar ********************/
 .min-sidebar .content-container {
@@ -331,18 +338,7 @@
   padding-left: 0;
 }
 
-
 .min-sidebar .sidebar .nav-item:active {
-  border-radius: 50%;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-/* active-item */
-.min-sidebar .sidebar .router-link-active,
-.min-sidebar .sidebar .router-link-active:hover,
-.min-sidebar .sidebar .router-link-exact-active,
-.min-sidebar .sidebar .router-link-exact-active:hover {
   border-radius: 50%;
   margin-left: 0;
   padding-left: 0;
