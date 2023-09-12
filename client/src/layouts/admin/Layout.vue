@@ -72,8 +72,8 @@ import { RouterLink } from 'vue-router'
                             </div>
                         </a>
                     </li>
-                    <li class="nav-item nav-education">
-                        <router-link :to="{ name: 'education-list' }" class="nav-link">
+                    <li class="nav-item nav-educations">
+                        <router-link :to="{ name: 'educations-list' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
                                 <span>Educations</span>
@@ -88,13 +88,13 @@ import { RouterLink } from 'vue-router'
                             </div>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="message-list.html">
+                    <li class="nav-item nav-messages">
+                        <router-link :to="{ name: 'messages-list' }" class="nav-link">
                             <div class="nav-link-inner">
-                                <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="">
+                                <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                 <span>Messages</span>
                             </div>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </div>
@@ -126,8 +126,8 @@ import { RouterLink } from 'vue-router'
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item nav-education">
-                            <router-link :to="{ name: 'education-list' }" class="nav-link">
+                        <li class="nav-item nav-educations">
+                            <router-link :to="{ name: 'educations-list' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
                                     <span>Educations</span>
@@ -142,13 +142,13 @@ import { RouterLink } from 'vue-router'
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="message-list.html">
+                        <li class="nav-item nav-messages">
+                            <router-link :to="{ name: 'messages-list' }" class="nav-link">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="">
+                                    <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                     <span>Messages</span>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                         <hr class="line" />
                         <li class="nav-item">

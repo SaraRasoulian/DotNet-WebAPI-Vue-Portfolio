@@ -148,9 +148,13 @@
 .profile .sidebar .nav-profile:hover,
 .profile .mobile-navbar .nav-item.nav-profile,
 
-.education .sidebar .nav-education,
-.education .sidebar .nav-education:hover,
-.education .mobile-navbar .nav-item.nav-education {
+.education .sidebar .nav-educations,
+.education .sidebar .nav-educations:hover,
+.education .mobile-navbar .nav-item.nav-educations,
+
+.messages .sidebar .nav-messages,
+.messages .sidebar .nav-messages:hover,
+.messages .mobile-navbar .nav-item.nav-messages {
   background-color: var(--active-color);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -165,16 +169,19 @@
 .profile .min-sidebar .sidebar .nav-profile,
 .profile .min-sidebar .sidebar .nav-profile:hover,
 
-.education .min-sidebar .sidebar .nav-education,
-.education .min-sidebar .sidebar .nav-education:hover {
+.education .min-sidebar .sidebar .nav-educations,
+.education .min-sidebar .sidebar .nav-educations:hover,
+
+.messages .min-sidebar .sidebar .nav-messages,
+.messages .min-sidebar .sidebar .nav-messages:hover {
   border-radius: 50%;
   margin-left: 0;
   padding-left: 0;
 }
 
 .profile .sidebar .nav-profile .nav-link,
-
-.education .sidebar .nav-education .nav-link {
+.education .sidebar .nav-educations .nav-link,
+.messages .sidebar .nav-messages .nav-link {
   font-weight: 600;
   color: var(--text-color);
 }

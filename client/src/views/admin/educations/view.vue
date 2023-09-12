@@ -4,7 +4,7 @@
             <div class="content-container">
                 <div class="view-wrapper">
                     <div class="title-wrapper">
-                        <router-link :to="{ name: 'education-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
+                        <router-link :to="{ name: 'educations-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
                             data-placement="top" title="Return to list">
                             <div class="back-to-list">
                                 <img src="@/assets/admin/images/back.png" class="back-icon" alt="Return to list" />
@@ -12,12 +12,12 @@
                         </router-link>
                         <h4>View Education</h4>
                         <div class="buttons-wrapper">
-                            <router-link :to="{ name: 'education-edit', params: { id: id } }" class="list-button"
+                            <router-link :to="{ name: 'educations-edit', params: { id: id } }" class="list-button"
                                 data-toggle="tooltip" data-placement="top" title="Edit">
                                 <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit" />
                             </router-link>
 
-                            <router-link :to="{ name: 'education-delete', params: { id: id } }" class="list-button"
+                            <router-link :to="{ name: 'educations-delete', params: { id: id } }" class="list-button"
                                 data-toggle="tooltip" data-placement="top" title="Delete">
                                 <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="Delete" />
                             </router-link>

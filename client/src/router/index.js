@@ -8,11 +8,14 @@ const router = createRouter({
       name: 'home',
       component: () => import('../views/home/home.vue')
     },
+
     {
       path: '/admin/login',
       name: 'login',
       component: () => import('../views/admin/login.vue')
     },
+
+
     {
       path: '/admin/profile',
       name: 'profile-view',
@@ -23,33 +26,50 @@ const router = createRouter({
       name: 'profile-edit',
       component: () => import('../views/admin/profile/edit.vue')
     },
+
+
     {
       path: '/admin/educations',
-      name: 'education-list',
+      name: 'educations-list',
       component: () => import('../views/admin/educations/list.vue')
     },
     {
       path: '/admin/educations/add',
-      name: 'education-add',
+      name: 'educations-add',
       component: () => import('../views/admin/educations/add.vue')
     },
     {
       path: '/admin/educations/:id',
-      name: 'education-view',
+      name: 'educations-view',
       component: () => import('../views/admin/educations/view.vue')
     },    
     {
       path: '/admin/educations/edit/:id',
-      name: 'education-edit',
+      name: 'educations-edit',
       component: () => import('../views/admin/educations/edit.vue')
     },
     {
       path: '/admin/educations/delete/:id',
-      name: 'education-delete',
+      name: 'educations-delete',
       component: () => import('../views/admin/educations/delete.vue')
     },
 
-    
+
+    {
+      path: '/admin/messages',
+      name: 'messages-list',
+      component: () => import('../views/admin/messages/list.vue')
+    },
+    {
+      path: '/admin/messages/:id',
+      name: 'messages-view',
+      component: () => import('../views/admin/messages/view.vue')
+    },
+    {
+      path: '/admin/messages/delete/:id',
+      name: 'messages-delete',
+      component: () => import('../views/admin/messages/delete.vue')
+    },
   ]
 })
 
