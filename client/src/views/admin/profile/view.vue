@@ -86,7 +86,7 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import profileService from '@/services/ProfileService'
+import profileService from '@/services/profileService'
 import { useToast } from 'vue-toastification'
 
 export default {

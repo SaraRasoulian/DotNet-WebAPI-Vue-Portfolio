@@ -101,8 +101,7 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import axios from "axios"
-import api from '@/common/api.js'
+import educationsService from '@/services/educationsService'
 import { useToast } from "vue-toastification"
 
 export default {
@@ -116,23 +115,20 @@ export default {
         };
     },
     methods: {
-        loadData() {
-            axios.get(api.url + '/api/educations/' + this.id).then(response => {
+        async loadData() {
+            await educationsService.get(this.id).then(response => {
                 this.model = response.data;
             });
         },
-        update() {
-            const toast = useToast();
-            axios.put(api.url + '/api/educations/' + this.id, this.model)
+        async update() {
+            const toast = useToast()
+            await educationsService.update(this.id, this.model)
                 .then(response => {
-                    console.log('Response: ', response.status)
-
                     this.$router.push("/admin/educations")
 
                     if (response.status == 200) {
                         toast.success("Education edited successfully")
                     }
-
                 })
                 .catch(error => {
                     this.errorMessage = error.message;

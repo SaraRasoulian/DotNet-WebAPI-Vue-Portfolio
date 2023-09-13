@@ -5,10 +5,10 @@ const path = '/api/profiles'
 
 const profileService = {
   async get() {
-    return await axios.get(api.url + path)
+    return await axios.get(`${api.url}${path}`)
   },
   async update(model) {
-    return await axios.put(api.url + path, model)
+    return await axios.put(`${api.url}${path}`, model)
   }
 }
 

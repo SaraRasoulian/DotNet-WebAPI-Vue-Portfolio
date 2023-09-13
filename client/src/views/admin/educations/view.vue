@@ -90,8 +90,7 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import axios from "axios"
-import api from '@/common/api.js'
+import educationsService from '@/services/educationsService'
 
 export default {
     components: {
@@ -104,10 +103,10 @@ export default {
         };
     },
     methods: {
-        loadData() {
-            axios.get(api.url + '/api/educations/' + this.id).then(response => {
+        async loadData() {
+            await educationsService.get(this.id).then(response => {
                 this.model = response.data;
-            });
+            })
         },
     },
     mounted() {

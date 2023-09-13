@@ -68,8 +68,7 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import axios from "axios"
-import api from '@/common/api.js'
+import educationsService from '@/services/educationsService'
 
 export default {
   components: {
@@ -79,14 +78,14 @@ export default {
     return {
       list: [],
       listTotal: 0,
-    };
+    }
   },
   methods: {
-    getList() {
-      axios.get(api.url + '/api/educations').then(response => {
+    async getList() {
+      await educationsService.getAll().then(response => {
         this.list = response.data;
         this.listTotal = this.list.length;
-      });
+      })
     },
   },
   mounted() {

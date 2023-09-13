@@ -93,8 +93,7 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import axios from "axios"
-import api from '@/common/api.js'
+import educationsService from '@/services/educationsService'
 import { useToast } from "vue-toastification"
 
 export default {
@@ -122,21 +121,17 @@ export default {
         Description: this.description,
       }
       const toast = useToast()
-      axios.post(api.url + '/api/educations', model)
-        .then(response => {
-          console.log('Response: ', response.status)
+      educationsService.create(model).then(response => {
+        this.$router.push("/admin/educations")
 
-          this.$router.push("/admin/educations")
+        if (response.status == 200) {
+          toast.success("Education added successfully")
+        }
 
-          if (response.status == 200) {
-            toast.success("Education added successfully")
-          }
-
-        })
+      })
         .catch(error => {
-          console.error("There was an error!", error);
+          console.error("There was an error!", error)
           toast.error("Something went wrong")
-
         })
     },
   }
