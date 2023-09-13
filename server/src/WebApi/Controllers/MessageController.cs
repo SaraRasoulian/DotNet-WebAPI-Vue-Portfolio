@@ -6,12 +6,12 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EducationsController : ControllerBase
+    public class MessagesController : ControllerBase
     {
-        private readonly IEducationService _educationService;
-        public EducationsController(IEducationService educationService)
+        private readonly IMessageService _messageService;
+        public MessagesController(IMessageService messageService)
         {
-            _educationService = educationService;
+            _messageService = messageService;
         }
 
         [HttpGet]
@@ -19,7 +19,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                var result = await _educationService.GetAll();
+                var result = await _messageService.GetAll();
                 return Ok(result);
             }
             catch (Exception)
@@ -33,7 +33,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                var result = await _educationService.GetById(id);
+                var result = await _messageService.GetById(id);
                 if (result is null) return NoContent();
                 return Ok(result);
             }
@@ -44,29 +44,13 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] EducationDto model)
+        public async Task<IActionResult> Post([FromBody] MessageDto model)
         {
             try
             {
                 if (!ModelState.IsValid || model is null) return BadRequest(ModelState);
-                var result = await _educationService.Add(model);
+                var result = await _messageService.Add(model);
                 return Ok(result);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-        }
-
-        [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDto model)
-        {
-            try
-            {
-                if (!ModelState.IsValid) return BadRequest(ModelState);
-                var result = await _educationService.Update(id, model);
-                if (!result) return BadRequest();
-                return Ok();
             }
             catch (Exception)
             {
@@ -79,7 +63,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                var result = await _educationService.Delete(id);
+                var result = await _messageService.Delete(id);
                 if (!result) return BadRequest();
                 return Ok();
             }

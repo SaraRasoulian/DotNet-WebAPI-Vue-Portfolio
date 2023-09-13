@@ -24,7 +24,6 @@ namespace WebApi.Controllers
             }
             catch (Exception)
             {
-                // To Do: log the exceptions
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20230905114121_Initialize")]
+    [Migration("20230913131444_Initialize")]
     partial class Initialize
     {
         /// <inheritdoc />
@@ -116,9 +116,6 @@ namespace Infrastructure.Migrations
                         .HasMaxLength(320)
                         .HasColumnType("character varying(320)");
 
-                    b.Property<bool>("IsRead")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -173,7 +170,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9fbf9255-da73-4c5b-bd1b-498726e5eeff"),
+                            Id = new Guid("f0e50692-6f21-41df-a64a-cd1e01e9314d"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",
