@@ -99,8 +99,7 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import axios from "axios"
-import api from '@/common/api.js'
+import profileService from '@/services/ProfileService'
 import { useToast } from "vue-toastification"
 
 export default {
@@ -113,24 +112,22 @@ export default {
         };
     },
     methods: {
-        loadData() {
-            axios.get(api.url + '/api/profiles').then(response => {
+        async loadData() {
+            await profileService.get().then(response => {
                 this.model = response.data;
             });
         },
-        update() {
+        async update() {
             const toast = useToast();
-            axios.put(api.url + '/api/profiles', this.model)
-                .then(response => {
-                    console.log('Response: ', response.status)
+            await profileService.update(this.model).then(response => {
 
-                    this.$router.push("/admin/profile")
+                this.$router.push("/admin/profile")
 
-                    if (response.status == 200) {
-                        toast.success("Profile edited successfully")
-                    }
+                if (response.status == 200) {
+                    toast.success("Profile edited successfully")
+                }
 
-                })
+            })
                 .catch(error => {
                     this.errorMessage = error.message;
                     console.error("There was an error!", error)

@@ -86,8 +86,8 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import axios from "axios"
-import api from '@/common/api.js'
+import profileService from '@/services/ProfileService'
+import { useToast } from 'vue-toastification'
 
 export default {
     components: {
@@ -99,10 +99,15 @@ export default {
         };
     },
     methods: {
-        loadData() {
-            axios.get(api.url + '/api/profiles').then(response => {
-                this.model = response.data;
-            });
+        async loadData() {
+            const toast = useToast()
+            try {
+                await profileService.get().then(response => {
+                    this.model = response.data
+                })
+            } catch (errorMessage) {
+                toast.error("Something went wrong")
+            }
         },
     },
     mounted() {
