@@ -1,4 +1,5 @@
 ﻿using Application.DTOs;
+using Application.Extentions;
 using Application.Interfaces;
 using Application.Service.Interfaces;
 using Domain.Entities;
@@ -25,7 +26,7 @@ namespace Application.Service
             var result = await _unitOfWork.Message.GetById(id);
             MessageDto? dto = result?.Adapt<MessageDto>();
             if(dto is not null)
-                dto.TimeAgo = "1 hour ago";
+                dto.TimeAgo = dto.SentAt.TimeAgo();
             return dto;
         }
 
