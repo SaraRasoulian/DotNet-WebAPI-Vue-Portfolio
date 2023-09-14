@@ -13,7 +13,7 @@
                         <h4>View Message</h4>
 
                         <div class="buttons-wrapper">
-                            <router-link :to="{ name: 'messages-delete', params: { id: 1 } }" class="list-button"
+                            <router-link :to="{ name: 'messages-delete', params: { id: model.id } }" class="list-button"
                                 data-toggle="tooltip" data-placement="top" title="Delete">
                                 <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="" />
                             </router-link>
@@ -26,16 +26,14 @@
                             <div class="row g-3">
                                 <div class="message-head">
                                     <div>
-                                        <span class="bold">Alicia Berenson</span>
-                                        <span> (alicia@example.com)</span>
+                                        <span class="bold">{{ model.name }}</span>
+                                        <span> ({{ model.email }})</span>
                                     </div>
                                     <div class="buttons-wrapper">
-                                        <span class="secondary-text">May 20, 2023, 11:52 PM (17 hours ago)</span>
+                                        <span class="secondary-text">{{ model.sentAt }} ({{ model.timeAgo }})</span>
                                     </div>
                                 </div>
-                                <p>Phasellus at velit magna. Vestibulum nec eros nunc. Nunc fringilla, mi sed volutpat
-                                    venenatis, purus risus rutrum velit, sit amet semper justo orci non nunc. Aliquam
-                                    erat volutpat. Nam elementum turpis eget sagittis ullamcorper.</p>
+                                <p>{{ model.content }}</p>
                             </div>
                         </div>
                     </div>
@@ -48,10 +46,27 @@
 
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
+import messagesService from '@/services/messagesService'
 
 export default {
     components: {
         AdminLayout,
+    },
+    data() {
+        return {
+            model: [],
+            id: this.$route.params.id,
+        };
+    },
+    methods: {
+        async loadData() {
+            await messagesService.get(this.id).then(response => {
+                this.model = response.data;
+            })
+        },
+    },
+    mounted() {
+        this.loadData()
     }
 }
 </script>
