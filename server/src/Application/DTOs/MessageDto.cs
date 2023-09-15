@@ -10,7 +10,7 @@
 
         public required string Content { get; set; }
 
-        public DateTime SentAt { get; set; }
+        public string? SentAt { get; set; }
 
         public string? TimeAgo { get; set; }
     }

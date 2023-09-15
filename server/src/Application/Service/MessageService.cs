@@ -24,9 +24,12 @@ namespace Application.Service
         public async Task<MessageDto?> GetById(Guid id)
         {
             var result = await _unitOfWork.Message.GetById(id);
-            MessageDto? dto = result?.Adapt<MessageDto>();
-            if(dto is not null)
-                dto.TimeAgo = dto.SentAt.TimeAgo();
+            if (result is null) return null;
+
+            MessageDto dto = result.Adapt<MessageDto>();
+
+            dto.SentAt = result.SentAt.ToString("dd MMMM yyyy");
+            dto.TimeAgo = result.SentAt.TimeAgo();
             return dto;
         }
 
