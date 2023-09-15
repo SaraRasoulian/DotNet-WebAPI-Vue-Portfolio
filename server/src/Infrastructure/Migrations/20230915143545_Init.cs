@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialize : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -69,7 +69,7 @@ namespace Infrastructure.Migrations
                     Email = table.Column<string>(type: "character varying(320)", maxLength: 320, nullable: false),
                     Headline = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     About = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
-                    Photo = table.Column<byte[]>(type: "bytea", nullable: true)
+                    Photo = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,7 +93,7 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("f0e50692-6f21-41df-a64a-cd1e01e9314d"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+                values: new object[] { new Guid("f2d4ddce-3877-4d0c-adaf-e49744a16098"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
         }
 
         /// <inheritdoc />

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20230913131444_Initialize")]
-    partial class Initialize
+    [Migration("20230915143545_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,8 +160,8 @@ namespace Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<byte[]>("Photo")
-                        .HasColumnType("bytea");
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -170,7 +170,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f0e50692-6f21-41df-a64a-cd1e01e9314d"),
+                            Id = new Guid("f2d4ddce-3877-4d0c-adaf-e49744a16098"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",

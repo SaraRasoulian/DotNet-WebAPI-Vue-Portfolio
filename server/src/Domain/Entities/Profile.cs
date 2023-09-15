@@ -14,6 +14,6 @@ namespace Domain.Entities
 
         public string? About { get; set; }
 
-        public byte[]? Photo { get; set; }
+        public string? Photo { get; set; }
     }
 }

@@ -14,6 +14,6 @@
                
         public required string About { get; set; }
 
-        public byte[]? Photo { get; set; }
+        public string? Photo { get; set; }
     }
 }

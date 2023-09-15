@@ -157,8 +157,8 @@ namespace Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<byte[]>("Photo")
-                        .HasColumnType("bytea");
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -167,7 +167,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f0e50692-6f21-41df-a64a-cd1e01e9314d"),
+                            Id = new Guid("f2d4ddce-3877-4d0c-adaf-e49744a16098"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",
