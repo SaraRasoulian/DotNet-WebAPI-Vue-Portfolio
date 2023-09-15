@@ -64,17 +64,22 @@
                                         <span class="secondary-text">(Optional)</span>
                                     </label>
                                     <div class="edit-photo-wrapper">
-                                        <img src="assets/admin/images/profile-photo.png" class="view-profile-photo"
-                                            alt="" />
+                                        <div v-if="model.photo !== null && model.photo !== ''">
+                                            <img :src="model.photo" class="view-profile-photo" :alt="model.firstName" />
+                                        </div>
                                         <div class="photo-buttons-wrapper">
-                                            <div>
-                                                <button class="photo-btn update-btn" type="button">Update</button>
-                                                <button class="photo-btn remove-btn" type="button">Remove</button>
+                                            <div class="button-container">
+
+                                                <label for="file-upload" class="photo-btn update-btn">Upload</label>
+                                                <input @change="uploadPhoto" id="file-upload" type="file" accept="image/*" />                                                
+
+                                                <div v-if="model.photo !== null && model.photo !== ''">
+                                                    <button v-on:click.prevent="removePhoto()"
+                                                        class="photo-btn remove-btn">Remove</button>
+                                                </div>
                                             </div>
                                             <span class="secondary-text">Recommended: Square JPG, PNG, or GIF, at least
-                                                1,000
-                                                pixels
-                                                per side.</span>
+                                                1,000 pixels per side.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -109,16 +114,16 @@ export default {
     data() {
         return {
             model: [],
-        };
+        }
     },
     methods: {
         async loadData() {
             await profileService.get().then(response => {
-                this.model = response.data;
-            });
+                this.model = response.data
+            })
         },
         async update() {
-            const toast = useToast();
+            const toast = useToast()
             await profileService.update(this.model).then(response => {
 
                 this.$router.push("/admin/profile")
@@ -126,14 +131,28 @@ export default {
                 if (response.status == 200) {
                     toast.success("Profile edited successfully")
                 }
-
             })
                 .catch(error => {
-                    this.errorMessage = error.message;
+                    this.errorMessage = error.message
                     console.error("There was an error!", error)
                     toast.error("Something went wrong")
                 })
-        }
+        },
+        removePhoto() {
+            this.model.photo = ''
+        },
+        uploadPhoto(e) {
+            const selectedImage = e.target.files[0]
+            this.createBase64Image(selectedImage)
+        },
+        createBase64Image(fileObject) {
+            const reader = new FileReader()
+
+            reader.onload = (e) => {
+                this.model.photo = e.target.result
+            }
+            reader.readAsDataURL(fileObject)
+        },
     },
     mounted() {
         this.loadData()

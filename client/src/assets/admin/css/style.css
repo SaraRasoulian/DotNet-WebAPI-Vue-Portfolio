@@ -367,14 +367,11 @@ input {
 
 .view-profile-photo {
   width: 10rem;
+  margin-right: 1rem;
 }
 
 .edit-photo-wrapper {
   display: flex;
-}
-
-.photo-buttons-wrapper {
-  margin: 0 0 0 1rem;
 }
 
 .photo-buttons-wrapper .photo-btn {
@@ -382,6 +379,7 @@ input {
   background-color: white;
   font-weight: 600;
   padding: 0;
+  cursor: pointer;
 }
 
 .photo-buttons-wrapper .photo-btn.update-btn {
@@ -399,6 +397,10 @@ input {
 
 .photo-buttons-wrapper .photo-btn.remove-btn:hover {
   color: var(--dark-red);
+}
+
+.photo-buttons-wrapper input[type='file'] {
+  display: none;
 }
 
 @media (max-width: 426px) {

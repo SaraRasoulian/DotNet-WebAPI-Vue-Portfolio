@@ -64,12 +64,13 @@
                                     </div>
                                 </div>
 
-                                <div class="row g-3">
-                                    <div class="col-lg-8 col-md-12 col-sm-12">
-                                        <div class="view-item-wrapper">
-                                            <span>Photo</span>
-                                            <img src="assets/admin/images/profile-photo.png" class="view-profile-photo"
-                                                alt="">
+                                <div v-if="model.photo !== null && model.photo !== ''">
+                                    <div class="row g-3">
+                                        <div class="col-lg-8 col-md-12 col-sm-12">
+                                            <div class="view-item-wrapper">
+                                                <span>Photo</span>
+                                                <img :src="model.photo" class="view-profile-photo" :alt="model.firstName">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

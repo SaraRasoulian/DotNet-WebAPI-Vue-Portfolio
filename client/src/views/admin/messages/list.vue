@@ -6,7 +6,7 @@
                     <div class="list-title">
                         <h4>Messages</h4>
                         <div class="list-total">
-                            <span>5</span>
+                            <span>{{ listTotal }}</span>
                             <span>total</span>
                         </div>
                     </div>
