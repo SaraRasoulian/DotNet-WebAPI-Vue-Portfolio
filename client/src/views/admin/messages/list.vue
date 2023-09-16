@@ -55,7 +55,6 @@
                         <hr class="line" />
                     </div>
                 </div>
-
             </div>
         </AdminLayout>
     </div>

@@ -50,7 +50,7 @@
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import messagesService from '@/services/messagesService'
-import { useToast } from "vue-toastification"
+import { useToast } from 'vue-toastification'
 
 export default {
     components: {
@@ -60,27 +60,25 @@ export default {
         return {
             model: [],
             id: this.$route.params.id,
-        };
+        }
     },
     methods: {
         async loadData() {
             await messagesService.get(this.id).then(response => {
                 this.model = response.data
-            });
+            })
         },
         async remove() {
             const toast = useToast()
-            await messagesService.delete(this.id).then(response => {
-                this.$router.push("/admin/messages")
-
-                if (response.status == 200) {
-                    toast.success("Message deleted successfully")
-                }
-            })
-                .catch(error => {
-                    console.log(error)
-                    toast.error("Something went wrong")
+            try {
+                await messagesService.delete(this.id).then(response => {
+                    this.$router.push("/admin/messages")
+                    if (response.status == 200)
+                        toast.success("Message deleted successfully")
                 })
+            } catch (errorMsg) {
+                toast.error("Something went wrong")
+            }
         }
     },
     mounted() {

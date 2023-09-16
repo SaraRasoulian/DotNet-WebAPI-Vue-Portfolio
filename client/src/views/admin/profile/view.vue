@@ -20,61 +20,57 @@
 
                     <div class="content">
                         <div class="form-container">
-                            <div>
-
-                                <div class="row g-3">
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="view-item-wrapper">
-                                            <span>First Name</span>
-                                            <p>{{ model.firstName }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="view-item-wrapper">
-                                            <span>Last Name</span>
-                                            <p>{{ model.lastName }}</p>
-                                        </div>
+                            <div class="row g-3">
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="view-item-wrapper">
+                                        <span>First Name</span>
+                                        <p>{{ model.firstName }}</p>
                                     </div>
                                 </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="view-item-wrapper">
+                                        <span>Last Name</span>
+                                        <p>{{ model.lastName }}</p>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <div class="view-item-wrapper">
+                                        <span>Email</span>
+                                        <p>{{ model.email }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <div class="view-item-wrapper">
+                                        <span>Headline</span>
+                                        <p>{{ model.headline }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <div class="view-item-wrapper">
+                                        <span>About</span>
+                                        <p>{{ model.about }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div v-if="model.photo !== null && model.photo !== ''">
                                 <div class="row g-3">
                                     <div class="col-lg-8 col-md-12 col-sm-12">
                                         <div class="view-item-wrapper">
-                                            <span>Email</span>
-                                            <p>{{ model.email }}</p>
+                                            <span>Photo</span>
+                                            <img :src="model.photo" class="view-profile-photo" :alt="model.firstName">
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row g-3">
-                                    <div class="col-lg-8 col-md-12 col-sm-12">
-                                        <div class="view-item-wrapper">
-                                            <span>Headline</span>
-                                            <p>{{ model.headline }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3">
-                                    <div class="col-lg-8 col-md-12 col-sm-12">
-                                        <div class="view-item-wrapper">
-                                            <span>About</span>
-                                            <p>{{ model.about }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div v-if="model.photo !== null && model.photo !== ''">
-                                    <div class="row g-3">
-                                        <div class="col-lg-8 col-md-12 col-sm-12">
-                                            <div class="view-item-wrapper">
-                                                <span>Photo</span>
-                                                <img :src="model.photo" class="view-profile-photo" :alt="model.firstName">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -88,7 +84,6 @@
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import profileService from '@/services/profileService'
-import { useToast } from 'vue-toastification'
 
 export default {
     components: {
@@ -101,14 +96,9 @@ export default {
     },
     methods: {
         async loadData() {
-            const toast = useToast()
-            try {
-                await profileService.get().then(response => {
-                    this.model = response.data
-                })
-            } catch (errorMessage) {
-                toast.error("Something went wrong")
-            }
+            await profileService.get().then(response => {
+                this.model = response.data
+            })
         },
     },
     mounted() {

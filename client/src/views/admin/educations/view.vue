@@ -100,12 +100,12 @@ export default {
         return {
             model: [],
             id: this.$route.params.id,
-        };
+        }
     },
     methods: {
         async loadData() {
             await educationsService.get(this.id).then(response => {
-                this.model = response.data;
+                this.model = response.data
             })
         },
     },

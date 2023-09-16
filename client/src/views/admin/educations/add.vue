@@ -94,7 +94,7 @@
 <script>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import educationsService from '@/services/educationsService'
-import { useToast } from "vue-toastification"
+import { useToast } from 'vue-toastification'
 
 export default {
   components: {
@@ -121,18 +121,16 @@ export default {
         Description: this.description,
       }
       const toast = useToast()
-      educationsService.create(model).then(response => {
-        this.$router.push("/admin/educations")
-
-        if (response.status == 200) {
-          toast.success("Education added successfully")
-        }
-
-      })
-        .catch(error => {
-          console.error("There was an error!", error)
-          toast.error("Something went wrong")
+      try {
+        educationsService.create(model).then(response => {
+          this.$router.push("/admin/educations")
+          if (response.status == 200)
+            toast.success("Education added successfully")
         })
+      }
+      catch (errorMsg) {
+        toast.error("Something went wrong")
+      }
     },
   }
 }

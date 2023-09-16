@@ -83,13 +83,13 @@ export default {
   methods: {
     async getList() {
       await educationsService.getAll().then(response => {
-        this.list = response.data;
-        this.listTotal = this.list.length;
+        this.list = response.data
+        this.listTotal = this.list.length
       })
     },
   },
   mounted() {
-    this.getList();
+    this.getList()
   }
 }
 </script>
