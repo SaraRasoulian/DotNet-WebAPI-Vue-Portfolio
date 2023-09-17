@@ -15,7 +15,10 @@ const messagesService = {
   },
   async delete(id) {
     return await axios.delete(`${api.url}${path}/${id}`)
-  }
+  },
+  async markAsRead(id) {
+    return await axios.put(`${api.url}${path}/mark-as-read/${id}`)
+  },
 }
 
 export default messagesService

@@ -12,6 +12,6 @@ namespace Domain.Entities
 
         public DateTime SentAt { get; set; }
 
-        //public bool IsRead { get; set; }
+        public bool IsRead { get; set; }
     }
 }

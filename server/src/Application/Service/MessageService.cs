@@ -52,5 +52,17 @@ namespace Application.Service
             await _unitOfWork.SaveChangesAsync();
             return true;
         }
+
+        public async Task<bool> MarkAsRead(Guid id)
+        {
+            var toUpdate = await _unitOfWork.Message.GetById(id);
+            if (toUpdate is null) return false;
+
+            toUpdate.IsRead = true;
+
+            _unitOfWork.Message.Update(toUpdate);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
+        }
     }
 }

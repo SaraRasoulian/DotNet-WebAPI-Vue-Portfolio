@@ -10,6 +10,8 @@
 
         public required string Content { get; set; }
 
+        public bool IsRead { get; set; }
+
         public string? SentAt { get; set; }
 
         public string? TimeAgo { get; set; }

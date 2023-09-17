@@ -64,9 +64,13 @@ export default {
                 this.model = response.data;
             })
         },
+        async markAsRead() {
+            await messagesService.markAsRead(this.id)
+        }
     },
     mounted() {
         this.loadData()
+        this.markAsRead()
     }
 }
 </script>

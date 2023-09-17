@@ -15,7 +15,7 @@ namespace Infrastructure.Repositories
 
         public async Task<IEnumerable<Message>> GetAll()
         {
-            return await _dbContext.Messages.OrderByDescending(c => c.SentAt).ToListAsync();
+            return await _dbContext.Messages.OrderBy(c=>c.IsRead).ThenByDescending(c => c.SentAt).ToListAsync();
         }
 
         public async Task<Message?> GetById(Guid id)
@@ -32,6 +32,11 @@ namespace Infrastructure.Repositories
         public void Delete(Message model)
         {
             _dbContext.Messages.Remove(model);
+        }
+
+        public void Update(Message model)
+        {
+            _dbContext.Messages.Update(model);
         }
     }
 }

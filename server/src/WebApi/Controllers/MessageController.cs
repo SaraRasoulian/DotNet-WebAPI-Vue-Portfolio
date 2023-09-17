@@ -72,5 +72,21 @@ namespace WebApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpPut("mark-as-read/{id:guid}")]
+        public async Task<IActionResult> MarkAsRead([FromRoute] Guid id)
+        {
+            try
+            {
+                var result = await _messageService.MarkAsRead(id);
+                if (!result) return BadRequest();
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
     }
 }
