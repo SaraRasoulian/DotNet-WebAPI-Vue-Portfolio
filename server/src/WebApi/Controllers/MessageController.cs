@@ -28,6 +28,20 @@ namespace WebApi.Controllers
             }
         }
 
+        [HttpGet("unread")]
+        public async Task<IActionResult> GetNumberOfUnread()
+        {
+            try
+            {
+                var result = await _messageService.GetNumberOfUnread();
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {

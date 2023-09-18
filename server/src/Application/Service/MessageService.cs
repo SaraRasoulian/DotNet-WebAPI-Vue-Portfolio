@@ -21,6 +21,11 @@ namespace Application.Service
             return result.Adapt<List<MessageDto>>();
         }
 
+        public async Task<int> GetNumberOfUnread()
+        {
+            return await _unitOfWork.Message.GetNumberOfUnread();
+        }
+
         public async Task<MessageDto?> GetById(Guid id)
         {
             var result = await _unitOfWork.Message.GetById(id);

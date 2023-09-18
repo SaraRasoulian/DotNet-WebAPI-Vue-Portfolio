@@ -18,6 +18,11 @@ namespace Infrastructure.Repositories
             return await _dbContext.Messages.OrderBy(c=>c.IsRead).ThenByDescending(c => c.SentAt).ToListAsync();
         }
 
+        public async Task<int> GetNumberOfUnread()
+        {
+            return await _dbContext.Messages.Where(c=> !c.IsRead).CountAsync();
+        }
+
         public async Task<Message?> GetById(Guid id)
         {
             return await _dbContext.Messages.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);

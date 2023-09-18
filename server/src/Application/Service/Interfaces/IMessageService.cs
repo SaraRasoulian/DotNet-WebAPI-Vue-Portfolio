@@ -8,6 +8,7 @@ namespace Application.Service.Interfaces
         Task<MessageDto?> GetById(Guid id);
         Task<MessageDto> Add(MessageDto model);
         Task<bool> Delete(Guid id);
+        Task<int> GetNumberOfUnread();
         Task<bool> MarkAsRead(Guid id);
     }
 }
