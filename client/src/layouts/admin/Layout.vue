@@ -93,6 +93,7 @@ import { RouterLink } from 'vue-router'
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                 <span>Messages</span>
+                                <NumberOfUnread/>
                             </div>
                         </router-link>
                     </li>
@@ -147,6 +148,7 @@ import { RouterLink } from 'vue-router'
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                     <span>Messages</span>
+                                    
                                 </div>
                             </router-link>
                         </li>
@@ -191,9 +193,13 @@ import { RouterLink } from 'vue-router'
 <script>
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import NumberOfUnread from '@/components/NumberOfUnread.vue'
 
 export default {
     name: 'App',
+    components: {
+        NumberOfUnread
+    },
     data() {
         return {
             isMobileNavbarVisible: false,

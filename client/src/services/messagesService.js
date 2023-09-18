@@ -16,6 +16,9 @@ const messagesService = {
   async delete(id) {
     return await axios.delete(`${api.url}${path}/${id}`)
   },
+  async GetNumberOfUnread() {
+    return await axios.get(`${api.url}${path}/unread`)
+  },
   async markAsRead(id) {
     return await axios.put(`${api.url}${path}/mark-as-read/${id}`)
   },
