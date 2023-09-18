@@ -101,11 +101,15 @@
 .sidebar li.sidebar-title {
   margin-bottom: 30px;
 }
+.sidebar .badge-wrapper{
+  display: flex;
+  align-items: center;
+}
 
 .sidebar .badge-unread {
   background-color: var(--red);
   border-radius: 100%;
-  padding: 5px 9px;
+  padding: 4px 7px;
 }
 
 .sidebar-title span {

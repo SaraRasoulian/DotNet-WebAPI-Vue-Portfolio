@@ -1,6 +1,6 @@
 <template>
   <!-- <h1>{{ numberOfUnread }}</h1> -->
-  <span class="badge badge-unread">4</span>
+  <h6 class="badge-wrapper"><span class="badge badge-unread">4</span></h6>
 </template>
 
 <!-- <script setup>
