@@ -4,7 +4,7 @@
             <div class="content-container">
                 <div class="view-wrapper">
                     <div class="title-wrapper">
-                        <router-link :to="{ name: 'educations-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
+                        <router-link :to="{ name: 'education-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
                             data-placement="top" title="Return to list">
                             <div class="back-to-list">
                                 <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
@@ -69,7 +69,7 @@
                                 <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                                     <div class="button-container">
                                         <button class="btn btn-delete" v-on:click.prevent="remove()">Delete</button>
-                                        <router-link :to="{ name: 'educations-list' }"
+                                        <router-link :to="{ name: 'education-list' }"
                                             class="btn btn-cancel">Cancel</router-link>
                                     </div>
                                 </div>

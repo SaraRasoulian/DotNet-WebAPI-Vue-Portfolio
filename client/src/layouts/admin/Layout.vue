@@ -73,7 +73,7 @@ import { RouterLink } from 'vue-router'
                         </a>
                     </li>
                     <li class="nav-item nav-educations">
-                        <router-link :to="{ name: 'educations-list' }" class="nav-link">
+                        <router-link :to="{ name: 'education-list' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
                                 <span>Educations</span>
@@ -128,7 +128,7 @@ import { RouterLink } from 'vue-router'
                             </a>
                         </li>
                         <li class="nav-item nav-educations">
-                            <router-link :to="{ name: 'educations-list' }" class="nav-link">
+                            <router-link :to="{ name: 'education-list' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
                                     <span>Educations</span>

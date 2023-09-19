@@ -30,28 +30,28 @@ const router = createRouter({
 
     {
       path: '/admin/educations',
-      name: 'educations-list',
-      component: () => import('../views/admin/educations/list.vue')
+      name: 'education-list',
+      component: () => import('../views/admin/educations/EducationList.vue')
     },
     {
       path: '/admin/educations/add',
-      name: 'educations-add',
-      component: () => import('../views/admin/educations/add.vue')
+      name: 'add-education',
+      component: () => import('../views/admin/educations/AddEducation.vue')
     },
     {
       path: '/admin/educations/:id',
-      name: 'educations-view',
-      component: () => import('../views/admin/educations/view.vue')
+      name: 'view-education',
+      component: () => import('../views/admin/educations/ViewEducation.vue')
     },    
     {
       path: '/admin/educations/edit/:id',
-      name: 'educations-edit',
-      component: () => import('../views/admin/educations/edit.vue')
+      name: 'edit-education',
+      component: () => import('../views/admin/educations/EditEducation.vue')
     },
     {
       path: '/admin/educations/delete/:id',
-      name: 'educations-delete',
-      component: () => import('../views/admin/educations/delete.vue')
+      name: 'delete-education',
+      component: () => import('../views/admin/educations/DeleteEducation.vue')
     },
 
 
