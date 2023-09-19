@@ -148,7 +148,7 @@ import { RouterLink } from 'vue-router'
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                     <span>Messages</span>
-                                    
+                                    <NumberOfUnread/>
                                 </div>
                             </router-link>
                         </li>

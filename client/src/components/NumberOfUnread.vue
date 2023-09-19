@@ -1,12 +1,26 @@
 <template>
-  <!-- <h1>{{ numberOfUnread }}</h1> -->
-  <h6 class="badge-wrapper"><span class="badge badge-unread">4</span></h6>
+  <h6 class="badge-wrapper"><span class="badge badge-unread">{{ unread }}</span></h6>
 </template>
 
-<!-- <script setup>
-import educationsService from '@/services/educationsService'
-
-const numberOfUnread = educationsService.GetNumberOfUnread()
-</script> -->
+<script>
+import messagesService from '@/services/messagesService'
+export default {
+  data() {
+    return {
+      unread: 0,
+    };
+  },
+  methods: {
+    async getUnRead() {
+      await messagesService.GetNumberOfUnread().then(response => {
+        this.unread = response.data
+      })
+    },
+  },
+  mounted() {
+    this.getUnRead()
+  }
+}
+</script>
 
 

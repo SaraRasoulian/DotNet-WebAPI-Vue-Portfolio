@@ -101,16 +101,6 @@
 .sidebar li.sidebar-title {
   margin-bottom: 30px;
 }
-.sidebar .badge-wrapper{
-  display: flex;
-  align-items: center;
-}
-
-.sidebar .badge-unread {
-  background-color: var(--red);
-  border-radius: 100%;
-  padding: 4px 7px;
-}
 
 .sidebar-title span {
   margin: 0 5px;
@@ -207,6 +197,16 @@
 
 .nav-link:focus {
   color: var(--text-color);
+}
+
+.badge-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-inner .badge-unread {
+  background-color: var(--red);
+  padding: 4px 7px;
 }
 
 .desktop-navbar {
