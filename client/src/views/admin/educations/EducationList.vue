@@ -12,7 +12,7 @@
           </div>
           <div class="right-button-wrapper">
             <router-link :to="{ name: 'add-education' }" class="btn btn-save btn-add">
-              <img src="@/assets/admin/images/add.svg" class="add-icon" alt="">
+              <img src="@/assets/admin/images/add.svg" class="add-icon" alt="Add">
               <span class="add-text">Add</span>
             </router-link>
           </div>

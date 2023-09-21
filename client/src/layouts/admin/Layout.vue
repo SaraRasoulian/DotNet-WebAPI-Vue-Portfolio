@@ -193,7 +193,7 @@ import { RouterLink } from 'vue-router'
 <script>
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import NumberOfUnread from '@/components/NumberOfUnread.vue'
+import NumberOfUnread from '@/components/admin/NumberOfUnread.vue'
 
 export default {
     name: 'App',
