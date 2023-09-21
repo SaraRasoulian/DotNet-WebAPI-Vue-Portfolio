@@ -522,7 +522,7 @@ a:hover {
 }
 
 /******************** Fade in effect ********************/
-.fade-in-text {
+/* .fade-in-text {
   animation: fadeInText 2s;
 }
 
@@ -562,7 +562,7 @@ a:hover {
   opacity: 1;
   transform: translate(0, 0);
   transition: 1s;
-}
+} */
 
 /******************** Scrollbar ********************/
 @media (min-width: 769px) {

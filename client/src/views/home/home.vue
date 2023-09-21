@@ -182,12 +182,11 @@
             <h6 class="footer-text">Designed and Developed by <a href="#" target="_self">Sara Rasoulian</a></h6>
         </div>
     </div>
-
     
 </div>
 </template>
 
-<style scoped>
+<style>
 @import '@/assets/home/css/reset.css';
 @import '@/assets/home/css/skeleton.css';
 @import '@/assets/home/css/style.css';

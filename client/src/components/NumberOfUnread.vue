@@ -1,5 +1,5 @@
 <template>
-  <h6 class="badge-wrapper"><span class="badge badge-unread">{{ unread }}</span></h6>
+  <h6 v-if="unread > 0" class="badge-wrapper"><span class="badge badge-unread">{{ unread }}</span></h6>
 </template>
 
 <script>
