@@ -2,12 +2,12 @@
   <div class="section fade-in-on-load">
     <div class="profile">
       <div class="row">
-        <div class="eight columns">
+        <div class="columns" :class="{ 'eight': model.photo !== null && model.photo !== '' }">
           <h1 class="profile-titr">{{ model.headline }}</h1>
           <p class="profile-text">{{ model.about }}</p>
         </div>
-        <div class="four columns img-wrapper">
-          <img class="profile-img" :src="model.photo" :alt="model.firstName +' '+ model.lastName">
+        <div v-if="model.photo !== null && model.photo !== ''" class="four columns img-wrapper">
+          <img class="profile-img" :src="model.photo" :alt="model.firstName + ' ' + model.lastName">
         </div>
       </div>
     </div>

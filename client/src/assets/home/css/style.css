@@ -84,6 +84,9 @@ h6 {
   /*for FireFox*/
   width: -moz-available;
   max-width: -moz-fit-content;
+
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
 }
 
 
@@ -330,11 +333,11 @@ label>.label-body {
 }
 
 /* buttons */
-.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+.form .button,
+.form button,
+.form input[type="submit"],
+.form input[type="reset"],
+.form input[type="button"] {
   width: 100%;
   display: inline-block;
   height: 38px;
@@ -352,16 +355,16 @@ input[type="button"] {
   box-sizing: border-box;
 }
 
-.button:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-.button:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
+.form .button:hover,
+.form button:hover,
+.form input[type="submit"]:hover,
+.form input[type="reset"]:hover,
+.form input[type="button"]:hover,
+.form .button:focus,
+.form button:focus,
+.form input[type="submit"]:focus,
+.form input[type="reset"]:focus,
+.form input[type="button"]:focus {
   color: var(--bg-color);
   background-color: var(--titr-color);
   transition: 0.7s;
