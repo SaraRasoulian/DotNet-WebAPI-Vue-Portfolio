@@ -2,14 +2,7 @@
     <div class="animated-gradient">
         <div class="texture">
             <div class="container">
-
-                <!-- Header -->
-                <div class="header">
-                    <div class="text fade-in-text">
-                        <h5 class="text-sm">SO NICE TO</h5>
-                        <h1 class="text-lg">Meet you</h1>
-                    </div>
-                </div>
+                <HomeHeader />
 
                 <Profile />
 
@@ -21,13 +14,8 @@
 
                 <Messages />
             </div>
-
-            <!-- Footer -->
-            <div class="footer">
-                <h6 class="footer-text">Designed and Developed by <a href="#" target="_self">Sara Rasoulian</a></h6>
-            </div>
+            <HomeFooter />
         </div>
-
     </div>
 </template>
 
@@ -43,6 +31,8 @@ import Experiences from '@/components/home/Experiences.vue'
 import Educations from '@/components/home/Educations.vue'
 import SocialLinks from '@/components/home/SocialLinks.vue'
 import Messages from '@/components/home/Messages.vue'
+import HomeHeader from '@/components/home/HomeHeader.vue'
+import HomeFooter from '@/components/home/HomeFooter.vue'
 
 export default {
     name: 'App',
@@ -51,7 +41,9 @@ export default {
         Experiences,
         Educations,
         SocialLinks,
-        Messages
+        Messages,
+        HomeHeader,
+        HomeFooter
     }
 }
 </script>
