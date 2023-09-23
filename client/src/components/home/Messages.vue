@@ -7,13 +7,13 @@
       <form>
         <div class="row">
           <div class="six columns">
-            <input type="text" placeholder="Your name" v-model="name">
+            <input type="text" placeholder="Your name" v-model="form.name" required maxlength="70" />
           </div>
           <div class="six columns">
-            <input type="email" placeholder="Your email" v-model="email">
+            <input type="email" placeholder="Your email" v-model="form.email" required maxlength="200" />
           </div>
         </div>
-        <textarea placeholder="Hi Sara …" v-model="content"></textarea>
+        <textarea placeholder="Hi Sara …" v-model="form.content" required maxlength="1000"></textarea>
         <div class="row">
           <div class="six columns">
             <button class="button send-button icon-rotate" v-on:click.prevent="Send">
@@ -35,21 +35,18 @@ import { useToast } from 'vue-toastification'
 export default {
   data() {
     return {
-      name: '',
-      email: '',
-      content: ''
+      form: {
+        name: '',
+        email: '',
+        content: ''
+      }
     }
   },
   methods: {
-    Send() {
-      const model = {
-        Name: this.name,
-        Email: this.email,
-        Content: this.content
-      }
+    Send() {      
       const toast = useToast()
       try {
-        messagesService.create(model).then(response => {
+        messagesService.create(this.form).then(response => {
           this.ClearForm()
           if (response.status == 200)
             toast.success("Message sent. Thank you!")
@@ -60,7 +57,7 @@ export default {
       }
     },
     ClearForm() {
-      this.name = this.email = this.content = ''
+      this.form = ''
     }
   }
 }
