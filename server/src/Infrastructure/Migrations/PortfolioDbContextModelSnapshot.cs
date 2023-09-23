@@ -170,7 +170,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("46660328-577b-430c-9208-e9b7f6af97db"),
+                            Id = new Guid("01685f3d-fcf3-4dc4-bbdc-2bdb72f664e9"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",

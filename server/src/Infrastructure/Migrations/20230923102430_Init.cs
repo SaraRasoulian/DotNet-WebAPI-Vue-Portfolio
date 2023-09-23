@@ -94,7 +94,7 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("46660328-577b-430c-9208-e9b7f6af97db"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+                values: new object[] { new Guid("01685f3d-fcf3-4dc4-bbdc-2bdb72f664e9"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
         }
 
         /// <inheritdoc />

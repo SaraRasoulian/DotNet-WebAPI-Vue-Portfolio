@@ -20,7 +20,7 @@ public class MessageConfiguration : IEntityTypeConfiguration<Message>
             .HasMaxLength(1000)
             .IsRequired();
 
-        //builder.Property(t => t.IsRead)
-        //    .IsRequired();
+        builder.Property(t => t.IsRead)
+            .IsRequired();
     }
 }
