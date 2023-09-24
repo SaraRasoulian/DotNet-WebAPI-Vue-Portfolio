@@ -119,8 +119,8 @@ export default {
             });
         },
         async update() {
+            const toast = useToast()
             try {
-                const toast = useToast()
                 await educationsService.update(this.id, this.model)
                     .then(response => {
                         this.$router.push("/admin/educations")

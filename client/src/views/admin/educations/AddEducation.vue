@@ -19,7 +19,7 @@
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="degree" class="form-label">Degree</label>
                 <div class="input-group has-validation">
-                  <input type="text" v-model="degree" class="form-control" id="degree" placeholder="Degree" required="">
+                  <input type="text" v-model="form.degree" class="form-control" id="degree" placeholder="Degree" required="">
                   <div class="invalid-feedback">
                     Degree is required.
                   </div>
@@ -30,7 +30,7 @@
             <div class="row g-3">
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="fieldOfStudy" class="form-label">Field of study</label>
-                <input type="text" v-model="fieldOfStudy" class="form-control" id="fieldOfStudy"
+                <input type="text" v-model="form.fieldOfStudy" class="form-control" id="fieldOfStudy"
                   placeholder="Field of study">
                 <div class="invalid-feedback">
                   Field is required.
@@ -41,7 +41,7 @@
             <div class="row g-3">
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="school" class="form-label">School</label>
-                <input type="text" v-model="school" class="form-control" id="school" placeholder="School">
+                <input type="text" v-model="form.school" class="form-control" id="school" placeholder="School">
                 <div class="invalid-feedback">
                   School is required.
                 </div>
@@ -51,7 +51,7 @@
             <div class="row g-3">
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <label for="startYear" class="form-label">Start Year</label>
-                <input type="text" v-model="startYear" class="form-control" id="startYear" placeholder="Start Year"
+                <input type="text" v-model="form.startYear" class="form-control" id="startYear" placeholder="Start Year"
                   required="">
                 <div class="invalid-feedback">
                   start year is required.
@@ -59,7 +59,7 @@
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <label for="endYear" class="form-label">End Year</label>
-                <input type="text" v-model="endYear" class="form-control" id="endYear" placeholder="End Year" required="">
+                <input type="text" v-model="form.endYear" class="form-control" id="endYear" placeholder="End Year" required="">
                 <div class="invalid-feedback">
                   end year is required.
                 </div>
@@ -70,7 +70,7 @@
                 <label for="description" class="form-label">Description
                   <span class="secondary-text">(Optional)</span>
                 </label>
-                <textarea type="text" v-model="description" class="form-control" id="description"
+                <textarea type="text" v-model="form.description" class="form-control" id="description"
                   placeholder="description"></textarea>
               </div>
             </div>
@@ -102,27 +102,21 @@ export default {
   },
   data() {
     return {
-      degree: '',
-      fieldOfStudy: '',
-      school: '',
-      startYear: '',
-      endYear: '',
-      description: '',
+      form: {
+        degree: '',
+        fieldOfStudy: '',
+        school: '',
+        startYear: '',
+        endYear: '',
+        description: '',
+      }
     }
   },
   methods: {
     create() {
-      const model = {
-        Degree: this.degree,
-        FieldOfStudy: this.fieldOfStudy,
-        School: this.school,
-        StartYear: this.startYear,
-        EndYear: this.endYear,
-        Description: this.description,
-      }
       const toast = useToast()
       try {
-        educationsService.create(model).then(response => {
+        educationsService.create(this.form).then(response => {
           this.$router.push("/admin/educations")
           if (response.status == 200)
             toast.success("Education added successfully")
