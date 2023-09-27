@@ -1,11 +1,12 @@
 :root {
   /******************** Colors ********************/
-  --bg-color: #F6F1EB;
+  --bg-color: #f6f1eb;
   --border-color: #d3c3b0;
   --text-color: #503115;
   --secondary-text-color: #9c8570;
-  --titr-color: #014F57;
+  --titr-color: #014f57;
   --input-border-color: #cfbda0;
+  --error-color: #cb5153;
 }
 
 /******************** Base styles ********************/
@@ -23,7 +24,7 @@ body {
   overflow-y: scroll;
   line-height: 1.5;
   font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 span,
@@ -88,7 +89,6 @@ h6 {
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
 }
-
 
 .img-wrapper {
   text-align: center;
@@ -197,7 +197,6 @@ h6 {
   display: inline-grid;
 }
 
-
 .social .social-item .social-icon {
   width: 5rem;
   height: 5rem;
@@ -210,7 +209,7 @@ h6 {
 
 /* Hover effect */
 .social .social-item:before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   left: 0;
@@ -242,13 +241,17 @@ h6 {
   margin-bottom: 1.8vw;
 }
 
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
+.form-item{
+  margin-bottom: 1rem;
+}
+
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
 textarea,
 select {
   width: 100%;
@@ -263,13 +266,13 @@ select {
   resize: none;
 }
 
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -280,13 +283,13 @@ textarea {
   min-height: 86px;
 }
 
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='search']:focus,
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
 textarea:focus,
 select:focus {
   border: 1px solid var(--secondary-text-color);
@@ -296,7 +299,7 @@ select:focus {
 label,
 legend {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
@@ -305,14 +308,14 @@ fieldset {
   border-width: 0;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   display: inline;
 }
 
-label>.label-body {
+label > .label-body {
   display: inline-block;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   font-weight: normal;
 }
 
@@ -335,9 +338,9 @@ label>.label-body {
 /* buttons */
 .form .button,
 .form button,
-.form input[type="submit"],
-.form input[type="reset"],
-.form input[type="button"] {
+.form input[type='submit'],
+.form input[type='reset'],
+.form input[type='button'] {
   width: 100%;
   display: inline-block;
   height: 38px;
@@ -347,7 +350,7 @@ label>.label-body {
   border: none;
   text-align: center;
   line-height: 38px;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   text-decoration: none;
   white-space: nowrap;
   border-radius: 0;
@@ -357,14 +360,14 @@ label>.label-body {
 
 .form .button:hover,
 .form button:hover,
-.form input[type="submit"]:hover,
-.form input[type="reset"]:hover,
-.form input[type="button"]:hover,
+.form input[type='submit']:hover,
+.form input[type='reset']:hover,
+.form input[type='button']:hover,
 .form .button:focus,
 .form button:focus,
-.form input[type="submit"]:focus,
-.form input[type="reset"]:focus,
-.form input[type="button"]:focus {
+.form input[type='submit']:focus,
+.form input[type='reset']:focus,
+.form input[type='button']:focus {
   color: var(--bg-color);
   background-color: var(--titr-color);
   transition: 0.7s;
@@ -417,6 +420,12 @@ label>.label-body {
   transform: rotate(20deg);
 }
 
+.validation-error {
+  font-size: small;
+  color: var(--error-color);
+}
+
+
 /******************** Footer ********************/
 .footer {
   border-top: 1px solid var(--border-color);
@@ -446,7 +455,7 @@ a:hover {
 
 /******************** Animated Gradient ********************/
 .animated-gradient {
-  background: linear-gradient(260deg, #B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD, #F8B2B0);
+  background: linear-gradient(260deg, #b1c2ba, #d5e4cf, #f4e4d4, #f6f1eb, #efd4cd, #f8b2b0);
   background-size: 300% 300%;
 
   -webkit-animation: AnimationName 10s ease infinite;
@@ -458,7 +467,7 @@ a:hover {
 /* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
   .animated-gradient {
-    background: linear-gradient(240deg, #B1C2BA, #D5E4CF, #F4E4D4, #F6F1EB, #EFD4CD, #F8B2B0);
+    background: linear-gradient(240deg, #b1c2ba, #d5e4cf, #f4e4d4, #f6f1eb, #efd4cd, #f8b2b0);
     background-size: 800% 800%;
 
     -webkit-animation: AnimationName 20s ease infinite;
@@ -470,57 +479,57 @@ a:hover {
 
 @-webkit-keyframes AnimationName {
   0% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 
   50% {
-    background-position: 100% 50%
+    background-position: 100% 50%;
   }
 
   100% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 }
 
 @-moz-keyframes AnimationName {
   0% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 
   50% {
-    background-position: 100% 50%
+    background-position: 100% 50%;
   }
 
   100% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 }
 
 @-o-keyframes AnimationName {
   0% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 
   50% {
-    background-position: 100% 50%
+    background-position: 100% 50%;
   }
 
   100% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 }
 
 @keyframes AnimationName {
   0% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 
   50% {
-    background-position: 100% 50%
+    background-position: 100% 50%;
   }
 
   100% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 }
 
@@ -569,7 +578,6 @@ a:hover {
 
 /******************** Scrollbar ********************/
 @media (min-width: 769px) {
-
   /* width */
   ::-webkit-scrollbar {
     width: 8px;

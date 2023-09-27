@@ -8,7 +8,6 @@
 - Grid
 - Base Styles
 - Typography 
-- Spacing
 - Clearing
 */
 
@@ -147,16 +146,6 @@ button {font-size: 16px;}
   button {font-size: 16px;}
   .text-lg { font-size: calc(5rem + 2vw); }
 }
-
-/* Spacing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-button,
-.button,
-input,
-textarea,
-select,
-fieldset {
-  margin-bottom: 1rem; }
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
