@@ -7,13 +7,13 @@
       <form>
         <div class="row">
           <div class="six columns">
-            <input type="text" placeholder="Your name" v-model="form.name" required maxlength="70" />
+            <input type="text" placeholder="Your name" v-model="formData.name" required maxlength="70" />
           </div>
           <div class="six columns">
-            <input type="email" placeholder="Your email" v-model="form.email" required maxlength="200" />
+            <input type="email" placeholder="Your email" v-model="formData.email" required maxlength="200" />
           </div>
         </div>
-        <textarea placeholder="Hi Sara …" v-model="form.content" required maxlength="1000"></textarea>
+        <textarea placeholder="Hi Sara …" v-model="formData.content" required maxlength="1000"></textarea>
         <div class="row">
           <div class="six columns">
             <button class="button send-button icon-rotate" v-on:click.prevent="Send">
@@ -28,38 +28,33 @@
 </template>
 
 
-<script>
+<script setup>
 import messagesService from '@/services/messagesService'
 import { useToast } from 'vue-toastification'
+import { reactive } from 'vue'
 
-export default {
-  data() {
-    return {
-      form: {
-        name: '',
-        email: '',
-        content: ''
-      }
-    }
-  },
-  methods: {
-    Send() {      
-      const toast = useToast()
-      try {
-        messagesService.create(this.form).then(response => {
-          this.ClearForm()
-          if (response.status == 200)
-            toast.success("Message sent. Thank you!")
-        })
-      }
-      catch (errorMsg) {
-        toast.error("Something went wrong")
-      }
-    },
-    ClearForm() {
-      this.form = ''
-    }
+const formData = reactive({
+  name: "",
+  email: "",
+  content: ""
+});
+
+const Send = async () => {
+  const toast = useToast()
+  try {
+    messagesService.create(formData).then(response => {
+      ClearForm()
+      if (response.status == 200)
+        toast.success("Message sent. Thank you!")
+    })
   }
+  catch (errorMsg) {
+    toast.error("Something went wrong")
+  }
+};
+
+const ClearForm = async () => {
+  formData.name = formData.email = formData.content = ''
 }
 </script>
 
