@@ -89,7 +89,7 @@ import { RouterLink } from 'vue-router'
                         </a>
                     </li>
                     <li class="nav-item nav-messages">
-                        <router-link :to="{ name: 'messages-list' }" class="nav-link">
+                        <router-link :to="{ name: 'message-list' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                 <span>Messages</span>
@@ -144,7 +144,7 @@ import { RouterLink } from 'vue-router'
                             </a>
                         </li>
                         <li class="nav-item nav-messages">
-                            <router-link :to="{ name: 'messages-list' }" class="nav-link">
+                            <router-link :to="{ name: 'message-list' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                     <span>Messages</span>

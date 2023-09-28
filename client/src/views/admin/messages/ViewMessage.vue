@@ -4,7 +4,7 @@
             <div class="content-container">
                 <div class="view-wrapper">
                     <div class="title-wrapper">
-                        <router-link :to="{ name: 'messages-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
+                        <router-link :to="{ name: 'message-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
                             data-placement="top" title="Return to list">
                             <div class="back-to-list">
                                 <img src="@/assets/admin/images/back.png" class="back-icon" alt="Return to list" />
@@ -13,7 +13,7 @@
                         <h4>View Message</h4>
 
                         <div class="buttons-wrapper">
-                            <router-link :to="{ name: 'messages-delete', params: { id: model.id } }" class="list-button"
+                            <router-link :to="{ name: 'delete-message', params: { id: model.id } }" class="list-button"
                                 data-toggle="tooltip" data-placement="top" title="Delete">
                                 <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="" />
                             </router-link>

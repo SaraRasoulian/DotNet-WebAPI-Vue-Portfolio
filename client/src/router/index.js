@@ -57,18 +57,18 @@ const router = createRouter({
 
     {
       path: '/admin/messages',
-      name: 'messages-list',
-      component: () => import('../views/admin/messages/list.vue')
+      name: 'message-list',
+      component: () => import('../views/admin/messages/MessageList.vue')
     },
     {
       path: '/admin/messages/:id',
-      name: 'messages-view',
-      component: () => import('../views/admin/messages/view.vue')
+      name: 'view-message',
+      component: () => import('../views/admin/messages/ViewMessage.vue')
     },
     {
       path: '/admin/messages/delete/:id',
-      name: 'messages-delete',
-      component: () => import('../views/admin/messages/delete.vue')
+      name: 'delete-message',
+      component: () => import('../views/admin/messages/DeleteMessage.vue')
     },
   ]
 })

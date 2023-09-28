@@ -42,11 +42,11 @@
                                 </div>
                             </div>
                             <div class="buttons-wrapper">
-                                <router-link :to="{ name: 'messages-view', params: { id: item.id } }" class="list-button"
+                                <router-link :to="{ name: 'view-message', params: { id: item.id } }" class="list-button"
                                     data-toggle="tooltip" data-placement="top" title="View">
                                     <img src="@/assets/admin/images/view.png" class="list-button-icon" alt="View" />
                                 </router-link>
-                                <router-link :to="{ name: 'messages-delete', params: { id: item.id } }" class="list-button"
+                                <router-link :to="{ name: 'delete-message', params: { id: item.id } }" class="list-button"
                                     data-toggle="tooltip" data-placement="top" title="Delete">
                                     <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="Delete" />
                                 </router-link>
