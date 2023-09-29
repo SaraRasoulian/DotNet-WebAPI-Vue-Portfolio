@@ -17,7 +17,7 @@ import { RouterLink } from 'vue-router'
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <router-link :to="{ name: 'profile-edit' }" class="dropdown-item">
+                                        <router-link :to="{ name: 'edit-profile' }" class="dropdown-item">
                                             <img src="@/assets/admin/images/profile.png" class="sidebar-icon dropdown-icon"
                                                 alt="Edit profile">
                                             Edit profile
@@ -57,7 +57,7 @@ import { RouterLink } from 'vue-router'
                     </li>
 
                     <li class="nav-item nav-profile">
-                        <router-link :to="{ name: 'profile-view' }" class="nav-link">
+                        <router-link :to="{ name: 'view-profile' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="">
                                 <span>Profile</span>
@@ -112,7 +112,7 @@ import { RouterLink } from 'vue-router'
                             <hr />
                         </li>
                         <li class="nav-item nav-profile">
-                            <router-link :to="{ name: 'profile-view' }" class="nav-link">
+                            <router-link :to="{ name: 'view-profile' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="">
                                     <span>Profile</span>

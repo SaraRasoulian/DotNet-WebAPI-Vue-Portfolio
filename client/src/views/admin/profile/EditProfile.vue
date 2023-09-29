@@ -3,7 +3,7 @@
         <AdminLayout>
             <div class="content-container">
                 <div class="title-wrapper">
-                    <router-link :to="{ name: 'profile-view' }" class="back-to-list-wrapper" data-toggle="tooltip"
+                    <router-link :to="{ name: 'view-profile' }" class="back-to-list-wrapper" data-toggle="tooltip"
                         data-placement="top" title="Return to view">
                         <div class="back-to-list">
                             <img src="@/assets/admin/images/back.png" class="back-icon" alt="Return to view" />
@@ -81,7 +81,7 @@
                             <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                                 <div class="button-container">
                                     <button class="btn btn-save" v-on:click.prevent="update()">Save</button>
-                                    <router-link :to="{ name: 'profile-view' }" class="btn btn-cancel">Cancel</router-link>
+                                    <router-link :to="{ name: 'view-profile' }" class="btn btn-cancel">Cancel</router-link>
                                 </div>
                             </div>
                         </div>

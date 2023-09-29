@@ -7,6 +7,7 @@
   --titr-color: #014f57;
   --input-border-color: #cfbda0;
   --error-color: #cb5153;
+  --success-color: #29bc9c;
 }
 
 /******************** Base styles ********************/
@@ -241,7 +242,7 @@ h6 {
   margin-bottom: 1.8vw;
 }
 
-.form-item{
+.form-item {
   margin-bottom: 1rem;
 }
 
@@ -425,6 +426,9 @@ label > .label-body {
   color: var(--error-color);
 }
 
+.Vue-Toastification__toast--success {
+  background-color: var(--success-color);
+}
 
 /******************** Footer ********************/
 .footer {

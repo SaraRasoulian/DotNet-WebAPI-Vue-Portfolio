@@ -9,7 +9,7 @@
                             <h4>View Profile</h4>
                         </div>
                         <div class="buttons-wrapper">
-                            <router-link :to="{ name: 'profile-edit' }" class="list-button" data-toggle="tooltip"
+                            <router-link :to="{ name: 'edit-profile' }" class="list-button" data-toggle="tooltip"
                                 data-placement="top" title="Edit">
                                 <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit">
                             </router-link>
