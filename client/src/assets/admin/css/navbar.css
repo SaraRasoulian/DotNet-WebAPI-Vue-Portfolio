@@ -205,13 +205,18 @@
   color: var(--text-color);
 }
 
-.badge-wrapper{
+.badge-wrapper {
   display: flex;
   align-items: center;
 }
 
+.messages .nav-link-inner .badge-unread {
+  background-color: white;
+}
+
 .nav-link-inner .badge-unread {
-  background-color: var(--red);
+  background-color: var(--active-color);
+  color: var(--text-color);
   padding: 4px 7px;
 }
 
