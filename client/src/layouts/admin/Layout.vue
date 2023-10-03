@@ -12,7 +12,12 @@ import { RouterLink } from 'vue-router'
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle wraper-div" href="#" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="@/assets/admin/images/default-photo.svg" class="profile-photo" alt="">
+                                    <img v-if="profile.photo !== null && profile.photo !== ''" :src="profile.photo"
+                                        class="profile-photo" :alt="profile.firstName">
+
+                                    <img v-else src="@/assets/admin/images/default-photo.svg" class="profile-photo"
+                                        :alt="profile.firstName">
+
                                     <span>{{ profile.firstName }}</span>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -106,8 +111,12 @@ import { RouterLink } from 'vue-router'
                     <ul class="nav flex-column">
                         <li class="">
                             <div class="profile-container">
-                                <img src="@/assets/admin/images/default-photo.svg" class="profile-photo" alt="">
-                                <span>{{ profile.firstName }} Rasoulian</span>
+                                <img v-if="profile.photo !== null && profile.photo !== ''" :src="profile.photo"
+                                    class="profile-photo" :alt="profile.firstName">
+
+                                <img v-else src="@/assets/admin/images/default-photo.svg" class="profile-photo"
+                                    :alt="profile.firstName">
+                                <span>{{ profile.firstName }} {{ profile.lastName }}</span>
                             </div>
                             <hr />
                         </li>
@@ -195,6 +204,7 @@ import { RouterLink } from 'vue-router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NumberOfUnread from '@/components/admin/NumberOfUnread.vue'
+import profileService from '@/services/profileService'
 
 export default {
     name: 'App',
@@ -219,9 +229,12 @@ export default {
         toggleSidebar() {
             this.isSidebarMinimized = !this.isSidebarMinimized
         },
-        GetProfile() {
-            //get admin's first name, last name and photo
-            this.profile.firstName = 'XXX'
+        async GetProfile() {
+            await profileService.get().then(response => {
+                this.profile.firstName = response.data.firstName
+                this.profile.lastName = response.data.lastName
+                this.profile.photo = response.data.photo
+            })
         }
     },
     mounted() {
