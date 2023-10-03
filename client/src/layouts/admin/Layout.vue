@@ -15,7 +15,7 @@ import { RouterLink } from 'vue-router'
                                     <img v-if="profile.photo !== null && profile.photo !== ''" :src="profile.photo"
                                         class="profile-photo" :alt="profile.firstName">
 
-                                    <img v-else src="@/assets/admin/images/default-photo.svg" class="profile-photo"
+                                    <img v-else src="@/assets/admin/images/default-photo.png" class="profile-photo"
                                         :alt="profile.firstName">
 
                                     <span>{{ profile.firstName }}</span>
@@ -114,7 +114,7 @@ import { RouterLink } from 'vue-router'
                                 <img v-if="profile.photo !== null && profile.photo !== ''" :src="profile.photo"
                                     class="profile-photo" :alt="profile.firstName">
 
-                                <img v-else src="@/assets/admin/images/default-photo.svg" class="profile-photo"
+                                <img v-else src="@/assets/admin/images/default-photo.png" class="profile-photo"
                                     :alt="profile.firstName">
                                 <span>{{ profile.firstName }} {{ profile.lastName }}</span>
                             </div>
