@@ -25,7 +25,7 @@
 @import '@/assets/home/css/style.css';
 </style>
 
-<script>
+<script setup>
 import Profile from '@/components/home/Profile.vue'
 import Experiences from '@/components/home/Experiences.vue'
 import Educations from '@/components/home/Educations.vue'
@@ -33,17 +33,4 @@ import SocialLinks from '@/components/home/SocialLinks.vue'
 import SendMessage from '@/components/home/SendMessage.vue'
 import HomeHeader from '@/components/home/HomeHeader.vue'
 import HomeFooter from '@/components/home/HomeFooter.vue'
-
-export default {
-    name: 'App',
-    components: {
-        Profile,
-        Experiences,
-        Educations,
-        SocialLinks,
-        SendMessage,
-        HomeHeader,
-        HomeFooter
-    }
-}
 </script>
