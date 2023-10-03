@@ -12,7 +12,7 @@
 
                 <SocialLinks />
 
-                <Messages />
+                <SendMessage />
             </div>
             <HomeFooter />
         </div>
@@ -30,7 +30,7 @@ import Profile from '@/components/home/Profile.vue'
 import Experiences from '@/components/home/Experiences.vue'
 import Educations from '@/components/home/Educations.vue'
 import SocialLinks from '@/components/home/SocialLinks.vue'
-import Messages from '@/components/home/Messages.vue'
+import SendMessage from '@/components/home/SendMessage.vue'
 import HomeHeader from '@/components/home/HomeHeader.vue'
 import HomeFooter from '@/components/home/HomeFooter.vue'
 
@@ -41,7 +41,7 @@ export default {
         Experiences,
         Educations,
         SocialLinks,
-        Messages,
+        SendMessage,
         HomeHeader,
         HomeFooter
     }
