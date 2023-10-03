@@ -150,6 +150,9 @@
 .education .sidebar .nav-educations,
 .education .sidebar .nav-educations:hover,
 .education .mobile-navbar .nav-item.nav-educations,
+.social .sidebar .nav-social,
+.social .sidebar .nav-social:hover,
+.social .mobile-navbar .nav-item.nav-social,
 .messages .sidebar .nav-messages,
 .messages .sidebar .nav-messages:hover,
 .messages .mobile-navbar .nav-item.nav-messages {
@@ -168,6 +171,8 @@
 .profile .min-sidebar .sidebar .nav-profile:hover,
 .education .min-sidebar .sidebar .nav-educations,
 .education .min-sidebar .sidebar .nav-educations:hover,
+.social .min-sidebar .sidebar .nav-social,
+.social .min-sidebar .sidebar .nav-social:hover,
 .messages .min-sidebar .sidebar .nav-messages,
 .messages .min-sidebar .sidebar .nav-messages:hover {
   border-radius: 50%;
@@ -177,6 +182,7 @@
 
 .profile .sidebar .nav-profile .nav-link,
 .education .sidebar .nav-educations .nav-link,
+.social .sidebar .nav-social .nav-link,
 .messages .sidebar .nav-messages .nav-link {
   font-weight: 600;
   color: var(--text-color);

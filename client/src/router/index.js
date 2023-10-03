@@ -70,6 +70,33 @@ const router = createRouter({
       name: 'delete-message',
       component: () => import('../views/admin/messages/DeleteMessage.vue')
     },
+
+
+    {
+      path: '/admin/socials',
+      name: 'social-list',
+      component: () => import('../views/admin/socialLinks/SocialList.vue')
+    },
+    {
+      path: '/admin/socials/add',
+      name: 'add-social',
+      component: () => import('../views/admin/socialLinks/AddSocial.vue')
+    },
+    {
+      path: '/admin/socials/:id',
+      name: 'view-social',
+      component: () => import('../views/admin/socialLinks/ViewSocial.vue')
+    },    
+    {
+      path: '/admin/socials/edit/:id',
+      name: 'edit-social',
+      component: () => import('../views/admin/socialLinks/EditSocial.vue')
+    },
+    {
+      path: '/admin/socials/delete/:id',
+      name: 'delete-social',
+      component: () => import('../views/admin/socialLinks/DeleteSocial.vue')
+    },
   ]
 })
 

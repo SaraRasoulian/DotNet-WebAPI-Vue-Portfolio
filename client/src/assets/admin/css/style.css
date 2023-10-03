@@ -457,6 +457,12 @@ input {
   }
 }
 
+/*********** social links ***********/
+.social-img {
+  width: 3rem;
+  height: 3rem;
+}
+
 /* toastnotification */
 .Vue-Toastification__toast--success {
   background-color: var(--green);

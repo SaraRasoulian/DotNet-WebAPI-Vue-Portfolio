@@ -12,8 +12,8 @@ import { RouterLink } from 'vue-router'
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle wraper-div" href="#" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="@/assets/admin/images/profile-photo.png" class="profile-photo" alt="">
-                                    <span>Sara</span>
+                                    <img src="@/assets/admin/images/default-photo.svg" class="profile-photo" alt="">
+                                    <span>{{ profile.firstName }}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -50,7 +50,7 @@ import { RouterLink } from 'vue-router'
                     <li class="sidebar-title">
                         <div class="toggle-sidebar-wrapper">
                             <div class="toggle-sidebar" v-on:click="toggleSidebar">
-                                <img src="@/assets/admin/images/menu.svg" class="sidebar-icon" alt="">
+                                <img src="@/assets/admin/images/menu.svg" class="sidebar-icon" alt="Admin Panel">
                             </div>
                             <span>Admin Panel</span>
                         </div>
@@ -59,7 +59,7 @@ import { RouterLink } from 'vue-router'
                     <li class="nav-item nav-profile">
                         <router-link :to="{ name: 'view-profile' }" class="nav-link">
                             <div class="nav-link-inner">
-                                <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="">
+                                <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="Profile">
                                 <span>Profile</span>
                             </div>
                         </router-link>
@@ -67,7 +67,7 @@ import { RouterLink } from 'vue-router'
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <div class="nav-link-inner">
-                                <img src="@/assets/admin/images/experiences.png" class="sidebar-icon" alt="">
+                                <img src="@/assets/admin/images/experiences.png" class="sidebar-icon" alt="Experiences">
                                 <span>Experiences</span>
                             </div>
                         </a>
@@ -75,25 +75,25 @@ import { RouterLink } from 'vue-router'
                     <li class="nav-item nav-educations">
                         <router-link :to="{ name: 'education-list' }" class="nav-link">
                             <div class="nav-link-inner">
-                                <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
+                                <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="Educations">
                                 <span>Educations</span>
                             </div>
                         </router-link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+                    <li class="nav-item nav-social">
+                        <router-link :to="{ name: 'social-list' }" class="nav-link">
                             <div class="nav-link-inner">
-                                <img src="@/assets/admin/images/social-links.png" class="sidebar-icon" alt="">
+                                <img src="@/assets/admin/images/social-links.png" class="sidebar-icon" alt="Social Links">
                                 <span>Social Links</span>
                             </div>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="nav-item nav-messages">
                         <router-link :to="{ name: 'message-list' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                 <span>Messages</span>
-                                <NumberOfUnread/>
+                                <NumberOfUnread />
                             </div>
                         </router-link>
                     </li>
@@ -106,15 +106,15 @@ import { RouterLink } from 'vue-router'
                     <ul class="nav flex-column">
                         <li class="">
                             <div class="profile-container">
-                                <img src="@/assets/admin/images/profile-photo.png" class="profile-photo" alt="">
-                                <span>Sara Rasoulian</span>
+                                <img src="@/assets/admin/images/default-photo.svg" class="profile-photo" alt="">
+                                <span>{{ profile.firstName }} Rasoulian</span>
                             </div>
                             <hr />
                         </li>
                         <li class="nav-item nav-profile">
                             <router-link :to="{ name: 'view-profile' }" class="nav-link">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="">
+                                    <img src="@/assets/admin/images/profile.png" class="sidebar-icon" alt="Profile">
                                     <span>Profile</span>
                                 </div>
                             </router-link>
@@ -122,7 +122,7 @@ import { RouterLink } from 'vue-router'
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/experiences.png" class="sidebar-icon" alt="">
+                                    <img src="@/assets/admin/images/experiences.png" class="sidebar-icon" alt="Experiences">
                                     <span>Experiences</span>
                                 </div>
                             </a>
@@ -130,25 +130,26 @@ import { RouterLink } from 'vue-router'
                         <li class="nav-item nav-educations">
                             <router-link :to="{ name: 'education-list' }" class="nav-link">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="">
+                                    <img src="@/assets/admin/images/educations.png" class="sidebar-icon" alt="Educations">
                                     <span>Educations</span>
                                 </div>
                             </router-link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item nav-social">
+                            <router-link :to="{ name: 'social-list' }" class="nav-link">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/social-links.png" class="sidebar-icon" alt="">
+                                    <img src="@/assets/admin/images/social-links.png" class="sidebar-icon"
+                                        alt="Social Links">
                                     <span>Social Links</span>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                         <li class="nav-item nav-messages">
                             <router-link :to="{ name: 'message-list' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/messages.png" class="sidebar-icon" alt="Messages">
                                     <span>Messages</span>
-                                    <NumberOfUnread/>
+                                    <NumberOfUnread />
                                 </div>
                             </router-link>
                         </li>
@@ -156,7 +157,7 @@ import { RouterLink } from 'vue-router'
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/password.png" class="sidebar-icon" alt="">
+                                    <img src="@/assets/admin/images/password.png" class="sidebar-icon" alt="Password">
                                     <span>Password</span>
                                 </div>
                             </a>
@@ -164,7 +165,7 @@ import { RouterLink } from 'vue-router'
                         <li class="nav-item">
                             <router-link :to="{ name: 'login' }" class="nav-link">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/logout.png" class="sidebar-icon" alt="">
+                                    <img src="@/assets/admin/images/logout.png" class="sidebar-icon" alt="Log Out">
                                     <span>Log Out</span>
                                 </div>
                             </router-link>
@@ -176,7 +177,7 @@ import { RouterLink } from 'vue-router'
                 </div>
                 <div class="navbar-top">
                     <div v-on:click="toggleMobileNavbar">
-                        <img src="@/assets/admin/images/menu.svg" class="navbar-icon" alt="">
+                        <img src="@/assets/admin/images/menu.svg" class="navbar-icon">
                     </div>
                 </div>
             </div>
@@ -203,7 +204,12 @@ export default {
     data() {
         return {
             isMobileNavbarVisible: false,
-            isSidebarMinimized: false
+            isSidebarMinimized: false,
+            profile: {
+                firstName: '',
+                lastName: '',
+                photo: ''
+            }
         }
     },
     methods: {
@@ -212,7 +218,14 @@ export default {
         },
         toggleSidebar() {
             this.isSidebarMinimized = !this.isSidebarMinimized
+        },
+        GetProfile() {
+            //get admin's first name, last name and photo
+            this.profile.firstName = 'XXX'
         }
-    }
+    },
+    mounted() {
+        this.GetProfile()
+    },
 }
 </script>
