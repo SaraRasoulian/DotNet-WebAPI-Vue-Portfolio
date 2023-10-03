@@ -3,7 +3,3 @@
         <h6 class="footer-text">Designed and Developed by <a href="#" target="_self">Sara Rasoulian</a></h6>
     </div>
 </template>
-
-<script>
-export default {}
-</script>
