@@ -81,12 +81,8 @@ h6 {
 .profile-img {
   margin-top: 2rem;
   width: -webkit-fill-available;
-  max-width: fit-content;
-
-  /*for FireFox*/
   width: -moz-available;
-  max-width: -moz-fit-content;
-
+  max-width: 32rem;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
 }

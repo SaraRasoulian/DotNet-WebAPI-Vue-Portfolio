@@ -33,7 +33,6 @@ export default {
     async getList() {
       await educationsService.getAll().then(response => {
         this.list = response.data
-        console.log('List: ', this.list.length)
       })
     },
   },
