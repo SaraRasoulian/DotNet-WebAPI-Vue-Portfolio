@@ -99,6 +99,7 @@ import { useToast } from 'vue-toastification'
 import { useRouter } from 'vue-router'
 import { onMounted, ref } from 'vue'
 
+const router = useRouter()
 const model = ref({})
 
 async function loadData() {
@@ -107,19 +108,13 @@ async function loadData() {
     })
 }
 
-onMounted(loadData)
-
 function update() {
     const toast = useToast()
     try {
         profileService.update(model.value).then(response => {
+            router.push({ name: 'view-profile' })
             if (response.status == 200)
                 toast.success("Profile edited successfully")
-
-            const router = useRouter()
-            //router.push('/admin/profile')
-            router.push({ path: '/admin/profile' })
-
         })
     } catch (errorMsg) {
         toast.error("Something went wrong")
@@ -142,4 +137,6 @@ function createBase64Image(fileObject) {
     }
     reader.readAsDataURL(fileObject)
 }
+
+onMounted(loadData)
 </script>
