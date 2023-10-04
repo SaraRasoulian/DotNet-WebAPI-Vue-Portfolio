@@ -20,24 +20,18 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import educationsService from '@/services/educationsService'
+import { onMounted } from 'vue'
+import { ref } from 'vue'
 
-export default {
-  data() {
-    return {
-      list: []
-    }
-  },
-  methods: {
-    async getList() {
-      await educationsService.getAll().then(response => {
-        this.list = response.data
-      })
-    },
-  },
-  mounted() {
-    this.getList()
-  }
+const list = ref([])
+
+async function getList() {
+  await educationsService.getAll().then(response => {
+    list.value = response.data
+  })
 }
+
+onMounted(getList)
 </script>

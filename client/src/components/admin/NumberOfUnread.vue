@@ -4,8 +4,8 @@
 
 <script setup>
 import messagesService from '@/services/messagesService'
-import { ref } from 'vue'
 import { onMounted } from 'vue'
+import { ref } from 'vue'
 
 const unread = ref(0)
 

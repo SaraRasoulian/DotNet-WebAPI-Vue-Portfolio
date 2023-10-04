@@ -14,25 +14,18 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import profileService from '@/services/profileService'
-export default {
-  data() {
-    return {
-      model: [],
-    };
-  },
-  methods: {
-    async loadData() {
-      await profileService.get().then(response => {
-        this.model = response.data
-      })
-    },
-  },
-  mounted() {
-    this.loadData()
-  }
+import { onMounted } from 'vue'
+import { ref } from 'vue'
+
+const model = ref({})
+
+async function getProfile() {
+  await profileService.get().then(response => {
+    model.value = response.data
+  })
 }
+
+onMounted(getProfile)
 </script>
-
-
