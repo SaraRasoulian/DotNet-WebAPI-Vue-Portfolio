@@ -88,29 +88,21 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import educationsService from '@/services/educationsService'
 
-export default {
-    components: {
-        AdminLayout,
-    },
-    data() {
-        return {
-            model: [],
-            id: this.$route.params.id,
-        }
-    },
-    methods: {
-        async loadData() {
-            await educationsService.get(this.id).then(response => {
-                this.model = response.data
-            })
-        },
-    },
-    mounted() {
-        this.loadData()
-    }
+const model = ref([])
+const route = useRoute()
+const id = route.params.id
+
+async function loadData() {
+    await educationsService.get(id).then(response => {
+        model.value = response.data
+    })
 }
+
+onMounted(loadData)
 </script>
