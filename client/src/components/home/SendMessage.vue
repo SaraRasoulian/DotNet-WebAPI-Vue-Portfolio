@@ -38,19 +38,18 @@
   </div>
 </template>
 
-
 <script setup>
 import messagesService from '@/services/messagesService'
 import { useToast } from 'vue-toastification'
 import { reactive } from 'vue'
-import useVuelidate from '@vuelidate/core';
-import { required, email } from '@vuelidate/validators';
+import useVuelidate from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
 
 const formData = reactive({
   name: "",
   email: "",
   content: ""
-});
+})
 
 const rules = {
   name: { required },
@@ -60,7 +59,7 @@ const rules = {
 const v$ = useVuelidate(rules, formData)
 
 const Send = async () => {
-  const result = await v$.value.$validate();
+  const result = await v$.value.$validate()
   if (!result)
     return
 
@@ -83,5 +82,3 @@ const ClearForm = () => {
   formData.name = formData.email = formData.content = ''
 }
 </script>
-
-

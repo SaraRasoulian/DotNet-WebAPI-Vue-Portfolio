@@ -1,4 +1,5 @@
 <template>
+  v-model="formData
   <div class="education">
     <AdminLayout>
       <div class="content-container">
@@ -19,7 +20,8 @@
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="degree" class="form-label">Degree</label>
                 <div class="input-group has-validation">
-                  <input type="text" v-model="form.degree" class="form-control" id="degree" placeholder="Degree" required="">
+                  <input type="text" v-model="formData.degree" class="form-control" id="degree" placeholder="Degree"
+                    required="">
                   <div class="invalid-feedback">
                     Degree is required.
                   </div>
@@ -30,7 +32,7 @@
             <div class="row g-3">
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="fieldOfStudy" class="form-label">Field of study</label>
-                <input type="text" v-model="form.fieldOfStudy" class="form-control" id="fieldOfStudy"
+                <input type="text" v-model="formData.fieldOfStudy" class="form-control" id="fieldOfStudy"
                   placeholder="Field of study">
                 <div class="invalid-feedback">
                   Field is required.
@@ -41,7 +43,7 @@
             <div class="row g-3">
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="school" class="form-label">School</label>
-                <input type="text" v-model="form.school" class="form-control" id="school" placeholder="School">
+                <input type="text" v-model="formData.school" class="form-control" id="school" placeholder="School">
                 <div class="invalid-feedback">
                   School is required.
                 </div>
@@ -51,15 +53,16 @@
             <div class="row g-3">
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <label for="startYear" class="form-label">Start Year</label>
-                <input type="text" v-model="form.startYear" class="form-control" id="startYear" placeholder="Start Year"
-                  required="">
+                <input type="text" v-model="formData.startYear" class="form-control" id="startYear"
+                  placeholder="Start Year" required="">
                 <div class="invalid-feedback">
                   start year is required.
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <label for="endYear" class="form-label">End Year</label>
-                <input type="text" v-model="form.endYear" class="form-control" id="endYear" placeholder="End Year" required="">
+                <input type="text" v-model="formData.endYear" class="form-control" id="endYear" placeholder="End Year"
+                  required="">
                 <div class="invalid-feedback">
                   end year is required.
                 </div>
@@ -70,7 +73,7 @@
                 <label for="description" class="form-label">Description
                   <span class="secondary-text">(Optional)</span>
                 </label>
-                <textarea type="text" v-model="form.description" class="form-control" id="description"
+                <textarea type="text" v-model="formData.description" class="form-control" id="description"
                   placeholder="description"></textarea>
               </div>
             </div>
@@ -91,41 +94,34 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import educationsService from '@/services/educationsService'
 import { useToast } from 'vue-toastification'
+import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
 
-export default {
-  components: {
-    AdminLayout
-  },
-  data() {
-    return {
-      form: {
-        degree: '',
-        fieldOfStudy: '',
-        school: '',
-        startYear: '',
-        endYear: '',
-        description: '',
-      }
-    }
-  },
-  methods: {
-    create() {
-      const toast = useToast()
-      try {
-        educationsService.create(this.form).then(response => {
-          this.$router.push("/admin/educations")
-          if (response.status == 200)
-            toast.success("Education added successfully")
-        })
-      }
-      catch (errorMsg) {
-        toast.error("Something went wrong")
-      }
-    },
+const router = useRouter()
+const formData = reactive({
+  degree: '',
+  fieldOfStudy: '',
+  school: '',
+  startYear: '',
+  endYear: '',
+  description: '',
+})
+
+async function create() {
+  const toast = useToast()
+  try {
+    await educationsService.create(formData).then(response => {
+      router.push({ name: 'education-list' })
+      if (response.status == 200)
+        toast.success("Education added successfully")
+    })
+  }
+  catch (errorMsg) {
+    toast.error("Something went wrong")
   }
 }
 </script>

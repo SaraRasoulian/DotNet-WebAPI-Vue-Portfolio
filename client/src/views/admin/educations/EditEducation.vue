@@ -97,43 +97,37 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import educationsService from '@/services/educationsService'
 import { useToast } from 'vue-toastification'
+import educationsService from '@/services/educationsService'
 
-export default {
-    components: {
-        AdminLayout,
-    },
-    data() {
-        return {
-            model: [],
-            id: this.$route.params.id,
-        }
-    },
-    methods: {
-        async loadData() {
-            await educationsService.get(this.id).then(response => {
-                this.model = response.data;
-            });
-        },
-        async update() {
-            const toast = useToast()
-            try {
-                await educationsService.update(this.id, this.model)
-                    .then(response => {
-                        this.$router.push("/admin/educations")
-                        if (response.status == 200)
-                            toast.success("Education edited successfully")
-                    })
-            } catch (errorMsg) {
-                toast.error("Something went wrong")
-            }
-        }
-    },
-    mounted() {
-        this.loadData()
+const model = ref([])
+const router = useRouter()
+const route = useRoute()
+const id = route.params.id
+
+async function loadData() {
+    await educationsService.get(id).then(response => {
+        model.value = response.data
+    })
+}
+
+async function update() {
+    const toast = useToast()
+    try {
+        await educationsService.update(id, model.value)
+            .then(response => {
+                router.push({ name: 'education-list' })
+                if (response.status == 200)
+                    toast.success("Education edited successfully")
+            })
+    } catch (errorMsg) {
+        toast.error("Something went wrong")
     }
 }
+
+onMounted(loadData)
 </script>
