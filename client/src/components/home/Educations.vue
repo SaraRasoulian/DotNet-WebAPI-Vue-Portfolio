@@ -22,8 +22,7 @@
 
 <script setup>
 import educationsService from '@/services/educationsService'
-import { onMounted } from 'vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const list = ref([])
 
