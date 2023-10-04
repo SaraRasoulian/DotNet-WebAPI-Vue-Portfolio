@@ -81,28 +81,18 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import profileService from '@/services/profileService'
+import { onMounted, ref } from 'vue'
 
-export default {
-    components: {
-        AdminLayout,
-    },
-    data() {
-        return {
-            model: [],
-        };
-    },
-    methods: {
-        async loadData() {
-            await profileService.get().then(response => {
-                this.model = response.data
-            })
-        },
-    },
-    mounted() {
-        this.loadData()
-    }
+const model = ref({})
+
+async function loadData() {
+    await profileService.get().then(response => {
+        model.value = response.data
+    })
 }
+
+onMounted(loadData)
 </script>

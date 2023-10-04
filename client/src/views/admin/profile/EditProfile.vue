@@ -92,55 +92,54 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import profileService from '@/services/ProfileService'
 import { useToast } from 'vue-toastification'
+import { useRouter } from 'vue-router'
+import { onMounted, ref } from 'vue'
 
-export default {
-    components: {
-        AdminLayout,
-    },
-    data() {
-        return {
-            model: [],
-        }
-    },
-    methods: {
-        async loadData() {
-            await profileService.get().then(response => {
-                this.model = response.data
-            })
-        },
-        async update() {
-            const toast = useToast()
-            try {
-                await profileService.update(this.model).then(response => {
-                    this.$router.push("/admin/profile")
-                    if (response.status == 200)
-                        toast.success("Profile edited successfully")
-                })
-            } catch (errorMsg) {
-                toast.error("Something went wrong")
-            }
-        },
-        removePhoto() {
-            this.model.photo = ''
-        },
-        uploadPhoto(e) {
-            const selectedImage = e.target.files[0]
-            this.createBase64Image(selectedImage)
-        },
-        createBase64Image(fileObject) {
-            const reader = new FileReader()
-            reader.onload = (e) => {
-                this.model.photo = e.target.result
-            }
-            reader.readAsDataURL(fileObject)
-        },
-    },
-    mounted() {
-        this.loadData()
+const model = ref({})
+
+async function loadData() {
+    await profileService.get().then(response => {
+        model.value = response.data
+    })
+}
+
+onMounted(loadData)
+
+function update() {
+    const toast = useToast()
+    try {
+        profileService.update(model.value).then(response => {
+            if (response.status == 200)
+                toast.success("Profile edited successfully")
+
+            const router = useRouter()
+            //router.push('/admin/profile')
+            router.push({ path: '/admin/profile' })
+
+        })
+    } catch (errorMsg) {
+        toast.error("Something went wrong")
     }
+}
+
+function removePhoto() {
+    model.value.photo = ''
+}
+
+function uploadPhoto(e) {
+    const selectedImage = e.target.files[0]
+    createBase64Image(selectedImage)
+}
+
+function createBase64Image(fileObject) {
+    const reader = new FileReader()
+    reader.onload = (e) => {
+        model.value.photo = e.target.result
+    }
+    reader.readAsDataURL(fileObject)
 }
 </script>

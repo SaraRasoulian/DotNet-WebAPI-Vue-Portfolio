@@ -4,8 +4,7 @@
 
 <script setup>
 import messagesService from '@/services/messagesService'
-import { onMounted } from 'vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const unread = ref(0)
 
@@ -15,7 +14,5 @@ async function getUnRead() {
   })
 }
 
-onMounted(() => {
-  getUnRead()
-})
+onMounted(getUnRead)
 </script>

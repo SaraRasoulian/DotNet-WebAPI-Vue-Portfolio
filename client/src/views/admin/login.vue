@@ -1,7 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
-
 <template>
   <div class="content-container login-container">
     <div class="title-wrapper parent-page-title">
@@ -57,7 +53,8 @@ import { RouterLink } from 'vue-router'
 @import '@/assets/admin/css/login.css';
 </style>
 
-<script>
+<script setup>
+import { RouterLink } from 'vue-router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 </script>

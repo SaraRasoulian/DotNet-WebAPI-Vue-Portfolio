@@ -126,12 +126,6 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-
-export default {
-  components: {
-    AdminLayout,
-  }
-}
 </script>

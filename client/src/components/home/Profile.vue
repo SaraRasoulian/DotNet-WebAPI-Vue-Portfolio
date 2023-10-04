@@ -16,16 +16,15 @@
 
 <script setup>
 import profileService from '@/services/profileService'
-import { onMounted } from 'vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const model = ref({})
 
-async function getProfile() {
+async function loadData() {
   await profileService.get().then(response => {
     model.value = response.data
   })
 }
 
-onMounted(getProfile)
+onMounted(loadData)
 </script>
