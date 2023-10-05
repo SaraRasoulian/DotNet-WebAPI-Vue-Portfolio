@@ -6,7 +6,7 @@
                     <div class="list-title">
                         <h4>Messages</h4>
                         <div class="list-total">
-                            <span>{{ listTotal }}</span>
+                            <span>{{ list.length }}</span>
                             <span>total</span>
                         </div>
                     </div>
@@ -60,30 +60,18 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import messagesService from '@/services/messagesService'
+import { onMounted, ref } from 'vue'
 
-export default {
-    components: {
-        AdminLayout,
-    },
-    data() {
-        return {
-            list: [],
-            listTotal: 0,
-        }
-    },
-    methods: {
-        async getList() {
-            await messagesService.getAll().then(response => {
-                this.list = response.data;
-                this.listTotal = this.list.length;
-            })
-        },
-    },
-    mounted() {
-        this.getList();
-    }
+const list = ref([])
+
+async function getList() {
+  await messagesService.getAll().then(response => {
+    list.value = response.data
+  })
 }
+
+onMounted(getList)
 </script>
