@@ -44,33 +44,27 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import messagesService from '@/services/messagesService'
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
-export default {
-    components: {
-        AdminLayout,
-    },
-    data() {
-        return {
-            model: [],
-            id: this.$route.params.id,
-        };
-    },
-    methods: {
-        async loadData() {
-            await messagesService.get(this.id).then(response => {
-                this.model = response.data;
-            })
-        },
-        async markAsRead() {
-            await messagesService.markAsRead(this.id)
-        }
-    },
-    mounted() {
-        this.loadData()
-        this.markAsRead()
-    }
+const model = ref([])
+const route = useRoute()
+const id = route.params.id
+
+async function loadData() {
+    await messagesService.get(id).then(response => {
+        model.value = response.data
+    })
 }
+async function markAsRead() {
+    await messagesService.markAsRead(id)
+}
+
+onMounted(() => {
+    loadData()
+    markAsRead()
+})
 </script>

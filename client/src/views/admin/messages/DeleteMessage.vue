@@ -47,42 +47,36 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import messagesService from '@/services/messagesService'
+import { ref, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useToast } from 'vue-toastification'
 
-export default {
-    components: {
-        AdminLayout,
-    },
-    data() {
-        return {
-            model: [],
-            id: this.$route.params.id,
-        }
-    },
-    methods: {
-        async loadData() {
-            await messagesService.get(this.id).then(response => {
-                this.model = response.data
-            })
-        },
-        async remove() {
-            const toast = useToast()
-            try {
-                await messagesService.delete(this.id).then(response => {
-                    this.$router.push("/admin/messages")
-                    if (response.status == 200)
-                        toast.success("Message deleted successfully")
-                })
-            } catch (errorMsg) {
-                toast.error("Something went wrong")
-            }
-        }
-    },
-    mounted() {
-        this.loadData()
+const model = ref([])
+const router = useRouter()
+const route = useRoute()
+const id = route.params.id
+
+async function loadData() {
+    await messagesService.get(id).then(response => {
+        model.value = response.data
+    })
+}
+
+async function remove() {
+    const toast = useToast()
+    try {
+        await messagesService.delete(id).then(response => {
+            router.push({ name: 'message-list' })
+            if (response.status == 200)
+                toast.success("Education deleted successfully")
+        })
+    } catch (errorMsg) {
+        toast.error("Something went wrong")
     }
 }
+
+onMounted(loadData)
 </script>

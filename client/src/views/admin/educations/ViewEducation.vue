@@ -89,10 +89,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
 import AdminLayout from '@/layouts/admin/Layout.vue'
 import educationsService from '@/services/educationsService'
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
 const model = ref([])
 const route = useRoute()

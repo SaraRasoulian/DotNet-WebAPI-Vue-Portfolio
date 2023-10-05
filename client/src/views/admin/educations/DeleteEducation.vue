@@ -82,12 +82,13 @@
         </AdminLayout>
     </div>
 </template>
+
 <script setup>
+import AdminLayout from '@/layouts/admin/Layout.vue'
+import educationsService from '@/services/educationsService'
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import AdminLayout from '@/layouts/admin/Layout.vue'
 import { useToast } from 'vue-toastification'
-import educationsService from '@/services/educationsService'
 
 const model = ref([])
 const router = useRouter()
