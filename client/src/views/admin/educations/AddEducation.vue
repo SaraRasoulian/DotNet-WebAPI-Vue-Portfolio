@@ -1,5 +1,4 @@
 <template>
-  v-model="formData
   <div class="education">
     <AdminLayout>
       <div class="content-container">

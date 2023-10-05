@@ -450,7 +450,7 @@ a:hover {
 /******************** Grainy Texture ********************/
 .texture {
   padding-top: 1px;
-  background-image: url(/src/home/assets/images/noise.png);
+  background-image: url('@/assets/home/images/noise.png');
 }
 
 /******************** Animated Gradient ********************/

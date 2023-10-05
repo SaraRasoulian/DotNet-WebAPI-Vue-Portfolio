@@ -1,6 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
 <template>
     <div class="" :class="{ 'min-sidebar': isSidebarMinimized }">
         <div class="desktop-navbar noselect">
@@ -200,45 +197,32 @@ import { RouterLink } from 'vue-router'
 @import '@/assets/admin/css/style.css';
 </style>
 
-<script>
+<script setup>
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NumberOfUnread from '@/components/admin/NumberOfUnread.vue'
 import profileService from '@/services/profileService'
+import { ref, onMounted } from 'vue'
 
-export default {
-    name: 'App',
-    components: {
-        NumberOfUnread
-    },
-    data() {
-        return {
-            isMobileNavbarVisible: false,
-            isSidebarMinimized: false,
-            profile: {
-                firstName: '',
-                lastName: '',
-                photo: ''
-            }
+const isMobileNavbarVisible = ref(false)
+const isSidebarMinimized = ref(false)
+const profile = ref({})
+
+function toggleMobileNavbar() {
+            isMobileNavbarVisible.value = !isMobileNavbarVisible.value
         }
-    },
-    methods: {
-        toggleMobileNavbar() {
-            this.isMobileNavbarVisible = !this.isMobileNavbarVisible
-        },
-        toggleSidebar() {
-            this.isSidebarMinimized = !this.isSidebarMinimized
-        },
-        async GetProfile() {
+       function toggleSidebar() {
+            isSidebarMinimized.value = !isSidebarMinimized.value
+        }
+        async function GetProfile() {
             await profileService.get().then(response => {
-                this.profile.firstName = response.data.firstName
-                this.profile.lastName = response.data.lastName
-                this.profile.photo = response.data.photo
+                profile.value.firstName = response.data.firstName
+                profile.value.lastName = response.data.lastName
+                profile.value.photo = response.data.photo
             })
         }
-    },
-    mounted() {
-        this.GetProfile()
-    },
-}
+
+onMounted(()=>{
+    GetProfile()
+})
 </script>
