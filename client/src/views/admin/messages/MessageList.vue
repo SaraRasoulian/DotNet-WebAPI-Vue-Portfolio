@@ -11,7 +11,6 @@
                         </div>
                     </div>
                 </div>
-
                 <hr class="line" />
 
                 <div class="content">
@@ -29,7 +28,7 @@
 
                     <!--list items-->
                     <div v-for="item in list" :key="item.id">
-                        <div class="list-item" :class="{ 'un-read' : !item.isRead }">
+                        <div class="list-item" :class="{ 'un-read': !item.isRead }">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                     <span>{{ item.name }}</span>
@@ -68,9 +67,9 @@ import { onMounted, ref } from 'vue'
 const list = ref([])
 
 async function getList() {
-  await messagesService.getAll().then(response => {
-    list.value = response.data
-  })
+    await messagesService.getAll().then(response => {
+        list.value = response.data
+    })
 }
 
 onMounted(getList)

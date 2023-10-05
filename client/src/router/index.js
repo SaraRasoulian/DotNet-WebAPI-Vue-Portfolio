@@ -15,7 +15,6 @@ const router = createRouter({
       component: () => import('../views/admin/Login.vue')
     },
 
-
     {
       path: '/admin/profile',
       name: 'view-profile',
@@ -26,7 +25,6 @@ const router = createRouter({
       name: 'edit-profile',
       component: () => import('../views/admin/profile/EditProfile.vue')
     },
-
 
     {
       path: '/admin/educations',
@@ -54,7 +52,6 @@ const router = createRouter({
       component: () => import('../views/admin/educations/DeleteEducation.vue')
     },
 
-
     {
       path: '/admin/messages',
       name: 'message-list',
@@ -70,7 +67,6 @@ const router = createRouter({
       name: 'delete-message',
       component: () => import('../views/admin/messages/DeleteMessage.vue')
     },
-
 
     {
       path: '/admin/socials',

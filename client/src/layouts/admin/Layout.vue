@@ -209,20 +209,20 @@ const isSidebarMinimized = ref(false)
 const profile = ref({})
 
 function toggleMobileNavbar() {
-            isMobileNavbarVisible.value = !isMobileNavbarVisible.value
-        }
-       function toggleSidebar() {
-            isSidebarMinimized.value = !isSidebarMinimized.value
-        }
-        async function GetProfile() {
-            await profileService.get().then(response => {
-                profile.value.firstName = response.data.firstName
-                profile.value.lastName = response.data.lastName
-                profile.value.photo = response.data.photo
-            })
-        }
+    isMobileNavbarVisible.value = !isMobileNavbarVisible.value
+}
+function toggleSidebar() {
+    isSidebarMinimized.value = !isSidebarMinimized.value
+}
+async function GetProfile() {
+    await profileService.get().then(response => {
+        profile.value.firstName = response.data.firstName
+        profile.value.lastName = response.data.lastName
+        profile.value.photo = response.data.photo
+    })
+}
 
-onMounted(()=>{
+onMounted(() => {
     GetProfile()
 })
 </script>

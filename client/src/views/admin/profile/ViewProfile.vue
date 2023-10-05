@@ -15,7 +15,6 @@
                             </router-link>
                         </div>
                     </div>
-
                     <hr class="line" />
 
                     <div class="content">
