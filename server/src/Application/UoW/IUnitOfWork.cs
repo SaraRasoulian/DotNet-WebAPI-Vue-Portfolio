@@ -7,6 +7,7 @@ namespace Application.Interfaces
         IProfileRepository Profile { get; }
         IEducationRepository Education { get; }
         IMessageRepository Message { get; }
+        ISocialLinkRepository SocialLink { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }

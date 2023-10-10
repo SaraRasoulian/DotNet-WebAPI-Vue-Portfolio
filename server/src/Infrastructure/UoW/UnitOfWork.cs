@@ -10,6 +10,7 @@ namespace Infrastructure.UoW
         public IProfileRepository Profile { get; private set; }
         public IEducationRepository Education { get; private set; }
         public IMessageRepository Message { get; private set; }
+        public ISocialLinkRepository SocialLink { get; private set; }
 
         private readonly PortfolioDbContext _dbContext;
         public UnitOfWork(PortfolioDbContext dbContext)
@@ -18,6 +19,7 @@ namespace Infrastructure.UoW
             Profile = new ProfileRepository(_dbContext);
             Education = new EducationRepository(_dbContext);
             Message = new MessageRepository(_dbContext);
+            SocialLink = new SocialLinkRepository(_dbContext);
         }
 
         public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
