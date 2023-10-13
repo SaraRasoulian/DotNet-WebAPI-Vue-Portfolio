@@ -1,18 +1,25 @@
-﻿namespace Application.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Application.DTOs
 {
     public class ProfileDto
     {
         public Guid Id { get; set; }
 
-        public required string FirstName { get; set; }
-               
-        public required string LastName { get; set; }
-               
-        public required string Email { get; set; }
-               
-        public required string Headline { get; set; }
-               
-        public required string About { get; set; }
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        public string Email { get; set; }
+
+        [Required]
+        public string Headline { get; set; }
+
+        [Required]
+        public string About { get; set; }
 
         public string? Photo { get; set; }
     }
