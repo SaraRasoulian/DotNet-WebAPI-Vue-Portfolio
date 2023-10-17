@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -91,10 +91,29 @@ namespace Infrastructure.Migrations
                     table.PrimaryKey("PK_SocialLinks", x => x.Id);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("01685f3d-fcf3-4dc4-bbdc-2bdb72f664e9"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+                values: new object[] { new Guid("5e518e26-97c8-4b01-bacd-e34a5f2948a3"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Email", "Password", "UserName" },
+                values: new object[] { new Guid("a6092c6a-cafa-4ab4-9eb1-4f33db8b849f"), "example@gmail.com", "demo", "admin" });
         }
 
         /// <inheritdoc />
@@ -114,6 +133,9 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "SocialLinks");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

@@ -170,7 +170,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("01685f3d-fcf3-4dc4-bbdc-2bdb72f664e9"),
+                            Id = new Guid("5e518e26-97c8-4b01-bacd-e34a5f2948a3"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",
@@ -201,6 +201,38 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SocialLinks");
+                });
+
+            modelBuilder.Entity("Domain.Entities.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a6092c6a-cafa-4ab4-9eb1-4f33db8b849f"),
+                            Email = "example@gmail.com",
+                            Password = "demo",
+                            UserName = "admin"
+                        });
                 });
 #pragma warning restore 612, 618
         }
