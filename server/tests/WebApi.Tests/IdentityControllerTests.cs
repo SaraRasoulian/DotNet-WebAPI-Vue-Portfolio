@@ -2,6 +2,7 @@
 using Application.Service.Interfaces;
 using FakeItEasy;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Controllers;
 
@@ -34,7 +35,7 @@ namespace WebApi.Tests
         }
 
         [Fact]
-        public async Task Login_With_Invalid_User_Returns_Unauthorized()
+        public async Task Login_With_Invalid_User_Returns_NoContent()
         {
             // Arrange
             var identityService = A.Fake<IIdentityService>();
@@ -52,9 +53,7 @@ namespace WebApi.Tests
             var result = await controller.Login(userLoginDto);
 
             // Assert
-            Assert.IsType<UnauthorizedResult>(result);
-            var unauthorizedResult = (UnauthorizedResult)result;
-            Assert.Equal(StatusCodes.Status401Unauthorized, unauthorizedResult.StatusCode);
+            Assert.IsType<NoContentResult>(result);
         }
     }
 }

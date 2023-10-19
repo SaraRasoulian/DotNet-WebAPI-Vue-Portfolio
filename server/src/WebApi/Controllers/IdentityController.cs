@@ -24,7 +24,7 @@ namespace WebApi.Controllers
                 if (!ModelState.IsValid || model is null) return BadRequest(ModelState);
                 var result = await _identityService.Login(model);
 
-                if (result is null) return Unauthorized();
+                if (result is null) return NoContent();
 
                 return Ok(result);
             }
