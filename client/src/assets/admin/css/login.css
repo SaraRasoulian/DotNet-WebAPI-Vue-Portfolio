@@ -34,6 +34,11 @@
   margin: 0 auto;
 }
 
+.validation-error {
+  font-size: small;
+  color: var(--dark-red);
+}
+
 @media (max-width: 426px) {
   .login-container {
     margin: 10px;

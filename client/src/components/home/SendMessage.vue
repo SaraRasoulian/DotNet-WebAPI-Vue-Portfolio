@@ -43,7 +43,7 @@ import messagesService from '@/services/messagesService'
 import { useToast } from 'vue-toastification'
 import { reactive } from 'vue'
 import useVuelidate from '@vuelidate/core'
-import { required, email } from '@vuelidate/validators'
+import { required, email, minLength } from '@vuelidate/validators'
 
 const formData = reactive({
   name: "",
@@ -52,9 +52,9 @@ const formData = reactive({
 })
 
 const rules = {
-  name: { required },
+  name: { required, minLength: minLength(2) },
   email: { required, email },
-  content: { required }
+  content: { required, minLength: minLength(10) }
 }
 const v$ = useVuelidate(rules, formData)
 
