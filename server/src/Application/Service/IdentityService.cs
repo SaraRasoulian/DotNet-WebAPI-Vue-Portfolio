@@ -46,7 +46,7 @@ namespace Application.Service
                 new Claim(JwtRegisteredClaimNames.Jti,
                 Guid.NewGuid().ToString())
              }),
-                Expires = DateTime.UtcNow.AddMinutes(2),
+                Expires = DateTime.UtcNow.AddMinutes(10),
                 Issuer = issuer,
                 Audience = audience,
                 SigningCredentials = new SigningCredentials

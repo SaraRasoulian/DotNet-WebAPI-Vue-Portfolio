@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EducationsController : ControllerBase
@@ -31,6 +30,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
             try
@@ -46,6 +46,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Post([FromBody] EducationDto model)
         {
             try
@@ -61,6 +62,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDto model)
         {
             try
@@ -77,6 +79,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             try

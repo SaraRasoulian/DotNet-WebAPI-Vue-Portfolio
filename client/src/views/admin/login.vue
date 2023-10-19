@@ -64,6 +64,7 @@ import { useToast } from 'vue-toastification'
 import { reactive } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
+import { useRouter } from 'vue-router'
 
 const formData = reactive({
   username: "",
@@ -82,6 +83,7 @@ const rules = {
 }
 
 const v$ = useVuelidate(rules, formData)
+const router = useRouter()
 
 const Login = async () => {
   const result = await v$.value.$validate()
@@ -95,9 +97,9 @@ const Login = async () => {
       v$.value.$reset()
 
       if (response.status == 200) {
+        localStorage.setItem('token', response.data)
+        router.push({ name: 'view-profile' })
         toast.success("welcome!")
-        //save Token in localstorage or cookie
-        //redirect to view profile in admin panel
       }
       else {
         toast.error("Username or password is incorrect.")

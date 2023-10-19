@@ -5,7 +5,7 @@ namespace Application.Service.Interfaces
 {
     public interface IIdentityService
     {
-        Task<string> Login(UserLoginDto userLogin);
+        Task<string?> Login(UserLoginDto userLogin);
         string GenerateToken(User user);
     }
 }
