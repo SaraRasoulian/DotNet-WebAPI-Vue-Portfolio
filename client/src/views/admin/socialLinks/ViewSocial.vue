@@ -40,7 +40,7 @@
                                 <div class="row g-3">
                                     <div class="col-lg-8 col-md-12 col-sm-12">
                                         <div class="view-item-wrapper">
-                                            <span>Url</span>
+                                            <span>URL</span>
                                             <p>{{ model.url }}</p>
                                         </div>
                                     </div>

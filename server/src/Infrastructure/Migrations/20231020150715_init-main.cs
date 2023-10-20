@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class initmain : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -84,7 +84,7 @@ namespace Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     URL = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
-                    Icon = table.Column<byte[]>(type: "bytea", nullable: true)
+                    Icon = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -94,7 +94,7 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("01685f3d-fcf3-4dc4-bbdc-2bdb72f664e9"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+                values: new object[] { new Guid("538f46c7-8c5d-42ac-ae83-246644c454c7"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
         }
 
         /// <inheritdoc />

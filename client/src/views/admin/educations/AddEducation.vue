@@ -19,11 +19,7 @@
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="degree" class="form-label">Degree</label>
                 <div class="input-group has-validation">
-                  <input type="text" v-model="formData.degree" class="form-control" id="degree" placeholder="Degree"
-                    required="">
-                  <div class="invalid-feedback">
-                    Degree is required.
-                  </div>
+                  <input type="text" v-model="formData.degree" class="form-control" id="degree" placeholder="Degree" required>
                 </div>
               </div>
             </div>
@@ -33,38 +29,24 @@
                 <label for="fieldOfStudy" class="form-label">Field of study</label>
                 <input type="text" v-model="formData.fieldOfStudy" class="form-control" id="fieldOfStudy"
                   placeholder="Field of study">
-                <div class="invalid-feedback">
-                  Field is required.
-                </div>
               </div>
             </div>
 
             <div class="row g-3">
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="school" class="form-label">School</label>
-                <input type="text" v-model="formData.school" class="form-control" id="school" placeholder="School">
-                <div class="invalid-feedback">
-                  School is required.
-                </div>
+                <input type="text" v-model="formData.school" class="form-control" id="school" placeholder="School">                
               </div>
             </div>
 
             <div class="row g-3">
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <label for="startYear" class="form-label">Start Year</label>
-                <input type="text" v-model="formData.startYear" class="form-control" id="startYear"
-                  placeholder="Start Year" required="">
-                <div class="invalid-feedback">
-                  start year is required.
-                </div>
+                <input type="text" v-model="formData.startYear" class="form-control" id="startYear" placeholder="Start Year" required>
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <label for="endYear" class="form-label">End Year</label>
-                <input type="text" v-model="formData.endYear" class="form-control" id="endYear" placeholder="End Year"
-                  required="">
-                <div class="invalid-feedback">
-                  end year is required.
-                </div>
+                <input type="text" v-model="formData.endYear" class="form-control" id="endYear" placeholder="End Year" required>
               </div>
             </div>
             <div class="row g-3">
