@@ -12,6 +12,6 @@ namespace Application.DTOs
         [Required]
         public string URL { get; set; }
 
-        public byte[]? Icon { get; set; }
+        public string? Icon { get; set; }
     }
 }
