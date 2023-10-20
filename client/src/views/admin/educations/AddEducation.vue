@@ -6,7 +6,7 @@
           <router-link :to="{ name: 'education-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
             data-placement="top" title="Return to list">
             <div class="back-to-list">
-              <img src="@/assets/admin/images/back.png" class="back-icon" alt="" />
+              <img src="@/assets/admin/images/back.png" class="back-icon" alt="Return" />
             </div>
           </router-link>
           <h4>Add Education</h4>
