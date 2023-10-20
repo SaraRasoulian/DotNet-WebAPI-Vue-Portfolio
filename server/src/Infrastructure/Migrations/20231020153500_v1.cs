@@ -84,7 +84,7 @@ namespace Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     URL = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
-                    Icon = table.Column<byte[]>(type: "bytea", nullable: true)
+                    Icon = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -108,12 +108,12 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("5e518e26-97c8-4b01-bacd-e34a5f2948a3"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+                values: new object[] { new Guid("aee16466-bd11-41ff-a8ef-c4ccb796336d"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Password", "UserName" },
-                values: new object[] { new Guid("a6092c6a-cafa-4ab4-9eb1-4f33db8b849f"), "example@gmail.com", "demo", "admin" });
+                values: new object[] { new Guid("ec279455-9490-47ad-a2aa-cfce3562c0bb"), "example@gmail.com", "demo", "admin" });
         }
 
         /// <inheritdoc />

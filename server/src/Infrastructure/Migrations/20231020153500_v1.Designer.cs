@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20231020150715_init-main")]
-    partial class initmain
+    [Migration("20231020153500_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,7 +173,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("538f46c7-8c5d-42ac-ae83-246644c454c7"),
+                            Id = new Guid("aee16466-bd11-41ff-a8ef-c4ccb796336d"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",
@@ -204,6 +204,38 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SocialLinks");
+                });
+
+            modelBuilder.Entity("Domain.Entities.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("ec279455-9490-47ad-a2aa-cfce3562c0bb"),
+                            Email = "example@gmail.com",
+                            Password = "demo",
+                            UserName = "admin"
+                        });
                 });
 #pragma warning restore 612, 618
         }

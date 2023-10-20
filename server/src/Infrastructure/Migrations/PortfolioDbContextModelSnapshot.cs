@@ -170,8 +170,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("538f46c7-8c5d-42ac-ae83-246644c454c7"),
-
+                            Id = new Guid("aee16466-bd11-41ff-a8ef-c4ccb796336d"),
                             About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
                             Email = "Example@gmail.com",
                             FirstName = "Sara",
@@ -229,7 +228,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a6092c6a-cafa-4ab4-9eb1-4f33db8b849f"),
+                            Id = new Guid("ec279455-9490-47ad-a2aa-cfce3562c0bb"),
                             Email = "example@gmail.com",
                             Password = "demo",
                             UserName = "admin"
