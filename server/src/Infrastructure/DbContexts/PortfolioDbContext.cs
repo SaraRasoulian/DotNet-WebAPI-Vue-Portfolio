@@ -8,6 +8,7 @@ namespace Infrastructure.DbContexts
     {
         public PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : base(options) { }
 
+        public DbSet<User> Users { get; set; }
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Education> Educations { get; set; }
@@ -18,7 +19,7 @@ namespace Infrastructure.DbContexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            //Seed
+            //Seed - Temporary
             modelBuilder.Entity<Profile>().HasData(
                 new Profile
                 {
@@ -28,6 +29,16 @@ namespace Infrastructure.DbContexts
                     Email = "Example@gmail.com",
                     Headline = "My name is Sara",
                     About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
+                }
+                );
+
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = Guid.NewGuid(),
+                    UserName = "admin",
+                    Password = "demo",
+                    Email = "example@gmail.com"
                 }
                 );
         }

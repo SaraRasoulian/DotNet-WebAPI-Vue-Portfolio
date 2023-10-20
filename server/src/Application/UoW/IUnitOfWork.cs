@@ -8,6 +8,7 @@ namespace Application.Interfaces
         IEducationRepository Education { get; }
         IMessageRepository Message { get; }
         ISocialLinkRepository SocialLink { get; }
+        IUserRepository User { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }

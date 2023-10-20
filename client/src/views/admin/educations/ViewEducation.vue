@@ -101,6 +101,7 @@ const id = route.params.id
 async function loadData() {
     await educationsService.get(id).then(response => {
         model.value = response.data
+        console.log('response: ',response)
     })
 }
 
