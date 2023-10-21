@@ -1,5 +1,5 @@
 <template>
-  <div class="education">
+  <div class="social">
     <AdminLayout>
       <div class="content-container">
         <div class="title-wrapper">
