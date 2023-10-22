@@ -1,7 +1,6 @@
 import axios from 'axios'
 import api from '@/common/api.js'
 
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token')
 const path = '/api/educations'
 
 const educationsService = {
@@ -9,11 +8,7 @@ const educationsService = {
     return await axios.get(`${api.url}${path}`)
   },
   async get(id) {
-    //return await axios.get(`${api.url}${path}/${id}`, {
-    //  headers: { Authorization: 'Bearer ' + localStorage.getItem('token') }
-    //})
-
-    return await axios.get(`${api.url}${path}/${id}`)
+     return await axios.get(`${api.url}${path}/${id}`)
   },
   async update(id, model) {
     return await axios.put(`${api.url}${path}/${id}`, model)
