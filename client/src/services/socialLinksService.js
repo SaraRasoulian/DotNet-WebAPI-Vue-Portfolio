@@ -1,4 +1,4 @@
-import axios from '@/axiosConfig'
+import axios from '@/axiosDefaults'
 
 const path = '/api/sociallinks'
 
