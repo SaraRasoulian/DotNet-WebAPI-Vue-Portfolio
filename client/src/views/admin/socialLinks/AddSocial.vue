@@ -19,7 +19,8 @@
               <div class="col-lg-8 col-md-12 col-sm-12">
                 <label for="name" class="form-label">Name</label>
                 <div class="input-group has-validation">
-                  <input type="text" v-model="formData.name" class="form-control" id="name" placeholder="Name" required>
+                  <input type="text" v-model="formData.name" class="form-control" id="name" placeholder="Name" required
+                    maxlength="50">
                 </div>
               </div>
             </div>

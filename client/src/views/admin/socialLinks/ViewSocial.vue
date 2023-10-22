@@ -51,7 +51,7 @@
                                         <div class="col-lg-8 col-md-12 col-sm-12">
                                             <div class="view-item-wrapper">
                                                 <span>Icon</span>
-                                                <img :src="model.icon" class="" :alt="model.name">
+                                                <img :src="model.icon" class="view-profile-photo" :alt="model.name">
                                             </div>
                                         </div>
                                     </div>
