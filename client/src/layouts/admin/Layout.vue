@@ -33,11 +33,11 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <router-link :to="{ name: 'login' }" class="dropdown-item">
+                                        <div v-on:click="logout" class="dropdown-item">
                                             <img src="@/assets/admin/images/logout.png" class="sidebar-icon dropdown-icon"
                                                 alt="Log out">
                                             Log out
-                                        </router-link>
+                                        </div>
                                     </li>
                                 </ul>
                             </li>
@@ -169,12 +169,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="{ name: 'login' }" class="nav-link">
+                            <div v-on:click="logout" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/logout.png" class="sidebar-icon" alt="Log Out">
                                     <span>Log Out</span>
                                 </div>
-                            </router-link>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -203,10 +203,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import NumberOfUnread from '@/components/admin/NumberOfUnread.vue'
 import profileService from '@/services/profileService'
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 const isMobileNavbarVisible = ref(false)
 const isSidebarMinimized = ref(false)
 const profile = ref({})
+const router = useRouter()
 
 function toggleMobileNavbar() {
     isMobileNavbarVisible.value = !isMobileNavbarVisible.value
@@ -220,6 +222,11 @@ async function GetProfile() {
         profile.value.lastName = response.data.lastName
         profile.value.photo = response.data.photo
     })
+}
+
+function logout() {
+    localStorage.setItem('token', '')
+    router.push({ name: 'login' })
 }
 
 onMounted(() => {
