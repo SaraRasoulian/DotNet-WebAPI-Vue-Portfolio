@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -29,6 +30,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
             try
@@ -44,6 +46,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Post([FromBody] SocialLinkDto model)
         {
             try
@@ -59,6 +62,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] SocialLinkDto model)
         {
             try
@@ -75,6 +79,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             try

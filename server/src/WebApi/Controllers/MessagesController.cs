@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -15,6 +16,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Get()
         {
             try
@@ -29,6 +31,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("unread")]
+        [Authorize]
         public async Task<IActionResult> GetNumberOfUnread()
         {
             try
@@ -43,6 +46,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
             try
@@ -73,6 +77,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             try
@@ -88,6 +93,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("mark-as-read/{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> MarkAsRead([FromRoute] Guid id)
         {
             try
