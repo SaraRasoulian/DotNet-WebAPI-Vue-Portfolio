@@ -1,11 +1,10 @@
-import axios from 'axios'
-import api from '@/common/api.js'
+import axios from '@/axiosConfig'
 
 const path = '/api/identity'
 
 const identityService = {
   async login(userLogin) {
-    return await axios.post(`${api.url}${path}/login`, userLogin)
+    return await axios.post(`${path}/login`, userLogin)
   }
 }
 

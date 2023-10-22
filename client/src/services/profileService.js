@@ -1,14 +1,13 @@
-import axios from 'axios'
-import api from '@/common/api.js'
+import axios from '@/axiosConfig'
 
 const path = '/api/profiles'
 
 const profileService = {
   async get() {
-    return await axios.get(`${api.url}${path}`)
+    return await axios.get(`${path}`)
   },
   async update(model) {
-    return await axios.put(`${api.url}${path}`, model)
+    return await axios.put(`${path}`, model)
   }
 }
 

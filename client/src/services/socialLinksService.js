@@ -1,23 +1,22 @@
-import axios from 'axios'
-import api from '@/common/api.js'
+import axios from '@/axiosConfig'
 
 const path = '/api/sociallinks'
 
 const socialLinksService = {
   async getAll() {
-    return await axios.get(`${api.url}${path}`)
+    return await axios.get(`${path}`)
   },
   async get(id) {
-    return await axios.get(`${api.url}${path}/${id}`)
+    return await axios.get(`${path}/${id}`)
   },
   async update(id, model) {
-    return await axios.put(`${api.url}${path}/${id}`, model)
+    return await axios.put(`${path}/${id}`, model)
   },
   async create(model) {
-    return await axios.post(`${api.url}${path}`, model)
+    return await axios.post(`${path}`, model)
   },
   async delete(id) {
-    return await axios.delete(`${api.url}${path}/${id}`)
+    return await axios.delete(`${path}/${id}`)
   }
 }
 
