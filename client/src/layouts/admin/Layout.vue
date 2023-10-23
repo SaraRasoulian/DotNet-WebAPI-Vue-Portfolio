@@ -35,8 +35,8 @@
                                     <li>
                                         <div v-on:click="logout" class="dropdown-item">
                                             <img src="@/assets/admin/images/logout.png" class="sidebar-icon dropdown-icon"
-                                                alt="Log out">
-                                            Log out
+                                                alt="Logout">
+                                            Logout
                                         </div>
                                     </li>
                                 </ul>
@@ -171,8 +171,8 @@
                         <li class="nav-item">
                             <div v-on:click="logout" class="nav-link">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/logout.png" class="sidebar-icon" alt="Log Out">
-                                    <span>Log Out</span>
+                                    <img src="@/assets/admin/images/logout.png" class="sidebar-icon" alt="Logout">
+                                    <span>Logout</span>
                                 </div>
                             </div>
                         </li>

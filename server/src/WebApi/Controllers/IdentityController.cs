@@ -32,5 +32,13 @@ namespace WebApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpGet("validate-token")]
+        [Authorize]
+        public IActionResult ValidateToken()
+        {
+            // If the request reaches this point, it means the token is valid
+            return Ok();
+        }
     }
 }

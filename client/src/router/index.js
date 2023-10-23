@@ -1,8 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import identityService from '@/services/identityService'
+
+async function isAuthenticated() {
+  try {
+    const response = await identityService.validateToken()
+    if (response.status === 200) {
+      return true
+    } else {
+      return false
+    }
+  } catch (error) {
+    return false
+  }
+}
+
+async function guardMyRoute(to, from, next) {
+  const authStatus = await isAuthenticated()
+  if (authStatus) {
+    next()
+  } else {
+    next('/admin/login')
+  }
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [   
+  routes: [
     {
       path: '/',
       name: 'home',
@@ -12,44 +35,59 @@ const router = createRouter({
     {
       path: '/admin/login',
       name: 'login',
-      component: () => import('../views/admin/Login.vue')
+      component: () => import('../views/admin/Login.vue'),
+      meta: { title: 'Login' }
     },
 
     {
       path: '/admin/profile',
       name: 'view-profile',
-      component: () => import('../views/admin/profile/ViewProfile.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/profile/ViewProfile.vue'),
+      meta: { title: 'Profile' }
     },
     {
       path: '/admin/profile/edit',
       name: 'edit-profile',
-      component: () => import('../views/admin/profile/EditProfile.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/profile/EditProfile.vue'),
+      meta: { title: 'Edit Profile' }
     },
 
     {
       path: '/admin/educations',
       name: 'education-list',
-      component: () => import('../views/admin/educations/EducationList.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/educations/EducationList.vue'),
+      meta: { title: 'Educations' }
     },
     {
       path: '/admin/educations/add',
       name: 'add-education',
-      component: () => import('../views/admin/educations/AddEducation.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/educations/AddEducation.vue'),
+      meta: { title: 'Add Education' }
     },
     {
       path: '/admin/educations/:id',
       name: 'view-education',
-      component: () => import('../views/admin/educations/ViewEducation.vue')
-    },    
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/educations/ViewEducation.vue'),
+      meta: { title: 'Education' }
+    },
     {
       path: '/admin/educations/edit/:id',
       name: 'edit-education',
-      component: () => import('../views/admin/educations/EditEducation.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/educations/EditEducation.vue'),
+      meta: { title: 'Edit Education' }
     },
     {
       path: '/admin/educations/delete/:id',
       name: 'delete-education',
-      component: () => import('../views/admin/educations/DeleteEducation.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/educations/DeleteEducation.vue'),
+      meta: { title: 'Delete Education' }
     },
 
     {
@@ -82,7 +120,7 @@ const router = createRouter({
       path: '/admin/socials/:id',
       name: 'view-social',
       component: () => import('../views/admin/socialLinks/ViewSocial.vue')
-    },    
+    },
     {
       path: '/admin/socials/edit/:id',
       name: 'edit-social',
@@ -92,7 +130,7 @@ const router = createRouter({
       path: '/admin/socials/delete/:id',
       name: 'delete-social',
       component: () => import('../views/admin/socialLinks/DeleteSocial.vue')
-    },
+    }
   ]
 })
 
