@@ -8,6 +8,9 @@ const identityService = {
   },
   async validateToken() {
     return await axios.get(`${path}/validate-token`)
+  },
+  async changePassword(model){
+    return await axios.put(`${path}/change-password`, model)
   }
 }
 

@@ -467,3 +467,8 @@ input {
 .Vue-Toastification__toast--success {
   background-color: var(--green);
 }
+
+.validation-error {
+  font-size: small;
+  color: var(--dark-red);
+}
