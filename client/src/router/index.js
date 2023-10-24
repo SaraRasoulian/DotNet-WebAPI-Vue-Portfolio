@@ -44,7 +44,7 @@ const router = createRouter({
       name: 'view-profile',
       beforeEnter: guardMyRoute,
       component: () => import('../views/admin/profile/ViewProfile.vue'),
-      meta: { title: 'Profile' }
+      meta: { title: 'View Profile' }
     },
     {
       path: '/admin/profile/edit',
@@ -73,7 +73,7 @@ const router = createRouter({
       name: 'view-education',
       beforeEnter: guardMyRoute,
       component: () => import('../views/admin/educations/ViewEducation.vue'),
-      meta: { title: 'Education' }
+      meta: { title: 'View Education' }
     },
     {
       path: '/admin/educations/edit/:id',
@@ -93,43 +93,59 @@ const router = createRouter({
     {
       path: '/admin/messages',
       name: 'message-list',
-      component: () => import('../views/admin/messages/MessageList.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/messages/MessageList.vue'),
+      meta: { title: 'Messages' }
     },
     {
       path: '/admin/messages/:id',
       name: 'view-message',
-      component: () => import('../views/admin/messages/ViewMessage.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/messages/ViewMessage.vue'),
+      meta: { title: 'View Message' }
     },
     {
       path: '/admin/messages/delete/:id',
       name: 'delete-message',
-      component: () => import('../views/admin/messages/DeleteMessage.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/messages/DeleteMessage.vue'),
+      meta: { title: 'Delete Message' }
     },
 
     {
       path: '/admin/socials',
       name: 'social-list',
-      component: () => import('../views/admin/socialLinks/SocialList.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/socialLinks/SocialList.vue'),
+      meta: { title: 'Social Links' }
     },
     {
       path: '/admin/socials/add',
       name: 'add-social',
-      component: () => import('../views/admin/socialLinks/AddSocial.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/socialLinks/AddSocial.vue'),
+      meta: { title: 'Add Social Link' }
     },
     {
       path: '/admin/socials/:id',
       name: 'view-social',
-      component: () => import('../views/admin/socialLinks/ViewSocial.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/socialLinks/ViewSocial.vue'),
+      meta: { title: 'View Social Link' }
     },
     {
       path: '/admin/socials/edit/:id',
       name: 'edit-social',
-      component: () => import('../views/admin/socialLinks/EditSocial.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/socialLinks/EditSocial.vue'),
+      meta: { title: 'Edit Social Link' }
     },
     {
       path: '/admin/socials/delete/:id',
       name: 'delete-social',
-      component: () => import('../views/admin/socialLinks/DeleteSocial.vue')
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/socialLinks/DeleteSocial.vue'),
+      meta: { title: 'Delete Social Link' }
     }
   ]
 })

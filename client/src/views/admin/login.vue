@@ -99,7 +99,6 @@ const Login = async () => {
       if (response.status == 200) {
         localStorage.setItem('token', response.data)
         router.push({ name: 'view-profile' })
-        toast.success("welcome!")
       }
       else {
         toast.error("Username or password is incorrect.")

@@ -71,7 +71,7 @@ async function remove() {
         await messagesService.delete(id).then(response => {
             router.push({ name: 'message-list' })
             if (response.status == 200)
-                toast.success("Education deleted successfully")
+                toast.success("Message deleted successfully")
         })
     } catch (errorMsg) {
         toast.error("Something went wrong")
