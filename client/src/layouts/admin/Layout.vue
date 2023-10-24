@@ -6,6 +6,14 @@
                 <nav class="top-navbar navbar navbar-expand-lg">
                     <div class="container">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <router-link :to="{ name: 'home' }" class="nav-link">
+                                    <div class="nav-link-inner">
+                                        <img src="@/assets/admin/images/home.png" class="sidebar-icon" alt="">
+                                        <span class="header-link">Home</span>
+                                    </div>
+                                </router-link>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle wraper-div" href="#" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -17,6 +25,7 @@
 
                                     <span>{{ profile.firstName }}</span>
                                 </a>
+
                                 <ul class="dropdown-menu">
                                     <li>
                                         <router-link :to="{ name: 'edit-profile' }" class="dropdown-item">

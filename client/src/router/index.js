@@ -1,28 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import identityService from '@/services/identityService'
 
-async function isAuthenticated() {
-  try {
-    const response = await identityService.validateToken()
-    if (response.status === 200) {
-      return true
-    } else {
-      return false
-    }
-  } catch (error) {
-    return false
-  }
-}
-
-async function guardMyRoute(to, from, next) {
-  const authStatus = await isAuthenticated()
-  if (authStatus) {
-    next()
-  } else {
-    next('/admin/login')
-  }
-}
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -149,5 +127,27 @@ const router = createRouter({
     }
   ]
 })
+
+async function guardMyRoute(to, from, next) {
+  const authStatus = await isAuthenticated()
+  if (authStatus) {
+    next()
+  } else {
+    next('/admin/login')
+  }
+}
+
+async function isAuthenticated() {
+  try {
+    const response = await identityService.validateToken()
+    if (response.status === 200) {
+      return true
+    } else {
+      return false
+    }
+  } catch (error) {
+    return false
+  }
+}
 
 export default router

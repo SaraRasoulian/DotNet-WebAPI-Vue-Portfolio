@@ -121,6 +121,10 @@
   padding: 0 1rem;
 }
 
+.nav-link-inner .header-link {
+  padding: 0 6px;
+}
+
 .sidebar .nav-item:hover,
 .mobile-navbar .nav-item:hover {
   background-color: var(--gray);
