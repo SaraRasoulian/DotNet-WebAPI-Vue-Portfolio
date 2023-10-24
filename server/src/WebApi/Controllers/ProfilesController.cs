@@ -2,6 +2,7 @@
 using Application.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace WebApi.Controllers
 {
@@ -18,6 +19,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            string? a = User.FindFirst(ClaimTypes.Name)?.Value;
             try
             {
                 var result = await _ProfileService.Get();

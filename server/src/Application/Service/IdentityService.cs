@@ -29,7 +29,21 @@ namespace Application.Service
             return GenerateToken(user);
         }
 
-        // move into a helper
+        public async Task<bool> ChangePassword(PasswordDto dto, string userName)
+        {
+            if (dto.newPassword != dto.confirmNewPassword) return false;
+            
+            User? user = await _unitOfWork.User.GetByUserName(userName);
+            
+            if (user == null || user.Password != dto.currentPassword) return false;
+            
+            user.Password = dto.newPassword;
+
+            _unitOfWork.User.Update(user);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
+        }        
+
         public string GenerateToken(User user)
         {
             var issuer = _config["JwtSettings:Issuer"];
@@ -55,7 +69,6 @@ namespace Application.Service
             };
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            var jwtToken = tokenHandler.WriteToken(token);
             var stringToken = tokenHandler.WriteToken(token);
             return stringToken;
         }

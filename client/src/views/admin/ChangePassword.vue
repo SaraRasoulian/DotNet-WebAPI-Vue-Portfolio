@@ -16,7 +16,8 @@
                                 <label class="form-label">Current password</label>
                                 <input v-model="formData.currentPassword" type="password" class="form-control"
                                     placeholder="Current password" maxlength="50">
-                                <span class="validation-error" v-for="error in v$.currentPassword.$errors" :key="error.$uid">
+                                <span class="validation-error" v-for="error in v$.currentPassword.$errors"
+                                    :key="error.$uid">
                                     {{ error.$message }}
                                 </span>
                             </div>
@@ -25,7 +26,8 @@
                         <div class="row g-3">
                             <div class="col-lg-8 col-md-12 col-sm-12">
                                 <label class="form-label">New password</label>
-                                <input v-model="formData.newPassword" type="password" class="form-control" placeholder="New password" maxlength="50">
+                                <input v-model="formData.newPassword" type="password" class="form-control"
+                                    placeholder="New password" maxlength="50">
                                 <span class="validation-error" v-for="error in v$.newPassword.$errors" :key="error.$uid">
                                     {{ error.$message }}
                                 </span>
@@ -35,9 +37,10 @@
                         <div class="row g-3">
                             <div class="col-lg-8 col-md-12 col-sm-12">
                                 <label class="form-label">Confirm new password</label>
-                                <input v-model="formData.confirmNewPassword" type="password" class="form-control" placeholder="Confirm new password"
-                                    maxlength="50">
-                                <span class="validation-error" v-for="error in v$.confirmNewPassword.$errors" :key="error.$uid">
+                                <input v-model="formData.confirmNewPassword" type="password" class="form-control"
+                                    placeholder="Confirm new password" maxlength="50">
+                                <span class="validation-error" v-for="error in v$.confirmNewPassword.$errors"
+                                    :key="error.$uid">
                                     {{ error.$message }}
                                 </span>
                             </div>
@@ -65,6 +68,7 @@ import { useToast } from 'vue-toastification'
 import { reactive } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
+import { useRouter } from 'vue-router'
 
 const formData = reactive({
     currentPassword: "",
@@ -78,6 +82,7 @@ const rules = {
     confirmNewPassword: { required, minLength: minLength(6) }
 }
 const v$ = useVuelidate(rules, formData)
+const router = useRouter()
 
 const Save = async () => {
     const result = await v$.value.$validate()
@@ -90,7 +95,10 @@ const Save = async () => {
             v$.value.$reset()
 
             if (response.status == 200)
+            {
                 toast.success("Password changed")
+                router.push({ name: 'view-profile' })
+            }
         })
     }
     catch (errorMsg) {

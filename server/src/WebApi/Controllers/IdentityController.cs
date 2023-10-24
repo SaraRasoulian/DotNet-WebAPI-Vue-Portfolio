@@ -2,6 +2,7 @@
 using Application.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace WebApi.Controllers
 {
@@ -26,6 +27,26 @@ namespace WebApi.Controllers
                 if (result is null) return NoContent();
 
                 return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPut("change-password")]
+        [Authorize]
+        public async Task<ActionResult> ChangePassword([FromBody] PasswordDto dto)
+        {
+            try
+            {
+                if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
+
+                string userName = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+                var result = await _identityService.ChangePassword(dto, userName);
+                if (!result) return BadRequest();
+                return Ok();
             }
             catch (Exception)
             {

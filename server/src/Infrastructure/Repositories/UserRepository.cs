@@ -18,5 +18,16 @@ namespace Infrastructure.Repositories
             return await _dbContext.Users
                 .FirstOrDefaultAsync(c => c.UserName.ToLower() == userName.ToLower() && c.Password == password);
         }
+
+        public async Task<User?> GetByUserName(string userName)
+        {
+            return await _dbContext.Users.FirstOrDefaultAsync(c => c.UserName.ToLower() == userName.ToLower());
+        }
+
+
+        public async void Update(User user)
+        {
+            _dbContext.Users.Update(user);
+        }
     }
 }
