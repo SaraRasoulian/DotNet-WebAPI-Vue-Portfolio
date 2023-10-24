@@ -18,6 +18,14 @@ const router = createRouter({
     },
 
     {
+      path: '/admin/change-password',
+      name: 'change-password',
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/ChangePassword.vue'),
+      meta: { title: 'Change Password' }
+    },
+
+    {
       path: '/admin/profile',
       name: 'view-profile',
       beforeEnter: guardMyRoute,

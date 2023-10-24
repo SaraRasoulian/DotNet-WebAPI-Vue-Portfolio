@@ -35,11 +35,11 @@
                                         </router-link>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <router-link :to="{ name: 'change-password' }" class="dropdown-item">
                                             <img src="@/assets/admin/images/password.png" class="sidebar-icon dropdown-icon"
-                                                alt="">
+                                                alt="Change Password">
                                             Password
-                                        </a>
+                                        </router-link>
                                     </li>
                                     <li>
                                         <div v-on:click="logout" class="dropdown-item">
@@ -169,13 +169,14 @@
                             </router-link>
                         </li>
                         <hr class="line" />
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item nav-password">
+                            <router-link :to="{ name: 'change-password' }" class="nav-link">
                                 <div class="nav-link-inner">
-                                    <img src="@/assets/admin/images/password.png" class="sidebar-icon" alt="Password">
+                                    <img src="@/assets/admin/images/password.png" class="sidebar-icon"
+                                        alt="Change Password">
                                     <span>Password</span>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                         <li class="nav-item">
                             <div v-on:click="logout" class="nav-link">

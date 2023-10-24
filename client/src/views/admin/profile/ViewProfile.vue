@@ -3,7 +3,6 @@
         <AdminLayout>
             <div class="content-container">
                 <div class="view-wrapper">
-
                     <div class="title-wrapper parent-page-title">
                         <div class="list-title">
                             <h4>View Profile</h4>

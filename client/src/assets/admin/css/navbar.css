@@ -159,7 +159,10 @@
 .social .mobile-navbar .nav-item.nav-social,
 .messages .sidebar .nav-messages,
 .messages .sidebar .nav-messages:hover,
-.messages .mobile-navbar .nav-item.nav-messages {
+.messages .mobile-navbar .nav-item.nav-messages,
+.password .sidebar .nav-password,
+.password .sidebar .nav-password:hover,
+.password .mobile-navbar .nav-item.nav-password {
   background-color: var(--active-color);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -178,7 +181,9 @@
 .social .min-sidebar .sidebar .nav-social,
 .social .min-sidebar .sidebar .nav-social:hover,
 .messages .min-sidebar .sidebar .nav-messages,
-.messages .min-sidebar .sidebar .nav-messages:hover {
+.messages .min-sidebar .sidebar .nav-messages:hover,
+.password .min-sidebar .sidebar .nav-password,
+.password .min-sidebar .sidebar .nav-password:hover {
   border-radius: 50%;
   margin-left: 0;
   padding-left: 0;
@@ -187,7 +192,8 @@
 .profile .sidebar .nav-profile .nav-link,
 .education .sidebar .nav-educations .nav-link,
 .social .sidebar .nav-social .nav-link,
-.messages .sidebar .nav-messages .nav-link {
+.messages .sidebar .nav-messages .nav-link,
+.password .sidebar .nav-password .nav-link {
   font-weight: 600;
   color: var(--text-color);
 }
