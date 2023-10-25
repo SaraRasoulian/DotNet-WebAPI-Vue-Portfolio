@@ -19,7 +19,6 @@ namespace WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            string? a = User.FindFirst(ClaimTypes.Name)?.Value;
             try
             {
                 var result = await _ProfileService.Get();

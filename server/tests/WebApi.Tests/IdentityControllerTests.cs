@@ -39,7 +39,7 @@ namespace WebApi.Tests
         {
             // Arrange
             var identityService = A.Fake<IIdentityService>();
-            string returnValue = null;
+            var returnValue = null as string;
             A.CallTo(() => identityService.Login(A<UserLoginDto>._)).Returns(returnValue);
 
             var controller = new IdentityController(identityService);
