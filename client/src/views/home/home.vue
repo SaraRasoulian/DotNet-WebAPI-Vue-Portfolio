@@ -2,6 +2,7 @@
     <div class="animated-gradient">
         <div class="texture">
             <div class="container">
+                <div class="gradient-1"></div>
                 <HomeHeader />
 
                 <Profile class="fade-in-on-scroll" />

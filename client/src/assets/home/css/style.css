@@ -451,7 +451,9 @@ a:hover {
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
 }
 
 .fade-in-on-scroll.visible {
@@ -561,5 +563,23 @@ a:hover {
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* radial */
+.gradient-1 {
+  background: radial-gradient(closest-side, red, transparent);
+  width: 30rem;
+  height: 30rem;
+  position: absolute;
+  margin: -18rem 0 0 -15rem;
+}
+
+/* Larger than tablet (tablet:768px) */
+@media (min-width: 769px) {
+  .gradient-1 {
+    width: 70rem;
+    height: 70rem;
+    margin: calc(-30rem + -5vw) 0 0 calc(-30rem + -15vw);
   }
 }
