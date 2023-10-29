@@ -447,6 +447,37 @@ a:hover {
   font-weight: 600;
 }
 
+/******************** Fade in effect ********************/
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/******************** Scrollbar ********************/
+@media (min-width: 769px) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+  }
+}
+
 /******************** Grainy Texture ********************/
 .texture {
   padding-top: 1px;
@@ -530,67 +561,5 @@ a:hover {
 
   100% {
     background-position: 0% 50%;
-  }
-}
-
-/******************** Fade in effect ********************/
-/* .fade-in-text {
-  animation: fadeInText 2s;
-}
-
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade-in-on-load {
-  animation: fadeInOnLoad 1.5s;
-}
-
-@keyframes fadeInOnLoad {
-  0% {
-    opacity: 0;
-    transform: translate(0, 3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-
-.fade-in-on-scroll {
-  opacity: 0;
-  transform: translate(0, 3rem);
-  transition: all 1s;
-}
-
-.fade-in-on-scroll.visible {
-  opacity: 1;
-  transform: translate(0, 0);
-  transition: 1s;
-} */
-
-/******************** Scrollbar ********************/
-@media (min-width: 769px) {
-  /* width */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--border-color);
-    border-radius: 10px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-color);
   }
 }
