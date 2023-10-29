@@ -32,12 +32,12 @@ namespace WebApi.Controllers
 
         [HttpPut]
         [Authorize]
-        public async Task<IActionResult> Put([FromBody] ProfileDto model)
+        public async Task<IActionResult> Put([FromBody] ProfileDto dto)
         {
             try
             {
                 if (!ModelState.IsValid) return BadRequest(ModelState);
-                var result = await _ProfileService.Update(model);
+                var result = await _ProfileService.Update(dto);
                 if (!result) return BadRequest();
                 return Ok();
             }

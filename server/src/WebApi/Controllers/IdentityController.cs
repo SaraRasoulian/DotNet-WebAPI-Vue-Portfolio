@@ -17,12 +17,12 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult> Login([FromBody] UserLoginDto model)
+        public async Task<ActionResult> Login([FromBody] UserLoginDto dto)
         {
             try
             {
-                if (!ModelState.IsValid || model is null) return BadRequest(ModelState);
-                var result = await _identityService.Login(model);
+                if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
+                var result = await _identityService.Login(dto);
 
                 if (result is null) return NoContent();
 

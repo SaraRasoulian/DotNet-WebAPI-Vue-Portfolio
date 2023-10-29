@@ -47,12 +47,12 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Post([FromBody] EducationDto model)
+        public async Task<IActionResult> Post([FromBody] EducationDto dto)
         {
             try
             {
-                if (!ModelState.IsValid || model is null) return BadRequest(ModelState);
-                var result = await _educationService.Add(model);
+                if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
+                var result = await _educationService.Add(dto);
                 return Ok(result);
             }
             catch (Exception)
@@ -63,12 +63,12 @@ namespace WebApi.Controllers
 
         [HttpPut("{id:guid}")]
         [Authorize]
-        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDto model)
+        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] EducationDto dto)
         {
             try
             {
                 if (!ModelState.IsValid) return BadRequest(ModelState);
-                var result = await _educationService.Update(id, model);
+                var result = await _educationService.Update(id, dto);
                 if (!result) return BadRequest();
                 return Ok();
             }

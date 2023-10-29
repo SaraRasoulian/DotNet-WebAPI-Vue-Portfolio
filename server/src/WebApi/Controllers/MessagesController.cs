@@ -62,12 +62,12 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] MessageDto model)
+        public async Task<IActionResult> Post([FromBody] MessageDto dto)
         {
             try
             {
-                if (!ModelState.IsValid || model is null) return BadRequest(ModelState);
-                var result = await _messageService.Add(model);
+                if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
+                var result = await _messageService.Add(dto);
                 return Ok(result);
             }
             catch (Exception)
