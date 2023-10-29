@@ -63,8 +63,57 @@
 /* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
   .gradient-1 {
-    width: 70rem;
-    height: 70rem;
-    margin: calc(-30rem + -5vw) 0 0 calc(-30rem + -15vw);
+    width: 450rem;
+    height: 450rem;
+    margin: -30rem 0 0 -30rem;
+    animation: expandAndContract 5s infinite alternate;
   }
+  
+  .gradient-2 {
+    width: 470rem;
+    height: 450rem;
+    margin: -30rem 0 0 -10rem;
+    animation: expandAndContract2 5s infinite alternate;
+  }
+  
+  .gradient-3 {
+    width: 470rem;
+    height: 470rem;
+    margin: -30rem 0 0 10rem;
+    animation: expandAndContract3 5s infinite alternate;
+  }
+
+  
+@keyframes expandAndContract {
+  0% {
+    width: 230rem;
+    height: 230rem;
+  }
+  100% {
+    width: 235rem; 
+    height: 235rem; 
+  }
+}
+
+@keyframes expandAndContract2 {
+  0% {
+    width: 240rem;
+    height: 225rem;
+  }
+  100% {
+    width: 250rem; 
+    height: 230rem; 
+  }
+}
+
+@keyframes expandAndContract3 {
+  0% {
+    width: 35rem;
+    height: 35rem;
+  }
+  100% {
+    width: 40rem; 
+    height: 40rem; 
+  }
+}
 }
