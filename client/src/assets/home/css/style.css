@@ -1,6 +1,7 @@
 :root {
   /******************** Colors ********************/
-  --bg-color: #f6f1eb;
+  /* --bg-color: #f6f1eb; */
+  --bg-color: #fff;
   --border-color: #d3c3b0;
   --text-color: #503115;
   --secondary-text-color: #9c8570;
@@ -487,7 +488,7 @@ a:hover {
 }
 
 /******************** Animated Gradient ********************/
-.animated-gradient {
+/* .animated-gradient {
   background: linear-gradient(260deg, #b1c2ba, #d5e4cf, #f4e4d4, #f6f1eb, #efd4cd, #f8b2b0);
   background-size: 300% 300%;
 
@@ -497,7 +498,6 @@ a:hover {
   animation: AnimationName 10s ease infinite;
 }
 
-/* Larger than tablet (tablet:768px) */
 @media (min-width: 769px) {
   .animated-gradient {
     background: linear-gradient(240deg, #b1c2ba, #d5e4cf, #f4e4d4, #f6f1eb, #efd4cd, #f8b2b0);
@@ -564,22 +564,4 @@ a:hover {
   100% {
     background-position: 0% 50%;
   }
-}
-
-/* radial */
-.gradient-1 {
-  background: radial-gradient(closest-side, red, transparent);
-  width: 30rem;
-  height: 30rem;
-  position: absolute;
-  margin: -18rem 0 0 -15rem;
-}
-
-/* Larger than tablet (tablet:768px) */
-@media (min-width: 769px) {
-  .gradient-1 {
-    width: 70rem;
-    height: 70rem;
-    margin: calc(-30rem + -5vw) 0 0 calc(-30rem + -15vw);
-  }
-}
+} */

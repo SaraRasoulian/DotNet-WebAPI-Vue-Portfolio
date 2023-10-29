@@ -1,8 +1,10 @@
 <template>
-    <div class="animated-gradient">
+    <div class="animated-gradient-del">
         <div class="texture">
             <div class="container">
                 <div class="gradient-1"></div>
+                <div class="gradient-2"></div>
+                <div class="gradient-3"></div>
                 <HomeHeader />
 
                 <Profile class="fade-in-on-scroll" />
@@ -24,6 +26,7 @@
 @import '@/assets/home/css/reset.css';
 @import '@/assets/home/css/skeleton.css';
 @import '@/assets/home/css/style.css';
+@import '@/assets/home/css/radial-gradient.css';
 </style>
 
 <script setup>

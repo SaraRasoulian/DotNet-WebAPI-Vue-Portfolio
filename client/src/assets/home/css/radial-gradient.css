@@ -1,0 +1,70 @@
+
+/* radial */
+.gradient-1 {
+  background: radial-gradient(closest-side, #e2b6b9, transparent);
+  width: 50rem;
+  height: 50rem;
+  position: absolute;
+  margin: -16rem 0 0 -13rem;
+  animation: expandAndContract 2s infinite alternate;
+}
+
+.gradient-2 {
+  background: radial-gradient(closest-side, #cbb2f1, transparent);
+  width: 50rem;
+  height: 50rem;
+  position: absolute;
+  margin: -21rem 0 0 3rem;
+  animation: expandAndContract2 2s infinite alternate;
+}
+
+.gradient-3 {
+  background: radial-gradient(closest-side, #b3d9f5, transparent);
+  width: 50rem;
+  height: 50rem;
+  position: absolute;
+  margin: -15rem 0 0 17rem;
+  animation: expandAndContract3 1s infinite alternate;
+}
+
+@keyframes expandAndContract {
+  0% {
+    width: 30rem;
+    height: 30rem;
+  }
+  100% {
+    width: 35rem; 
+    height: 35rem; 
+  }
+}
+
+@keyframes expandAndContract2 {
+  0% {
+    width: 40rem;
+    height: 25rem;
+  }
+  100% {
+    width: 50rem; 
+    height: 30rem; 
+  }
+}
+
+@keyframes expandAndContract3 {
+  0% {
+    width: 35rem;
+    height: 35rem;
+  }
+  100% {
+    width: 40rem; 
+    height: 40rem; 
+  }
+}
+
+/* Larger than tablet (tablet:768px) */
+@media (min-width: 769px) {
+  .gradient-1 {
+    width: 70rem;
+    height: 70rem;
+    margin: calc(-30rem + -5vw) 0 0 calc(-30rem + -15vw);
+  }
+}
