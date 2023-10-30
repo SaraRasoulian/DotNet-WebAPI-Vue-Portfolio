@@ -1,5 +1,5 @@
 <template>
-    <div class="animated-gradient-del">
+    <div class="animated-gradient-del gradient-wrapper">
         <div class="texture-del">
             <div class="container">
                 <div class="gradient gradient-1"></div>
@@ -22,7 +22,13 @@
                 <SocialLinks class="fade-in-on-scroll" />
 
                 <SendMessage class="fade-in-on-scroll" />
+
+                <div class="gradient gradient-10 "></div>
+                <div class="gradient gradient-11 "></div>
+                <div class="gradient gradient-12 "></div>
             </div>
+
+
             <HomeFooter />
         </div>
     </div>

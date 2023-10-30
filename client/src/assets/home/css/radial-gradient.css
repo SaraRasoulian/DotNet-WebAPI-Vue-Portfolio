@@ -1,66 +1,114 @@
 /* radial */
 .gradient {
-  z-index: -1;;
+  position: absolute;
+  z-index: -1;
 }
 
 .gradient-1 {
-  background: radial-gradient(closest-side,  #b3d9f5, transparent);
-  width: 60rem;
-  height: 80rem;
-  position: absolute;
+  background: radial-gradient(closest-side, #b3d9f5, transparent);
   margin: -15rem 0 0 -19rem;
   animation: expandAndContract 1.8s infinite alternate;
 }
 
 .gradient-2 {
   background: radial-gradient(closest-side, #cbb2f1, transparent);
-  width: 50rem;
-  height: 50rem;
-  position: absolute;
   margin: -21rem 0 0 3rem;
   animation: expandAndContract2 1s infinite alternate;
 }
 
 .gradient-3 {
-  background: radial-gradient(closest-side,#e2b6b9 , transparent);
-  width: 50rem;
-  height: 50rem;
-  position: absolute;
+  background: radial-gradient(closest-side, #e2b6b9, transparent);
   margin: -15rem 0 0 17rem;
   animation: expandAndContract3 1.2s infinite alternate;
   /* border:solid black 1px; */
 }
 
 .gradient-4 {
-  background: radial-gradient(closest-side, #9dcef1, transparent);
-  position: absolute;
+  background: radial-gradient(closest-side, #caedff, transparent);
   margin: 13rem 0 0 17rem;
   animation: expandAndContract4 1.6s infinite alternate;
   /* border:solid black 1px; */
 }
 
 .gradient-5 {
-  background: radial-gradient(closest-side, #b3d9f5, transparent);
- 
-  position: absolute;
+  background: radial-gradient(closest-side, #2dcddf, transparent);
   margin: 0 0 0 15rem;
-  animation: rotateAndPulse 7s infinite alternate;
-  /* border:solid black 1px; */
+  animation: rotateAndPulse 8s infinite alternate;
+  /*  97FFF4 */
 }
 
 .gradient-6 {
-  background: radial-gradient(closest-side, #d4958c, transparent);
-  position: absolute;
+  background: radial-gradient(closest-side, #ffc8c8, transparent);
   margin: 70rem 0 0 -30rem;
   animation: expandAndContract4 1.6s infinite alternate;
 }
 
 .gradient-7 {
-  background: radial-gradient(closest-side,  #FFC8C8 , transparent);
+  background: radial-gradient(closest-side, #EF9C84, transparent);
   /* # FFC8C8  */
-  position: absolute;
-  margin: 60rem 0 0 -23rem;
+  margin: 60rem 0 0 -53rem;
   animation: rotateAndPulse7 7s infinite alternate;
+}
+
+.gradient-10 {
+  background: radial-gradient(closest-side, #e2b6b9, transparent);
+  margin: -16rem 0 0 -25rem;
+  animation: expandAndContract10 0.7s infinite alternate;
+}
+@keyframes expandAndContract10 {
+  0% {
+    width: 40rem;
+    height: 50rem;
+  }
+  100% {
+    width: 50rem;
+    height: 60rem;
+  }
+}
+
+.gradient-11 {
+  background: radial-gradient(closest-side, #cbb2f1, transparent);
+  margin: -10rem 0 0 -5rem;
+  animation: expandAndContract11 1s infinite alternate;
+}
+
+@keyframes expandAndContract11 {
+  0% {
+    width: 50rem;
+    height: 35rem;
+  }
+  100% {
+    width: 70rem;
+    height: 45rem;
+  }
+}
+
+.gradient-12 {
+  background: radial-gradient(closest-side, #b3d9f5, transparent);
+  margin: -24rem 0 0 13rem;
+  animation: expandAndContract12 2s infinite alternate;
+}
+
+@keyframes expandAndContract12 {
+  0% {
+    width: 40rem;
+    height: 30rem;
+  }
+  100% {
+    width: 50rem;
+    height: 50rem;
+  }
+}
+
+.gradient-10,
+.gradient-11,
+.gradient-12 {
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+.gradient-wrapper {
+  overflow: hidden;
 }
 
 @keyframes rotateAndPulse {
@@ -71,8 +119,8 @@
   }
   50% {
     transform: rotate(180deg);
-    width: 125rem; 
-    height: 135rem; 
+    width: 125rem;
+    height: 135rem;
   }
   100% {
     transform: rotate(360deg);
@@ -84,18 +132,18 @@
 @keyframes rotateAndPulse7 {
   0% {
     transform: rotate(0deg);
-    width: 50rem;
+    width: 60rem;
     height: 60rem;
   }
   50% {
-    transform: rotate(180deg); /* Adjust the desired rotation in degrees */
-    width: 25rem; 
-    height: 35rem; 
+    transform: rotate(180deg);
+    width: 65rem;
+    height: 75rem;
   }
   100% {
     transform: rotate(360deg);
-    width: 50rem;
-    height: 60rem;
+    width: 80rem;
+    height: 90rem;
   }
 }
 
