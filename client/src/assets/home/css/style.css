@@ -4,8 +4,10 @@
   --bg-color: #fff;
   --border-color: #d3c3b0;
   --text-color: #503115;
-  --secondary-text-color: #9c8570;
-  --titr-color: #014f57;
+  --secondary-text-color: #9E7676;
+  /* --titr-color: #014f57; */
+  --titr-color1: #E25E3E;
+  --titr-color: #004225;
   --input-border-color: #cfbda0;
   --error-color: #cb5153;
   --success-color: #29bc9c;
@@ -14,6 +16,7 @@
 /******************** Base styles ********************/
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {

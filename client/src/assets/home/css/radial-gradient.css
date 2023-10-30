@@ -1,12 +1,15 @@
-
 /* radial */
+.gradient {
+  z-index: -1;;
+}
+
 .gradient-1 {
-  background: radial-gradient(closest-side, #e2b6b9, transparent);
-  width: 50rem;
-  height: 50rem;
+  background: radial-gradient(closest-side,  #b3d9f5, transparent);
+  width: 60rem;
+  height: 80rem;
   position: absolute;
-  margin: -16rem 0 0 -13rem;
-  animation: expandAndContract 2s infinite alternate;
+  margin: -15rem 0 0 -19rem;
+  animation: expandAndContract 1.8s infinite alternate;
 }
 
 .gradient-2 {
@@ -15,16 +18,85 @@
   height: 50rem;
   position: absolute;
   margin: -21rem 0 0 3rem;
-  animation: expandAndContract2 2s infinite alternate;
+  animation: expandAndContract2 1s infinite alternate;
 }
 
 .gradient-3 {
-  background: radial-gradient(closest-side, #b3d9f5, transparent);
+  background: radial-gradient(closest-side,#e2b6b9 , transparent);
   width: 50rem;
   height: 50rem;
   position: absolute;
   margin: -15rem 0 0 17rem;
-  animation: expandAndContract3 1s infinite alternate;
+  animation: expandAndContract3 1.2s infinite alternate;
+  /* border:solid black 1px; */
+}
+
+.gradient-4 {
+  background: radial-gradient(closest-side, #9dcef1, transparent);
+  position: absolute;
+  margin: 13rem 0 0 17rem;
+  animation: expandAndContract4 1.6s infinite alternate;
+  /* border:solid black 1px; */
+}
+
+.gradient-5 {
+  background: radial-gradient(closest-side, #b3d9f5, transparent);
+ 
+  position: absolute;
+  margin: 0 0 0 15rem;
+  animation: rotateAndPulse 7s infinite alternate;
+  /* border:solid black 1px; */
+}
+
+.gradient-6 {
+  background: radial-gradient(closest-side, #d4958c, transparent);
+  position: absolute;
+  margin: 70rem 0 0 -30rem;
+  animation: expandAndContract4 1.6s infinite alternate;
+}
+
+.gradient-7 {
+  background: radial-gradient(closest-side,  #FFC8C8 , transparent);
+  /* # FFC8C8  */
+  position: absolute;
+  margin: 60rem 0 0 -23rem;
+  animation: rotateAndPulse7 7s infinite alternate;
+}
+
+@keyframes rotateAndPulse {
+  0% {
+    transform: rotate(0deg);
+    width: 100rem;
+    height: 130rem;
+  }
+  50% {
+    transform: rotate(180deg);
+    width: 125rem; 
+    height: 135rem; 
+  }
+  100% {
+    transform: rotate(360deg);
+    width: 100rem;
+    height: 130rem;
+  }
+}
+
+@keyframes rotateAndPulse7 {
+  0% {
+    transform: rotate(0deg);
+    width: 50rem;
+    height: 60rem;
+  }
+  50% {
+    transform: rotate(180deg); /* Adjust the desired rotation in degrees */
+    width: 25rem; 
+    height: 35rem; 
+  }
+  100% {
+    transform: rotate(360deg);
+    width: 50rem;
+    height: 60rem;
+  }
 }
 
 @keyframes expandAndContract {
@@ -33,8 +105,8 @@
     height: 30rem;
   }
   100% {
-    width: 35rem; 
-    height: 35rem; 
+    width: 35rem;
+    height: 35rem;
   }
 }
 
@@ -44,8 +116,8 @@
     height: 25rem;
   }
   100% {
-    width: 50rem; 
-    height: 30rem; 
+    width: 50rem;
+    height: 30rem;
   }
 }
 
@@ -55,27 +127,37 @@
     height: 35rem;
   }
   100% {
-    width: 40rem; 
-    height: 40rem; 
+    width: 40rem;
+    height: 40rem;
   }
 }
 
-/* Larger than tablet (tablet:768px) */
-@media (min-width: 769px) {
+@keyframes expandAndContract4 {
+  0% {
+    width: 60rem;
+    height: 45rem;
+  }
+  100% {
+    width: 60rem;
+    height: 45rem;
+  }
+}
+
+@media (min-width: 500px) {
   .gradient-1 {
     width: 450rem;
     height: 450rem;
     margin: -30rem 0 0 -30rem;
     animation: expandAndContract 5s infinite alternate;
   }
-  
+
   .gradient-2 {
     width: 470rem;
     height: 450rem;
     margin: -30rem 0 0 -10rem;
     animation: expandAndContract2 5s infinite alternate;
   }
-  
+
   .gradient-3 {
     width: 470rem;
     height: 470rem;
@@ -83,37 +165,36 @@
     animation: expandAndContract3 5s infinite alternate;
   }
 
-  
-@keyframes expandAndContract {
-  0% {
-    width: 230rem;
-    height: 230rem;
+  @keyframes expandAndContract {
+    0% {
+      width: 230rem;
+      height: 230rem;
+    }
+    100% {
+      width: 235rem;
+      height: 235rem;
+    }
   }
-  100% {
-    width: 235rem; 
-    height: 235rem; 
-  }
-}
 
-@keyframes expandAndContract2 {
-  0% {
-    width: 240rem;
-    height: 225rem;
+  @keyframes expandAndContract2 {
+    0% {
+      width: 240rem;
+      height: 225rem;
+    }
+    100% {
+      width: 250rem;
+      height: 230rem;
+    }
   }
-  100% {
-    width: 250rem; 
-    height: 230rem; 
-  }
-}
 
-@keyframes expandAndContract3 {
-  0% {
-    width: 35rem;
-    height: 35rem;
+  @keyframes expandAndContract3 {
+    0% {
+      width: 35rem;
+      height: 35rem;
+    }
+    100% {
+      width: 40rem;
+      height: 40rem;
+    }
   }
-  100% {
-    width: 40rem; 
-    height: 40rem; 
-  }
-}
 }
