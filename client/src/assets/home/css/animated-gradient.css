@@ -42,7 +42,7 @@
 }
 
 .gradient-3 {
-  background: radial-gradient(closest-side, #f8b2b0, transparent); /* e2b6b9 */
+  background: radial-gradient(closest-side, #e2b6b9, transparent); /*  f8b2b0 */
   top: -15rem;
   left: 17rem;
   animation: expandAndContract3 1.2s infinite alternate;
@@ -79,37 +79,37 @@
 .gradient-5 {
   background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
   left: 13rem;
-  animation: rotateAndPulse 8s infinite alternate;  
+  animation: rotateAndPulse 7s infinite alternate;  
 }
 @keyframes rotateAndPulse {
   0% {
     transform: rotate(0deg);
-    width: 100rem;
-    height: 130rem;
+    width: 90rem;
+    height: 100rem;
   }
   50% {
     transform: rotate(180deg);
-    width: 125rem;
-    height: 135rem;
+    width: 110rem;
+    height: 120rem;
   }
   100% {
     transform: rotate(360deg);
-    width: 100rem;
-    height: 130rem;
+    width: 90rem;
+    height: 100rem;
   }
 }
 
 .gradient-6 {
   background: radial-gradient(closest-side, #ffc8c8, transparent); 
   bottom: 75rem;
-  left: -30rem; 
+  left: -40rem; 
   animation: expandAndContract4 1.6s infinite alternate;  
 }
 
 .gradient-7 {
   background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
   bottom: 32rem;
-  right: 8rem;
+  right: 10rem;
   animation: rotateAndPulse 7s infinite alternate;
 }
 
