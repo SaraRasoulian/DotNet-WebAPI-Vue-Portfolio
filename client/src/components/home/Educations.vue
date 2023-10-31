@@ -1,5 +1,5 @@
 <template>
-  <div v-if="list.length > 0" class="section fade-in-on-scroll">
+  <div v-if="list.length > 0" class="section">
     <div class="section-header">
       <img src="@/assets/home/images/education.png" class="section-header-icon">
       <h3 class="section-titr">My Study</h3>

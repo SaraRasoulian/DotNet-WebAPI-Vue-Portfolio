@@ -1,36 +1,24 @@
 <template>
-    <div class="animated-gradient-del gradient-wrapper">
-        <div class="texture-del">
-            <div class="container">
-                <div class="gradient gradient-1"></div>
-                <div class="gradient gradient-2"></div>
-                <div class="gradient gradient-3"></div>
-                <HomeHeader />
-
-                <div class="gradient gradient-4 fade-in-on-scroll"></div>
-                <div class="gradient gradient-5 fade-in-on-scroll"></div>
-                <Profile class="fade-in-on-scroll" />
-
-                <div class="gradient gradient-6 fade-in-on-scroll"></div>
-                <div class="gradient gradient-7 fade-in-on-scroll"></div>
-                <Experiences class="fade-in-on-scroll" />
-
-
-
-                <Educations class="fade-in-on-scroll" />
-
-                <SocialLinks class="fade-in-on-scroll" />
-
-                <SendMessage class="fade-in-on-scroll" />
-
-                <div class="gradient gradient-10 "></div>
-                <div class="gradient gradient-11 "></div>
-                <div class="gradient gradient-12 "></div>
-            </div>
-
-
-            <HomeFooter />
+    <div class="gradient-wrapper">
+        <div class="container">
+            <div class="gradient gradient-1"></div>
+            <div class="gradient gradient-2"></div>
+            <div class="gradient gradient-3"></div>
+            <HomeHeader />
+            <div class="gradient gradient-4 fade-in-on-scroll"></div>
+            <div class="gradient gradient-5 fade-in-on-scroll"></div>
+            <Profile class="fade-in-on-scroll" />
+            <div class="gradient gradient-6 fade-in-on-scroll"></div>
+            <div class="gradient gradient-7 fade-in-on-scroll"></div>
+            <Experiences class="fade-in-on-scroll" />
+            <Educations class="fade-in-on-scroll" />
+            <SocialLinks class="fade-in-on-scroll" />
+            <SendMessage class="fade-in-on-scroll" />
+            <div class="gradient gradient-8"></div>
+            <div class="gradient gradient-9"></div>
+            <div class="gradient gradient-10"></div>
         </div>
+        <HomeFooter />
     </div>
 </template>
 
@@ -38,7 +26,7 @@
 @import '@/assets/home/css/reset.css';
 @import '@/assets/home/css/skeleton.css';
 @import '@/assets/home/css/style.css';
-@import '@/assets/home/css/radial-gradient.css';
+@import '@/assets/home/css/animated-gradient.css';
 </style>
 
 <script setup>
@@ -54,7 +42,6 @@ import { ref, onMounted, onBeforeUnmount } from "vue"
 
 const pageTop = ref(0)
 const pageBottom = ref(0)
-
 const tags = ref([])
 
 onMounted(() => {

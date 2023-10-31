@@ -1,5 +1,5 @@
 <template>
-    <div class="section fade-in-on-scroll">
+    <div class="section">
         <div class="section-header">
             <img src="@/assets/home/images/journey.png" class="section-header-icon">
             <h3 class="section-titr">My Journey</h3>
