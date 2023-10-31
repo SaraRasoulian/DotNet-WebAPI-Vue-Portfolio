@@ -96,7 +96,7 @@
 
 .gradient-6 {
   background: radial-gradient(closest-side, #ffc8c8, transparent);
-  margin: 60rem 0 0 -30rem;
+  margin: 70rem 0 0 -30rem;
   animation: expandAndContract4 1.6s infinite alternate;
 }
 

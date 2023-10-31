@@ -1,11 +1,12 @@
 :root {
   /******************** Colors ********************/
-  --bg-color: #f6f1eb;
+  --bg-color: #ffffff;
+  /* --bg-color: #f6f1eb; */
   --border-color: #d3c3b0;
   --text-color: #503115;
   --secondary-text-color: #9e7676;
   --titr-color: #004225;
-   /* --titr-color: #014f57;  */
+  /* --titr-color: #014f57;  */
   --input-border-color: #cfbda0;
   --error-color: #cb5153;
   --success-color: #29bc9c;
