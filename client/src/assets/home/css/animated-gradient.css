@@ -1,5 +1,5 @@
 .gradient-wrapper {
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 .gradient {
@@ -9,7 +9,8 @@
 
 .gradient-1 {
   background: radial-gradient(closest-side, #63d9fd, transparent);
-  margin: -17rem 0 0 -21rem;
+  top: -17rem;
+  left: -21rem;
   animation: expandAndContract 3s infinite alternate;
 }
 @keyframes expandAndContract {
@@ -25,7 +26,8 @@
 
 .gradient-2 {
   background: radial-gradient(closest-side, #cbb2f1, transparent);
-  margin: -21rem 0 0 3rem;
+  top: -21rem;
+  left: 3rem;
   animation: expandAndContract2 1.5s infinite alternate;
 }
 @keyframes expandAndContract2 {
@@ -41,7 +43,8 @@
 
 .gradient-3 {
   background: radial-gradient(closest-side, #f8b2b0, transparent); /* e2b6b9 */
-  margin: -15rem 0 0 17rem;
+  top: -15rem;
+  left: 17rem;
   animation: expandAndContract3 1.2s infinite alternate;
 }
 @keyframes expandAndContract3 {
@@ -57,8 +60,10 @@
 
 .gradient-4 {
   background: radial-gradient(closest-side, #caedff, transparent);
-  margin: 13rem 0 0 17rem;
+  top: 39rem;
+  left: 3rem; 
   animation: expandAndContract4 1.6s infinite alternate;
+  
 }
 @keyframes expandAndContract4 {
   0% {
@@ -72,9 +77,9 @@
 }
 
 .gradient-5 {
-  background: radial-gradient(closest-side, #2dcddf, transparent); /* 97FFF4 */
-  margin: 0 0 0 15rem;
-  animation: rotateAndPulse 8s infinite alternate;
+  background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
+  left: 13rem;
+  animation: rotateAndPulse 8s infinite alternate;  
 }
 @keyframes rotateAndPulse {
   0% {
@@ -95,38 +100,24 @@
 }
 
 .gradient-6 {
-  background: radial-gradient(closest-side, #ffc8c8, transparent);
-  margin: 70rem 0 0 -30rem;
-  animation: expandAndContract4 1.6s infinite alternate;
+  background: radial-gradient(closest-side, #ffc8c8, transparent); 
+  bottom: 75rem;
+  left: -30rem; 
+  animation: expandAndContract4 1.6s infinite alternate;  
 }
 
 .gradient-7 {
-  background: radial-gradient(closest-side, #ef9c84, transparent); /* FFC8C8 */
-  margin: 50rem 0 0 -53rem;
-  animation: rotateAndPulse7 7s infinite alternate;
-}
-@keyframes rotateAndPulse7 {
-  0% {
-    transform: rotate(0deg);
-    width: 60rem;
-    height: 60rem;
-  }
-  50% {
-    transform: rotate(180deg);
-    width: 65rem;
-    height: 75rem;
-  }
-  100% {
-    transform: rotate(360deg);
-    width: 80rem;
-    height: 90rem;
-  }
+  background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
+  bottom: 32rem;
+  right: 8rem;
+  animation: rotateAndPulse 7s infinite alternate;
 }
 
 .gradient-8 {
   background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
-  margin: -21rem 0 0 -26rem;
-  animation: expandAndContract8 3.5s infinite alternate;
+  left: 0;
+  bottom: -41rem;
+  animation: expandAndContract8 3.5s infinite alternate;  
 }
 
 @keyframes expandAndContract8 {
@@ -139,28 +130,12 @@
     height: 70rem;
   }
 }
-.gradient-9 {
-  background: radial-gradient(closest-side, #f7eafb, transparent); /* 63D9FD */
-  margin: -10rem 0 0 -3rem;
-  animation: expandAndContract9 1s infinite alternate;
-}
-
-@keyframes expandAndContract9 {
-  0% {
-    width: 30rem;
-    height: 30rem;
-  }
-  100% {
-    width: 40rem;
-    height: 40rem;
-  }
-}
 
 .gradient-10 {
   background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
-
-  margin: -20rem 0 0 2rem;
-  animation: expandAndContract10 2s infinite alternate;
+  right: 0;
+  bottom: -40rem;
+  animation: expandAndContract10 4s infinite alternate;
 }
 
 @keyframes expandAndContract10 {
