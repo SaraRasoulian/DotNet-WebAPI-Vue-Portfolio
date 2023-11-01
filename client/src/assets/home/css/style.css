@@ -1,10 +1,12 @@
 :root {
   /******************** Colors ********************/
-  --bg-color: #f6f1eb;
+  --bg-color: #ffffff;
+  /* --bg-color: #f6f1eb; */
   --border-color: #d3c3b0;
   --text-color: #503115;
-  --secondary-text-color: #9c8570;
-  --titr-color: #014f57;
+  --secondary-text-color: #9e7676;
+  --titr-color: #004225;
+   /* --titr-color: #014f57;  */
   --input-border-color: #cfbda0;
   --error-color: #cb5153;
   --success-color: #29bc9c;
@@ -13,6 +15,7 @@
 /******************** Base styles ********************/
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -21,8 +24,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden;  
   line-height: 1.5;
   font-weight: 400;
   font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -448,10 +450,26 @@ a:hover {
 }
 
 /******************** Fade in effect ********************/
+.fade-in-text {
+  animation: fadeInText 1.5s;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition:
+    opacity 1.5s ease,
+    transform 2s ease;
 }
 
 .fade-in-on-scroll.visible {
@@ -461,105 +479,16 @@ a:hover {
 
 /******************** Scrollbar ********************/
 @media (min-width: 769px) {
-  /* width */
   ::-webkit-scrollbar {
     width: 8px;
   }
 
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 10px;
   }
 
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: var(--text-color);
-  }
-}
-
-/******************** Grainy Texture ********************/
-.texture {
-  padding-top: 1px;
-  background-image: url('@/assets/home/images/noise.png');
-}
-
-/******************** Animated Gradient ********************/
-.animated-gradient {
-  background: linear-gradient(260deg, #b1c2ba, #d5e4cf, #f4e4d4, #f6f1eb, #efd4cd, #f8b2b0);
-  background-size: 300% 300%;
-
-  -webkit-animation: AnimationName 10s ease infinite;
-  -moz-animation: AnimationName 10s ease infinite;
-  -o-animation: AnimationName 10s ease infinite;
-  animation: AnimationName 10s ease infinite;
-}
-
-/* Larger than tablet (tablet:768px) */
-@media (min-width: 769px) {
-  .animated-gradient {
-    background: linear-gradient(240deg, #b1c2ba, #d5e4cf, #f4e4d4, #f6f1eb, #efd4cd, #f8b2b0);
-    background-size: 800% 800%;
-
-    -webkit-animation: AnimationName 20s ease infinite;
-    -moz-animation: AnimationName 20s ease infinite;
-    -o-animation: AnimationName 20s ease infinite;
-    animation: AnimationName 20s ease infinite;
-  }
-}
-
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@-o-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="form fade-in-on-scroll">
+  <div class="form">
     <div class="form-header">
       <h1>Say Hi</h1>
     </div>

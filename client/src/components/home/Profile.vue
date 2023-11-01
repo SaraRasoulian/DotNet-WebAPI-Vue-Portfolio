@@ -1,5 +1,5 @@
 <template>
-  <div class="section fade-in-on-load">
+  <div class="section">
     <div class="profile">
       <div class="row">
         <div class="columns" :class="{ 'eight': model.photo !== null && model.photo !== '' }">
