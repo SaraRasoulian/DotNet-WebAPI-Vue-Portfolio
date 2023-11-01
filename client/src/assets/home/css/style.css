@@ -1,13 +1,11 @@
 :root {
   /******************** Colors ********************/
   --bg-color: #ffffff;
-  /* --bg-color: #f6f1eb; */
-  --border-color: #d3c3b0;
-  --text-color: #503115;
-  --secondary-text-color: #9e7676;
-  --titr-color: #004225;
-   /* --titr-color: #014f57;  */
-  --input-border-color: #cfbda0;
+  --titr-color: #014f57;
+  --text-color: #3c4043;
+  --secondary-text-color: #61677a;
+  --border-color: #b5b9c8;
+  --input-border-color: #ccd0dd;
   --error-color: #cb5153;
   --success-color: #29bc9c;
 }
@@ -24,7 +22,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  overflow-x: hidden;  
+  overflow-x: hidden;
   line-height: 1.5;
   font-weight: 400;
   font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -183,6 +181,7 @@ h6 {
 
 .social-item-img {
   margin: auto;
+  max-width: 5rem;
 }
 
 /* Larger than tablet (tablet:768px) */
@@ -449,6 +448,10 @@ a:hover {
   font-weight: 600;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 /******************** Fade in effect ********************/
 .fade-in-text {
   animation: fadeInText 1.5s;
@@ -469,7 +472,7 @@ a:hover {
   transform: translateY(30px);
   transition:
     opacity 1.5s ease,
-    transform 2s ease;
+    transform 1.5s ease;
 }
 
 .fade-in-on-scroll.visible {
