@@ -1,5 +1,5 @@
 .gradient-wrapper {
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .gradient {
@@ -61,25 +61,24 @@
 .gradient-4 {
   background: radial-gradient(closest-side, #caedff, transparent);
   top: 39rem;
-  left: 3rem; 
+  left: 15rem;
   animation: expandAndContract4 1.6s infinite alternate;
-  
 }
 @keyframes expandAndContract4 {
   0% {
-    width: 60rem;
+    width: 45rem;
     height: 45rem;
   }
   100% {
     width: 60rem;
-    height: 45rem;
+    height: 60rem;
   }
 }
 
 .gradient-5 {
   background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
-  left: 13rem;
-  animation: rotateAndPulse 7s infinite alternate;  
+  left: 22rem;
+  animation: rotateAndPulse 7s infinite alternate;
 }
 @keyframes rotateAndPulse {
   0% {
@@ -100,16 +99,16 @@
 }
 
 .gradient-6 {
-  background: radial-gradient(closest-side, #ffc8c8, transparent); 
+  background: radial-gradient(closest-side, #ffc8c8, transparent);
   bottom: 75rem;
-  left: -40rem; 
-  animation: expandAndContract4 1.6s infinite alternate;  
+  left: -42rem;
+  animation: expandAndContract4 1.6s infinite alternate;
 }
 
 .gradient-7 {
   background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
   bottom: 32rem;
-  right: 10rem;
+  right: 15rem;
   animation: rotateAndPulse 7s infinite alternate;
 }
 
@@ -117,7 +116,7 @@
   background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
   left: 0;
   bottom: -41rem;
-  animation: expandAndContract8 3.5s infinite alternate;  
+  animation: expandAndContract8 3.5s infinite alternate;
 }
 
 @keyframes expandAndContract8 {
@@ -131,14 +130,14 @@
   }
 }
 
-.gradient-10 {
+.gradient-9 {
   background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
   right: 0;
   bottom: -40rem;
-  animation: expandAndContract10 4s infinite alternate;
+  animation: expandAndContract9 4s infinite alternate;
 }
 
-@keyframes expandAndContract10 {
+@keyframes expandAndContract9 {
   0% {
     width: 50rem;
     height: 50rem;
@@ -150,12 +149,353 @@
 }
 
 .gradient-8,
-.gradient-9,
-.gradient-10 {
+.gradient-9 {
   -webkit-transform: rotate(-94deg);
   transform: rotate(-94deg);
 }
 
-/* Tablet(?) and Desktop */
-@media (min-width: 500px) {
+/* Tablet */
+@media (min-width: 426px) and (max-width: 850px) {
+  .gradient-1 {
+    background: radial-gradient(closest-side, #63d9fd, transparent);
+    top: -24rem;
+    left: -35rem;
+    animation: expandAndContract 3s infinite alternate;
+  }
+  @keyframes expandAndContract {
+    0% {
+      width: 60rem;
+      height: 40rem;
+    }
+    100% {
+      width: 75rem;
+      height: 45rem;
+    }
+  }
+
+  .gradient-2 {
+    background: radial-gradient(closest-side, #cbb2f1, transparent);
+    top: -38rem;
+    left: 6rem;
+    animation: expandAndContract2 2s infinite alternate;
+  }
+  @keyframes expandAndContract2 {
+    0% {
+      width: 50rem;
+      height: 45rem;
+    }
+    100% {
+      width: 60rem;
+      height: 60rem;
+    }
+  }
+
+  .gradient-3 {
+    background: radial-gradient(closest-side, #e2b6b9, transparent); /* f8b2b0 */
+    top: -26rem;
+    left: 28rem;
+    animation: expandAndContract3 3s infinite alternate;
+  }
+  @keyframes expandAndContract3 {
+    0% {
+      width: 60rem;
+      height: 55rem;
+    }
+    100% {
+      width: 75rem;
+      height: 60rem;
+    }
+  }
+
+  .gradient-4 {
+    background: radial-gradient(closest-side, #caedff, transparent); /* caedff */
+    top: 36rem;
+    left: 30rem;
+    animation: expandAndContract4 1.6s infinite alternate;
+  }
+  @keyframes expandAndContract4 {
+    0% {
+      width: 40rem;
+      height: 40rem;
+    }
+    100% {
+      width: 50rem;
+      height: 50rem;
+    }
+  }
+
+  .gradient-5 {
+    background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
+    left: 45rem;
+    top: 9rem;
+    animation: rotateAndPulse 5s infinite alternate;
+  }
+  @keyframes rotateAndPulse {
+    0% {
+      transform: rotate(0deg);
+      width: 90rem;
+      height: 100rem;
+    }
+    50% {
+      transform: rotate(180deg);
+      width: 110rem;
+      height: 120rem;
+    }
+    100% {
+      transform: rotate(360deg);
+      width: 90rem;
+      height: 100rem;
+    }
+  }
+
+  .gradient-6 {
+    background: radial-gradient(closest-side, #ffc8c8, transparent);
+    bottom: 60rem;
+    left: -40rem;
+    animation: expandAndContract4 1.6s infinite alternate;
+  }
+
+  .gradient-7 {
+    background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
+    bottom: 32rem;
+    right: 29rem;
+    animation: rotateAndPulse 7s infinite alternate;
+  }
+
+  .gradient-8 {
+    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    left: 32rem;
+    bottom: -44rem;
+    animation: expandAndContract8 3.5s infinite alternate;
+  }
+
+  @keyframes expandAndContract8 {
+    0% {
+      width: 60rem;
+      height: 60rem;
+    }
+    100% {
+      width: 90rem;
+      height: 80rem;
+    }
+  }
+
+  .gradient-9 {
+    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    right: 37rem;
+    bottom: -41rem;
+    animation: expandAndContract9 4s infinite alternate;
+  }
+
+  @keyframes expandAndContract9 {
+    0% {
+      width: 50rem;
+      height: 50rem;
+    }
+    100% {
+      width: 65rem;
+      height: 75rem;
+    }
+  }
+
+  .gradient-10 {
+    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    left: 17rem;
+    bottom: -38rem;
+    animation: expandAndContract10 3s infinite alternate;
+  }
+
+  @keyframes expandAndContract10 {
+    0% {
+      width: 40rem;
+      height: 40rem;
+    }
+    100% {
+      width: 50rem;
+      height: 50rem;
+    }
+  }
+
+  .gradient-11 {
+    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    right: 19rem;
+    bottom: -35rem;
+    animation: expandAndContract10 4s infinite alternate;
+  }
+}
+
+/* Laptop & Monitor */
+@media (min-width: 851px) {
+  .gradient-1 {
+    background: radial-gradient(closest-side, #63d9fd, transparent); /* 63d9fd */
+    top: -54rem;
+    left: -90rem;
+    animation: expandAndContract 4.5s infinite alternate;
+  }
+  @keyframes expandAndContract {
+    0% {
+      width: 120rem;
+      height: 80rem;
+    }
+    100% {
+      width: 160rem;
+      height: 100rem;
+    }
+  }
+
+  .gradient-2 {
+    background: radial-gradient(closest-side, #cbb2f1, transparent);
+    top: -60rem;
+    left: 10rem;
+    animation: expandAndContract2 3s infinite alternate;
+  }
+  @keyframes expandAndContract2 {
+    0% {
+      width: 100rem;
+      height: 65rem;
+    }
+    100% {
+      width: 110rem;
+      height: 80rem;
+    }
+  }
+
+  .gradient-3 {
+    background: radial-gradient(closest-side, #e2b6b9, transparent); /* f8b2b0 e2b6b9 */
+    top: -55rem;
+    left: 60rem;
+    animation: expandAndContract3 4s infinite alternate;
+  }
+  @keyframes expandAndContract3 {
+    0% {
+      width: 140rem;
+      height: 75rem;
+    }
+    100% {
+      width: 150rem;
+      height: 100rem;
+    }
+  }
+
+  .gradient-4 {
+    display: none;
+  }
+  .gradient-4 {
+    background: radial-gradient(closest-side, #caedff, transparent); /* caedff */
+    top: 75rem;
+    left: 100rem;
+    animation: expandAndContract4 1.6s infinite alternate;
+    border: black solid;
+  }
+  @keyframes expandAndContract4 {
+    0% {
+      width: 40rem;
+      height: 40rem;
+    }
+    100% {
+      width: 50rem;
+      height: 50rem;
+    }
+  }
+
+  .gradient-5 {
+    background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
+    left: 110rem;
+    top: 50rem;
+    animation: rotateAndPulse 4s infinite alternate;
+  }
+   @keyframes rotateAndPulse {
+    0% {
+      transform: rotate(0deg);
+      width: 80rem;
+      height: 80rem;
+    }
+    50% {
+      transform: rotate(180deg);
+      width: 100rem;
+      height: 100rem;
+    }
+    100% {
+      transform: rotate(360deg);
+      width: 90rem;
+      height: 90rem;
+    }
+  }
+
+  .gradient-6{
+    display: none;
+  }
+  .gradient-6 {
+    background: radial-gradient(closest-side, #ffc8c8, transparent);
+    bottom: 60rem;
+    left: -40rem;
+    animation: expandAndContract4 1.6s infinite alternate;
+  }
+
+  .gradient-7 {
+    background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
+    bottom: 32rem;
+    right: 110rem;
+    animation: rotateAndPulse 5s infinite alternate;
+  }
+
+  .gradient-8 {
+    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    left: 70rem;
+    bottom: -70rem;
+    animation: expandAndContract8 4s infinite alternate;    
+  }
+  @keyframes expandAndContract8 {
+    0% {
+      width: 90rem;
+      height: 90rem;
+    }
+    100% {
+      width: 110rem;
+      height: 120rem;
+    }
+  }
+
+  .gradient-9 {
+    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    right: 90rem;
+    bottom: -70rem;
+    animation: expandAndContract9 4s infinite alternate;
+  }
+
+  @keyframes expandAndContract9 {
+    0% {
+      width: 90rem;
+      height: 90rem;
+    }
+    100% {
+      width: 100rem;
+      height: 120rem;
+    }
+  }
+
+  .gradient-10 {
+    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    left: 30rem;
+    bottom: -52rem;
+    animation: expandAndContract10 3s infinite alternate;        
+  }
+
+  @keyframes expandAndContract10 {
+    0% {
+      width: 100rem;
+      height: 60rem;
+    }
+    100% {
+      width: 120rem;
+      height: 70rem;
+    }
+  }
+
+  .gradient-11 {
+    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    right: 30rem;
+    bottom: -52rem;
+    animation: expandAndContract10 4s infinite alternate;  
+  }
 }

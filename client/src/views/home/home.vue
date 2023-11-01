@@ -15,7 +15,9 @@
             <SocialLinks class="fade-in-on-scroll" />
             <SendMessage class="fade-in-on-scroll" />
             <div class="gradient gradient-8"></div>
+            <div class="gradient gradient-9"></div>
             <div class="gradient gradient-10"></div>
+            <div class="gradient gradient-11"></div>
         </div>
         <HomeFooter />
     </div>
