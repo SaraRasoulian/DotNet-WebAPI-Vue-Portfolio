@@ -24,8 +24,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden;  
   line-height: 1.5;
   font-weight: 400;
   font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -452,7 +451,7 @@ a:hover {
 
 /******************** Fade in effect ********************/
 .fade-in-text {
-  animation: fadeInText 1s;
+  animation: fadeInText 1.5s;
 }
 
 @keyframes fadeInText {
@@ -469,8 +468,8 @@ a:hover {
   opacity: 0;
   transform: translateY(30px);
   transition:
-    opacity 1s ease,
-    transform 1s ease;
+    opacity 1.5s ease,
+    transform 2s ease;
 }
 
 .fade-in-on-scroll.visible {
@@ -480,18 +479,15 @@ a:hover {
 
 /******************** Scrollbar ********************/
 @media (min-width: 769px) {
-  /* width */
   ::-webkit-scrollbar {
     width: 8px;
   }
 
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 10px;
   }
 
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: var(--text-color);
   }
