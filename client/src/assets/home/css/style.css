@@ -213,7 +213,7 @@ h6 {
   left: 0;
   right: 100%;
   bottom: 0;
-  background: var(--border-color);
+  background: var(--secondary-text-color);
   height: 2px;
   -webkit-transition-property: right;
   transition-property: right;
@@ -258,7 +258,7 @@ select {
   background-color: transparent;
   border: 1px solid var(--input-border-color);
   color: var(--text-color);
-  border-radius: 0;
+  border-radius: 3px;
   box-shadow: none;
   box-sizing: border-box;
   resize: none;
@@ -340,7 +340,6 @@ label > .label-body {
 .form input[type='reset'],
 .form input[type='button'] {
   width: 100%;
-  display: inline-block;
   height: 38px;
   padding: 0 30px;
   color: var(--bg-color);
@@ -351,7 +350,7 @@ label > .label-body {
   letter-spacing: 0.1rem;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: 0;
+  border-radius: 3px;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -487,7 +486,7 @@ a:hover {
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+    background: var(--bg-color);
     border-radius: 10px;
   }
 
