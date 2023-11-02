@@ -155,7 +155,7 @@
 }
 
 /* Tablet */
-@media (min-width: 426px) and (max-width: 850px) {
+@media (min-width: 460px) and (max-width: 850px) {
   .gradient-1 {
     background: radial-gradient(closest-side, #63d9fd, transparent);
     top: -24rem;

@@ -45,15 +45,14 @@ h6 {
 /******************** Header ********************/
 .header {
   margin: calc(2rem + 4vw) auto;
-  text-align: center;
+}
+
+.header-text-wrapper {
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   padding: 11vw 0;
-}
-
-.header .text {
-  margin: 1rem;
   display: grid;
 }
 
@@ -70,6 +69,18 @@ h6 {
   font-family: 'Mastrih', 'sans-serif';
 }
 
+.scroll-down {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .scroll-down {
+    display: block;
+    margin: 0 auto;
+    width: 7rem;
+    margin-bottom: 1.5vw;
+  }
+}
 /******************** Profile ********************/
 .profile-titr {
   color: var(--titr-color);
