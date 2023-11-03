@@ -396,25 +396,9 @@
     }
   }
 
-  .gradient-right-sm {
+  .gradient-right-sm,
+  .gradient-left-sm {
     display: none;
-  }
-  .gradient-right-sm {
-    background: radial-gradient(closest-side, var(--right-sm-color), transparent);
-    top: 75rem;
-    left: 100rem;
-    animation: expandAndContract4 1.6s infinite alternate;
-    border: black solid;
-  }
-  @keyframes expandAndContract4 {
-    0% {
-      width: 40rem;
-      height: 40rem;
-    }
-    100% {
-      width: 50rem;
-      height: 50rem;
-    }
   }
 
   .gradient-right {
@@ -439,16 +423,6 @@
       width: 90rem;
       height: 90rem;
     }
-  }
-
-  .gradient-left-sm {
-    display: none;
-  }
-  .gradient-left-sm {
-    background: radial-gradient(closest-side, var(--left-sm-color), transparent);
-    bottom: 60rem;
-    left: -40rem;
-    animation: expandAndContract4 1.6s infinite alternate;
   }
 
   .gradient-left {
