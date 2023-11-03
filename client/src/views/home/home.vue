@@ -1,23 +1,23 @@
 <template>
     <div class="gradient-wrapper">
         <div class="container">
-            <div class="gradient gradient-1"></div>
-            <div class="gradient gradient-2"></div>
-            <div class="gradient gradient-3"></div>
+            <div class="gradient gradient-top-left"></div>
+            <div class="gradient gradient-top-mid"></div>
+            <div class="gradient gradient-top-right"></div>
             <HomeHeader />
-            <div class="gradient gradient-4 fade-in-on-scroll"></div>
-            <div class="gradient gradient-5 fade-in-on-scroll"></div>
+            <div class="gradient gradient-right fade-in-on-scroll"></div>
+            <div class="gradient gradient-right-sm fade-in-on-scroll"></div>
             <Profile class="fade-in-on-scroll" />
-            <div class="gradient gradient-6 fade-in-on-scroll"></div>
-            <div class="gradient gradient-7 fade-in-on-scroll"></div>
+            <div class="gradient gradient-left fade-in-on-scroll"></div>
+            <div class="gradient gradient-left-sm fade-in-on-scroll"></div>
             <Experiences class="fade-in-on-scroll" />
             <Educations class="fade-in-on-scroll" />
             <SocialLinks class="fade-in-on-scroll" />
             <SendMessage class="fade-in-on-scroll" />
-            <div class="gradient gradient-8"></div>
-            <div class="gradient gradient-9"></div>
-            <div class="gradient gradient-10"></div>
-            <div class="gradient gradient-11"></div>
+            <div class="gradient gradient-bottom-left"></div>
+            <div class="gradient gradient-bottom-left-sm"></div>
+            <div class="gradient gradient-bottom-right"></div>
+            <div class="gradient gradient-bottom-right-sm"></div>
         </div>
         <HomeFooter />
     </div>
