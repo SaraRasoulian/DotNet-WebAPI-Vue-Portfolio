@@ -1,3 +1,21 @@
+:root {
+  /******************** Colors ********************/
+  --top-left-color: #63d9fd;
+  --top-mid-color: #cbb2f1;
+  --top-right-color: #f8b2b0;
+
+  --right-color: #68d5e1; /* 00fff6 2dcddf 97FFF4 */
+  --right-sm-color: #caedff; /* #279eff */
+
+  --left-color: #ef9c84; /* ea047e ef9c84 FFC8C8 */
+  --left-sm-color: #ffc8c8; /* ff6c22 */
+
+  --bottom-right-color: #eca6f0;
+  --bottom-right-sm-color: #eca6f0;
+  --bottom-left-color: #63d9fd;
+  --bottom-left-sm-color: #63d9fd;
+}
+
 .gradient-wrapper {
   overflow: hidden;
 }
@@ -8,7 +26,7 @@
 }
 
 .gradient-top-left {
-  background: radial-gradient(closest-side, #63d9fd, transparent);
+  background: radial-gradient(closest-side, var(--top-left-color), transparent);
   top: -17rem;
   left: -21rem;
   animation: expandAndContract 3s infinite alternate;
@@ -25,7 +43,7 @@
 }
 
 .gradient-top-mid {
-  background: radial-gradient(closest-side, #cbb2f1, transparent);
+  background: radial-gradient(closest-side, var(--top-mid-color), transparent);
   top: -21rem;
   left: 3rem;
   animation: expandAndContract2 1.5s infinite alternate;
@@ -42,7 +60,7 @@
 }
 
 .gradient-top-right {
-  background: radial-gradient(closest-side, #f8b2b0, transparent); /*  f8b2b0 */
+  background: radial-gradient(closest-side, var(--top-right-color), transparent);
   top: -15rem;
   left: 17rem;
   animation: expandAndContract3 1.2s infinite alternate;
@@ -59,7 +77,7 @@
 }
 
 .gradient-right-sm {
-  background: radial-gradient(closest-side, #caedff, transparent);
+  background: radial-gradient(closest-side, var(--right-sm-color), transparent);
   top: 39rem;
   left: 15rem;
   animation: expandAndContract4 1.6s infinite alternate;
@@ -76,7 +94,7 @@
 }
 
 .gradient-right {
-  background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
+  background: radial-gradient(closest-side, var(--right-color), transparent);
   left: 22rem;
   animation: rotateAndPulse 7s infinite alternate;
 }
@@ -99,21 +117,21 @@
 }
 
 .gradient-left-sm {
-  background: radial-gradient(closest-side, #ffc8c8, transparent);
+  background: radial-gradient(closest-side, var(--left-sm-color), transparent);
   bottom: 75rem;
   left: -42rem;
-  animation: expandAndContract4 1.6s infinite alternate;
+  animation: expandAndContract4 5s infinite alternate;
 }
 
 .gradient-left {
-  background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
-  bottom: 32rem;
+  background: radial-gradient(closest-side, var(--left-color), transparent);
+  bottom: 39rem;
   right: 15rem;
   animation: rotateAndPulse 7s infinite alternate;
 }
 
 .gradient-bottom-right {
-  background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+  background: radial-gradient(closest-side, var(--bottom-right-color), transparent);
   left: 0;
   bottom: -41rem;
   animation: expandAndContract8 3.5s infinite alternate;
@@ -131,7 +149,7 @@
 }
 
 .gradient-bottom-left {
-  background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+  background: radial-gradient(closest-side, var(--bottom-left-color), transparent);
   right: 0;
   bottom: -40rem;
   animation: expandAndContract9 4s infinite alternate;
@@ -157,7 +175,7 @@
 /* Tablet */
 @media (min-width: 460px) and (max-width: 850px) {
   .gradient-top-left {
-    background: radial-gradient(closest-side, #63d9fd, transparent);
+    background: radial-gradient(closest-side, var(--top-left-color), transparent);
     top: -24rem;
     left: -35rem;
     animation: expandAndContract 3s infinite alternate;
@@ -174,7 +192,7 @@
   }
 
   .gradient-top-mid {
-    background: radial-gradient(closest-side, #cbb2f1, transparent);
+    background: radial-gradient(closest-side, var(--top-mid-color), transparent);
     top: -38rem;
     left: 6rem;
     animation: expandAndContract2 2s infinite alternate;
@@ -191,7 +209,7 @@
   }
 
   .gradient-top-right {
-    background: radial-gradient(closest-side, #f8b2b0, transparent); /* f8b2b0 */
+    background: radial-gradient(closest-side, var(--top-right-color), transparent);
     top: -26rem;
     left: 28rem;
     animation: expandAndContract3 3s infinite alternate;
@@ -208,7 +226,7 @@
   }
 
   .gradient-right-sm {
-    background: radial-gradient(closest-side, #caedff, transparent); /* caedff */
+    background: radial-gradient(closest-side, var(--right-sm-color), transparent);
     top: 36rem;
     left: 30rem;
     animation: expandAndContract4 1.6s infinite alternate;
@@ -225,7 +243,7 @@
   }
 
   .gradient-right {
-    background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
+    background: radial-gradient(closest-side, var(--right-color), transparent);
     left: 45rem;
     top: 9rem;
     animation: rotateAndPulse 5s infinite alternate;
@@ -249,21 +267,21 @@
   }
 
   .gradient-left-sm {
-    background: radial-gradient(closest-side, #ffc8c8, transparent);
+    background: radial-gradient(closest-side, var(--left-sm-color), transparent);
     bottom: 60rem;
     left: -40rem;
     animation: expandAndContract4 1.6s infinite alternate;
   }
 
   .gradient-left {
-    background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
+    background: radial-gradient(closest-side, var(--left-color), transparent);
     bottom: 32rem;
     right: 29rem;
     animation: rotateAndPulse 7s infinite alternate;
   }
 
   .gradient-bottom-right {
-    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    background: radial-gradient(closest-side, var(--bottom-right-color), transparent);
     left: 32rem;
     bottom: -44rem;
     animation: expandAndContract8 3.5s infinite alternate;
@@ -281,7 +299,7 @@
   }
 
   .gradient-bottom-left {
-    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    background: radial-gradient(closest-side, var(--bottom-left-color), transparent);
     right: 37rem;
     bottom: -41rem;
     animation: expandAndContract9 4s infinite alternate;
@@ -299,7 +317,7 @@
   }
 
   .gradient-bottom-right-sm {
-    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    background: radial-gradient(closest-side, var(--bottom-right-sm-color), transparent);
     left: 17rem;
     bottom: -38rem;
     animation: expandAndContract10 3s infinite alternate;
@@ -317,7 +335,7 @@
   }
 
   .gradient-bottom-left-sm {
-    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    background: radial-gradient(closest-side, var(--bottom-left-sm-color), transparent);
     right: 19rem;
     bottom: -35rem;
     animation: expandAndContract10 4s infinite alternate;
@@ -327,7 +345,7 @@
 /* Laptop & Monitor */
 @media (min-width: 851px) {
   .gradient-top-left {
-    background: radial-gradient(closest-side, #63d9fd, transparent); /* 63d9fd */
+    background: radial-gradient(closest-side, var(--top-left-color), transparent);
     top: -54rem;
     left: -90rem;
     animation: expandAndContract 4.5s infinite alternate;
@@ -344,7 +362,7 @@
   }
 
   .gradient-top-mid {
-    background: radial-gradient(closest-side, #cbb2f1, transparent);
+    background: radial-gradient(closest-side, var(--top-mid-color), transparent);
     top: -60rem;
     left: 10rem;
     animation: expandAndContract2 3s infinite alternate;
@@ -361,11 +379,12 @@
   }
 
   .gradient-top-right {
-    background: radial-gradient(closest-side, #f8b2b0, transparent); /* f8b2b0 e2b6b9 */
+    background: radial-gradient(closest-side, var(--top-right-color), transparent);
     top: -55rem;
     left: 60rem;
     animation: expandAndContract3 4s infinite alternate;
   }
+
   @keyframes expandAndContract3 {
     0% {
       width: 140rem;
@@ -381,7 +400,7 @@
     display: none;
   }
   .gradient-right-sm {
-    background: radial-gradient(closest-side, #caedff, transparent); /* caedff */
+    background: radial-gradient(closest-side, var(--right-sm-color), transparent);
     top: 75rem;
     left: 100rem;
     animation: expandAndContract4 1.6s infinite alternate;
@@ -399,7 +418,7 @@
   }
 
   .gradient-right {
-    background: radial-gradient(closest-side, #68d5e1, transparent); /* 2dcddf 97FFF4 */
+    background: radial-gradient(closest-side, var(--right-color), transparent);
     left: 110rem;
     top: 50rem;
     animation: rotateAndPulse 4s infinite alternate;
@@ -426,21 +445,21 @@
     display: none;
   }
   .gradient-left-sm {
-    background: radial-gradient(closest-side, #ffc8c8, transparent);
+    background: radial-gradient(closest-side, var(--left-sm-color), transparent);
     bottom: 60rem;
     left: -40rem;
     animation: expandAndContract4 1.6s infinite alternate;
   }
 
   .gradient-left {
-    background: radial-gradient(closest-side, #ef9c84, transparent); /* ef9c84 FFC8C8 */
+    background: radial-gradient(closest-side, var(--left-color), transparent);
     bottom: 32rem;
     right: 110rem;
     animation: rotateAndPulse 5s infinite alternate;
   }
 
   .gradient-bottom-right {
-    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    background: radial-gradient(closest-side, var(--bottom-right-color), transparent);
     left: 70rem;
     bottom: -70rem;
     animation: expandAndContract8 4s infinite alternate;
@@ -457,7 +476,7 @@
   }
 
   .gradient-bottom-left {
-    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    background: radial-gradient(closest-side, var(--bottom-left-color), transparent);
     right: 90rem;
     bottom: -70rem;
     animation: expandAndContract9 4s infinite alternate;
@@ -475,7 +494,7 @@
   }
 
   .gradient-bottom-right-sm {
-    background: radial-gradient(closest-side, #eca6f0, transparent); /* ECA6F0 */
+    background: radial-gradient(closest-side, var(--bottom-right-sm-color), transparent);
     left: 30rem;
     bottom: -52rem;
     animation: expandAndContract10 3s infinite alternate;
@@ -493,7 +512,7 @@
   }
 
   .gradient-bottom-left-sm {
-    background: radial-gradient(closest-side, #63d9fd, transparent); /* D475F3 */
+    background: radial-gradient(closest-side, var(--bottom-left-sm-color), transparent);
     right: 30rem;
     bottom: -52rem;
     animation: expandAndContract10 4s infinite alternate;
