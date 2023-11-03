@@ -9,7 +9,7 @@ namespace WebApi.Tests
 {
     public class EducationsControllerTests
     {
-        IEducationService educationService;
+        private readonly IEducationService educationService;
         public EducationsControllerTests()
         {
             educationService = A.Fake<IEducationService>();

@@ -10,8 +10,8 @@ namespace Application.Tests
 {
     public class SocialLinkServiceTests
     {
-        IUnitOfWork unitOfWork;
-        ISocialLinkRepository SocialLinkRepository;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly ISocialLinkRepository SocialLinkRepository;
 
         public SocialLinkServiceTests()
         {

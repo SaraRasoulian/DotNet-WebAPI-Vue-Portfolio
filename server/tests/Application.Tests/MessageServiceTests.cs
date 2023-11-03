@@ -10,8 +10,8 @@ namespace Application.Tests
 {
     public class MessageServiceTests
     {
-        IUnitOfWork unitOfWork;
-        IMessageRepository messageRepository;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IMessageRepository messageRepository;
 
         public MessageServiceTests()
         {

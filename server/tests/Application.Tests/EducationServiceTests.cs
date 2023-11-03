@@ -10,8 +10,8 @@ namespace Application.Tests
 {
     public class EducationServiceTests
     {
-        IUnitOfWork unitOfWork;
-        IEducationRepository educationRepository;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IEducationRepository educationRepository;
 
         public EducationServiceTests()
         {

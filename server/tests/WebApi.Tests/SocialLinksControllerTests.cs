@@ -9,7 +9,7 @@ namespace WebApi.Tests
 {
     public class SocialLinksControllerTests
     {
-        ISocialLinkService socialLinkService;
+        private readonly ISocialLinkService socialLinkService;
         public SocialLinksControllerTests()
         {
             socialLinkService = A.Fake<ISocialLinkService>();

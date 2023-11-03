@@ -9,7 +9,7 @@ namespace WebApi.Tests
 {
     public class MessagesControllerTests
     {
-        IMessageService messageService;
+        private readonly IMessageService messageService;
         public MessagesControllerTests()
         {
             messageService = A.Fake<IMessageService>();

@@ -9,7 +9,7 @@ namespace WebApi.Tests
 {
     public class ProfilesControllerTests
     {
-        IProfileService profileService;
+        private readonly IProfileService profileService;
         public ProfilesControllerTests()
         {
             profileService = A.Fake<IProfileService>();

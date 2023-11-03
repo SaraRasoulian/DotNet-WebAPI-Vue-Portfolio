@@ -9,8 +9,8 @@ namespace Application.Tests
 {
     public class ProfileServiceTests
     {
-        IUnitOfWork unitOfWork;
-        IProfileRepository profileRepository;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IProfileRepository profileRepository;
 
         public ProfileServiceTests()
         {

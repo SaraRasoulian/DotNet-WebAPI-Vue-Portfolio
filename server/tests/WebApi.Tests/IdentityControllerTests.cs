@@ -2,7 +2,6 @@
 using Application.Service.Interfaces;
 using FakeItEasy;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Controllers;
 
