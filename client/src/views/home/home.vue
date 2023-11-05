@@ -41,6 +41,7 @@ import HomeFooter from "@/components/home/HomeFooter.vue"
 
 import { ref, onMounted, onBeforeUnmount } from "vue"
 
+// Fade in on scroll down
 const pageTop = ref(0)
 const pageBottom = ref(0)
 const tags = ref([])

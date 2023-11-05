@@ -70,7 +70,7 @@ h6 {
 }
 
 .scroll-down {
-  display: none;
+  display: none;  
 }
 
 @media (min-width: 1024px) {
@@ -78,7 +78,7 @@ h6 {
     display: block;
     margin: 0 auto;
     width: 7rem;
-    margin-bottom: 1.5vw;
+    padding-bottom: 1.5vw;
   }
 }
 /******************** Profile ********************/
@@ -488,6 +488,17 @@ a:hover {
 .fade-in-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.fade-out-on-scroll {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.fade-out-on-scroll.fade-out {
+  opacity: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 /******************** Scrollbar ********************/
