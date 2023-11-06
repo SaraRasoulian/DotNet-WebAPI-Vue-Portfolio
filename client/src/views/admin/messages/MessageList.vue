@@ -31,7 +31,7 @@
                         <div class="list-item" :class="{ 'un-read': !item.isRead }">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12">
-                                    <span>{{ item.name }}</span>
+                                    <p>{{ item.name }}</p>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                     <p class="truncated truncated-email">{{ item.email }}</p>

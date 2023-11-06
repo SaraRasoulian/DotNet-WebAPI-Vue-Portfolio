@@ -36,9 +36,9 @@
           <div v-for="item in list" :key="item.id">
             <div class="list-item">
               <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.degree }}</span></div>
-                <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.fieldOfStudy }}</span></div>
-                <div class="col-lg-4 col-md-4 col-sm-12"><span>{{ item.school }}</span></div>
+                <div class="col-lg-4 col-md-4 col-sm-12"><p class="truncated">{{ item.degree }}</p></div>
+                <div class="col-lg-4 col-md-4 col-sm-12"><p class="truncated">{{ item.fieldOfStudy }}</p></div>
+                <div class="col-lg-4 col-md-4 col-sm-12"><p class="truncated">{{ item.school }}</p></div>
               </div>
               <div class="buttons-wrapper">
                 <router-link :to="{ name: 'view-education', params: { id: item.id } }" class="list-button"

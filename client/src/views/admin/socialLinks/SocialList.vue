@@ -39,8 +39,8 @@
                 <div class="col-lg-3 col-md-3 col-sm-12">
                   <img :src="item.icon" class="social-img" :alt="item.name">
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12"><span>{{ item.name }}</span></div>
-                <div class="col-lg-6 col-md-6 col-sm-12"><span>{{ item.url }}</span></div>
+                <div class="col-lg-3 col-md-3 col-sm-12"><p>{{ item.name }}</p></div>
+                <div class="col-lg-6 col-md-6 col-sm-12"><p class="truncated">{{ item.url }}</p></div>
               </div>
               <div class="buttons-wrapper">
                 <router-link :to="{ name: 'view-social', params: { id: item.id } }" class="list-button" data-toggle="tooltip"

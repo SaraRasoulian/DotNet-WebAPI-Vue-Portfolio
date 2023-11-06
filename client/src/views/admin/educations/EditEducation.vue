@@ -21,10 +21,7 @@
                                     <label for="degree" class="form-label">Degree</label>
                                     <div class="input-group has-validation">
                                         <input type="text" v-model="model.degree" class="form-control" id="degree"
-                                            placeholder="Degree" required="">
-                                        <div class="invalid-feedback">
-                                            Degree is required.
-                                        </div>
+                                            placeholder="Degree" maxlength="50" required>
                                     </div>
                                 </div>
                             </div>
@@ -33,10 +30,7 @@
                                 <div class="col-lg-8 col-md-12 col-sm-12">
                                     <label for="fieldOfStudy" class="form-label">Field of study</label>
                                     <input type="text" v-model="model.fieldOfStudy" class="form-control" id="fieldOfStudy"
-                                        placeholder="Field of study">
-                                    <div class="invalid-feedback">
-                                        Field is required.
-                                    </div>
+                                        placeholder="Field of study" maxlength="250" required>
                                 </div>
                             </div>
 
@@ -44,10 +38,7 @@
                                 <div class="col-lg-8 col-md-12 col-sm-12">
                                     <label for="school" class="form-label">School</label>
                                     <input type="text" v-model="model.school" class="form-control" id="school"
-                                        placeholder="School">
-                                    <div class="invalid-feedback">
-                                        School is required.
-                                    </div>
+                                        placeholder="School" maxlength="250" required>
                                 </div>
                             </div>
 
@@ -55,18 +46,12 @@
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <label for="startYear" class="form-label">Start Year</label>
                                     <input type="text" v-model="model.startYear" class="form-control" id="startYear"
-                                        placeholder="Start Year" required="">
-                                    <div class="invalid-feedback">
-                                        start year is required.
-                                    </div>
+                                        placeholder="Start Year" maxlength="10" required>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <label for="endYear" class="form-label">End Year</label>
                                     <input type="text" v-model="model.endYear" class="form-control" id="endYear"
-                                        placeholder="End Year" required="">
-                                    <div class="invalid-feedback">
-                                        end year is required.
-                                    </div>
+                                        placeholder="End Year" maxlength="10" required>
                                 </div>
                             </div>
                             <div class="row g-3">
@@ -75,7 +60,7 @@
                                         <span class="secondary-text">(Optional)</span>
                                     </label>
                                     <textarea type="text" v-model="model.description" class="form-control" id="description"
-                                        placeholder="description"></textarea>
+                                        placeholder="description" maxlength="1000"></textarea>
                                 </div>
                             </div>
 
