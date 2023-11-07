@@ -6,6 +6,7 @@ namespace Application.Interfaces
     {
         IProfileRepository Profile { get; }
         IEducationRepository Education { get; }
+        IExperienceRepository Experience { get; }
         IMessageRepository Message { get; }
         ISocialLinkRepository SocialLink { get; }
         IUserRepository User { get; }

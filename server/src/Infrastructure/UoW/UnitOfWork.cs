@@ -9,6 +9,7 @@ namespace Infrastructure.UoW
     {
         public IProfileRepository Profile { get; private set; }
         public IEducationRepository Education { get; private set; }
+        public IExperienceRepository Experience { get; private set; }
         public IMessageRepository Message { get; private set; }
         public ISocialLinkRepository SocialLink { get; private set; }
         public IUserRepository User { get; private set; }
@@ -19,6 +20,7 @@ namespace Infrastructure.UoW
             _dbContext = dbContext;
             Profile = new ProfileRepository(_dbContext);
             Education = new EducationRepository(_dbContext);
+            Experience = new ExperienceRepository(_dbContext);
             Message = new MessageRepository(_dbContext);
             SocialLink = new SocialLinkRepository(_dbContext);
             User = new UserRepository(_dbContext);
