@@ -4,8 +4,6 @@ namespace Application.DTOs
 {
     public class PasswordDto
     {
-        //public string UserName { get; set; }
-
         [Required]
         public string currentPassword { get; set; }
 

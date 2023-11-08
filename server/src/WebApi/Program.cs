@@ -51,6 +51,7 @@ builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IEducationService, EducationService>();
+builder.Services.AddScoped<IExperienceService, ExperienceService>();
 builder.Services.AddScoped<ISocialLinkService, SocialLinkService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<IIdentityService, IdentityService>();
