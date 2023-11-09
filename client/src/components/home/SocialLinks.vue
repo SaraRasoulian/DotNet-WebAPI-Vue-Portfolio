@@ -8,7 +8,7 @@
         <div class="section-content">
             <div class="social center-content">
                 <div v-for="item in list" :key="item.id" class="social-item">
-                    <a :href="item.url" target="_self" class="hvr-underline-from-left">
+                    <a :href="item.url" target="_blank" class="hvr-underline-from-left">
                         <div class="social-item-inner">
                             <img :src="item.icon" class="social-item-img" :alt="item.name">
                             <span class="social-title">{{ item.name }}</span>
