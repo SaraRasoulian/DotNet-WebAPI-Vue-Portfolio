@@ -20,8 +20,8 @@ namespace WebApi.Tests
         public async Task Get_With_Data_Returns_Ok()
         {
             // Arrange            
-            var dummyMessageData = A.CollectionOfDummy<MessageDto>(5);
-            A.CallTo(() => messageService.GetAll()).Returns(dummyMessageData);
+            var dummyData = A.CollectionOfDummy<MessageDto>(5);
+            A.CallTo(() => messageService.GetAll()).Returns(dummyData);
             var controller = new MessagesController(messageService);
 
             // Act

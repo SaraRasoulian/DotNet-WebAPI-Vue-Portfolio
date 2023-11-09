@@ -20,8 +20,8 @@ namespace WebApi.Tests
         public async Task Get_With_Data_Returns_Ok()
         {
             // Arrange            
-            var dummySocialLinkData = A.CollectionOfDummy<SocialLinkDto>(3);
-            A.CallTo(() => socialLinkService.GetAll()).Returns(dummySocialLinkData);
+            var dummyData = A.CollectionOfDummy<SocialLinkDto>(3);
+            A.CallTo(() => socialLinkService.GetAll()).Returns(dummyData);
             var controller = new SocialLinksController(socialLinkService);
 
             // Act
