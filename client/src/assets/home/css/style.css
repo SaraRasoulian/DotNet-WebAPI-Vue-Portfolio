@@ -516,3 +516,15 @@ a:hover {
     background: var(--text-color);
   }
 }
+
+
+/******************** Text Selection ********************/
+::-moz-selection { 
+  color: var(--text-color);
+  background: var(--top-left-color);
+}
+
+::selection {
+  color: var(--text-color);
+  background:  var(--top-left-color);
+}
