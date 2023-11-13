@@ -75,13 +75,13 @@
                             </div>
                         </router-link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+                    <li class="nav-item nav-experiences">
+                        <router-link :to="{ name: 'experience-list' }" class="nav-link">
                             <div class="nav-link-inner">
                                 <img src="@/assets/admin/images/experiences.png" class="sidebar-icon" alt="Experiences">
                                 <span>Experiences</span>
                             </div>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="nav-item nav-educations">
                         <router-link :to="{ name: 'education-list' }" class="nav-link">
@@ -133,14 +133,14 @@
                                     <span>Profile</span>
                                 </div>
                             </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        </li>                        
+                        <li class="nav-item nav-experiences">
+                            <router-link :to="{ name: 'experience-list' }" class="nav-link">
                                 <div class="nav-link-inner">
                                     <img src="@/assets/admin/images/experiences.png" class="sidebar-icon" alt="Experiences">
                                     <span>Experiences</span>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                         <li class="nav-item nav-educations">
                             <router-link :to="{ name: 'education-list' }" class="nav-link">

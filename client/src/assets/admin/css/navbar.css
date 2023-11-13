@@ -162,7 +162,10 @@
 .messages .mobile-navbar .nav-item.nav-messages,
 .password .sidebar .nav-password,
 .password .sidebar .nav-password:hover,
-.password .mobile-navbar .nav-item.nav-password {
+.password .mobile-navbar .nav-item.nav-password,
+.experience .sidebar .nav-experiences,
+.experience .sidebar .nav-experiences:hover,
+.experience .mobile-navbar .nav-item.nav-experiences {
   background-color: var(--active-color);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -183,7 +186,9 @@
 .messages .min-sidebar .sidebar .nav-messages,
 .messages .min-sidebar .sidebar .nav-messages:hover,
 .password .min-sidebar .sidebar .nav-password,
-.password .min-sidebar .sidebar .nav-password:hover {
+.password .min-sidebar .sidebar .nav-password:hover,
+.experience .min-sidebar .sidebar .nav-experiences,
+.experience .min-sidebar .sidebar .nav-experiences:hover {
   border-radius: 50%;
   margin-left: 0;
   padding-left: 0;
@@ -193,7 +198,8 @@
 .education .sidebar .nav-educations .nav-link,
 .social .sidebar .nav-social .nav-link,
 .messages .sidebar .nav-messages .nav-link,
-.password .sidebar .nav-password .nav-link {
+.password .sidebar .nav-password .nav-link,
+.experience .sidebar .nav-experiences .nav-link {
   font-weight: 600;
   color: var(--text-color);
 }

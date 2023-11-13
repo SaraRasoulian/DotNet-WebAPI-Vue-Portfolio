@@ -132,7 +132,44 @@ const router = createRouter({
       beforeEnter: guardMyRoute,
       component: () => import('../views/admin/socialLinks/DeleteSocial.vue'),
       meta: { title: 'Delete Social Link' }
-    }
+    },
+
+    {
+      path: '/admin/experiences',
+      name: 'experience-list',
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/experiences/ExperienceList.vue'),
+      meta: { title: 'Experiences' }
+    },
+    // {
+    //   path: '/admin/experiences/add',
+    //   name: 'add-experience',
+    //   beforeEnter: guardMyRoute,
+    //   component: () => import('../views/admin/experiences/AddExperience.vue'),
+    //   meta: { title: 'Add Experience' }
+    // },
+    // {
+    //   path: '/admin/experiences/:id',o
+    //   name: 'view-experience',
+    //   beforeEnter: guardMyRoute,
+    //   component: () => import('../views/admin/experiences/ViewExperience.vue'),
+    //   meta: { title: 'View Experience' }
+    // },
+    // {
+    //   path: '/admin/experiences/edit/:id',
+    //   name: 'edit-experience',
+    //   beforeEnter: guardMyRoute,
+    //   component: () => import('../views/admin/experiences/EditExperience.vue'),
+    //   meta: { title: 'Edit Experience' }
+    // },
+    // {
+    //   path: '/admin/experiences/delete/:id',
+    //   name: 'delete-experience',
+    //   beforeEnter: guardMyRoute,
+    //   component: () => import('../views/admin/experiences/DeleteExperience.vue'),
+    //   meta: { title: 'Delete Experience' }
+    // },
+
   ]
 })
 
