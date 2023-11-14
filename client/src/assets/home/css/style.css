@@ -16,6 +16,11 @@ html {
   overflow-x: hidden;
 }
 
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: url('@/assets/home/fonts/Raleway-Regular.ttf') format('truetype');
+}
+
 body {
   background-color: var(--bg-color);
   margin: 0;
@@ -25,7 +30,7 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
   font-weight: 400;
-  font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Raleway-Regular', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 span,
@@ -481,8 +486,8 @@ a:hover {
   opacity: 0;
   transform: translateY(30px);
   transition:
-    opacity 1.5s ease,
-    transform 1.5s ease;
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .fade-in-on-scroll.visible {
