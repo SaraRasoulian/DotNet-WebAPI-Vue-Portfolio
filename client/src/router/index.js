@@ -141,13 +141,13 @@ const router = createRouter({
       component: () => import('../views/admin/experiences/ExperienceList.vue'),
       meta: { title: 'Experiences' }
     },
-    // {
-    //   path: '/admin/experiences/add',
-    //   name: 'add-experience',
-    //   beforeEnter: guardMyRoute,
-    //   component: () => import('../views/admin/experiences/AddExperience.vue'),
-    //   meta: { title: 'Add Experience' }
-    // },
+    {
+      path: '/admin/experiences/add',
+      name: 'add-experience',
+      beforeEnter: guardMyRoute,
+      component: () => import('../views/admin/experiences/AddExperience.vue'),
+      meta: { title: 'Add Experience' }
+    }
     // {
     //   path: '/admin/experiences/:id',o
     //   name: 'view-experience',
@@ -169,7 +169,6 @@ const router = createRouter({
     //   component: () => import('../views/admin/experiences/DeleteExperience.vue'),
     //   meta: { title: 'Delete Experience' }
     // },
-
   ]
 })
 
