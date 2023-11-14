@@ -94,7 +94,7 @@
 
 <script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import profileService from '@/services/ProfileService'
+import profileService from '@/services/profileService'
 import { useToast } from 'vue-toastification'
 import { useRouter } from 'vue-router'
 import { onMounted, ref } from 'vue'
