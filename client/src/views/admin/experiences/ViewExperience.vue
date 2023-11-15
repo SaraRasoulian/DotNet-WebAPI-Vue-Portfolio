@@ -1,16 +1,16 @@
 <template>
-    <div class="education">
+    <div class="experience">
         <AdminLayout>
             <div class="content-container">
                 <div class="view-wrapper">
                     <div class="title-wrapper">
-                        <router-link :to="{ name: 'education-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
+                        <router-link :to="{ name: 'experience-list' }" class="back-to-list-wrapper" data-toggle="tooltip"
                             data-placement="top" title="Return to list">
                             <div class="back-to-list">
                                 <img src="@/assets/admin/images/back.png" class="back-icon" alt="Return to list" />
                             </div>
                         </router-link>
-                        <h4>View Education</h4>
+                        <h4>View Experience</h4>
                         <div class="buttons-wrapper">
                             <router-link :to="{ name: 'edit-education', params: { id: id } }" class="list-button"
                                 data-toggle="tooltip" data-placement="top" title="Edit">
@@ -31,29 +31,11 @@
                                 <div class="row g-3">
                                     <div class="col-lg-8 col-md-12 col-sm-12">
                                         <div class="view-item-wrapper">
-                                            <span>Degree</span>
-                                            <p>{{ model.degree }}</p>
+                                            <span>Company Name</span>
+                                            <p>{{ model.companyName }}</p>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row g-3">
-                                    <div class="col-lg-8 col-md-12 col-sm-12">
-                                        <div class="view-item-wrapper">
-                                            <span>Field of study</span>
-                                            <p>{{ model.fieldOfStudy }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3">
-                                    <div class="col-lg-8 col-md-12 col-sm-12">
-                                        <div class="view-item-wrapper">
-                                            <span>School</span>
-                                            <p>{{ model.school }}</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>                               
 
                                 <div class="row g-3">
                                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -69,6 +51,16 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="row g-3" v-if="model.website !== ''">
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        <div class="view-item-wrapper">
+                                            <span>Website</span>
+                                            <p>{{ model.website }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row g-3" v-if="model.description !== ''">
                                     <div class="col-lg-8 col-md-12 col-sm-12">
                                         <div class="view-item-wrapper">
@@ -90,7 +82,7 @@
 
 <script setup>
 import AdminLayout from '@/layouts/admin/Layout.vue'
-import educationsService from '@/services/educationsService'
+import experiencesService from '@/services/experiencesService'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -99,7 +91,7 @@ const route = useRoute()
 const id = route.params.id
 
 async function loadData() {
-    await educationsService.get(id).then(response => {
+    await experiencesService.get(id).then(response => {
         model.value = response.data
     })
 }

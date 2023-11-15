@@ -147,14 +147,14 @@ const router = createRouter({
       beforeEnter: guardMyRoute,
       component: () => import('@/views/admin/experiences/AddExperience.vue'),
       meta: { title: 'Add Experience' }
+    },
+    {
+      path: '/admin/experiences/:id',
+      name: 'view-experience',
+      beforeEnter: guardMyRoute,
+      component: () => import('@/views/admin/experiences/ViewExperience.vue'),
+      meta: { title: 'View Experience' }
     }
-    // {
-    //   path: '/admin/experiences/:id',o
-    //   name: 'view-experience',
-    //   beforeEnter: guardMyRoute,
-    //   component: () => import('@/views/admin/experiences/ViewExperience.vue'),
-    //   meta: { title: 'View Experience' }
-    // },
     // {
     //   path: '/admin/experiences/edit/:id',
     //   name: 'edit-experience',

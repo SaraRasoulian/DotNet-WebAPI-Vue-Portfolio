@@ -41,7 +41,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12"><p class="truncated">{{ item.endYear }}</p></div>
               </div>
               <div class="buttons-wrapper">
-                <router-link :to="{ name: 'view-education', params: { id: item.id } }" class="list-button"
+                <router-link :to="{ name: 'view-experience', params: { id: item.id } }" class="list-button"
                   data-toggle="tooltip" data-placement="top" title="View">
                   <img src="@/assets/admin/images/view.png" class="list-button-icon" alt="View">
                 </router-link>
