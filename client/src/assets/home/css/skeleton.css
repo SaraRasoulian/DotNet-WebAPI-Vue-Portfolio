@@ -110,13 +110,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300; }
-h1 { font-size: 3.3rem; line-height: 1.2;  letter-spacing: -.1rem;}
-h2 { font-size: 3.0rem; line-height: 1.25; letter-spacing: -.1rem; }
-h3 { font-size: 2.6rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h1 { font-size: 3.0rem; line-height: 1.2;  letter-spacing: -.1rem; }
+h2 { font-size: 2.8rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 2.4rem; line-height: 1.3;  letter-spacing: -.1rem; }
 h4 { font-size: 2.2rem; line-height: 1.35; letter-spacing: -.08rem; }
-h5 { font-size: 1.9rem; line-height: 1.5;  letter-spacing: -.05rem; }
-h6 { font-size: 1.4rem; line-height: 1.6;  letter-spacing: 0; }
-p{font-size: 18px; line-height: 1.7;  letter-spacing: 0;}
+h5 { font-size: 1.7rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.3rem; line-height: 1.6;  letter-spacing: 0; }
+p { font-size: 17px; line-height: 1.7; letter-spacing: 0; }
 span,
 input,
 textarea,
@@ -124,7 +124,7 @@ select,
 label,
 legend,
 .button,
-button {font-size: 16px;}
+button {font-size: 15px;}
 .text-lg { font-size: 4.5rem; }
 
 /* Larger than tablet (tablet:768px) */

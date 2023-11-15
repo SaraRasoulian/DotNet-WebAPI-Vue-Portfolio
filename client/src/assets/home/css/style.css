@@ -5,7 +5,6 @@
   --text-color: #3c4043;
   --secondary-text-color: #61677a;
   --border-color: #b5b9c8;
-  --input-border-color: #ccd0dd;
   --error-color: #cb5153;
   --success-color: #29bc9c;
 }
@@ -71,11 +70,11 @@ h6 {
 }
 
 .text-lg {
-  font-family: 'Mastrih', 'sans-serif';
+  font-family: 'Mastrih', 'times-new-roman';
 }
 
 .scroll-down {
-  display: none;  
+  display: none;
 }
 
 @media (min-width: 1024px) {
@@ -110,7 +109,7 @@ h6 {
   justify-content: center;
 }
 
-/* Larger than tablet (tablet:768px) */
+/* Larger than tablet */
 @media (min-width: 769px) {
   .img-wrapper {
     text-align: end;
@@ -127,7 +126,7 @@ h6 {
 /******************** Sections ********************/
 .section {
   width: 100%;
-  margin-bottom: calc(7rem + 1vw);
+  margin-bottom: calc(5rem + 2vw);
 }
 
 .section-header {
@@ -138,8 +137,8 @@ h6 {
 }
 
 .section-header-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 2.3rem;
+  height: 2.3rem;
   margin-right: 10px;
 }
 
@@ -197,13 +196,22 @@ h6 {
 
 .social-item-img {
   margin: auto;
-  max-width: 5rem;
+  max-width: 4rem;
 }
 
-/* Larger than tablet (tablet:768px) */
+/* Larger than tablet */
 @media (min-width: 769px) {
   .social .social-item {
     margin: auto 5vw;
+  }
+
+  .social-item-img {
+    max-width: 5rem;
+  }
+
+  .section-header-icon {
+    width: 3rem;
+    height: 3rem;
   }
 }
 
@@ -272,7 +280,7 @@ select {
   height: 38px;
   padding: 6px 10px;
   background-color: transparent;
-  border: 1px solid var(--input-border-color);
+  border: 1px solid var(--border-color);
   color: var(--text-color);
   border-radius: 3px;
   box-shadow: none;
@@ -396,9 +404,15 @@ label > .label-body {
 }
 
 .send-button img {
+  width: 15px;
+  height: 15px;
+}
+
+@media (min-width: 769px) {
+.send-button img {
   width: 17px;
   height: 17px;
-}
+}}
 
 .send-button span {
   color: var(--bg-color);
@@ -484,7 +498,7 @@ a:hover {
 
 .fade-in-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   transition:
     opacity 1s ease,
     transform 1s ease;
@@ -523,10 +537,10 @@ a:hover {
 }
 
 /******************** Text Selection ********************/
-::-moz-selection { 
+::-moz-selection {
   background: var(--top-left-color);
 }
 
 ::selection {
-  background:  var(--top-left-color);
+  background: var(--top-left-color);
 }
