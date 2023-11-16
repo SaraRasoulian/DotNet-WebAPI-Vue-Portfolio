@@ -13,166 +13,144 @@ const router = createRouter({
     {
       path: '/admin/login',
       name: 'login',
-      component: () => import('@/views/admin/Login.vue'),
-      meta: { title: 'Login' }
+      component: () => import('@/views/admin/Login.vue')
     },
 
     {
       path: '/admin/change-password',
       name: 'change-password',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/ChangePassword.vue'),
-      meta: { title: 'Change Password' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/ChangePassword.vue')
     },
 
     {
       path: '/admin/profile',
       name: 'view-profile',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/profile/ViewProfile.vue'),
-      meta: { title: 'View Profile' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/profile/ViewProfile.vue')
     },
     {
       path: '/admin/profile/edit',
       name: 'edit-profile',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/profile/EditProfile.vue'),
-      meta: { title: 'Edit Profile' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/profile/EditProfile.vue')
     },
 
     {
       path: '/admin/educations',
       name: 'education-list',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/educations/EducationList.vue'),
-      meta: { title: 'Educations' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/educations/EducationList.vue')
     },
     {
       path: '/admin/educations/add',
       name: 'add-education',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/educations/AddEducation.vue'),
-      meta: { title: 'Add Education' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/educations/AddEducation.vue')
     },
     {
       path: '/admin/educations/:id',
       name: 'view-education',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/educations/ViewEducation.vue'),
-      meta: { title: 'View Education' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/educations/ViewEducation.vue')
     },
     {
       path: '/admin/educations/edit/:id',
       name: 'edit-education',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/educations/EditEducation.vue'),
-      meta: { title: 'Edit Education' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/educations/EditEducation.vue')
     },
     {
       path: '/admin/educations/delete/:id',
       name: 'delete-education',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/educations/DeleteEducation.vue'),
-      meta: { title: 'Delete Education' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/educations/DeleteEducation.vue')
     },
 
     {
       path: '/admin/messages',
       name: 'message-list',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/messages/MessageList.vue'),
-      meta: { title: 'Messages' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/messages/MessageList.vue')
     },
     {
       path: '/admin/messages/:id',
       name: 'view-message',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/messages/ViewMessage.vue'),
-      meta: { title: 'View Message' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/messages/ViewMessage.vue')
     },
     {
       path: '/admin/messages/delete/:id',
       name: 'delete-message',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/messages/DeleteMessage.vue'),
-      meta: { title: 'Delete Message' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/messages/DeleteMessage.vue')
     },
 
     {
       path: '/admin/socials',
       name: 'social-list',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/socialLinks/SocialList.vue'),
-      meta: { title: 'Social Links' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/socialLinks/SocialList.vue')
     },
     {
       path: '/admin/socials/add',
       name: 'add-social',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/socialLinks/AddSocial.vue'),
-      meta: { title: 'Add Social Link' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/socialLinks/AddSocial.vue')
     },
     {
       path: '/admin/socials/:id',
       name: 'view-social',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/socialLinks/ViewSocial.vue'),
-      meta: { title: 'View Social Link' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/socialLinks/ViewSocial.vue')
     },
     {
       path: '/admin/socials/edit/:id',
       name: 'edit-social',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/socialLinks/EditSocial.vue'),
-      meta: { title: 'Edit Social Link' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/socialLinks/EditSocial.vue')
     },
     {
       path: '/admin/socials/delete/:id',
       name: 'delete-social',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/socialLinks/DeleteSocial.vue'),
-      meta: { title: 'Delete Social Link' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/socialLinks/DeleteSocial.vue')
     },
 
     {
       path: '/admin/experiences',
       name: 'experience-list',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/experiences/ExperienceList.vue'),
-      meta: { title: 'Experiences' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/experiences/ExperienceList.vue')
     },
     {
       path: '/admin/experiences/add',
       name: 'add-experience',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/experiences/AddExperience.vue'),
-      meta: { title: 'Add Experience' }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/experiences/AddExperience.vue')
     },
     {
       path: '/admin/experiences/:id',
       name: 'view-experience',
-      beforeEnter: guardMyRoute,
-      component: () => import('@/views/admin/experiences/ViewExperience.vue'),
-      meta: { title: 'View Experience' }
-    }
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/experiences/ViewExperience.vue')
+    },
     // {
     //   path: '/admin/experiences/edit/:id',
     //   name: 'edit-experience',
-    //   beforeEnter: guardMyRoute,
-    //   component: () => import('@/views/admin/experiences/EditExperience.vue'),
-    //   meta: { title: 'Edit Experience' }
+    //   beforeEnter: authenticateAndRoute,
+    //   component: () => import('@/views/admin/experiences/EditExperience.vue')
     // },
-    // {
-    //   path: '/admin/experiences/delete/:id',
-    //   name: 'delete-experience',
-    //   beforeEnter: guardMyRoute,
-    //   component: () => import('@/views/admin/experiences/DeleteExperience.vue'),
-    //   meta: { title: 'Delete Experience' }
-    // },
+    {
+      path: '/admin/experiences/delete/:id',
+      name: 'delete-experience',
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/experiences/DeleteExperience.vue')
+    }
   ]
 })
 
-async function guardMyRoute(to, from, next) {
+async function authenticateAndRoute(to, from, next) {
   const authStatus = await isAuthenticated()
   if (authStatus) {
     next()

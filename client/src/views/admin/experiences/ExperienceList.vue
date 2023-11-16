@@ -51,7 +51,7 @@
                   <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit">
                 </router-link>
 
-                <router-link :to="{ name: 'delete-education', params: { id: item.id } }" class="list-button"
+                <router-link :to="{ name: 'delete-experience', params: { id: item.id } }" class="list-button"
                   data-toggle="tooltip" data-placement="top" title="Delete">
                   <img src="@/assets/admin/images/delete.svg" class="list-button-icon" alt="Delete">
                 </router-link>
