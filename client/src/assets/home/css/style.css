@@ -540,11 +540,11 @@ a:hover {
 
 /******************** Text Selection ********************/
 ::-moz-selection {
-  background: var(--top-left-color);
+  background: var(--cursor-color);
 }
 
 ::selection {
-  background: var(--top-left-color);
+  background: var(--cursor-color);
 }
 
 /******************** Cursor ********************/
