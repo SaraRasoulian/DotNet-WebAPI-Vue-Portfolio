@@ -409,10 +409,11 @@ label > .label-body {
 }
 
 @media (min-width: 769px) {
-.send-button img {
-  width: 17px;
-  height: 17px;
-}}
+  .send-button img {
+    width: 17px;
+    height: 17px;
+  }
+}
 
 .send-button span {
   color: var(--bg-color);
@@ -543,4 +544,39 @@ a:hover {
 
 ::selection {
   background: var(--top-left-color);
+}
+
+/******************** Cursor ********************/
+@media (min-width: 769px) {
+  body {
+    cursor: default;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  .custom-cursor {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, var(--top-left-color), transparent);
+    animation: cursorExpand 3s infinite alternate;
+  }
+
+  @keyframes cursorExpand {
+    0% {
+      width: 40px;
+      height: 40px;
+    }
+    100% {
+      width: 55px;
+      height: 55px;
+    }
+  }
 }
