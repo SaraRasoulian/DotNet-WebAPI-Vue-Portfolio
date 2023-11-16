@@ -3,7 +3,7 @@
     <div class="profile">
       <div class="row">
         <div class="columns" :class="{ 'eight': model.photo !== null && model.photo !== '' }">
-          <h2 class="profile-titr">{{ model.headline }}</h2>
+          <h2 class="profile-title">{{ model.headline }}</h2>
           <p class="profile-text">{{ model.about }}</p>
         </div>
         <div v-if="model.photo !== null && model.photo !== ''" class="four columns img-wrapper">

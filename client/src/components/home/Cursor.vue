@@ -11,9 +11,8 @@ const cursorContainer = ref(null);
 const customCursor = ref(null);
 
 const positionElement = (e) => {
-  const mouseY = e.clientY - 16;
-  const mouseX = e.clientX - 16;
-
+  const mouseY = e.clientY - 14;
+  const mouseX = e.clientX - 18;
   customCursor.value.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 };
 

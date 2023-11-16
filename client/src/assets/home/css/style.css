@@ -1,12 +1,13 @@
 :root {
   /******************** Colors ********************/
   --bg-color: #ffffff;
-  --titr-color: #014f57;
+  --title-color: #014f57;
   --text-color: #3c4043;
   --secondary-text-color: #61677a;
   --border-color: #b5b9c8;
   --error-color: #cb5153;
   --success-color: #29bc9c;
+  --cursor-color: #b7eeff;
 }
 
 /******************** Base styles ********************/
@@ -86,8 +87,8 @@ h6 {
   }
 }
 /******************** Profile ********************/
-.profile-titr {
-  color: var(--titr-color);
+.profile-title {
+  color: var(--title-color);
   text-align: left;
   font-weight: 700;
   margin-bottom: 2vw;
@@ -390,7 +391,7 @@ label > .label-body {
 .form input[type='reset']:focus,
 .form input[type='button']:focus {
   color: var(--bg-color);
-  background-color: var(--titr-color);
+  background-color: var(--title-color);
   transition: 0.7s;
   border: none;
   outline: none;
@@ -562,17 +563,17 @@ a:hover {
   }
 
   .custom-cursor {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    background: radial-gradient(closest-side, var(--top-left-color), transparent);
-    animation: cursorExpand 3s infinite alternate;
+    background: radial-gradient(closest-side, var(--cursor-color), transparent);
+    animation: cursorExpand 2s infinite alternate;
   }
 
   @keyframes cursorExpand {
     0% {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
     }
     100% {
       width: 55px;
