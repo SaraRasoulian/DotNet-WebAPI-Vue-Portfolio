@@ -1,6 +1,7 @@
 <template>
     <div class="gradient-wrapper">
         <div class="container">
+            <Cursor />
             <div class="gradient gradient-top-left"></div>
             <div class="gradient gradient-top-mid"></div>
             <div class="gradient gradient-top-right"></div>
@@ -38,6 +39,7 @@ import SocialLinks from "@/components/home/SocialLinks.vue"
 import SendMessage from "@/components/home/SendMessage.vue"
 import HomeHeader from "@/components/home/HomeHeader.vue"
 import HomeFooter from "@/components/home/HomeFooter.vue"
+import Cursor from "@/components/home/Cursor.vue"
 
 import { ref, onMounted, onBeforeUnmount } from "vue"
 
