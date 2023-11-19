@@ -1,6 +1,8 @@
 <template>
   <div class="section">
-    <h2 v-if="loading">Loading....</h2>
+    <div v-if="loading">
+      <Loading />
+    </div>
     <div v-else class="profile">
       <div class="row">
         <div class="columns" :class="{ 'eight': model.photo !== null && model.photo !== '' }">
@@ -16,6 +18,7 @@
 </template>
 
 <script setup>
+import Loading from "@/components/home/Loading.vue"
 import profileService from '@/services/profileService'
 import { onMounted, ref } from 'vue'
 

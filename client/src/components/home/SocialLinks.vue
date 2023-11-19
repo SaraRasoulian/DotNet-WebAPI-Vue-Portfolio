@@ -2,7 +2,7 @@
     <div v-if="list.length > 0" class="section">
         <div class="section-header">
             <img src="@/assets/home/images/contact.png" class="section-header-icon">
-            <h3 class="section-titr">Contact Me</h3>
+            <h3 class="section-titr">Contact</h3>
             <div class="section-line"></div>
         </div>
         <div class="section-content">
