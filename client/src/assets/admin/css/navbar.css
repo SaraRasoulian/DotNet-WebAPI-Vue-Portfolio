@@ -147,7 +147,7 @@
   padding-left: 2rem;
 }
 
-/* active-item start */
+/* active-item */
 .profile .sidebar .nav-profile,
 .profile .sidebar .nav-profile:hover,
 .profile .mobile-navbar .nav-item.nav-profile,
@@ -203,7 +203,6 @@
   font-weight: 600;
   color: var(--text-color);
 }
-/* active-item end */
 
 .nav-link {
   color: var(--text-color);
