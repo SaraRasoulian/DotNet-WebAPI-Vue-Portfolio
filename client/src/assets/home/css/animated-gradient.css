@@ -75,9 +75,9 @@
 
 .gradient-right-sm {
   background: radial-gradient(closest-side, var(--right-sm-color), transparent);
-  top: 39rem;
+  top: 30rem;
   left: 15rem;
-  animation: expandAndContract4 1.6s infinite alternate;
+  animation: expandAndContract4 1.6s infinite alternate;  
 }
 @keyframes expandAndContract4 {
   0% {
@@ -115,14 +115,14 @@
 
 .gradient-left-sm {
   background: radial-gradient(closest-side, var(--left-sm-color), transparent);
-  bottom: 75rem;
+  bottom: 50rem;
   left: -42rem;
-  animation: expandAndContract4 5s infinite alternate;
+  animation: expandAndContract4 5s infinite alternate;  
 }
 
 .gradient-left {
   background: radial-gradient(closest-side, var(--left-color), transparent);
-  bottom: 39rem;
+  bottom: 19rem;
   right: 15rem;
   animation: rotateAndPulse 7s infinite alternate;
 }

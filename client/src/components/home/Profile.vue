@@ -1,6 +1,7 @@
 <template>
   <div class="section">
-    <div class="profile">
+    <h2 v-if="loading">Loading....</h2>
+    <div v-else class="profile">
       <div class="row">
         <div class="columns" :class="{ 'eight': model.photo !== null && model.photo !== '' }">
           <h2 class="profile-title">{{ model.headline }}</h2>
@@ -18,12 +19,16 @@
 import profileService from '@/services/profileService'
 import { onMounted, ref } from 'vue'
 
+const loading = ref(true)
 const model = ref({})
 
 async function loadData() {
-  await profileService.get().then(response => {
+  try {
+    const response = await profileService.get()
     model.value = response.data
-  })
+  } finally {
+    loading.value = false
+  }
 }
 
 onMounted(loadData)
