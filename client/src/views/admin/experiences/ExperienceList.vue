@@ -46,7 +46,7 @@
                   <img src="@/assets/admin/images/view.png" class="list-button-icon" alt="View">
                 </router-link>
 
-                <router-link :to="{ name: 'edit-education', params: { id: item.id } }" class="list-button"
+                <router-link :to="{ name: 'edit-experience', params: { id: item.id } }" class="list-button"
                   data-toggle="tooltip" data-placement="top" title="Edit">
                   <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit">
                 </router-link>

@@ -135,12 +135,12 @@ const router = createRouter({
       beforeEnter: authenticateAndRoute,
       component: () => import('@/views/admin/experiences/ViewExperience.vue')
     },
-    // {
-    //   path: '/admin/experiences/edit/:id',
-    //   name: 'edit-experience',
-    //   beforeEnter: authenticateAndRoute,
-    //   component: () => import('@/views/admin/experiences/EditExperience.vue')
-    // },
+    {
+      path: '/admin/experiences/edit/:id',
+      name: 'edit-experience',
+      beforeEnter: authenticateAndRoute,
+      component: () => import('@/views/admin/experiences/EditExperience.vue')
+    },
     {
       path: '/admin/experiences/delete/:id',
       name: 'delete-experience',

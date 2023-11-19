@@ -12,7 +12,7 @@
                         </router-link>
                         <h4>View Experience</h4>
                         <div class="buttons-wrapper">
-                            <router-link :to="{ name: 'edit-education', params: { id: id } }" class="list-button"
+                            <router-link :to="{ name: 'edit-experience', params: { id: id } }" class="list-button"
                                 data-toggle="tooltip" data-placement="top" title="Edit">
                                 <img src="@/assets/admin/images/edit.svg" class="list-button-icon" alt="Edit" />
                             </router-link>

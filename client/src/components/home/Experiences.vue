@@ -1,54 +1,22 @@
 <template>
-    <div class="section">
+    <div v-if="list.length > 0" class="section">
         <div class="section-header">
             <img src="@/assets/home/images/journey.png" class="section-header-icon">
             <h3 class="section-titr">My Journey</h3>
             <div class="section-line"></div>
         </div>
         <div class="section-content">
-            <!-- Timeline -->
-            <div class="timeline-item row">
+            <div v-for="item in list" :key="item.id" class="timeline-item row">
                 <div class="three columns">
                     <div class="timeline-item-header">
-                        <p>Aenean</p>
-                        <p>2022 - Present</p>
+                        <a :href="item.website" target="_self">
+                            <p>{{ item.companyName }}</p>
+                        </a>
+                        <p>{{ item.startYear }} - {{ item.endYear }}</p>
                     </div>
                 </div>
                 <div class="nine columns">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt
-                        ut labore et dolore magna aliqua. Vulputate enim nulla aliquet porttitor lacus
-                        luctus
-                        accumsan tortor. Ullamcorper eget nulla facilisi etiam.</p>
-                </div>
-            </div>
-            <div class="timeline-item row">
-                <div class="three columns">
-                    <div class="timeline-item-header">
-                        <p>Dictum</p>
-                        <p>2021 - 2022</p>
-                    </div>
-                </div>
-                <div class="nine columns">
-                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
-                        demonstrate the visual form of a document or a typeface without relying on
-                        meaningful
-                        content</p>
-                </div>
-            </div>
-            <div class="timeline-item row">
-                <div class="three columns">
-                    <div class="timeline-item-header">
-                        <p>Phasellus</p>
-                        <p>2018 - 2019</p>
-                    </div>
-                </div>
-                <div class="nine columns">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt
-                        ut labore et dolore magna aliqua. Dui id ornare arcu odio ut sem nulla pharetra
-                        diam.
-                        Tellus in hac habitasse platea dictumst vestibulum rhoncus.</p>
+                    <p>{{ item.description }}</p>
                 </div>
             </div>
         </div>
@@ -56,4 +24,16 @@
 </template>
 
 <script setup>
+import experiencesService from '@/services/experiencesService'
+import { onMounted, ref } from 'vue'
+
+const list = ref([])
+
+async function getList() {
+    await experiencesService.getAll().then(response => {
+        list.value = response.data
+    })
+}
+
+onMounted(getList)
 </script>
