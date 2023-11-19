@@ -19,16 +19,16 @@ namespace Infrastructure.DbContexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            //Seed - Temporary
+            // Seed
             modelBuilder.Entity<Profile>().HasData(
                 new Profile
                 {
                     Id = Guid.NewGuid(),
                     FirstName = "Sara",
                     LastName = "Rasoulian",
-                    Email = "Example@gmail.com",
-                    Headline = "My name is Sara",
-                    About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
+                    Email = "example@gmail.com",
+                    Headline = "Lorem ipsum is a placeholder text",
+                    About = "Lorem ipsum is a placeholder text",
                 }
                 );
 
@@ -37,7 +37,7 @@ namespace Infrastructure.DbContexts
                 {
                     Id = Guid.NewGuid(),
                     UserName = "admin",
-                    Password = "demo",
+                    Password = "123456",
                     Email = "example@gmail.com"
                 }
                 );

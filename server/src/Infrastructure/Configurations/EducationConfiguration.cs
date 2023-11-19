@@ -14,11 +14,7 @@ public class EducationConfiguration : IEntityTypeConfiguration<Education>
 
         builder.Property(t => t.FieldOfStudy)
             .HasMaxLength(250)
-            .IsRequired();
-
-        builder.Property(t => t.School)
-            .HasMaxLength(250)
-            .IsRequired();
+            .IsRequired();        
 
         builder.Property(t => t.StartYear)
             .HasMaxLength(10)
@@ -27,6 +23,9 @@ public class EducationConfiguration : IEntityTypeConfiguration<Education>
         builder.Property(t => t.EndYear)
             .HasMaxLength(10)
             .IsRequired();
+
+        builder.Property(t => t.School)
+            .HasMaxLength(250);
 
         builder.Property(t => t.Description)
             .HasMaxLength(1000);

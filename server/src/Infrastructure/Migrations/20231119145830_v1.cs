@@ -18,7 +18,7 @@ namespace Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Degree = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     FieldOfStudy = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
-                    School = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
+                    School = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
                     StartYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     EndYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     Description = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: true)
@@ -108,12 +108,12 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("aee16466-bd11-41ff-a8ef-c4ccb796336d"), "In publishing and graphic design, Lorem ipsum is a placeholder text.", "Example@gmail.com", "Sara", "My name is Sara", "Rasoulian", null });
+                values: new object[] { new Guid("af4f4184-43e7-4912-953e-0ef1d3dd9693"), "Lorem ipsum is a placeholder text", "example@gmail.com", "Sara", "Lorem ipsum is a placeholder text", "Rasoulian", null });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Password", "UserName" },
-                values: new object[] { new Guid("ec279455-9490-47ad-a2aa-cfce3562c0bb"), "example@gmail.com", "demo", "admin" });
+                values: new object[] { new Guid("5a951e06-be3d-4165-a65f-3c669233f863"), "example@gmail.com", "123456", "admin" });
         }
 
         /// <inheritdoc />

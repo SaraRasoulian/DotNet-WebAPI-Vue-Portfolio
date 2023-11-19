@@ -13,13 +13,12 @@ namespace Application.DTOs
         public string FieldOfStudy { get; set; }
 
         [Required]
-        public string School { get; set; }
-
-        [Required]
         public string StartYear { get; set; }
 
         [Required]
-        public required string EndYear { get; set; }
+        public string EndYear { get; set; }
+
+        public string? School { get; set; }        
 
         public string? Description { get; set; }
     }

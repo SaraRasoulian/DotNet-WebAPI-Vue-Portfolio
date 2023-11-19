@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20231020153500_v1")]
+    [Migration("20231119145830_v1")]
     partial class v1
     {
         /// <inheritdoc />
@@ -51,7 +51,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("character varying(250)");
 
                     b.Property<string>("School")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("character varying(250)");
 
@@ -173,11 +172,11 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("aee16466-bd11-41ff-a8ef-c4ccb796336d"),
-                            About = "In publishing and graphic design, Lorem ipsum is a placeholder text.",
-                            Email = "Example@gmail.com",
+                            Id = new Guid("af4f4184-43e7-4912-953e-0ef1d3dd9693"),
+                            About = "Lorem ipsum is a placeholder text",
+                            Email = "example@gmail.com",
                             FirstName = "Sara",
-                            Headline = "My name is Sara",
+                            Headline = "Lorem ipsum is a placeholder text",
                             LastName = "Rasoulian"
                         });
                 });
@@ -231,9 +230,9 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ec279455-9490-47ad-a2aa-cfce3562c0bb"),
+                            Id = new Guid("5a951e06-be3d-4165-a65f-3c669233f863"),
                             Email = "example@gmail.com",
-                            Password = "demo",
+                            Password = "123456",
                             UserName = "admin"
                         });
                 });
