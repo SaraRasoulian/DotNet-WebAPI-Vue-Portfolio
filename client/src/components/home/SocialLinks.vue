@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div v-if="list.length > 0" class="section">
         <div class="section-header">
             <img src="@/assets/home/images/contact.png" class="section-header-icon">
             <h3 class="section-titr">Contact Me</h3>
@@ -8,9 +8,9 @@
         <div class="section-content">
             <div class="social center-content">
                 <div v-for="item in list" :key="item.id" class="social-item">
-                    <a :href="item.url" target="_blank" class="hvr-underline-from-left">
+                    <a :href="item.url" target="_self" class="hvr-underline-from-left">
                         <div class="social-item-inner">
-                            <img :src="item.icon" class="social-item-img" :alt="item.name">
+                            <img :src="item.icon" class="social-item-img">
                             <span class="social-title">{{ item.name }}</span>
                         </div>
                     </a>

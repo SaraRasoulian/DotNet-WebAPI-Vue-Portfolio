@@ -1,15 +1,12 @@
 :root {
-  /******************** Colors ********************/
+  /******************** animated gradient colors ********************/
   --top-left-color: #63d9fd;
   --top-mid-color: #cbb2f1;
   --top-right-color: #f8b2b0;
-
-  --right-color: #68d5e1; /* 00fff6 2dcddf 97FFF4 */
-  --right-sm-color: #caedff; /* #279eff */
-
-  --left-color: #ef9c84; /* ea047e ef9c84 FFC8C8 */
-  --left-sm-color: #ffc8c8; /* ff6c22 */
-
+  --right-color: #68d5e1;
+  --right-sm-color: #caedff;
+  --left-color: #ef9c84;
+  --left-sm-color: #ffc8c8;
   --bottom-right-color: #eca6f0;
   --bottom-right-sm-color: #eca6f0;
   --bottom-left-color: #63d9fd;
