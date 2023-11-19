@@ -60,7 +60,7 @@
   background: radial-gradient(closest-side, var(--top-right-color), transparent);
   top: -15rem;
   left: 17rem;
-  animation: expandAndContract3 1.2s infinite alternate;
+  animation: expandAndContract3 2.2s infinite alternate;
 }
 @keyframes expandAndContract3 {
   0% {
@@ -77,7 +77,7 @@
   background: radial-gradient(closest-side, var(--right-sm-color), transparent);
   top: 30rem;
   left: 15rem;
-  animation: expandAndContract4 1.6s infinite alternate;  
+  animation: expandAndContract4 1s infinite alternate;  
 }
 @keyframes expandAndContract4 {
   0% {
@@ -93,7 +93,7 @@
 .gradient-right {
   background: radial-gradient(closest-side, var(--right-color), transparent);
   left: 22rem;
-  animation: rotateAndPulse 7s infinite alternate;
+  animation: rotateAndPulse 4s infinite alternate;
 }
 @keyframes rotateAndPulse {
   0% {
@@ -117,14 +117,14 @@
   background: radial-gradient(closest-side, var(--left-sm-color), transparent);
   bottom: 50rem;
   left: -42rem;
-  animation: expandAndContract4 5s infinite alternate;  
+  animation: expandAndContract4 3s infinite alternate;  
 }
 
 .gradient-left {
   background: radial-gradient(closest-side, var(--left-color), transparent);
   bottom: 19rem;
   right: 15rem;
-  animation: rotateAndPulse 7s infinite alternate;
+  animation: rotateAndPulse 6s infinite alternate;
 }
 
 .gradient-bottom-right {
