@@ -1,7 +1,7 @@
 <template>
   <div class="form">
     <div class="form-header">
-      <h1>Say Hi</h1>
+      <h2>Say Hi</h2>
     </div>
     <div>
       <form>

@@ -131,11 +131,11 @@ button {font-size: 15px;}
 @media (min-width: 769px) {
   h1 { font-size: 4.5rem; }
   h2 { font-size: 4.0rem; }
-  h3 { font-size: 3.6rem; }
-  h4 { font-size: 3.0rem; }
+  h3 { font-size: 3.0rem; }
+  h4 { font-size: 2.8rem; }
   h5 { font-size: 2.4rem; }
   h6 { font-size: 1.5rem; }
-  p {font-size: 20px;}
+  p {font-size: 19px;}
   span,
   input,
   textarea,
