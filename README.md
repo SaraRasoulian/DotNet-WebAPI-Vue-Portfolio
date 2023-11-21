@@ -19,6 +19,8 @@
 * Educations
 * Social links
 * Message form
+* Login
+* Change password
 
 
 <h2>Give a Star ⭐ </h2>
