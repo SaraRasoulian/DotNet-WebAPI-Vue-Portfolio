@@ -1,4 +1,4 @@
-<h1> Portfolio website ⚡</h1>
+<h2> Portfolio website ⚡</h2>
 This repo is a full-stack application with a backend ASP.NET Core Web API project and a frontend Vue JS project.
 
 
