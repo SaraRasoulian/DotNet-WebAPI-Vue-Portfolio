@@ -7,12 +7,11 @@
 [Live demo](http://www.sara-rasoulian.ir/)
 
 - <h5>Home page</h5>
-
-![Web 1920 – 3](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/41c4eae0-bd97-4174-8e17-20cd7fa34bba)
+![Web 1920 – 4](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/6052b0fc-8de0-4683-b73f-4d96f89f317e)
 
 - <h5>Admin panel</h5>
+![Web 1920 – 5](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/47ffcaaa-1651-4d85-8268-11bfcd7cf228)
 
-// Image
 
 <h2>Sections ✔️</h2>
 
