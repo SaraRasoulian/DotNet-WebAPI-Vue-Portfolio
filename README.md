@@ -1,7 +1,6 @@
-<h2> Portfolio website ⚡</h2>
-This repo is a full-stack application with a backend ASP.NET Core Web API project and a frontend Vue JS project.
-
-
+<h2> Personal Portfolio Website ✨ </h2>
+<p>This repository is a dynamic responsive portfolio website with an admin panel.</p>
+<p>The backend is built with ASP.NET Core Web API, the frontend with Vue JS, and the database with PostgreSQL.</p>
 
 <h2>Demo 💻 </h2>
 
@@ -15,6 +14,12 @@ This repo is a full-stack application with a backend ASP.NET Core Web API projec
 
 // Image
 
+
+
+<h2>Features ✔️</h2>
+
+* Dynamic Contents
+* Responsive Design
 
 <h2>Sections ✔️</h2>
 
