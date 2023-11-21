@@ -19,7 +19,7 @@
 * Experiences
 * Educations
 * Social links
-* Message form
+* Messages
 * Login
 * Change password
 
