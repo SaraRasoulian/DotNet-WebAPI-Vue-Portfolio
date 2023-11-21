@@ -8,7 +8,7 @@
 
 - <h5>Home page</h5>
 
-![Web 1920 – 3](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/93fa2950-c368-43bc-9398-b2fe85e2b696)
+![Web 1920 – 3](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/41c4eae0-bd97-4174-8e17-20cd7fa34bba)
 
 - <h5>Admin panel</h5>
 
