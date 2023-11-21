@@ -14,13 +14,6 @@
 
 // Image
 
-
-
-<h2>Features ✔️</h2>
-
-* Dynamic Contents
-* Responsive Design
-
 <h2>Sections ✔️</h2>
 
 * Profile
