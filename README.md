@@ -10,7 +10,8 @@
 ![Web 1920 – 4](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/6052b0fc-8de0-4683-b73f-4d96f89f317e)
 
 - <h5>Admin panel</h5>
-![Web 1920 – 5](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/929ef223-102b-48f2-9e03-39311cf76cbd)
+![Admin new](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/dbd59886-8985-4481-8e93-1dedbf5b2219)
+
 
 <h2>Sections ✔️</h2>
 
