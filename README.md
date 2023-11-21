@@ -1,5 +1,5 @@
 <h2> Personal Portfolio Website ✨ </h2>
-<p>This repository is a dynamic responsive portfolio website with an admin panel.</p>
+<p>This repository is a dynamic and responsive portfolio website with an admin panel.</p>
 <p>The backend is built with ASP.NET Core Web API, the frontend with Vue JS, and the database with PostgreSQL.</p>
 
 <h2>Demo 💻 </h2>
@@ -31,7 +31,7 @@
 
 
 <h2>Give a Star ⭐ </h2>
-<p>If you like this project or it helped you, I hope you can give a star for it. Thanks!</p>
+<p>If you like this project, I hope you consider giving it a star. Thanks!</p>
 
 
 <h2>Tech Stack 🛠️ </h2>
