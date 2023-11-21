@@ -9,6 +9,9 @@ This repo is a full-stack application with a backend ASP.NET Core Web API projec
 
 - <h5>Home page</h5>
 
+![ezgif-2-54d95eee44](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/0d72f3bc-6bee-4a72-b13a-7bc4ebeca78f)
+
+
 ![Web 1920 – 3](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/2d62e12e-73ed-4f53-9a47-758f288d0b51)
 
 // Gif
