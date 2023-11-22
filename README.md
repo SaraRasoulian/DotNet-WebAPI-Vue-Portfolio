@@ -14,7 +14,7 @@ The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**
 ![Admin new](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/dbd59886-8985-4481-8e93-1dedbf5b2219)
 
 
-<h2>Sections ✔️</h2>
+<h4>Admin Panel Sections </h4>
 
 * Profile
 * Experiences
