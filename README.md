@@ -51,7 +51,7 @@ To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
   - Bootstrap -v5 for admin panel
   - Axios for API calls
   - Vuelidate for validation
-  - vue-toastification for notifications
+  - Vue-toastification for notifications
   - Skeleton for home page
   - HTML -v5
   - CSS -v3
