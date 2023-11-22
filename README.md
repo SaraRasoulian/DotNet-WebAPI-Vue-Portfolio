@@ -5,7 +5,7 @@ The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**
 
 <h2>Demo 💻 </h2>
 
-To view my portfolio [Click here](http://www.sara-rasoulian.ir/)
+To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
 
 - <h5>Home page</h5>
 ![Home -](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/b2872aeb-51c0-4452-8e6d-f7df9892b33c)
@@ -31,28 +31,34 @@ To view my portfolio [Click here](http://www.sara-rasoulian.ir/)
 
 <h2>Tech Stack 🛠️ </h2>
 
-- ### Server
-  - A
-  - B
-- ### Client
-  - A
-  - B
+- ###	Back-End
+  -	ASP.NET Core Web API
+  - .NET SDK -v7
+  - Entity Framework Core -v7
+  - Mapster -v7
+  - JWT for authentication & authorization
+  - Clean Architecture
+  - Unit Of Work Pattern
+  - Repository Service Pattern
+  - TDD
 - ### Testing
-  - A
-  - B
+  - xUnit
+  - FakeItEasy
+- ### Database
+  - PostgreSQL -v15
+  - DB built via EF migrations (code-first approach)
+- ### Front-End 
+  - Vue JS -v3 (Vite-based)
+  - Bootstrap -v5 for admin panel
+  - Axios for API calls
+  - Vuelidate for validation
+  - vue-toastification for notifications
+  - Skeleton for home page
+  - HTML -v5
+  - CSS -v3
 - ### IDE
-  - A
-  - B
-
-
-  
-<h2>Requirements </h2>
-<p>to run this project you need these</p>
-
-- .Net Framework >= 7.0
-- .NET Core >= x.0
-- NodeJS >= x.0
-- Vue CLI >= x.0
+  - Visual Studio 2022 -v17 for back-end development
+  - Visual Studio Code for front-end development
 
 <h2>Contributions 🤝</h2>
 <p>Contributions are welcomed! If you identify areas for improvement, please feel free to raise an issue or submit a pull request.</p>
