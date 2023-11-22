@@ -60,5 +60,5 @@ To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
   - Visual Studio Code for front-end development
 
 <h2>Contributions 🤝</h2>
-<p>Contributions are welcomed! If you identify areas for improvement, please feel free to raise an issue or submit a pull request.</p>
+<p>Contributions are appreciated. If you identify areas for improvement, please feel free to raise an issue or submit a pull request.</p>
 
