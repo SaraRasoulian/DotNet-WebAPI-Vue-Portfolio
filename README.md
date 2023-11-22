@@ -1,8 +1,6 @@
 <h2> Personal Portfolio Website ✨ </h2>
 
-<p>A dynamic and responsive portfolio website with admin panel.</p>
-
-The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
+A dynamic and responsive portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
 
 <h2>Demo 💻 </h2>
 
@@ -50,11 +48,11 @@ To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
   - DB built via EF migrations (code-first approach)
 - ### Front-End 
   - Vue JS -v3 (Vite-based)
-  - [Bootstrap](https://github.com/twbs/bootstrap) -v5 for admin panel
-  - [Axios](https://github.com/axios/axios) for API calls
-  - [Vuelidate](https://github.com/vuelidate/vuelidate) for validation
-  - [vue-toastification](https://github.com/Maronato/vue-toastification) for notifications
-  - [Skeleton](https://github.com/dhg/Skeleton) for home page
+  - Bootstrap -v5 for admin panel
+  - Axios for API calls
+  - Vuelidate for validation
+  - vue-toastification for notifications
+  - Skeleton for home page
   - HTML -v5
   - CSS -v3
 - ### IDE
