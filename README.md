@@ -5,7 +5,7 @@ The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**
 
 <h2>Demo 💻 </h2>
 
-[Live demo](http://www.sara-rasoulian.ir/)
+To view my portfolio [Click here](http://www.sara-rasoulian.ir/)
 
 - <h5>Home page</h5>
 ![Home -](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/b2872aeb-51c0-4452-8e6d-f7df9892b33c)
