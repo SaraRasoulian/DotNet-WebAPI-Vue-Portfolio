@@ -4,7 +4,7 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
 
 <h2>Demo 💻 </h2>
 
-To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
+To view the live portfolio [Click here](http://www.sara-rasoulian.ir/)
 
 <h5>Home page</h5>
 
