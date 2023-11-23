@@ -47,11 +47,11 @@ To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
 
 - ### Front-End 
   - Vue JS -v3 (Vite-based)
-  - Bootstrap -v5 for admin panel
+  - Bootstrap -v5 for admin panel UI
   - Axios for API calls
   - Vuelidate for validation
   - Vue-toastification for notifications
-  - Skeleton for home page
+  - Skeleton for home page UI
   - HTML -v5
   - CSS -v3
  
