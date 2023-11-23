@@ -40,7 +40,6 @@ To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
   - Unit Of Work Pattern
   - Repository Service Pattern
   - TDD
-- ### Testing
   - xUnit
   - FakeItEasy
 - ### Database
