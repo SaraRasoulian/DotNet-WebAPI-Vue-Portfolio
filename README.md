@@ -38,7 +38,7 @@ To view the live portfolio [Click here](http://www.sara-rasoulian.ir/)
   -	ASP.NET Core Web API
   - .NET SDK -v7
   - Entity Framework Core -v7
-  - Mapster for mapping -v7
+  - Mapster -v7 for mapping 
   - JWT for authentication & authorization
   - Clean Architecture
   - Unit Of Work Pattern
