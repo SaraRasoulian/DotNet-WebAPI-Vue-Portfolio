@@ -42,9 +42,7 @@ To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
   - TDD
   - xUnit
   - FakeItEasy
-- ### Database
-  - PostgreSQL -v15
-  - DB built via EF migrations (code-first approach)
+
 - ### Front-End 
   - Vue JS -v3 (Vite-based)
   - Bootstrap -v5 for admin panel
@@ -54,6 +52,11 @@ To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
   - Skeleton for home page
   - HTML -v5
   - CSS -v3
+ 
+- ### Database
+  - PostgreSQL -v15
+  - DB built via EF migrations (code-first approach)
+ 
 - ### IDE
   - Visual Studio 2022 -v17 for back-end development
   - Visual Studio Code for front-end development
