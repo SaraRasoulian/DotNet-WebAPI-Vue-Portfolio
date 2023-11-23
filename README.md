@@ -2,6 +2,8 @@
 
 A dynamic and responsive portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
 
+> This repository can be used as a template for .NET Core/Vue projects
+ 
 <h2>Demo 💻 </h2>
 
 To view the live portfolio [Click here](http://www.sara-rasoulian.ir/)
@@ -36,7 +38,7 @@ To view the live portfolio [Click here](http://www.sara-rasoulian.ir/)
   -	ASP.NET Core Web API
   - .NET SDK -v7
   - Entity Framework Core -v7
-  - Mapster -v7
+  - Mapster for mapping -v7
   - JWT for authentication & authorization
   - Clean Architecture
   - Unit Of Work Pattern
