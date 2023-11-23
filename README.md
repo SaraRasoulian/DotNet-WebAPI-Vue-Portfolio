@@ -6,10 +6,12 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
 
 To view the portfolio [Click here](http://www.sara-rasoulian.ir/)
 
-- <h5>Home page</h5>
+<h5>Home page</h5>
+
 ![Home -](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/b2872aeb-51c0-4452-8e6d-f7df9892b33c)
 
-- <h5>Admin panel</h5>
+<h5>Admin panel</h5>
+
 ![Admin new](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/assets/51083712/dbd59886-8985-4481-8e93-1dedbf5b2219)
 
 
