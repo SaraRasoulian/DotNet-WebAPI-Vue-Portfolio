@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/identity")]
     [ApiController]
     public class IdentityController : ControllerBase
     {

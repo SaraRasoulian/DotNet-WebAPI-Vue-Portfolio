@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/social-links")]
     [ApiController]
     public class SocialLinksController : ControllerBase
     {

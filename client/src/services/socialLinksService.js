@@ -1,6 +1,6 @@
 import axios from '@/axiosDefaults'
 
-const path = '/api/sociallinks'
+const path = '/api/social-links'
 
 const socialLinksService = {
   async getAll() {

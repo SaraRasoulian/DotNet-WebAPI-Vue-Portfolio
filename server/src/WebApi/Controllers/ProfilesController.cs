@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/profiles")]
     [ApiController]
     public class ProfilesController : ControllerBase
     {
