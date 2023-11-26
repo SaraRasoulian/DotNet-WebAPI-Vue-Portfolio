@@ -2,7 +2,7 @@
 
 A dynamic and responsive portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
 
-> This repository can be used as a template for .NET/Vue projects
+> This repository can be used as a starting point for .NET/Vue projects
  
 <h2>Demo 💻 </h2>
 
