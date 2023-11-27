@@ -36,7 +36,7 @@ To view the live portfolio [click here](http://www.sara-rasoulian.ir/)
 
 - ###	Back-End
   -	ASP.NET Core Web API
-  - .NET SDK -v7
+  - .NET -v7
   - Entity Framework Core -v7
   - Mapster -v7 for mapping 
   - JWT for authentication & authorization
