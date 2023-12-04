@@ -39,7 +39,7 @@ To view the live portfolio [click here](http://www.sara-rasoulian.ir/)
   - .NET -v7
   - Entity Framework Core -v7
   - Mapster -v7 for mapping 
-  - JWT for authentication & authorization
+  - JWT
   - Clean Architecture
   - Unit Of Work Pattern
   - Repository Service Pattern
