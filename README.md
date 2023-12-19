@@ -28,10 +28,6 @@ To view the live portfolio [click here](http://www.sara-rasoulian.ir/)
 * Change password
 
 
-<h2>Give a Star ⭐ </h2>
-<p>If you like this project, I hope you consider giving it a star. Thanks!</p>
-
-
 <h2>Tech Stack 🛠️ </h2>
 
 - ###	Back-End
