@@ -6,7 +6,7 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
  
 <h2>Demo 💻 </h2>
 
-To view the live portfolio [click here](https://app-vue.liara.run/)
+To view the live portfolio [click here](https://sararasoulian.ir)
 
 <h5>Home page</h5>
 
