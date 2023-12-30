@@ -4,7 +4,7 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
 
 > This repository can be used as a starting point for .NET/Vue projects
  
-<h2>Demo 💻 </h2>
+<h2>Demo </h2>
 
 <a href="https://sara-rasoulian.ir"><strong>➥ Live Demo</strong></a>
 
@@ -28,7 +28,7 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
 * Change password
 
 
-<h2>Tech Stack 🛠️ </h2>
+<h2>Tech Stack </h2>
 
 - ###	Back-End
   -	ASP.NET Core Web API
@@ -61,6 +61,6 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
   - Visual Studio 2022 -v17 for back-end development
   - Visual Studio Code for front-end development
 
-<h2>Contributions 🤝</h2>
+<h2>Contributions </h2>
 <p>Contributions are appreciated. If you identify areas for improvement, please feel free to raise an issue or submit a pull request.</p>
 
