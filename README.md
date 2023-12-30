@@ -1,4 +1,4 @@
-<h2> Personal Portfolio Website ✨ </h2>
+<h2> Personal Portfolio Website  </h2>
 
 A dynamic and responsive portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
 
