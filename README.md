@@ -37,7 +37,6 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
   - Mapster -v7 for mapping 
   - JWT
   - Clean Architecture
-  - Unit Of Work Pattern
   - Repository Service Pattern
   - TDD
   - xUnit
