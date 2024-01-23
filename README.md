@@ -2,7 +2,11 @@
 
 A dynamic and responsive portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
 
-> This repository can be used as a starting point for .NET/Vue projects
+This project was developed primarily as a learning project, and it showcases the implementation of several software development practices such as clean architecture, design patterns and test-driven development (TDD).
+
+> In a real-world scenario, these practices should be chosen based on the specific requirements of each project.
+
+
  
 <h2>Demo </h2>
 
@@ -38,6 +42,7 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
   - JWT
   - Clean Architecture
   - Repository Service Pattern
+  - Unit of Work Pattern
   - TDD
   - xUnit
   - FakeItEasy
