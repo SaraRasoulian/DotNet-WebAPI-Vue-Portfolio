@@ -38,7 +38,7 @@ This project was developed primarily as a learning project, and it showcases the
   -	ASP.NET Core Web API
   - .NET -v7
   - Entity Framework Core -v7
-  - Mapster -v7 for mapping 
+  - Mapster -v7 for object mapping
   - JWT
   - Clean Architecture
   - Repository Service Pattern
@@ -59,7 +59,7 @@ This project was developed primarily as a learning project, and it showcases the
  
 - ### Database
   - PostgreSQL -v15
-  - DB built via EF migrations (code-first approach)
+  - Database built via Entity framework migrations (code-first approach)
  
 - ### IDE
   - Visual Studio 2022 -v17 for back-end development
