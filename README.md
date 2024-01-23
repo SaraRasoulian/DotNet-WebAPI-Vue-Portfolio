@@ -34,7 +34,7 @@ In a real-world scenario, these practices should be chosen based on the specific
 
 <h2>Tech Stack </h2>
 
-- ###	Back-End
+- ###	Back End
   -	ASP.NET Core Web API
   - .NET -v7
   - Entity Framework Core -v7
@@ -43,11 +43,11 @@ In a real-world scenario, these practices should be chosen based on the specific
   - Clean Architecture
   - Repository Service Pattern
   - Unit of Work Pattern
-  - TDD (Test-Driven Development)
+  - TDD (Test-Driven Development)  
+  - FakeItEasy for mocking & fake data generating
   - xUnit
-  - FakeItEasy for Mocking
 
-- ### Front-End 
+- ### Front End 
   - Vue JS -v3 (Vite-based)
   - Bootstrap -v5 for admin panel UI
   - Axios for API calls
