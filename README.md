@@ -39,11 +39,11 @@ This project was developed primarily as a learning project, and it showcases the
   - .NET -v7
   - Entity Framework Core -v7
   - Mapster -v7 for object mapping
-  - JWT
+  - JWT (JSON Web Token)
   - Clean Architecture
   - Repository Service Pattern
   - Unit of Work Pattern
-  - TDD
+  - TDD (Test-Driven Development)
   - xUnit
   - FakeItEasy
 
@@ -51,7 +51,7 @@ This project was developed primarily as a learning project, and it showcases the
   - Vue JS -v3 (Vite-based)
   - Bootstrap -v5 for admin panel UI
   - Axios for API calls
-  - Vuelidate for validation
+  - Vuelidate for client-side validation
   - Vue-toastification for notifications
   - Skeleton for home page UI
   - HTML -v5
