@@ -4,7 +4,7 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
 
 This project was developed primarily as a learning project, and it showcases the implementation of several software development practices such as clean architecture, design patterns and test-driven development.
 
-> In a real-world scenario, these practices should be chosen based on the specific requirements of each project.
+In a real-world scenario, these practices should be chosen based on the specific requirements of each project.
 
 
  
@@ -45,7 +45,7 @@ This project was developed primarily as a learning project, and it showcases the
   - Unit of Work Pattern
   - TDD (Test-Driven Development)
   - xUnit
-  - FakeItEasy
+  - FakeItEasy for Mocking
 
 - ### Front-End 
   - Vue JS -v3 (Vite-based)
