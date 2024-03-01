@@ -1,4 +1,4 @@
-<h2> Personal Portfolio Website  </h2>
+<h2> Personal Portfolio Website ⚡</h2>
 
 A dynamic and responsive portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
 
@@ -8,7 +8,7 @@ In a real-world scenario, these practices should be chosen based on the specific
 
 
  
-<h2>Demo </h2>
+<h2>Demo 🚀</h2>
 
 <a href="https://sara-rasoulian.ir"><strong>➥ Live Demo</strong></a>
 
@@ -32,7 +32,7 @@ In a real-world scenario, these practices should be chosen based on the specific
 * Change password
 
 
-<h2>Tech Stack </h2>
+<h2>Tech Stack 🛠️</h2>
 
 - ###	Back End
   -	ASP.NET Core Web API
@@ -62,9 +62,18 @@ In a real-world scenario, these practices should be chosen based on the specific
   - Database built via Entity framework migrations (code-first approach)
  
 - ### IDE
-  - Visual Studio 2022 -v17 for back-end development
-  - Visual Studio Code for front-end development
+  - Visual Studio 2022 -v17 for back end development
+  - Visual Studio Code for front end development
 
-<h2>Contributions </h2>
+
+<h2>Assets 🗃️</h2>
+
+To download the project's UI/UX design file [click here](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/files/14462479/Home.Page.Admin.Panel.zip).
+Adobe XD software is required for viewing.
+
+To download the project's database design file [click here](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/files/14462723/Portfolio-Database-Design.pdf).
+
+
+<h2>Contributions 🤝</h2>
 <p>Contributions are appreciated. If you identify areas for improvement, please feel free to raise an issue or submit a pull request.</p>
 
