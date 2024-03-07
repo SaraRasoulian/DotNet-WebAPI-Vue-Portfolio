@@ -27,8 +27,8 @@ namespace Infrastructure.DbContexts
                     FirstName = "Sara",
                     LastName = "Rasoulian",
                     Email = "example@gmail.com",
-                    Headline = "Lorem ipsum is a placeholder text",
-                    About = "Lorem ipsum is a placeholder text",
+                    Headline = "Lorem ipsum",
+                    About = "Lorem ipsum is a placeholder text.",
                 }
                 );
 
@@ -39,6 +39,39 @@ namespace Infrastructure.DbContexts
                     UserName = "admin",
                     Password = "123456",
                     Email = "example@gmail.com"
+                }
+                );
+
+            modelBuilder.Entity<Experience>().HasData(
+                new Experience
+                {
+                    Id = Guid.NewGuid(),
+                    CompanyName = "Test",
+                    StartYear = "2020",
+                    EndYear = "2022",
+                    Description = "Lorem ipsum is a placeholder text."
+                }
+                );
+
+            modelBuilder.Entity<Education>().HasData(
+                new Education
+                {
+                    Id = Guid.NewGuid(),
+                    Degree = "Bachelor's degree",
+                    FieldOfStudy = "Software Engineering",
+                    School = "Test University",
+                    StartYear = "2016",
+                    EndYear = "2020",
+                    Description = "Lorem ipsum is a placeholder text."
+                }
+                );
+
+            modelBuilder.Entity<SocialLink>().HasData(
+                new SocialLink
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Github",
+                    URL = "https://github.com/SaraRasoulian",
                 }
                 );
         }
