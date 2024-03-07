@@ -59,6 +59,18 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Educations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("5b5321a3-3876-471f-acd6-11e690a3bf24"),
+                            Degree = "Bachelor's degree",
+                            Description = "Lorem ipsum is a placeholder text.",
+                            EndYear = "2020",
+                            FieldOfStudy = "Software Engineering",
+                            School = "Test University",
+                            StartYear = "2016"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Experience", b =>
@@ -94,6 +106,17 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Experiences");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("ad8251e5-b8b8-4b97-9bde-389f1b5a76e1"),
+                            CompanyName = "Test",
+                            Description = "Lorem ipsum is a placeholder text.",
+                            EndYear = "2022",
+                            StartYear = "2020",
+                            Website = ""
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Message", b =>
@@ -169,11 +192,11 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("af4f4184-43e7-4912-953e-0ef1d3dd9693"),
-                            About = "Lorem ipsum is a placeholder text",
+                            Id = new Guid("1c3c01b0-47f6-4c99-bafc-cdf24c76e9a9"),
+                            About = "Lorem ipsum is a placeholder text.",
                             Email = "example@gmail.com",
                             FirstName = "Sara",
-                            Headline = "Lorem ipsum is a placeholder text",
+                            Headline = "Lorem ipsum",
                             LastName = "Rasoulian"
                         });
                 });
@@ -200,6 +223,14 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SocialLinks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("1181050f-dc7c-4aed-8909-464d7a26c67e"),
+                            Name = "Github",
+                            URL = "https://github.com/SaraRasoulian"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -227,7 +258,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5a951e06-be3d-4165-a65f-3c669233f863"),
+                            Id = new Guid("4c6f07e8-26a4-416c-85fe-27636fcc6cbf"),
                             Email = "example@gmail.com",
                             Password = "123456",
                             UserName = "admin"
