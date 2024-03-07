@@ -1,0 +1,69 @@
+services:
+
+  # Vue Client Application
+  portfolio_client:
+    container_name: portfolio_client_container
+    ports:
+      - "8080:8080"
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    networks:
+      - portfolio_network
+
+  # ASP.NET Core Web API Application
+  portfolio_api:
+    container_name: portfolio_api_container
+    ports:
+      - "5000:5000"
+    depends_on:
+      - portfolio_db
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=User ID=sara;Password=mysecretpassword;Server=portfolio_db_container;Port=5432;Database=PortfolioDB;IntegratedSecurity=true;Pooling=true;
+      - ASPNETCORE_URLS=http://+:5000
+    networks:
+      - portfolio_network
+
+  # PostgreSQL Database    
+  portfolio_db:
+    container_name: portfolio_db_container
+    image: postgres
+    environment:
+      POSTGRES_USER: sara
+      POSTGRES_PASSWORD: mysecretpassword
+      PGDATA: /data/postgres
+    volumes:
+       - postgres_data:/data/postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - portfolio_network
+    restart: unless-stopped
+  
+  # PGAdmin User Interface
+  portfolio_pgadmin:
+    container_name: portfolio_pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: mysecretpassword
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+    ports:
+      - "8000:80"
+    networks:
+      - portfolio_network
+    restart: unless-stopped
+    
+networks:
+  portfolio_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  pgadmin_data:
