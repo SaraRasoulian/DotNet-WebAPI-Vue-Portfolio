@@ -71,8 +71,7 @@ In a real-world scenario, these practices should be chosen based on the specific
 To download the project's UI/UX design file [click here](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/files/14462479/Home.Page.Admin.Panel.zip).
 Adobe XD software is required for viewing.
 
-To download the project's database design file [click here](https://github.com/SaraRasoulian/DotNet-Vue-Portfolio-Website/files/14462723/Portfolio-Database-Design.pdf).
-
+To download the project's database design file [click here](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/files/14537053/Portfolio-Database-Design.pdf).
 
 <h2>Contributions 🤝</h2>
 <p>Contributions are appreciated. If you identify areas for improvement, please feel free to raise an issue or submit a pull request.</p>
