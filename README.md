@@ -74,5 +74,6 @@ Adobe XD software is required for viewing.
 To download the project's database design file [click here](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/files/14537053/Portfolio-Database-Design.pdf).
 
 <h2>Contributions 🤝</h2>
-<p>Contributions are appreciated. If you identify areas for improvement, please feel free to raise an issue or submit a pull request.</p>
+<p>Contributions are appreciated. If you identify areas for improvement, please feel free to create an issue or submit a pull request.</p>
+<p>For any questions or suggestions, please create an issue.</p>
 
