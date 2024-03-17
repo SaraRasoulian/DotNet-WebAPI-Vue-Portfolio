@@ -43,8 +43,7 @@ In a real-world scenario, these practices should be chosen based on the specific
 ![3 admin](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/e92fd6a6-6ea2-422b-813c-0f8bad2c119d)
 
 
-![Admin new](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/8e6748fb-39ce-4b20-80d9-677ef4df239b)
-
+![Admin - Mobile](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/81ad5b85-9777-4108-b9e9-8a2b6abb9845)
 
 
 If you want to get only the UI code, which includes static HTML and CSS, clone the `ui-only-static-html-css` branch.
