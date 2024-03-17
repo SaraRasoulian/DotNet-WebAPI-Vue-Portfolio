@@ -43,7 +43,9 @@ In a real-world scenario, these practices should be chosen based on the specific
 ![3 admin](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/e92fd6a6-6ea2-422b-813c-0f8bad2c119d)
 
 
-![admin panel - mobile view](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/bf38b575-e274-4851-ad33-aa55c6ae4c17)
+![Admin new](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/8e6748fb-39ce-4b20-80d9-677ef4df239b)
+
+
 
 </details>
 
