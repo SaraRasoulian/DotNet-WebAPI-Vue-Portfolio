@@ -33,7 +33,7 @@ In a real-world scenario, these practices should be chosen based on the specific
 
 <details>
 
-<summary>Screenshots of Admin Panel</summary>
+<summary>Screenshots of Admin Panel 📸</summary>
 
 
 ![1- Login](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/a323b561-3f06-4b10-9335-6c9579960bec)
