@@ -31,6 +31,24 @@ In a real-world scenario, these practices should be chosen based on the specific
 * Login
 * Change password
 
+<details>
+
+<summary>Screenshots of Admin Panel</summary>
+
+
+![1- Login](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/a323b561-3f06-4b10-9335-6c9579960bec)
+
+![2 Social links - edit](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/8e4fbea7-fe34-4f85-b73f-3f0145085dfb)
+
+![3 admin](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/e92fd6a6-6ea2-422b-813c-0f8bad2c119d)
+
+
+![Admin new](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/8e6748fb-39ce-4b20-80d9-677ef4df239b)
+
+
+
+</details>
+
 
 <h2>Tech Stack 🛠️</h2>
 
