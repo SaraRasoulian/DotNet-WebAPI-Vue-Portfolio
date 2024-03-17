@@ -47,6 +47,9 @@ In a real-world scenario, these practices should be chosen based on the specific
 
 
 
+If you want to get only the UI code, which includes static HTML and CSS, clone the `ui-only-static-html-css` branch.
+
+
 </details>
 
 
