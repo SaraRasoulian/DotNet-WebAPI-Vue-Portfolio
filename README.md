@@ -4,7 +4,7 @@ A dynamic and responsive portfolio website with admin panel. The backend is buil
 
 This is a learning project and it showcases the implementation of several software development practices such as clean architecture, design patterns and test-driven development.
 
-In a real-world scenario, these practices should be chosen based on the specific requirements of each project.
+> In a real-world scenario, these practices should be chosen based on the specific requirements of each project.
 
 
  
