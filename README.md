@@ -36,17 +36,14 @@ In a real-world scenario, these practices should be chosen based on the specific
 <summary>Screenshots of Admin Panel 📸</summary>
 
 
-![1- Login](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/a323b561-3f06-4b10-9335-6c9579960bec)
+![Login page](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/a323b561-3f06-4b10-9335-6c9579960bec)
 
-![2 Social links - edit](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/8e4fbea7-fe34-4f85-b73f-3f0145085dfb)
+![Social links page](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/8e4fbea7-fe34-4f85-b73f-3f0145085dfb)
 
-![3 admin](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/e92fd6a6-6ea2-422b-813c-0f8bad2c119d)
-
-
-![Admin - Mobile](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/81ad5b85-9777-4108-b9e9-8a2b6abb9845)
+![Messages page](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/e92fd6a6-6ea2-422b-813c-0f8bad2c119d)
 
 
-If you want to get only the UI code, which includes static HTML and CSS, clone the `ui-only-static-html-css` branch.
+![Admin panel - Mobile](https://github.com/SaraRasoulian/.Net-Vue-Portfolio/assets/51083712/81ad5b85-9777-4108-b9e9-8a2b6abb9845)
 
 
 </details>
