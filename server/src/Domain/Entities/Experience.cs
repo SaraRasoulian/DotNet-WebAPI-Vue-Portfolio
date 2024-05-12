@@ -4,14 +4,14 @@ namespace Domain.Entities
 {
     public class Experience : EntityBase
     {
-        public string? CompanyName { get; set; }
+        public string CompanyName { get; set; } = null!;
 
-        public string? StartYear { get; set; }
+        public string StartYear { get; set; } = null!;
+         
+        public string EndYear { get; set; } = null!;
 
-        public string? EndYear { get; set; }
+        public string Description { get; set; } = null!;
 
-        public string? Description { get; set; }
-
-        public string? Website { get; set; } = string.Empty;
+        public string? Website { get; set; }
     }
 }

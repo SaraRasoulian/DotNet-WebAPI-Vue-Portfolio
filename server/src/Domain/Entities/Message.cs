@@ -4,11 +4,11 @@ namespace Domain.Entities
 {
     public class Message : EntityBase
     {
-        public string? Name { get; set; }
+        public string Name { get; set; } = null!;
 
-        public string? Email { get; set; }
+        public string Email { get; set; } = null!;
 
-        public string? Content { get; set; }
+        public string Content { get; set; } = null!;
 
         public DateTime SentAt { get; set; }
 
