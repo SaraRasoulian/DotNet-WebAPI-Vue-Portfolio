@@ -19,93 +19,51 @@ namespace WebApi.Controllers
         [Authorize]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                var result = await _messageService.GetAll();
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            var result = await _messageService.GetAll();
+            return Ok(result);
         }
 
         [HttpGet("unread")]
         [Authorize]
         public async Task<IActionResult> GetNumberOfUnread()
         {
-            try
-            {
-                var result = await _messageService.GetNumberOfUnread();
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            var result = await _messageService.GetNumberOfUnread();
+            return Ok(result);
         }
 
         [HttpGet("{id:guid}")]
         [Authorize]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
-            try
-            {
-                var result = await _messageService.GetById(id);
-                if (result is null) return NoContent();
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            var result = await _messageService.GetById(id);
+            if (result is null) return NoContent();
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] MessageDto dto)
         {
-            try
-            {
-                if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
-                var result = await _messageService.Add(dto);
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
+            var result = await _messageService.Add(dto);
+            return Ok(result);
         }
 
         [HttpDelete("{id:guid}")]
         [Authorize]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
-            try
-            {
-                var result = await _messageService.Delete(id);
-                if (!result) return BadRequest();
-                return Ok();
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            var result = await _messageService.Delete(id);
+            if (!result) return BadRequest();
+            return Ok();
         }
 
         [HttpPut("mark-as-read/{id:guid}")]
         [Authorize]
         public async Task<IActionResult> MarkAsRead([FromRoute] Guid id)
         {
-            try
-            {
-                var result = await _messageService.MarkAsRead(id);
-                if (!result) return BadRequest();
-                return Ok();
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            var result = await _messageService.MarkAsRead(id);
+            if (!result) return BadRequest();
+            return Ok();
         }
 
     }
