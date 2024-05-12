@@ -1,12 +1,4 @@
-﻿using Application.DTOs;
-using Application.Interfaces;
-using Application.Service;
-using Domain.Entities;
-using Domain.Interfaces;
-using FakeItEasy;
-using Mapster;
-
-namespace Application.Tests
+﻿namespace Application.Tests
 {
     public class MessageServiceTests
     {
@@ -73,7 +65,7 @@ namespace Application.Tests
             Assert.IsType<MessageDto>(result);
             Assert.Equal(addedMessage.Id, result.Id);
         }
-     
+
         [Fact]
         public async Task Delete_With_Existing_Id_Returns_True()
         {

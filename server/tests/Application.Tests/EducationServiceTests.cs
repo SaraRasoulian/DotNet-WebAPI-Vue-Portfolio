@@ -1,12 +1,4 @@
-﻿using Application.DTOs;
-using Application.Interfaces;
-using Application.Service;
-using Domain.Entities;
-using Domain.Interfaces;
-using FakeItEasy;
-using Mapster;
-
-namespace Application.Tests
+﻿namespace Application.Tests
 {
     public class EducationServiceTests
     {

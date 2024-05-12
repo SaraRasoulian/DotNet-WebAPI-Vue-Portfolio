@@ -1,23 +1,15 @@
-﻿using Application.DTOs;
-using Application.Interfaces;
-using Application.Service;
-using Domain.Entities;
-using Domain.Interfaces;
-using FakeItEasy;
-using Mapster;
-
-namespace Application.Tests
+﻿namespace Application.Tests
 {
     public class SocialLinkServiceTests
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly ISocialLinkRepository SocialLinkRepository;
+        private readonly ISocialLinkRepository socialLinkRepository;
 
         public SocialLinkServiceTests()
         {
             unitOfWork = A.Fake<IUnitOfWork>();
-            SocialLinkRepository = A.Fake<ISocialLinkRepository>();
-            A.CallTo(() => unitOfWork.SocialLink).Returns(SocialLinkRepository);
+            socialLinkRepository = A.Fake<ISocialLinkRepository>();
+            A.CallTo(() => unitOfWork.SocialLink).Returns(socialLinkRepository);
         }
 
         [Fact]
@@ -25,7 +17,7 @@ namespace Application.Tests
         {
             // Arrange
             var SocialLinkData = new List<SocialLink>();
-            A.CallTo(() => SocialLinkRepository.GetAll()).Returns(SocialLinkData);
+            A.CallTo(() => socialLinkRepository.GetAll()).Returns(SocialLinkData);
             var SocialLinkService = new SocialLinkService(unitOfWork);
 
             // Act
@@ -43,7 +35,7 @@ namespace Application.Tests
             // Arrange
             var SocialLinkId = Guid.NewGuid();
             var SocialLinkData = A.Dummy<SocialLink>();
-            A.CallTo(() => SocialLinkRepository.GetById(SocialLinkId)).Returns(SocialLinkData);
+            A.CallTo(() => socialLinkRepository.GetById(SocialLinkId)).Returns(SocialLinkData);
             var SocialLinkService = new SocialLinkService(unitOfWork);
 
             // Act
@@ -61,7 +53,7 @@ namespace Application.Tests
             var SocialLinkDto = A.Dummy<SocialLinkDto>();
             var addedSocialLink = SocialLinkDto.Adapt<SocialLink>();
             addedSocialLink.Id = Guid.NewGuid();
-            A.CallTo(() => SocialLinkRepository.Add(A<SocialLink>._)).Returns(addedSocialLink);
+            A.CallTo(() => socialLinkRepository.Add(A<SocialLink>._)).Returns(addedSocialLink);
 
             var SocialLinkService = new SocialLinkService(unitOfWork);
 
@@ -81,7 +73,7 @@ namespace Application.Tests
             var existingId = Guid.NewGuid();
             var existingSocialLink = A.Dummy<SocialLink>();
             existingSocialLink.Id = existingId;
-            A.CallTo(() => SocialLinkRepository.GetById(existingId)).Returns(existingSocialLink);
+            A.CallTo(() => socialLinkRepository.GetById(existingId)).Returns(existingSocialLink);
 
             var updatedSocialLinkDto = A.Dummy<SocialLinkDto>();
             updatedSocialLinkDto.Id = existingId;
@@ -120,7 +112,7 @@ namespace Application.Tests
             // Arrange
             var existingId = Guid.NewGuid();
             var existingSocialLink = A.Dummy<SocialLink>();
-            A.CallTo(() => SocialLinkRepository.GetById(existingId)).Returns(existingSocialLink);
+            A.CallTo(() => socialLinkRepository.GetById(existingId)).Returns(existingSocialLink);
 
             var SocialLinkService = new SocialLinkService(unitOfWork);
 
