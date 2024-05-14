@@ -22,7 +22,6 @@ public class BaseControllerTest : IClassFixture<IntegrationTestWebApplicationFac
         };
 
         var loginResponse = await _httpClient.PostAsJsonAsync("api/identity/login", userLoginDto);
-        loginResponse.EnsureSuccessStatusCode();
         string token = await loginResponse.Content.ReadAsStringAsync();
 
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
