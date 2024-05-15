@@ -1,8 +1,4 @@
-﻿using Application.DTOs;
-using FluentAssertions;
-using System.Net.Http.Json;
-
-namespace WebApi.Tests.Integration.ControllersTests;
+﻿namespace WebApi.Tests.Integration.ControllersTests;
 
 public class EducationsControllerTests : BaseControllerTest
 {
