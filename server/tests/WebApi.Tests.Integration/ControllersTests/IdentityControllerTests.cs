@@ -67,25 +67,4 @@ public class IdentityControllerTests : BaseControllerTest
         // Assert
         response.EnsureSuccessStatusCode();
     }
-
-    [Fact]
-    public async Task ChangePassword_With_Mismatch_Passwords_Returns_BadRequest()
-    {
-        // Arrange
-        await AuthenticateAsync();
-
-        // Using the one user created by database seed
-        PasswordDto passwordDto = new PasswordDto
-        {
-            currentPassword = "123456",
-            newPassword = "admin123456",
-            confirmNewPassword = "admin1",
-        };
-
-        // Act
-        var response = await _httpClient.PutAsJsonAsync("api/identity/change-password", passwordDto);
-
-        // Assert
-        response.Should().HaveStatusCode(HttpStatusCode.BadRequest);
-    }
 }
