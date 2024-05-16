@@ -22,6 +22,8 @@ public class EducationsControllerTests : BaseControllerTest
     {
         // Arrange
         await AuthenticateAsync();
+
+        // Get a random id
         Guid id = Guid.NewGuid();
 
         // Act
@@ -29,6 +31,7 @@ public class EducationsControllerTests : BaseControllerTest
 
         // Assert
         response.EnsureSuccessStatusCode();
+        response.Should().HaveStatusCode(HttpStatusCode.NoContent);
     }
 
     [Fact]
