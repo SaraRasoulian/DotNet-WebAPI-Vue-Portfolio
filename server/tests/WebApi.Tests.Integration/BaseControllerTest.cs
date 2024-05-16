@@ -1,6 +1,4 @@
-﻿using Application.DTOs;
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Headers;
 
 namespace WebApi.Tests.Integration;
 
@@ -13,6 +11,10 @@ public class BaseControllerTest : IClassFixture<IntegrationTestWebApplicationFac
         _httpClient = factory.CreateDefaultClient();
     }
 
+    /// <summary>
+    /// Authenticate using the one user created by database seed
+    /// </summary>
+    /// <returns></returns>
     protected async Task AuthenticateAsync()
     {
         UserLoginDto userLoginDto = new UserLoginDto
