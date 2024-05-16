@@ -19,33 +19,19 @@ namespace WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                var result = await _ProfileService.Get();
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            var result = await _ProfileService.Get();
+            return Ok(result);
         }
 
         [HttpPut]
         [Authorize]
         public async Task<IActionResult> Put([FromBody] ProfileDto dto)
         {
-            try
-            {
-                if (!ModelState.IsValid) return BadRequest(ModelState);
-                var result = await _ProfileService.Update(dto);
-                if (!result) return BadRequest();
-                return Ok();
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var result = await _ProfileService.Update(dto);
+            if (!result) return BadRequest();
+            return Ok();
         }
-               
+
     }
 }

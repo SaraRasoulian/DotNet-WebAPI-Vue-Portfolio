@@ -19,39 +19,24 @@ namespace WebApi.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] UserLoginDto dto)
         {
-            try
-            {
-                if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
-                var result = await _identityService.Login(dto);
+            if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
+            var result = await _identityService.Login(dto);
 
-                if (result is null) return NoContent();
-
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            if (result is null) return NoContent();
+            return Ok(result);
         }
 
         [HttpPut("change-password")]
         [Authorize]
         public async Task<ActionResult> ChangePassword([FromBody] PasswordDto dto)
         {
-            try
-            {
-                if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
+            if (!ModelState.IsValid || dto is null) return BadRequest(ModelState);
 
-                string userName = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            string userName = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-                var result = await _identityService.ChangePassword(dto, userName);
-                if (!result) return BadRequest();
-                return Ok();
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            var result = await _identityService.ChangePassword(dto, userName);
+            if (!result) return BadRequest();
+            return Ok();
         }
 
         [HttpGet("validate-token")]
