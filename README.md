@@ -62,7 +62,9 @@ In a real-world scenario, these practices should be chosen based on the specific
   - Unit of Work Pattern
   - TDD (Test-Driven Development)  
   - FakeItEasy for mocking & fake data generating
-  - xUnit
+  - xUnit for unit and integration testing
+  - Testcontainers for integration testing
+  - Fluent Assertions
 
 - ### Front End 
   - Vue JS -v3 (Vite-based)
