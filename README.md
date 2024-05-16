@@ -1,8 +1,8 @@
 <h2> Personal Portfolio Website ⚡</h2>
 
-A dynamic and responsive portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
+A portfolio website with admin panel. The backend is built with **ASP.NET Core Web API**, the frontend with **Vue JS**, and the database with **PostgreSQL**.
 
-This is a learning project and it showcases the implementation of several software development practices such as clean architecture, design patterns and test-driven development.
+This is a __learning project__ and it showcases the implementation of several software development practices such as clean architecture, design patterns and test-driven development.
 
 In a real-world scenario, these practices should be chosen based on the specific requirements of each project.
 
