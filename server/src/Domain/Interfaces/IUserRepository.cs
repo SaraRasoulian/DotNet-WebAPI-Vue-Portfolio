@@ -1,10 +1,10 @@
 ﻿using Domain.Entities;
-namespace Domain.Interfaces
+
+namespace Domain.Interfaces;
+
+public interface IUserRepository
 {
-    public interface IUserRepository
-    {
-        Task<User?> Get(string userName, string password);
-        Task<User?> GetByUserName(string userName);
-        void Update(User user);
-    }
+    Task<User?> Get(string userName, string password);
+    Task<User?> GetByUserName(string userName);
+    void Update(User user);
 }

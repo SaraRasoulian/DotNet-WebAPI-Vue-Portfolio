@@ -1,88 +1,87 @@
-﻿namespace Application.Tests
+﻿namespace Application.Tests;
+
+public class MessageServiceTests
 {
-    public class MessageServiceTests
+    private readonly IUnitOfWork unitOfWork;
+    private readonly IMessageRepository messageRepository;
+
+    public MessageServiceTests()
     {
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IMessageRepository messageRepository;
+        unitOfWork = A.Fake<IUnitOfWork>();
+        messageRepository = A.Fake<IMessageRepository>();
+        A.CallTo(() => unitOfWork.Message).Returns(messageRepository);
+    }
 
-        public MessageServiceTests()
-        {
-            unitOfWork = A.Fake<IUnitOfWork>();
-            messageRepository = A.Fake<IMessageRepository>();
-            A.CallTo(() => unitOfWork.Message).Returns(messageRepository);
-        }
+    [Fact]
+    public async Task GetAll_With_Data_Returns_List_Of_MessageDto()
+    {
+        // Arrange
+        var messageData = new List<Message>();
+        A.CallTo(() => messageRepository.GetAll()).Returns(messageData);
+        var messageService = new MessageService(unitOfWork);
 
-        [Fact]
-        public async Task GetAll_With_Data_Returns_List_Of_MessageDto()
-        {
-            // Arrange
-            var messageData = new List<Message>();
-            A.CallTo(() => messageRepository.GetAll()).Returns(messageData);
-            var messageService = new MessageService(unitOfWork);
+        // Act
+        var result = await messageService.GetAll();
 
-            // Act
-            var result = await messageService.GetAll();
+        // Assert
+        Assert.NotNull(result);
+        Assert.IsAssignableFrom<IEnumerable<MessageDto>>(result);
+        Assert.Equal(messageData.Count, result.Count());
+    }
 
-            // Assert
-            Assert.NotNull(result);
-            Assert.IsAssignableFrom<IEnumerable<MessageDto>>(result);
-            Assert.Equal(messageData.Count, result.Count());
-        }
+    [Fact]
+    public async Task GetById_With_Data_Returns_MessageDto()
+    {
+        // Arrange
+        var messageId = Guid.NewGuid();
+        var messageData = A.Dummy<Message>();
+        A.CallTo(() => messageRepository.GetById(messageId)).Returns(messageData);
+        var messageService = new MessageService(unitOfWork);
 
-        [Fact]
-        public async Task GetById_With_Data_Returns_MessageDto()
-        {
-            // Arrange
-            var messageId = Guid.NewGuid();
-            var messageData = A.Dummy<Message>();
-            A.CallTo(() => messageRepository.GetById(messageId)).Returns(messageData);
-            var messageService = new MessageService(unitOfWork);
+        // Act
+        var result = await messageService.GetById(messageId);
 
-            // Act
-            var result = await messageService.GetById(messageId);
+        // Assert
+        Assert.NotNull(result);
+        Assert.IsType<MessageDto>(result);
+    }
 
-            // Assert
-            Assert.NotNull(result);
-            Assert.IsType<MessageDto>(result);
-        }
+    [Fact]
+    public async Task Add_Returns_Added_MessageDto()
+    {
+        // Arrange
+        var messageDto = A.Dummy<MessageDto>();
+        var addedMessage = messageDto.Adapt<Message>();
+        addedMessage.Id = Guid.NewGuid();
+        A.CallTo(() => messageRepository.Add(A<Message>._)).Returns(addedMessage);
 
-        [Fact]
-        public async Task Add_Returns_Added_MessageDto()
-        {
-            // Arrange
-            var messageDto = A.Dummy<MessageDto>();
-            var addedMessage = messageDto.Adapt<Message>();
-            addedMessage.Id = Guid.NewGuid();
-            A.CallTo(() => messageRepository.Add(A<Message>._)).Returns(addedMessage);
+        var messageService = new MessageService(unitOfWork);
 
-            var messageService = new MessageService(unitOfWork);
+        // Act
+        var result = await messageService.Add(messageDto);
 
-            // Act
-            var result = await messageService.Add(messageDto);
+        // Assert
+        Assert.NotNull(result);
+        Assert.IsType<MessageDto>(result);
+        Assert.Equal(addedMessage.Id, result.Id);
+    }
 
-            // Assert
-            Assert.NotNull(result);
-            Assert.IsType<MessageDto>(result);
-            Assert.Equal(addedMessage.Id, result.Id);
-        }
+    [Fact]
+    public async Task Delete_With_Existing_Id_Returns_True()
+    {
+        // Arrange
+        var existingId = Guid.NewGuid();
+        var existingMessage = A.Dummy<Message>();
+        A.CallTo(() => messageRepository.GetById(existingId)).Returns(existingMessage);
 
-        [Fact]
-        public async Task Delete_With_Existing_Id_Returns_True()
-        {
-            // Arrange
-            var existingId = Guid.NewGuid();
-            var existingMessage = A.Dummy<Message>();
-            A.CallTo(() => messageRepository.GetById(existingId)).Returns(existingMessage);
+        var messageService = new MessageService(unitOfWork);
 
-            var messageService = new MessageService(unitOfWork);
+        // Act
+        var result = await messageService.Delete(existingId);
 
-            // Act
-            var result = await messageService.Delete(existingId);
-
-            // Assert
-            Assert.True(result);
-            A.CallTo(() => unitOfWork.Message.Delete(existingMessage)).MustHaveHappenedOnceExactly();
-            A.CallTo(() => unitOfWork.SaveChangesAsync(default)).MustHaveHappenedOnceExactly();
-        }
+        // Assert
+        Assert.True(result);
+        A.CallTo(() => unitOfWork.Message.Delete(existingMessage)).MustHaveHappenedOnceExactly();
+        A.CallTo(() => unitOfWork.SaveChangesAsync(default)).MustHaveHappenedOnceExactly();
     }
 }

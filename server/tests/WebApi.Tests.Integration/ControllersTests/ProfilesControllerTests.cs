@@ -3,8 +3,7 @@
 public class ProfilesControllerTests : BaseControllerTest
 {
     public ProfilesControllerTests(IntegrationTestWebApplicationFactory factory) : base(factory)
-    {
-    }
+    { }
 
     [Fact]
     public async Task Get_Returns_OK_With_ProfileDto()

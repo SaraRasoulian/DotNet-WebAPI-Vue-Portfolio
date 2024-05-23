@@ -3,24 +3,23 @@ using Domain.Interfaces;
 using Infrastructure.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories
+namespace Infrastructure.Repositories;
+
+public class ProfileRepository : IProfileRepository
 {
-    public class ProfileRepository : IProfileRepository
+    private readonly PortfolioDbContext _dbContext;
+    public ProfileRepository(PortfolioDbContext dbContext)
     {
-        private readonly PortfolioDbContext _dbContext;
-        public ProfileRepository(PortfolioDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        _dbContext = dbContext;
+    }
 
-        public async Task<Profile?> Get()
-        {
-            return await _dbContext.Profiles.AsNoTracking().FirstOrDefaultAsync();
-        }
+    public async Task<Profile?> Get()
+    {
+        return await _dbContext.Profiles.AsNoTracking().FirstOrDefaultAsync();
+    }
 
-        public void Update(Profile model)
-        {
-            _dbContext.Profiles.Update(model);
-        }
+    public void Update(Profile model)
+    {
+        _dbContext.Profiles.Update(model);
     }
 }

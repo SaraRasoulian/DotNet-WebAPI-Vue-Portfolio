@@ -1,22 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Application.DTOs;
 
-namespace Application.DTOs
+public record ExperienceDto
 {
-    public class ExperienceDto
-    {
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        [Required]
-        public string CompanyName { get; set; }
+    public string CompanyName { get; set; } = null!;
 
-        [Required]
-        public string StartYear { get; set; }
+    public string StartYear { get; set; } = null!;
 
-        [Required]
-        public string EndYear { get; set; }
+    public string EndYear { get; set; } = null!;
 
-        public string? Description { get; set; }
+    public string? Description { get; set; }
 
-        public string? Website { get; set; } = string.Empty;
-    }
+    public string? Website { get; set; } = string.Empty;
 }

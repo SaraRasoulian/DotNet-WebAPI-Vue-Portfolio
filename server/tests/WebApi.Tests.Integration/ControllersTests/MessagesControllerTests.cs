@@ -3,8 +3,7 @@
 public class MessagesControllerTests : BaseControllerTest
 {
     public MessagesControllerTests(IntegrationTestWebApplicationFactory factory) : base(factory)
-    {
-    }
+    { }
 
     [Fact]
     public async Task GetAll_Returns_SuccessStatusCode()

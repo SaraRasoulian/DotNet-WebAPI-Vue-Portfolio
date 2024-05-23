@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Common
+namespace Domain.Common;
+
+public abstract class EntityBase
 {
-    public abstract class EntityBase
-    {
-        [Key]
-        public Guid Id { get; set; }
-    }
+    [Key]
+    public Guid Id { get; set; }
 }

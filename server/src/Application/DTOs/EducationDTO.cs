@@ -1,25 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Application.DTOs;
 
-namespace Application.DTOs
+public record EducationDto
 {
-    public class EducationDto
-    {
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        [Required]
-        public string Degree { get; set; }
+    public string Degree { get; set; } = null!;
 
-        [Required]
-        public string FieldOfStudy { get; set; }
+    public string FieldOfStudy { get; set; } = null!;
 
-        [Required]
-        public string StartYear { get; set; }
+    public string StartYear { get; set; } = null!;
 
-        [Required]
-        public string EndYear { get; set; }
+    public string EndYear { get; set; } = null!;
 
-        public string? School { get; set; }        
+    public string? School { get; set; }
 
-        public string? Description { get; set; }
-    }
+    public string? Description { get; set; }
 }

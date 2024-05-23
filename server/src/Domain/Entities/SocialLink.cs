@@ -1,13 +1,12 @@
 ﻿using Domain.Common;
 
-namespace Domain.Entities
+namespace Domain.Entities;
+
+public class SocialLink : EntityBase
 {
-    public class SocialLink : EntityBase
-    {
-        public string Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-        public string URL { get; set; } = null!;
+    public string URL { get; set; } = null!;
 
-        public string? Icon { get; set; }
-    }
+    public string? Icon { get; set; }
 }

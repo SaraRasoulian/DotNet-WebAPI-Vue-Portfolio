@@ -1,9 +1,9 @@
 ﻿using Domain.Entities;
-namespace Domain.Interfaces
+
+namespace Domain.Interfaces;
+
+public interface IProfileRepository
 {
-    public interface IProfileRepository
-    {
-        Task<Profile?> Get();
-        void Update(Profile model);
-    }
+    Task<Profile?> Get();
+    void Update(Profile model);
 }

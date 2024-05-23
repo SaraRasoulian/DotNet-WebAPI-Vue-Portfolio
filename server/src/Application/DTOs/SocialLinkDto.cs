@@ -1,17 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Application.DTOs;
 
-namespace Application.DTOs
+public record SocialLinkDto
 {
-    public class SocialLinkDto
-    {
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        [Required]
-        public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
-        [Required]
-        public string URL { get; set; }
+    public string URL { get; set; } = null!;
 
-        public string? Icon { get; set; }
-    }
+    public string? Icon { get; set; }
 }

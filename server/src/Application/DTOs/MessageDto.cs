@@ -1,24 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Application.DTOs;
 
-namespace Application.DTOs
+public record MessageDto
 {
-    public class MessageDto
-    {
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        [Required]
-        public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
-        [Required]
-        public string Email { get; set; }
+    public string Email { get; set; } = null!;
 
-        [Required]
-        public string Content { get; set; }
+    public string Content { get; set; } = null!;
 
-        public bool IsRead { get; set; }
+    public bool IsRead { get; set; }
 
-        public string? SentAt { get; set; }
+    public string? SentAt { get; set; }
 
-        public string? TimeAgo { get; set; }
-    }
+    public string? TimeAgo { get; set; }
 }

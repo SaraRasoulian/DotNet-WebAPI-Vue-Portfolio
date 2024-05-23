@@ -1,15 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Application.DTOs;
 
-namespace Application.DTOs
+public record UserLoginDto
 {
-    public class UserLoginDto
-    {
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        [Required]
-        public string UserName { get; set; }
+    public string UserName { get; set; } = null!;
 
-        [Required]
-        public string Password { get; set; }
-    }
+    public string Password { get; set; } = null!;
 }

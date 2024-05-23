@@ -1,16 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Application.DTOs;
 
-namespace Application.DTOs
+public record PasswordDto
 {
-    public class PasswordDto
-    {
-        [Required]
-        public string currentPassword { get; set; }
+    public string currentPassword { get; set; } = null!;
 
-        [Required]
-        public string newPassword { get; set; }
+    public string newPassword { get; set; } = null!;
 
-        [Required]
-        public string confirmNewPassword { get; set; }
-    }
+    public string confirmNewPassword { get; set; } = null!;
 }
