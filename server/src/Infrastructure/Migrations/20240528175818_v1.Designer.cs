@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20240307162221_v1")]
+    [Migration("20240528175818_v1")]
     partial class v1
     {
         /// <inheritdoc />
@@ -66,7 +66,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5b5321a3-3876-471f-acd6-11e690a3bf24"),
+                            Id = new Guid("6a9931b3-5b5d-4865-ab9f-eeef7641bc5d"),
                             Degree = "Bachelor's degree",
                             Description = "Lorem ipsum is a placeholder text.",
                             EndYear = "2020",
@@ -113,12 +113,11 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ad8251e5-b8b8-4b97-9bde-389f1b5a76e1"),
+                            Id = new Guid("090cfd89-9fa7-4355-a35e-f900fa593f7e"),
                             CompanyName = "Test",
                             Description = "Lorem ipsum is a placeholder text.",
                             EndYear = "2022",
-                            StartYear = "2020",
-                            Website = ""
+                            StartYear = "2020"
                         });
                 });
 
@@ -195,7 +194,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1c3c01b0-47f6-4c99-bafc-cdf24c76e9a9"),
+                            Id = new Guid("cfaa4d7b-6338-4df8-bd2a-36e8ae2e64f1"),
                             About = "Lorem ipsum is a placeholder text.",
                             Email = "example@gmail.com",
                             FirstName = "Sara",
@@ -230,7 +229,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1181050f-dc7c-4aed-8909-464d7a26c67e"),
+                            Id = new Guid("f1352af3-5871-429f-bc5a-99220e8751a1"),
                             Name = "Github",
                             URL = "https://github.com/SaraRasoulian"
                         });
@@ -261,7 +260,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4c6f07e8-26a4-416c-85fe-27636fcc6cbf"),
+                            Id = new Guid("cea95500-ba98-4dfe-9970-04e42a30521a"),
                             Email = "example@gmail.com",
                             Password = "123456",
                             UserName = "admin"

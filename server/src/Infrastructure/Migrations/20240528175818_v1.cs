@@ -18,9 +18,9 @@ namespace Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Degree = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     FieldOfStudy = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
-                    School = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
                     StartYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     EndYear = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    School = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
                     Description = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: true)
                 },
                 constraints: table =>
@@ -108,27 +108,27 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Educations",
                 columns: new[] { "Id", "Degree", "Description", "EndYear", "FieldOfStudy", "School", "StartYear" },
-                values: new object[] { new Guid("5b5321a3-3876-471f-acd6-11e690a3bf24"), "Bachelor's degree", "Lorem ipsum is a placeholder text.", "2020", "Software Engineering", "Test University", "2016" });
+                values: new object[] { new Guid("6a9931b3-5b5d-4865-ab9f-eeef7641bc5d"), "Bachelor's degree", "Lorem ipsum is a placeholder text.", "2020", "Software Engineering", "Test University", "2016" });
 
             migrationBuilder.InsertData(
                 table: "Experiences",
                 columns: new[] { "Id", "CompanyName", "Description", "EndYear", "StartYear", "Website" },
-                values: new object[] { new Guid("ad8251e5-b8b8-4b97-9bde-389f1b5a76e1"), "Test", "Lorem ipsum is a placeholder text.", "2022", "2020", "" });
+                values: new object[] { new Guid("090cfd89-9fa7-4355-a35e-f900fa593f7e"), "Test", "Lorem ipsum is a placeholder text.", "2022", "2020", null });
 
             migrationBuilder.InsertData(
                 table: "Profiles",
                 columns: new[] { "Id", "About", "Email", "FirstName", "Headline", "LastName", "Photo" },
-                values: new object[] { new Guid("1c3c01b0-47f6-4c99-bafc-cdf24c76e9a9"), "Lorem ipsum is a placeholder text.", "example@gmail.com", "Sara", "Lorem ipsum", "Rasoulian", null });
+                values: new object[] { new Guid("cfaa4d7b-6338-4df8-bd2a-36e8ae2e64f1"), "Lorem ipsum is a placeholder text.", "example@gmail.com", "Sara", "Lorem ipsum", "Rasoulian", null });
 
             migrationBuilder.InsertData(
                 table: "SocialLinks",
                 columns: new[] { "Id", "Icon", "Name", "URL" },
-                values: new object[] { new Guid("1181050f-dc7c-4aed-8909-464d7a26c67e"), null, "Github", "https://github.com/SaraRasoulian" });
+                values: new object[] { new Guid("f1352af3-5871-429f-bc5a-99220e8751a1"), null, "Github", "https://github.com/SaraRasoulian" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Password", "UserName" },
-                values: new object[] { new Guid("4c6f07e8-26a4-416c-85fe-27636fcc6cbf"), "example@gmail.com", "123456", "admin" });
+                values: new object[] { new Guid("cea95500-ba98-4dfe-9970-04e42a30521a"), "example@gmail.com", "123456", "admin" });
         }
 
         /// <inheritdoc />
