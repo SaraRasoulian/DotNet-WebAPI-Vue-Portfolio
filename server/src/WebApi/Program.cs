@@ -1,23 +1,14 @@
-using Application.Interfaces;
-using Application.Service;
-using Application.Service.Interfaces;
-using Infrastructure.DbContexts;
-using Infrastructure.UoW;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//temp
 builder.Services.AddCors();
 builder.Services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-
 // Add services to the container.
-
 
 builder.Services.AddAuthentication(options =>
 {
@@ -44,26 +35,16 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
 
-// Database
-builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), o => o.UseNodaTime()));
-builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "PortfolioDB");
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IProfileService, ProfileService>();
-builder.Services.AddScoped<IEducationService, EducationService>();
-builder.Services.AddScoped<IExperienceService, ExperienceService>();
-builder.Services.AddScoped<ISocialLinkService, SocialLinkService>();
-builder.Services.AddScoped<IMessageService, MessageService>();
-builder.Services.AddScoped<IIdentityService, IdentityService>();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Enable CORS for the client app running inside a Docker container
 app.UseCors(options => options.WithOrigins("http://localhost:8080").AllowAnyHeader().AllowAnyMethod());
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -73,7 +54,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 
 app.UseAuthentication();
 app.UseAuthorization();
