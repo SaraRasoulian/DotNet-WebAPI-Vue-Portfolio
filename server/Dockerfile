@@ -3,10 +3,8 @@ WORKDIR /app
 EXPOSE 5000
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-RUN pwd && ls /
 WORKDIR /src
 COPY ["src/WebApi/WebApi.csproj", "src/WebApi/"]
-RUN pwd && ls
 COPY ["src/Application/Application.csproj", "src/Application/"]
 COPY ["src/Domain/Domain.csproj", "src/Domain/"]
 COPY ["src/Infrastructure/Infrastructure.csproj", "src/Infrastructure/"]
